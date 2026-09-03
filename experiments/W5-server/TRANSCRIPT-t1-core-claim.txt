@@ -1,0 +1,150 @@
+
+==================================================================
+### SETUP: a bare server repo + two divergent edits to the SAME LINE
+==================================================================
+alice: r_0002 qty  6->25   (column 'qty')
+bob  : r_0002 unit 6.00->6.50 (column 'unit')
+SAME LINE, DIFFERENT CELLS.  Correct merge = qty 25 AND unit 6.50.
+
+==================================================================
+### CONTROL: what STOCK GIT does on the bare server (the forge merge button)
+==================================================================
+merge-tree exit=1  (1 = conflicted)
+--- the file stock git would produce ---
+    | id     | item     | qty | unit  |
+    | ------ | -------- | --: | ----: |
+    | r_0001 | widget   |  10 | 12.00 |
+    <<<<<<< main
+    | r_0002 | gadget   |  20 |  6.50 |
+    =======
+    | r_0002 | gadget   |  25 |  6.00 |
+    >>>>>>> alice
+    | r_0003 | sprocket |   8 | 15.00 |
+    
+    grand := sum(total)
+
+>> Conflict markers inside the artifact.  It is no longer a table.
+>> This is what a forge's green Merge button writes.  Nothing in the repo
+>> can prevent it, because a bare repo never reads .gitattributes.
+
+==================================================================
+### THE SERVER MERGE
+==================================================================
+{
+ "attempts": 1,
+ "clean_from_git": false,
+ "commit": "40859dd2ccb48cc6eefa2392a2e72be043415601",
+ "conflict_ref": null,
+ "git_calls": 21,
+ "ref": "refs/heads/main",
+ "resolved": [
+  "budget.tbl"
+ ],
+ "status": "merged",
+ "tree": "3a7146a0c86d9ad9a3421f654c09862e610183e4",
+ "unresolved": 0
+}
+exit=0
+
+==================================================================
+### PROOF: a PLAIN clone. No tooling. No config. No .gitattributes.
+==================================================================
+git version of the naive client: git version 2.47.3
+--- .gitattributes present? ---
+    ls: cannot access '.gitattributes': No such file or directory
+--- any merge driver configured? ---
+    (none)
+--- is any gws tool on PATH? ---
+    (none)
+
+--- budget.tbl AS RECEIVED BY THE PLAIN CLONE ---
+    | id     | item     | qty |  unit |
+    | ------ | -------- | --: | ----: |
+    | r_0001 | widget   |  10 | 12.00 |
+    | r_0002 | gadget   |  25 |  6.50 |
+    | r_0003 | sprocket |   8 | 15.00 |
+    
+    grand := sum(total)
+
+--- verification ---
+    parses as a table : 3 rows x 4 cols
+    zero conflict markers: True
+    r_0002 qty  = 25 (alice's edit)  OK
+    r_0002 unit = 6.50 (bob's edit)    OK
+    r_0001/r_0003 untouched: True
+    core-claim verification exit=0
+
+--- is it a real merge commit with both parents? ---
+    *   40859dd Merge alice into main
+    |\  
+    | * 5794e68 alice: gadget qty 20 -> 25
+    * | af0f8dc bob: gadget unit 6.00 -> 6.50
+    |/  
+    * 747d54c base
+    parents: 3 entries (1 commit + 2 parents = 3)
+
+==================================================================
+### refs/gws/* MUST NOT be fetched by a plain clone
+==================================================================
+--- refs the plain clone actually has ---
+      refs/heads/main
+      refs/remotes/origin/HEAD
+      refs/remotes/origin/alice
+      refs/remotes/origin/main
+--- refs ON THE SERVER ---
+      refs/heads/alice
+      refs/heads/main
+--- ls-remote shows they exist but were not fetched ---
+    (empty here: this merge had no unresolved cells)
+
+==================================================================
+### SAME TEST, but with an UNRESOLVABLE cell conflict (both edit the same cell)
+==================================================================
+carol: qty 25->40 ; dave: qty 25->99 -- SAME CELL, genuinely unresolvable
+{
+ "attempts": 1,
+ "conflict_ref": "refs/gws/conflicts/main/890fc95309ae-41580eeb88b0",
+ "git_calls": 16,
+ "reason": "1 unresolved",
+ "records": [
+  {
+   "base": "25",
+   "column": "qty",
+   "kind": "cell",
+   "ours": "99",
+   "path": "budget.tbl",
+   "row": "r_0002",
+   "theirs": "40"
+  }
+ ],
+ "status": "conflict"
+}
+exit=1
+--- refs/gws on the server ---
+    refs/gws/conflicts/main/890fc95309ae-41580eeb88b0
+--- main did NOT move (no silent lost update) ---
+    main = 890fc95 = dave's commit
+--- and a fresh PLAIN clone still receives a valid artifact, and no gws refs ---
+0
+    zero conflict markers
+    refs/gws/* NOT fetched by default: CONFIRMED
+--- our client fetches them explicitly ---
+    refs/gws/conflicts/main/890fc95309ae-41580eeb88b0
+    {
+     "at": 1787948814,
+     "conflicts": [
+      {
+       "base": "25",
+       "column": "qty",
+       "kind": "cell",
+       "ours": "99",
+       "path": "budget.tbl",
+       "row": "r_0002",
+       "theirs": "40"
+      }
+     ],
+     "ours": "890fc95309aec34f59808b50018772a9e21055af",
+     "ref": "refs/heads/main",
+     "schema": "gws.conflict/1",
+     "theirs": "41580eeb88b0a5ab03f4e2fe12598a2379128350"
+    }

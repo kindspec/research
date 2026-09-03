@@ -1,0 +1,6 @@
+| id | name | tier |
+| --- | --- | --- |
+| c_01 | Acme | gold |
+| c_02 | Borax | silver |
+
+key := id

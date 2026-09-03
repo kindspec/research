@@ -1,0 +1,24 @@
+| id | part | vendor | qty | unit_cost | ext_cost = qty * unit_cost | running = cumulative(ext_cost) | lead_days | moq |
+| --- | --- | --- | --: | --: | --: | --: | --: | --: |
+| r_0001 | ATmega328P-AU | digikey | 5 | 2.48 |  |  | 14 | 1 |
+| r_0002 | AMS1117-3.3 | lcsc | 10 | 0.11 |  |  | 14 | 1 |
+| r_0003 | USB-C receptacle 16pin | lcsc | 10 | 0.19 |  |  | 14 | 1 |
+| r_0004 | 0805 100nF X7R | lcsc | 100 | 0.0042 |  |  | 14 | 1 |
+| r_0005 | 16MHz crystal HC-49 | digikey | 5 | 0.68 |  |  | 14 | 1 |
+| r_0006 | 0805 10k 1% | lcsc | 100 | 0.003 |  |  | 14 | 1 |
+| r_0007 | tactile switch 6mm | digikey | 20 | 0.14 |  |  | 14 | 1 |
+| r_9f98a2 | 0805 22pF NP0 | lcsc | 50 | 0.005 |  |  | 14 | 1 |
+| r_0008 | PCB 2layer 50x50 | jlcpcb | 5 | 1.40 |  |  | 14 | 1 |
+| r_0009 | header 2.54 40pin | lcsc | 10 | 0.09 |  |  | 14 | 1 |
+| r_0749e5 | MCP2221A-I/SL | digikey | 3 | 2.05 |  |  | 14 | 1 |
+| r_9029cb | 0805 1uF X5R | lcsc | 50 | 0.012 |  |  | 14 | 1 |
+| r_9ebade | ESD diode SOT-23 | digikey | 10 | 0.22 |  |  | 14 | 1 |
+| r_229d50 | ferrite bead 0805 | lcsc | 20 | 0.03 |  |  | 14 | 1 |
+
+key   := id
+order := by(part)
+grand := sum(ext_cost)
+lines := count(id)
+t_digikey := sum(ext_cost where vendor = "digikey")
+t_lcsc := sum(ext_cost where vendor = "lcsc")
+t_jlcpcb := sum(ext_cost where vendor = "jlcpcb")

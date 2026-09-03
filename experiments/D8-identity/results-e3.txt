@@ -1,0 +1,6 @@
+merge exit=0
+conflict markers: 0
+occurrences of ^a3f91c2b: 2
+--- which block does a reference [[doc#^a3f91c2b]] resolve to? ---
+3:The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b
+33:The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b

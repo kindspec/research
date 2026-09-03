@@ -1,0 +1,8 @@
+| item     | qty | unit  | total = qty * unit |
+| -------- | --: | ----: | -----------------: |
+| widget   |  10 | 12.00 |                    |
+| gadget   |  20 |  6.00 |                    |
+| sprocket |   8 | 15.00 |                    |
+| flange   |   5 | 24.00 |                    |
+
+grand := sum(total)

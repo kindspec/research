@@ -1,0 +1,121 @@
+
+==============================================================
+### A. diff=<driver> + textconv  — needs LOCAL config?
+==============================================================
+-- (a1) fresh clone state: diff=upper declared, NO merge/diff config --
+ f.bin | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+   textual diff:
++++ b/f.bin
+@@ -1 +1 @@
+-binary-ish payload v1
++binary-ish payload v2
+-- (a2) now define diff.upper.textconv locally --
++++ b/f.bin
+@@ -1 +1 @@
+-BINARY-ISH PAYLOAD V1
++BINARY-ISH PAYLOAD V2
+>> VERDICT A: textconv output changed only after local git config. Attribute alone = no-op.
+
+==============================================================
+### B. built-in diff drivers (diff=markdown etc) — SHIP WITH GIT, no config
+==============================================================
+-- (b1) NO attribute:
+@@ -4,3 +4,3 @@ alpha
+-- (b2) WITH 'diff=markdown' (built-in funcname driver, zero config):
+@@ -4,3 +4,3 @@ # Heading One
+>> git's built-in language drivers: ok
+-- list of built-in diff drivers compiled into git (userdiff.c):
+
+
+==============================================================
+### C. diff wordRegex — LOCAL config? (word-diff granularity)
+==============================================================
+-- (c1) default word diff:
+@@ -1 +1 @@
+[-a,b,c,d,e-]{+a,b,X,d,e+}
+-- (c2) attribute set, driver undefined:
+@@ -1 +1 @@
+[-a,b,c,d,e-]{+a,b,X,d,e+}
+-- (c3) after local 'git config diff.csv.wordRegex':
+@@ -1 +1 @@
+a,b,[-c-]{+X+},d,e
+>> VERDICT C: wordRegex is LOCAL-ONLY config.
+
+==============================================================
+### D. merge=union — BUILT IN, repo-portable, zero config (but is it SAFE?)
+==============================================================
+Auto-merging s.csv
+exit=0
+-- resulting s.csv --
+name,qty
+apple,1
+cherry,3
+banana,2
+>> union merged CLEANLY with no config. Note ordering/duplication semantics.
+
+-- D2: union on a CONCURRENT EDIT OF THE SAME LINE (the dangerous case) --
+Auto-merging s.csv
+Merge made by the 'ort' strategy.
+ s.csv | 1 +
+-- resulting s.csv (union of a same-line edit) --
+total,300
+total,200
+>> union NEVER conflicts. It duplicates. For CSV that is a SILENTLY WRONG file.
+
+==============================================================
+### E. 'binary' and '-merge' — repo-portable refusal
+==============================================================
+warning: Cannot merge binary files: f.dat (HEAD vs. feat)
+Auto-merging f.dat
+CONFLICT (content): Merge conflict in f.dat
+Automatic merge failed; fix conflicts and then commit the result.
+-- f.dat after conflict (binary attr) --
+a
+M
+z
+UU f.dat
+>> 'binary' is REPO-PORTABLE: no config needed, always refuses, keeps OURS verbatim, marks UU.
+   The file is NEVER corrupted with markers -> stays valid as its type.
+
+==============================================================
+### F. filter=<driver> clean/smudge — LOCAL config, and what a naive clone gets
+==============================================================
+-- blob as stored in git (clean ran):
+value REDACTED here
+-- fresh clone WITHOUT filter config: checked-out file --
+value REDACTED here
+-- fresh clone: is it dirty? --
+(clean = filter absence silently ignored)
+-- now a colleague edits and commits in the unconfigured clone --
+-- blob now stored (clean did NOT run) --
+value SECRET here
+value SECRET two
+>> VERDICT F: filter FAILS OPEN AND SILENTLY. Unfiltered content enters history.
+-- F2: filter.<d>.required=true --
+fatal: a.txt: clean filter 'strip' failed
+exit=0
+>> 'required' converts silent corruption into a hard error -- but 'required' is ALSO local config.
+
+==============================================================
+### G. text/-text/eol — repo-portable, handled by core git
+==============================================================
+warning: in the working copy of 'crlf.txt', CRLF will be replaced by LF the next time Git touches it
+-- stored blob crlf.txt (text eol=lf -> normalized):
+0000000   a  \n   b  \n
+0000004
+-- stored blob keep.txt (-text -> verbatim):
+0000000   a  \r  \n   b  \r  \n
+0000006
+>> VERDICT G: REPO-PORTABLE. Core git implements it; no driver, no config.
+
+==============================================================
+### H. export-subst / export-ignore — repo-portable but ARCHIVE-ONLY
+==============================================================
+-- working tree ver.txt (NOT substituted):
+rev: $Format:%H$
+-- inside git archive:
+rev: b8a0c0996841d7034ad56969d66048a2cde21187
+-- private.txt present in archive?
+ver.txt 
+>> VERDICT H: REPO-PORTABLE, but only affects 'git archive'. Zero effect on clone/checkout/merge.

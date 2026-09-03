@@ -1,0 +1,99 @@
+
+workbooks read OK: 800   unreadable: 0   formula cells classified: 27657
+  NEEDS-HUMAN         14743   53.3%
+  UNTRANSLATABLE      10266   37.1%
+  NO-HEADER            1983    7.2%
+  CLEAN                 488    1.8%
+  CLEAN-LOOKUP          119    0.4%
+  CLEAN-WIDE             48    0.2%
+  AGGREGATE              10    0.0%
+
+-- failure reasons --
+      5196  18.8%  NEEDS-HUMAN | [] is a JOIN; .tbl has no join vocabulary
+      4057  14.7%  UNTRANSLATABLE | cross-sheet reference X: .tbl has no cross-sheet address
+      3343  12.1%  NEEDS-HUMAN | function(s) [] not in the .tbl subset
+      2777  10.0%  NEEDS-HUMAN | [] outside the total/pure subset
+      1418   5.1%  UNTRANSLATABLE | cross-sheet reference "X!$D$N:$D$N": .tbl has no cross-sheet address
+      1316   4.8%  UNTRANSLATABLE | cross-sheet reference "X!$AN": .tbl has no cross-sheet address
+       981   3.5%  UNTRANSLATABLE | range X spans rows other than this one; row order is not addressable
+       707   2.6%  UNTRANSLATABLE | reference X is anchored to row N, not this row
+       648   2.3%  UNTRANSLATABLE | N-D range X: not a column
+       462   1.7%  UNTRANSLATABLE | COUNTIF over a range spanning SEVERAL COLUMNS of one row: a wide-table row-wise count, whi
+       453   1.6%  NEEDS-HUMAN | SUMIFS with N predicates: the grammar has one `where col = "lit"` and no conjunction
+       403   1.5%  UNTRANSLATABLE | volatile/dynamic-reference function []
+       314   1.1%  NEEDS-HUMAN | the looked-up column A of X is NOT unique over the target rows, so it cannot be that table
+       306   1.1%  NEEDS-HUMAN | INDEX/MATCH return column has no header name
+       275   1.0%  NEEDS-HUMAN | column M has no header name
+       265   1.0%  NEEDS-HUMAN | whole-column structured reference [] is not a plain aggregate
+       259   0.9%  NEEDS-HUMAN | [] is a filtered aggregate over other rows
+       243   0.9%  NEEDS-HUMAN | column K has no header name
+       239   0.9%  NEEDS-HUMAN | column I has no header name
+       160   0.6%  NEEDS-HUMAN | SUMIF over a column with no header name
+
+-- deduplicated by R1C1-normalised formula string (n=1420 distinct) --
+  NEEDS-HUMAN           678   47.7%
+  UNTRANSLATABLE        614   43.2%
+  CLEAN                  74    5.2%
+  CLEAN-LOOKUP           41    2.9%
+  CLEAN-WIDE              9    0.6%
+  AGGREGATE               4    0.3%
+
+-- extended-grammar instrumentation --
+         3  ifagg.computed-criterion
+        43  ifagg.criterion-is-cell-ref
+         5  ifagg.cross-sheet
+         1  ifagg.grouped-literal
+       469  ifagg.horizontal-range
+       484  ifagg.multi-predicate
+        22  ifagg.numeric-literal-criterion
+         1  ifagg.range-not-a-plain-ref
+      1212  ifagg.total
+       184  ifagg.unnamed-column
+         2  lk.2d
+       119  lk.CLEAN
+         2  lk.approximate
+       151  lk.external-workbook
+       314  lk.first-column-not-a-key
+      4107  lk.fn.INDEX
+       962  lk.fn.VLOOKUP
+       758  lk.index-arity
+         6  lk.index-not-literal
+      2789  lk.index-shape
+        31  lk.index-without-match
+        29  lk.key-not-same-row
+         2  lk.match-not-exact
+       560  lk.table-not-a-range
+      5069  lk.total
+       306  lk.value-column-unnamed
+
+-- samples --
+  CLEAN           ">="&I2                                              -> ">="&start
+  CLEAN           "<="&J2                                              -> "<="&end
+  CLEAN           ">="&I2                                              -> ">="&start
+  CLEAN           "<="&J2                                              -> "<="&end
+  CLEAN           G2*H2                                                -> Bill_Rate_of_Resource*Worked_Hours
+  CLEAN           G2-30                                                -> Bill_Rate_of_Resource-30
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A2,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A3,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A4,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A5,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A6,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A7,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  AGGREGATE       SUM(D3:D9)                                           -> sum(AMOUNTS)
+  AGGREGATE       SUBTOTAL(109,tblNomina[TOTAL])                       -> sum(TOTAL)
+  AGGREGATE       SUBTOTAL(109,tblNomina[TOTAL])                       -> sum(TOTAL)
+  AGGREGATE       SUM(O2:O6)                                           -> sum(AMOUNT)
+  AGGREGATE       SUM(B4:B10)                                          -> sum(Base_Unit)
+  AGGREGATE       SUM(B4:B10)                                          -> sum(Base_Unit)
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> ['INDEX'] is a JOIN; .tbl has no join vocabulary
+  UNTRANSLATABLE  INT(TODAY()-D4+(1))                                  -> volatile/dynamic-reference function ['TODAY']
+  UNTRANSLATABLE  INT(TODAY()-D5+(1))                                  -> volatile/dynamic-reference function ['TODAY']
+  UNTRANSLATABLE  INT(TODAY()-D6+(1))                                  -> volatile/dynamic-reference function ['TODAY']
+  UNTRANSLATABLE  INT(TODAY()-D7+(1))                                  -> volatile/dynamic-reference function ['TODAY']
+  UNTRANSLATABLE  INT(TODAY()-D8+(1))                                  -> volatile/dynamic-reference function ['TODAY']
+  UNTRANSLATABLE  INT(TODAY()-D9+(1))                                  -> volatile/dynamic-reference function ['TODAY']

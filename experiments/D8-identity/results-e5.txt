@@ -1,0 +1,23 @@
+== Format A: line order (no keys) ==
+A1 inserts at two DIFFERENT points             exit=0 markers=0
+A2 inserts at the SAME point                   exit=1 markers=1
+A3 Alice MOVES 'echo' to top, Bob EDITS 'echo' exit=1 markers=1
+== Format B: fractional key, file kept sorted by key ==
+B1 inserts at two DIFFERENT points             exit=0 markers=0
+B2 inserts at the SAME point (interleaving test) exit=1 markers=1
+B3 Alice MOVES 'echo' (key change only), Bob EDITS it exit=1 markers=1
+== Format C: fractional key, file NOT sorted (render sorts) ==
+C3 Alice MOVES 'echo' (key edit in place), Bob EDITS it exit=1 markers=1
+
+-- C3 detail --
+C3 (shown)                                     exit=1 markers=1
+      - a0 alpha
+      - a1 bravo
+      - a2 charlie
+      - a3 delta
+      <<<<<<< HEAD
+      - Zz echo
+      =======
+      - a4 echo EDITED BY BOB
+      >>>>>>> o
+      - a5 foxtrot

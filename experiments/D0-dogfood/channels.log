@@ -1,0 +1,16 @@
+  [1] iptv-channels 0/7008 done=0 0s
+  [1] iptv-channels 500/7008 done=384 506s
+  [1] iptv-channels 1000/7008 done=960 1751s
+  [1] iptv-channels 1500/7008 done=1344 2447s
+  [1] iptv-channels 2000/7008 done=1920 3589s
+  [1] iptv-channels 2500/7008 done=2496 4774s
+  [1] iptv-channels 3000/7008 done=2880 5709s
+  [1] iptv-channels 3500/7008 done=3456 6935s
+  [1] iptv-channels 4000/7008 done=3840 7753s
+  [1] iptv-channels 4500/7008 done=4416 8811s
+  [1] iptv-channels 5000/7008 done=4992 10071s
+  [1] iptv-channels 5500/7008 done=5376 11167s
+  [1] iptv-channels 6000/7008 done=5952 13339s
+  [1] iptv-channels 6500/7008 done=6336 14432s
+  [1] iptv-channels 7000/7008 done=6912 15578s
+[dispatched 7006] iptv-channels: 7008 commits -> /home/cam/repos/working-git-backed-gws/experiments/D0-dogfood/ledger-iptv-channels.jsonl  (15779s)

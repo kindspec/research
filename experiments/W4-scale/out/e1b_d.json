@@ -1,0 +1,76 @@
+{
+ "e1d": [
+  {
+   "ncols": 9,
+   "padded": true,
+   "max_line": 138,
+   "median_line": 138.0,
+   "header_line": 138,
+   "bytes_per_row": 139.169,
+   "diff_line_len": 139,
+   "diff_lines": 2,
+   "terminal_wraps_80": 1.725,
+   "terminal_wraps_120": 1.15
+  },
+  {
+   "ncols": 9,
+   "padded": false,
+   "max_line": 116,
+   "median_line": 69.0,
+   "header_line": 116,
+   "bytes_per_row": 70.32,
+   "diff_line_len": 72,
+   "diff_lines": 2,
+   "terminal_wraps_80": 1.45,
+   "terminal_wraps_120": 0.9666666666666667
+  },
+  {
+   "ncols": 53,
+   "padded": true,
+   "max_line": 446,
+   "median_line": 446.0,
+   "header_line": 446,
+   "bytes_per_row": 447.477,
+   "diff_line_len": 447,
+   "diff_lines": 2,
+   "terminal_wraps_80": 5.575,
+   "terminal_wraps_120": 3.716666666666667
+  },
+  {
+   "ncols": 53,
+   "padded": false,
+   "max_line": 424,
+   "median_line": 328.0,
+   "header_line": 424,
+   "bytes_per_row": 329.7935,
+   "diff_line_len": 329,
+   "diff_lines": 2,
+   "terminal_wraps_80": 5.3,
+   "terminal_wraps_120": 3.533333333333333
+  },
+  {
+   "ncols": 203,
+   "padded": true,
+   "max_line": 1496,
+   "median_line": 1496.0,
+   "header_line": 1496,
+   "bytes_per_row": 1498.527,
+   "diff_line_len": 1497,
+   "diff_lines": 2,
+   "terminal_wraps_80": 18.7,
+   "terminal_wraps_120": 12.466666666666667
+  },
+  {
+   "ncols": 203,
+   "padded": false,
+   "max_line": 1474,
+   "median_line": 1212.0,
+   "header_line": 1474,
+   "bytes_per_row": 1214.22,
+   "diff_line_len": 1207,
+   "diff_lines": 2,
+   "terminal_wraps_80": 18.425,
+   "terminal_wraps_120": 12.283333333333333
+  }
+ ]
+}

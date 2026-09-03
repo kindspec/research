@@ -1,0 +1,5 @@
+| id | item   | qty | unit = rates.tbl#rate | total = qty * unit |
+| -- | ------ | --: | --------------------: | -----------------: |
+| b1 | widget |  10 |                       |                    |
+
+grand := sum(total)

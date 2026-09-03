@@ -1,0 +1,7 @@
+| id       | sku   | description    | qty | unit_price | ordered    | notes       |
+| -------- | ----- | -------------- | --- | ---------- | ---------- | ----------- |
+| r_1c7484 | 00123 | Widget, large  | 10  | 1234.50    | 2026-01-05 | ok          |
+| r_cb1c65 | 789   | Doohickey      |     | 12.00      | Jan 5 2026 | =SUM(A1:A9) |
+| r_1c773b | 00007 | He said "hi"   | 7   | 0012.00    | 5-Jan-26   | +1-555-0100 |
+| r_85fe67 | 0044  | Sci notation   | 1   | 1.5E3      | 44927      | @SUM(1)     |
+| r_7fc8e0 | 0045  | Negative paren | 1   | -45.00     | 2026/01/05 |             |

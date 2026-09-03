@@ -1,0 +1,67 @@
+
+==========================================================
+### SETUP: 1 repo, 16 linked worktrees (git worktree add), each on its own branch
+==========================================================
+worktrees: 17
+index files:   .git/index
+  .git/worktrees/wt12/index
+  .git/worktrees/wt5/index
+  .git/worktrees/wt7/index
+  .git/worktrees/wt11/index
+  .git/worktrees/wt1/index
+  .git/worktrees/wt2/index
+  .git/worktrees/wt16/index
+  .git/worktrees/wt3/index
+  .git/worktrees/wt6/index
+  .git/worktrees/wt4/index
+  .git/worktrees/wt10/index
+  .git/worktrees/wt14/index
+  .git/worktrees/wt15/index
+  .git/worktrees/wt9/index
+  .git/worktrees/wt8/index
+  .git/worktrees/wt13/index
+>> NOTE: each linked worktree gets its OWN index at .git/worktrees/<name>/index
+
+==========================================================
+### TEST 1: 16 concurrent commits, each in its own worktree, own branch, own file
+==========================================================
+succeeded: 16 / 16
+errors:
+  (none)
+
+==========================================================
+### TEST 2: 16 concurrent commits ALL TARGETING THE SAME BRANCH ref
+==========================================================
+succeeded (CAS on refs/heads/main): 3 / 16
+errors:
+      5   fatal: update_ref failed for ref 'refs/heads/main': cannot lock ref 'refs/heads/main': is at 8ee470747221a155cae33f3d1a0c791191c0151e but expected 9aa5b00dee86fa910dc3f94a8cc053c2273095b4
+      2   fatal: update_ref failed for ref 'refs/heads/main': cannot lock ref 'refs/heads/main': is at 9aa5b00dee86fa910dc3f94a8cc053c2273095b4 but expected 3ec84205ab14b76a39fc684cf6f2b3b40f0b5f12
+      6   fatal: update_ref failed for ref 'refs/heads/main': cannot lock ref 'refs/heads/main': is at d3660d9b0af1f39d874a33128721ab493d16548a but expected 8ee470747221a155cae33f3d1a0c791191c0151e
+>> the ref is the serialization point: compare-and-swap means at most one winner per round
+
+==========================================================
+### TEST 3: 16 concurrent writers all sharing ONE worktree/index (the naive server)
+==========================================================
+git add succeeded: 6 / 16
+       10 File exists
+       10 index.lock
+       10 Unable to create
+
+==========================================================
+### TEST 4: concurrent OBJECT WRITES only (hash-object) — is the object store safe?
+==========================================================
+workers OK: 64/64, 1280 objects in 326 ms
+objects on disk: 1280
+errors: 0
+fsck:
+notice: HEAD points to an unborn branch (main)
+notice: No default references
+dangling blob 0010fe459ff77cdcf7d9ae196ac8a7b8e7ece10e
+>> the OBJECT store is concurrency-safe (content-addressed, write-to-temp+rename).
+>> the INDEX and the REFS are not.
+
+==========================================================
+### TEST 5: worktree add/remove under concurrency (server provisioning N sessions)
+==========================================================
+concurrent 'git worktree add': 16 / 16
+disk cost of 16 worktrees of a trivial repo: 11M

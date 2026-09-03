@@ -1,0 +1,83 @@
+==============================================================
+CASE A1-concurrent-mint
+--------------------------------------------------------------
+merge exit=1
+conflict markers: 2
+--- resulting doc.md ---
+# Safety
+
+<<<<<<< HEAD
+The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b
+=======
+The reactor scram threshold is 4.2 sigma above baseline. ^7e40dd18
+>>>>>>> bob
+
+Next paragraph unchanged.
+--- end ---
+==============================================================
+CASE A2-id-vs-edit
+--------------------------------------------------------------
+merge exit=1
+conflict markers: 2
+--- resulting doc.md ---
+# Safety
+
+<<<<<<< HEAD
+The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b
+=======
+The reactor scram threshold is 3.8 sigma above baseline.
+>>>>>>> bob
+
+Next paragraph unchanged.
+--- end ---
+==============================================================
+CASE A3-ownline-id-vs-edit
+--------------------------------------------------------------
+merge exit=1
+conflict markers: 2
+--- resulting doc.md ---
+<<<<<<< HEAD
+- The reactor scram threshold is 4.2 sigma above baseline.
+  id:: 6621e4a1-9c33-4f0e-b1d2-77a51e0cf9ab
+=======
+- The reactor scram threshold is 3.8 sigma above baseline.
+>>>>>>> bob
+
+- Next paragraph unchanged.
+--- end ---
+==============================================================
+CASE A4-copypaste-dup
+--------------------------------------------------------------
+merge exit=1
+conflict markers: 2
+--- resulting doc.md ---
+# Safety
+
+The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b
+
+## Appendix
+
+<<<<<<< HEAD
+The reactor scram threshold is 4.2 sigma above baseline. ^a3f91c2b
+=======
+Nothing to see here.
+>>>>>>> bob
+--- end ---
+==============================================================
+CASE A5-concurrent-insert
+--------------------------------------------------------------
+merge exit=1
+conflict markers: 2
+--- resulting doc.md ---
+# Log
+
+- entry one ^b1
+<<<<<<< HEAD
+- ALICE entry ^a9x2
+=======
+- BOB entry ^k7m4
+>>>>>>> bob
+- entry two ^b2
+--- end ---
+
+workdir: /tmp/tmp.u8FCDRlirj

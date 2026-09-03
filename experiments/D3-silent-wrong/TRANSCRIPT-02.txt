@@ -1,0 +1,119 @@
+
+################ S1b CSV+A1, VARIED values: clean merge, per-row AND total both wrong
+--- git merge B ---
+    Auto-merging s.csv
+    Merge made by the 'ort' strategy.
+     s.csv | 1 +
+     1 file changed, 1 insertion(+)
+--- merged ---
+         1	item,qty,price,total
+         2	a,1,100,=B2*C2
+         3	NEW-B,10,100,=B3*C3
+         4	b,2,100,=B3*C3
+         5	c,3,100,=B4*C4
+         6	d,4,100,=B5*C5
+         7	e,5,100,=B6*C6
+         8	NEW-A,20,100,=B7*C7
+         9	f,6,100,=B7*C7
+        10	TOTAL,,,=SUM(D2:D8)
+--- evaluated vs intended ---
+    a      qty=  1 price= 100  intended=     100  computed=     100
+    NEW-B  qty= 10 price= 100  intended=    1000  computed=    1000
+    b      qty=  2 price= 100  intended=     200  computed=    1000   <-- WRONG
+    c      qty=  3 price= 100  intended=     300  computed=     200   <-- WRONG
+    d      qty=  4 price= 100  intended=     400  computed=     300   <-- WRONG
+    e      qty=  5 price= 100  intended=     500  computed=     400   <-- WRONG
+    NEW-A  qty= 20 price= 100  intended=    2000  computed=     500   <-- WRONG
+    f      qty=  6 price= 100  intended=     600  computed=     500   <-- WRONG
+    TOTAL  intended=5100  computed=3500   <-- WRONG
+
+################ S12 Markdown: sorted link-definition block, concurrent inserts -> CLEAN, duplicate label
+--- git merge B ---
+    Auto-merging d.md
+    Merge made by the 'ort' strategy.
+     d.md | 1 +
+     1 file changed, 1 insertion(+)
+--- merged ---
+    # Guide
+    
+    Read the [alpha][alpha] and [zeta][zeta] docs, plus the [api][api] reference.
+    
+    [alpha]: https://ex.com/alpha
+    [api]: https://ex.com/api/v1
+    [beta]: https://ex.com/beta
+    [delta]: https://ex.com/delta
+    [gamma]: https://ex.com/gamma
+    [kappa]: https://ex.com/kappa
+    [omega]: https://ex.com/omega
+    [sigma]: https://ex.com/sigma
+    [theta]: https://ex.com/theta
+    [api]: https://ex.com/api/v2
+    [zeta]: https://ex.com/zeta
+    [api] defined 2 times; CommonMark uses the FIRST -> https://ex.com/api/v1
+    the other definition is silently dead. No marker, no warning.
+
+################ S13 Markdown: concurrent edits turn a paragraph into a SETEXT HEADING
+--- git merge B ---
+    Auto-merging d.md
+    CONFLICT (content): Merge conflict in d.md
+    Automatic merge failed; fix conflicts and then commit the result.
+--- merged ---
+    # Notes
+    
+    Alpha paragraph.
+    
+    Beta paragraph.
+    
+    Gamma paragraph.
+    
+    Delta paragraph.
+    
+    Epsilon paragraph.
+    
+    Zeta paragraph.
+    
+    <<<<<<< HEAD
+    Closing remark.
+    =======
+    ---
+    
+    ## Appendix
+    
+    Appendix text.
+    >>>>>>> B
+--- rendered heading structure (markdown-it):
+    SETEXT H2 created from paragraph: "======="  <-- was body text
+
+################ S14 CSV FALSE CONFLICT: two writers edit DIFFERENT COLUMNS of the SAME row
+--- git merge B ---
+    Auto-merging f.csv
+    CONFLICT (content): Merge conflict in f.csv
+    Automatic merge failed; fix conflicts and then commit the result.
+--- merged (git CONFLICTS; a cell-level merge would resolve cleanly and correctly) ---
+    id,name,email,phone,dept
+    1,Alice,a@x.com,555-0001,Eng
+    <<<<<<< HEAD
+    2,Bob,bob@newdomain.com,555-0002,Sales
+    =======
+    2,Bob,b@x.com,555-9999,Sales
+    >>>>>>> B
+    3,Carol,c@x.com,555-0003,Eng
+    correct cell-level result: 2,Bob,bob@newdomain.com,555-9999,Sales
+
+################ S15 JSON: rename a key on one side, add a reader of the old key on the other
+--- git merge B ---
+    Auto-merging c.json
+    Merge made by the 'ort' strategy.
+     c.json | 2 +-
+     1 file changed, 1 insertion(+), 1 deletion(-)
+--- merged ---
+    {
+      "primary_db": {"host": "db1", "port": 5432},
+      "cache": {"host": "c1", "port": 6379},
+      "features": {"a": true, "b": false},
+      "logging": {"level": "info"},
+      "limits": {"rps": 100},
+      "replica_of": "database"
+    }
+    parses OK. keys: ['primary_db', 'cache', 'features', 'logging', 'limits', 'replica_of']
+    replica_of = 'database' but there is no "database" key any more -> dangling reference, no error

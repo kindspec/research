@@ -1,0 +1,246 @@
+==========================================================================
+### T2a duplicate row id (copy-paste)
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0002 | gadget2  |  30 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   6 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: duplicate row id 'r_0002' (also row 4) -- `key := id` is declared and violated; refusing (R1 T2a/T2b/T2c)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### T2b both sides mint the same id
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0005 | cog      |   4 | 25.00 |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | r_0005 | bolt     |  10 |  8.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: duplicate row id 'r_0005' (also row 3) -- `key := id` is declared and violated; refusing (R1 T2a/T2b/T2c)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### T2c invisible character splits one row id
+==========================================================================
+  stock git (the forge button): exit=1 markers=1
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | <<<<<<< main
+      | r_0002 | gadget   |  25 |  6.00 |
+      | =======
+      | r_0002​ | gadget   |  40 |  6.00 |
+      | >>>>>>> topic
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: theirs: row id 'r_0002\u200b' contains invisible or non-NFC characters -- refusing (R1 T2c)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### T1a duplicate AGGREGATE name
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | subtotal := sum(unit)
+      | grand := sum(qty)
+      | subtotal := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: duplicate aggregate name 'subtotal' (also 'subtotal') -- one binding silently wins (R1 T1a/T1b)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### T1b NFC/NFD aggregate-name collision
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | café := sum(unit)
+      | grand := sum(qty)
+      | café := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: duplicate aggregate name 'café' (also 'café') -- one binding silently wins (R1 T1a/T1b)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### T1c NFC/NFD COLUMN-name collision
+==========================================================================
+  stock git (the forge button): exit=1 markers=1
+      | <<<<<<< main
+      | id     | item     | qty | café |
+      | =======
+      | id     | item     | qty | café |
+      | >>>>>>> topic
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: column set changed by add(['café', 'café']) and remove(['unit']) on opposite sides -- indistinguishable from a rename; refusing
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### column RENAMED on one side
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | price |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   6 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=merged
+  ref moved: True
+  --- artifact the server wrote ---
+      | id     | item     | qty | price |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   6 | 24.00 |
+      
+      grand := sum(qty)
+  VERDICT: MERGED (manual review below)
+
+==========================================================================
+### input file is ALREADY CONFLICTED
+==========================================================================
+  stock git (the forge button): exit=0 markers=1
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  11 | 12.00 |
+      | <<<<<<< HEAD
+      | r_0002 | gadget   |  20 |  6.00 |
+      | =======
+      | r_0002 | gadget   |  99 |  6.00 |
+      | >>>>>>> other
+      | r_0003 | sprocket |   9 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: line 4 already contains a conflict marker '<<<<<<<' -- input is already conflicted
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### unescaped PIPE inside a cell
+==========================================================================
+  stock git (the forge button): exit=0 markers=0
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gad|get  |  20 |  6.00 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   6 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=refused
+      reason: post-merge validation: b.tbl: row 4 has 5 fields for 4 columns -- an unescaped '|' shifts every field (R1 a2)
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+### CONTROL: two cells on one line (the design's whole point)
+==========================================================================
+  stock git (the forge button): exit=1 markers=1
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | <<<<<<< main
+      | r_0002 | gadget   |  25 |  6.00 |
+      | =======
+      | r_0002 | gadget   |  20 |  6.50 |
+      | >>>>>>> topic
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=merged
+  ref moved: True
+  --- artifact the server wrote ---
+      | id     | item     | qty |  unit |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  25 |  6.50 |
+      | r_0003 | sprocket |   8 | 15.00 |
+      | r_0004 | flange   |   5 | 24.00 |
+      
+      grand := sum(qty)
+  VERDICT: CORRECT
+
+==========================================================================
+### row DELETED on one side, MODIFIED on the other
+==========================================================================
+  stock git (the forge button): exit=1 markers=1
+      | id     | item     | qty | unit  |
+      | ------ | -------- | --: | ----: |
+      | r_0001 | widget   |  10 | 12.00 |
+      | r_0002 | gadget   |  20 |  6.00 |
+      | <<<<<<< main
+      | =======
+      | r_0003 | sprocket |  80 | 15.00 |
+      | >>>>>>> topic
+      | r_0004 | flange   |   5 | 24.00 |
+      | 
+      | grand := sum(qty)
+  gws server: status=conflict
+      reason: 1 unresolved
+      conflict record: {'kind': 'delete/modify', 'row': 'r_0003', 'ours': 'deleted', 'theirs': 'modified', 'path': 'b.tbl'}
+  ref moved: False
+  VERDICT: REFUSED
+
+==========================================================================
+SUMMARY
+==========================================================================
+  REFUSED                          T2a duplicate row id (copy-paste)   [stock git exit=0]
+  REFUSED                          T2b both sides mint the same id   [stock git exit=0]
+  REFUSED                          T2c invisible character splits one row id   [stock git exit=1]
+  REFUSED                          T1a duplicate AGGREGATE name   [stock git exit=0]
+  REFUSED                          T1b NFC/NFD aggregate-name collision   [stock git exit=0]
+  REFUSED                          T1c NFC/NFD COLUMN-name collision   [stock git exit=1]
+  MERGED (manual review below)     column RENAMED on one side   [stock git exit=0]
+  REFUSED                          input file is ALREADY CONFLICTED   [stock git exit=0]
+  REFUSED                          unescaped PIPE inside a cell   [stock git exit=0]
+  CORRECT                          CONTROL: two cells on one line (the design's whole point)   [stock git exit=1]
+  REFUSED                          row DELETED on one side, MODIFIED on the other   [stock git exit=1]
+
+SILENTLY WRONG CASES: NONE

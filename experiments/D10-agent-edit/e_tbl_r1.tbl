@@ -1,0 +1,10 @@
+| id     | item     | qty | unit  | total = qty * unit |
+| ------ | -------- | --: | ----: | -----------------: |
+| r_7f3a | widget   |  10 | 12.00 |                    |
+| r_9b21 | gadget   |  20 |  6.00 |                    |
+| r_4c8e | sprocket |  10 |  4.50 |                    |
+| r_2d15 | flange   |   5 | 12.00 |                    |
+| r_a604 | cog      |  20 |  6.00 |                    |
+| r_ef37 | bracket  |   7 |  9.25 |                    |
+| r_1c9d | washer   |  10 |  4.50 |                    |
+| r_88b0 | bolt     |   5 | 12.00 |                    |

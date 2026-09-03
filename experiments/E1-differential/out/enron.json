@@ -1,0 +1,626 @@
+{
+ "counts": {
+  "shared.expanded": 158958,
+  "shared.unresolved": 0,
+  "formula-cells": 976328,
+  "verdict.UNTRANSLATABLE": 810066,
+  "verdict.NEEDS-HUMAN": 127910,
+  "verdict.CLEAN": 38352,
+  "translatable": 38352,
+  "EVALUABLE": 38352,
+  "chain.depends-only-on-literals": 38352,
+  "compared": 38352,
+  "cmp.numeric": 38352,
+  "D.ref-where-excel-numeric": 7632,
+  "Dref.blank": 7632,
+  "A.exact": 30720,
+  "wb.ok": 68,
+  "wb.bad": 0,
+  "distinct.workbooks-contributing": 47,
+  "distinct.sheets-contributing": 1598
+ },
+ "samples": {
+  "D.ref-where-excel-numeric": [
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F7",
+    "f": "C7*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F8",
+    "f": "C8*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F9",
+    "f": "C9*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F10",
+    "f": "C10*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F11",
+    "f": "C11*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F12",
+    "f": "C12*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F13",
+    "f": "C13*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F14",
+    "f": "C14*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F15",
+    "f": "C15*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F16",
+    "f": "C16*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F17",
+    "f": "C17*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F18",
+    "f": "C18*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F19",
+    "f": "C19*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F20",
+    "f": "C20*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F21",
+    "f": "C21*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F22",
+    "f": "C22*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F23",
+    "f": "C23*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F24",
+    "f": "C24*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F25",
+    "f": "C25*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F26",
+    "f": "C26*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F27",
+    "f": "C27*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F28",
+    "f": "C28*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F29",
+    "f": "C29*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "1",
+    "cell": "F30",
+    "f": "C30*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F7",
+    "f": "C7*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F8",
+    "f": "C8*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F9",
+    "f": "C9*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F10",
+    "f": "C10*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F11",
+    "f": "C11*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F12",
+    "f": "C12*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F13",
+    "f": "C13*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F14",
+    "f": "C14*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F15",
+    "f": "C15*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F16",
+    "f": "C16*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F17",
+    "f": "C17*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F18",
+    "f": "C18*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F19",
+    "f": "C19*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F20",
+    "f": "C20*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F21",
+    "f": "C21*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "13/12_12_13.xlsx",
+    "sheet": "InstForHLDSheet",
+    "cell": "F22",
+    "f": "C22*13.5",
+    "expr": "KENT_KOPETZKY___1_800_342_8638__PAGER_*13.5",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | zout = x0 * 13.5 |\n| --- | --- |\n|  |  |\n",
+    "kinds": [
+     "blank"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   }
+  ]
+ }
+}

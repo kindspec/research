@@ -1,0 +1,105 @@
+
+=== JSON array insert + counter field  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict       0     0.0%
+   SILENT-WRONG       200   100.0%
+   --- example silently-wrong merged output ---
+     {
+       "users": [
+         {"id": 1, "role": "viewer"},
+         {"id": 2, "role": "viewer"},
+         {"id": 3, "role": "viewer"},
+         {"id": 12, "role": "editor"},
+         {"id": 4, "role": "viewer"},
+         {"id": 5, "role": "viewer"},
+         {"id": 6, "role": "viewer"},
+         {"id": 7, "role": "viewer"},
+         {"id": 8, "role": "viewer"},
+         {"id": 9, "role": "viewer"},
+         {"id": 12, "role": "admin"},
+         {"id": 10, "role": "viewer"},
+         {"id": 11, "role": "viewer"}
+       ],
+
+
+=== YAML: same key added at two places  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict       0     0.0%
+   SILENT-WRONG       200   100.0%
+   --- example silently-wrong merged output ---
+     name: v0
+     replicas: v1
+     image: v2
+     port: v3
+     env: v4
+     region: v5
+     zone: v6
+     timeout: 30
+     tier: v7
+     owner: v8
+     team: v9
+     sla: v10
+     timeout: 90
+     tag: v11
+
+
+=== Markdown: link-definition label collision  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict       0     0.0%
+   SILENT-WRONG       200   100.0%
+   --- example silently-wrong merged output ---
+     # G
+     
+     See [x][api].
+     
+     [alpha]: https://ex.com/alpha
+     [beta]: https://ex.com/beta
+     [delta]: https://ex.com/delta
+     [gamma]: https://ex.com/gamma
+     [iota]: https://ex.com/iota
+     [kappa]: https://ex.com/kappa
+     [lamb]: https://ex.com/lamb
+     [mu]: https://ex.com/mu
+     [api]: https://ex.com/api/v1
+     [omega]: https://ex.com/omega
+     [sigma]: https://ex.com/sigma
+     [theta]: https://ex.com/theta
+
+
+=== Markdown: auto-numbered sections  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict     200   100.0%
+   SILENT-WRONG         0     0.0%
+
+=== CSV under merge=union (repo-portable driver)  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict       0     0.0%
+   SILENT-WRONG       200   100.0%
+   --- example silently-wrong merged output ---
+     id,name
+     1,n1
+     2,n2
+     3,n3
+     4,n4
+     5,n5
+     6,n6
+     7,n7
+     8,n8
+     9,n9
+     10,fromA
+     10,fromB
+
+
+=== SVG: concurrent <defs> id introduction  (n=200) ===
+   clean-correct        0     0.0%
+   false-conflict     200   100.0%
+   SILENT-WRONG         0     0.0%
+
+=== SUMMARY (all trials have a unique correct merge; zero legitimate conflicts) ===
+scenario                                        correct  false-conf  SILENT-WRONG
+JSON array insert + counter field                  0.0%        0.0%        100.0%
+YAML: same key added at two places                 0.0%        0.0%        100.0%
+Markdown: link-definition label collision          0.0%        0.0%        100.0%
+Markdown: auto-numbered sections                   0.0%      100.0%          0.0%
+CSV under merge=union (repo-portable driver)       0.0%        0.0%        100.0%
+SVG: concurrent <defs> id introduction             0.0%      100.0%          0.0%

@@ -1,0 +1,58 @@
+{
+ "fix": [
+  {
+   "blocks": 101,
+   "edited": 10,
+   "old_s": 0.019154352019540966,
+   "new_s": 0.005444070004159585,
+   "speedup": 3.5183882655634355,
+   "identical": true,
+   "n_matched": 101
+  },
+  {
+   "blocks": 501,
+   "edited": 50,
+   "old_s": 0.29789870500098914,
+   "new_s": 0.059969335998175666,
+   "speedup": 4.967517149265277,
+   "identical": true,
+   "n_matched": 501
+  },
+  {
+   "blocks": 1001,
+   "edited": 100,
+   "old_s": 1.2506464869948104,
+   "new_s": 0.28191176601103507,
+   "speedup": 4.436304680329857,
+   "identical": true,
+   "n_matched": 1001
+  },
+  {
+   "blocks": 2001,
+   "edited": 200,
+   "old_s": 5.68686317600077,
+   "new_s": 1.172833309014095,
+   "speedup": 4.8488247496835255,
+   "identical": true,
+   "n_matched": 2001
+  },
+  {
+   "blocks": 4001,
+   "edited": 400,
+   "old_s": 48.5424720380106,
+   "new_s": 4.558247470005881,
+   "speedup": 10.649371794188255,
+   "identical": true,
+   "n_matched": 4001
+  },
+  {
+   "blocks": 8001,
+   "edited": 800,
+   "old_s": 78.83918314398034,
+   "new_s": 14.191992590989685,
+   "speedup": 5.555187732696135,
+   "identical": true,
+   "n_matched": 8001
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+sku,part,vendor,qty,unit_cost
+S1,ATmega328P-AU,digikey,5,2.48
+S2,AMS1117-3.3,lcsc,10,0.11
+S3,0805 100nF X7R,lcsc,1,1.00

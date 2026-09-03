@@ -1,0 +1,11 @@
+=== ARM 1: Bob rewords a paragraph; Alice does/doesn't add an id to it ===
+1a-CONTROL-no-id-write             exit=0 markers=0 occurrences_of_^a3f91c2b=0
+1b-alice-writes-blockid            exit=1 markers=1 occurrences_of_^a3f91c2b=1
+
+=== ARM 2: copy-paste duplication of an id-bearing block, far apart ===
+2a-dup-block-clean-merge           exit=1 markers=1 occurrences_of_^a3f91c2b=2
+
+=== ARM 3: same-id minted for DIFFERENT blocks in two branches (birthday) ===
+3a-id-collision-different-blocks   exit=0 markers=0 occurrences_of_^a3f91c2b=2
+
+workdir: /tmp/tmp.mYF2NG1Nyo

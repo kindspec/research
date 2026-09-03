@@ -1,0 +1,92 @@
+
+=== A. SILENT DOWNGRADE: colleague without driver gets a CLEAN but WRONG merge ===
+-- ours:
+item,qty,price,total
+a,1,10,=B2*C2
+b,2,10,=B3*C3
+c,3,10,=B4*C4
+y,7,10,=B5*C5
+SUM,,,=SUM(E2:E5)
+-- merging (NO driver configured, .gitattributes says merge=tablemerge):
+Auto-merging sheet.csv
+CONFLICT (content): Merge conflict in sheet.csv
+Automatic merge failed; fix conflicts and then commit the result.
+merge exit=1
+-- RESULT:
+item,qty,price,total
+a,1,10,=B2*C2
+x,5,10,=B3*C3
+b,2,10,=B3*C3
+c,3,10,=B4*C4
+<<<<<<< HEAD
+y,7,10,=B5*C5
+=======
+>>>>>>> f1
+SUM,,,=SUM(E2:E5)
+-- git status:
+UU sheet.csv
+
+=== B. rebase backends: --merge (default) vs --apply ===
+rebase --merge -> exit=0  DRIVER RAN  head-of-file: ### MERGED BY CUSTOM DRIVER ###
+rebase --apply -> exit=0  DRIVER RAN  head-of-file: ### MERGED BY CUSTOM DRIVER ###
+
+=== C. merge-tree honours .gitattributes but needs the driver in the SERVER's config ===
+-- with driver in config:
+   DRIVER RAN
+-- driver UNSET (simulates a forge server that has .gitattributes but not the tool):
+   driver NOT run
+   exit=128
+fatal: custom merge driver probe lacks command line.
+   -> conflicted content merge-tree would produce:
+
+=== D. CONFIG SCOPE: exactly which parts are repo-portable? ===
+-- .gitattributes is a TRACKED FILE:
+.gitattributes
+-- merge.probe.driver lives in:
+   --local : /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh %O %A %B %L %P
+   --global : <unset>
+   --system : <unset>
+   --worktree : /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh %O %A %B %L %P
+-- is .git/config ever transferred by clone/fetch/push? check the clone:
+   clone's merge.probe.driver: '<UNSET>'
+   clone's .gitattributes: f.txt merge=probe
+
+=== E. Does .gitattributes in .git/info/attributes vs tracked differ? (both work, but only tracked ships) ===
+   (documented: gitattributes(5) precedence = .git/info/attributes > .gitattributes in-tree > parent dirs > core.attributesFile)
+
+=== F. CLEAN/SMUDGE FILTER COVERAGE ===
+-- which operations invoke clean/smudge:
+  checkout (rm + restore)            -> SMUDGE,
+  git add (clean)                    -> CLEAN,
+  git diff (worktree vs HEAD)        -> CLEAN,
+  git log -p                         -> none
+  git show HEAD                      -> none
+  git archive HEAD                   -> SMUDGE,
+  git cat-file -p HEAD:a.dat         -> none
+  git grep hello                     -> none
+  git stash push/pop                 -> CLEAN,SMUDGE,
+-- stored blob (should be UNsmudged):
+hello
+world
+-- worktree file (should be SMUDGED):
+SMUDGED:hello
+SMUDGED:world
+-- git archive contents:
+SMUDGED:hello
+SMUDGED:world
+-- full filter log:
+CLEAN a.dat
+CLEAN a.dat
+SMUDGE a.dat
+CLEAN a.dat
+CLEAN a.dat
+CLEAN a.dat
+SMUDGE a.dat
+CLEAN a.dat
+CLEAN a.dat
+SMUDGE a.dat
+CLEAN a.dat
+SMUDGE a.dat
+CLEAN a.dat
+SMUDGE a.dat
+SMUDGE a.dat

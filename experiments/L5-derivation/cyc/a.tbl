@@ -1,0 +1,7 @@
+| id | v |
+| --- | --- |
+| a | 1 |
+
+key := id
+av := sum(v)
+x := sum(b.tbl#bv)

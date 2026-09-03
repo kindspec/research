@@ -1,0 +1,39 @@
+
+=== CSV, no formulas, 1 edit each, 20 rows  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct      188    94.0%
+   false-conflict      12     6.0%
+   SILENT-WRONG         0     0.0%
+
+=== CSV, no formulas, 3 edits each, 20 rows  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct      111    55.5%
+   false-conflict      89    44.5%
+   SILENT-WRONG         0     0.0%
+
+=== CSV, A1 FORMULAS, 1 edit each, 20 rows  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct       56    28.0%
+   false-conflict     144    72.0%
+   SILENT-WRONG         0     0.0%
+
+=== CSV, A1 FORMULAS, 3 edits each, 20 rows  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct       13     6.5%
+   false-conflict     187    93.5%
+   SILENT-WRONG         0     0.0%
+
+=== Markdown, 1 section op each, 12 sections  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct      193    96.5%
+   false-conflict       7     3.5%
+   SILENT-WRONG         0     0.0%
+
+=== Markdown, 3 section ops each, 12 sections  (n=200, zero legitimate conflicts by construction) ===
+   clean-correct      151    75.5%
+   false-conflict      49    24.5%
+   SILENT-WRONG         0     0.0%
+
+=== SUMMARY TABLE ===
+scenario                                    clean-correct  false-conflict   SILENT-WRONG
+csv-plain-1                                         94.0%            6.0%           0.0%
+csv-plain-3                                         55.5%           44.5%           0.0%
+csv-form-1                                          28.0%           72.0%           0.0%
+csv-form-3                                           6.5%           93.5%           0.0%
+md-1                                                96.5%            3.5%           0.0%
+md-3                                                75.5%           24.5%           0.0%

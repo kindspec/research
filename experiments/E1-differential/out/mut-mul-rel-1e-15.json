@@ -1,0 +1,3073 @@
+{
+ "counts": {
+  "shared.expanded": 40797,
+  "shared.unresolved": 0,
+  "formula-cells": 61224,
+  "exc.array-formula": 8800,
+  "verdict.UNTRANSLATABLE": 15103,
+  "verdict.NEEDS-HUMAN": 33373,
+  "exc.no-header": 7011,
+  "verdict.AGGREGATE": 28,
+  "translatable": 3948,
+  "compared": 978,
+  "cmp.numeric": 977,
+  "A.exact": 394,
+  "verdict.CLEAN-WIDE": 177,
+  "NOTEVAL": 2752,
+  "noteval.Call": 1518,
+  "notevalfull.Call:SUM": 849,
+  "verdict.CLEAN": 3743,
+  "noteval.BinOp": 8,
+  "notevalfull.BinOp:BitAnd": 8,
+  "EVALUABLE": 965,
+  "chain.depends-only-on-literals": 466,
+  "D.float-accum": 336,
+  "chain.depends-on-a-formula-cell": 485,
+  "agg.table-range-used": 2,
+  "noteval.not-python": 1085,
+  "notevalfull.not-python:IF": 1082,
+  "notevalfull.Call:INT": 3,
+  "notevalfull.Call:IF": 297,
+  "noteval.UnaryOp": 141,
+  "notevalfull.UnaryOp:UAdd": 141,
+  "exc.no-cached-value": 204,
+  "notevalfull.Call:ROUND": 307,
+  "D.ref-where-excel-numeric": 209,
+  "Dref.blank": 209,
+  "notevalfull.Call:CEILING": 62,
+  "notevalfull.not-python:MIN": 1,
+  "exc.duplicate-header-name": 14,
+  "BUG.shadowed-column-name": 16,
+  "D.semantic": 16,
+  "cmp.excel-error": 1,
+  "A.ref-where-excel-errors": 1,
+  "A.15sig": 22,
+  "A15.hp-matches-excel-so-rowspec-float-is-the-cause": 22,
+  "A15.max-input-sigdigits-le14": 22,
+  "notevalfull.not-python:?": 2,
+  "wb.ok": 800,
+  "wb.bad": 0,
+  "distinct.workbooks-contributing": 38,
+  "distinct.sheets-contributing": 38
+ },
+ "samples": {
+  "NOTEVAL": [
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H4",
+    "f": "SUM(B4:F4)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H5",
+    "f": "SUM(B5:F5)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H6",
+    "f": "SUM(B6:F6)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H9",
+    "f": "SUM(B9:F9)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H4",
+    "f": "SUM(B4:F4)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H5",
+    "f": "SUM(B5:F5)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H6",
+    "f": "SUM(B6:F6)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H9",
+    "f": "SUM(B9:F9)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "17-35/1_17-35_golden.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "M2",
+    "f": "\">=\"&I2",
+    "expr": "\">=\"&start",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "BinOp:BitAnd"
+   },
+   {
+    "wb": "17-35/1_17-35_golden.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "N2",
+    "f": "\"<=\"&J2",
+    "expr": "\"<=\"&end",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "BinOp:BitAnd"
+   },
+   {
+    "wb": "17-35/1_17-35_init.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "M2",
+    "f": "\">=\"&I2",
+    "expr": "\">=\"&start",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "BinOp:BitAnd"
+   },
+   {
+    "wb": "17-35/1_17-35_init.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "N2",
+    "f": "\"<=\"&J2",
+    "expr": "\"<=\"&end",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "BinOp:BitAnd"
+   },
+   {
+    "wb": "203-15/1_203-15_golden.xlsx",
+    "sheet": "Output Required",
+    "cell": "M2",
+    "f": "SUM($H2:L2)",
+    "expr": "SUM(Basic, Housing_Allowance, Transport_Allowances, Other_Allowances, Social_Allowances)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "203-15/1_203-15_golden.xlsx",
+    "sheet": "Output Required",
+    "cell": "M3",
+    "f": "SUM($H3:L3)",
+    "expr": "SUM(Basic, Housing_Allowance, Transport_Allowances, Other_Allowances, Social_Allowances)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G2",
+    "f": "IF(C2=\"\",B2,C2)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G3",
+    "f": "IF(C3=\"\",B3,C3)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G4",
+    "f": "IF(C4=\"\",B4,C4)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G5",
+    "f": "IF(C5=\"\",B5,C5)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G6",
+    "f": "IF(C6=\"\",B6,C6)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G7",
+    "f": "IF(C7=\"\",B7,C7)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G8",
+    "f": "IF(C8=\"\",B8,C8)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G9",
+    "f": "IF(C9=\"\",B9,C9)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G10",
+    "f": "IF(C10=\"\",B10,C10)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G11",
+    "f": "IF(C11=\"\",B11,C11)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G12",
+    "f": "IF(C12=\"\",B12,C12)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G13",
+    "f": "IF(C13=\"\",B13,C13)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G14",
+    "f": "IF(C14=\"\",B14,C14)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G15",
+    "f": "IF(C15=\"\",B15,C15)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G2",
+    "f": "IF(C2=\"\",B2,C2)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G3",
+    "f": "IF(C3=\"\",B3,C3)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G4",
+    "f": "IF(C4=\"\",B4,C4)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G5",
+    "f": "IF(C5=\"\",B5,C5)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G6",
+    "f": "IF(C6=\"\",B6,C6)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G7",
+    "f": "IF(C7=\"\",B7,C7)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G8",
+    "f": "IF(C8=\"\",B8,C8)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G9",
+    "f": "IF(C9=\"\",B9,C9)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G10",
+    "f": "IF(C10=\"\",B10,C10)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G11",
+    "f": "IF(C11=\"\",B11,C11)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G12",
+    "f": "IF(C12=\"\",B12,C12)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   },
+   {
+    "wb": "32093/1_32093_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G13",
+    "f": "IF(C13=\"\",B13,C13)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "why": "not-python:IF"
+   }
+  ],
+  "D.float-accum": [
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I2",
+    "f": "G2*H2",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K2",
+    "f": "J2*H2",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I5",
+    "f": "G5*H5",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K5",
+    "f": "J5*H5",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I8",
+    "f": "G8*H8",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K8",
+    "f": "J8*H8",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I11",
+    "f": "G11*H11",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K11",
+    "f": "J11*H11",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I14",
+    "f": "G14*H14",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K14",
+    "f": "J14*H14",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I17",
+    "f": "G17*H17",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 150.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "150.0",
+     "176.0"
+    ],
+    "excel": "26400",
+    "rs": 422400.0,
+    "hp": 26400.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K17",
+    "f": "J17*H17",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 120.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "120.0",
+     "176.0"
+    ],
+    "excel": "21120",
+    "rs": 337920.0,
+    "hp": 21120.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I20",
+    "f": "G20*H20",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 150.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "150.0",
+     "176.0"
+    ],
+    "excel": "26400",
+    "rs": 422400.0,
+    "hp": 26400.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K20",
+    "f": "J20*H20",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 120.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "120.0",
+     "176.0"
+    ],
+    "excel": "21120",
+    "rs": 337920.0,
+    "hp": 21120.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I23",
+    "f": "G23*H23",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 150.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "150.0",
+     "176.0"
+    ],
+    "excel": "26400",
+    "rs": 422400.0,
+    "hp": 26400.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K23",
+    "f": "J23*H23",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 120.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "120.0",
+     "176.0"
+    ],
+    "excel": "21120",
+    "rs": 337920.0,
+    "hp": 21120.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I26",
+    "f": "G26*H26",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K26",
+    "f": "J26*H26",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I29",
+    "f": "G29*H29",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K29",
+    "f": "J29*H29",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I32",
+    "f": "G32*H32",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K32",
+    "f": "J32*H32",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I33",
+    "f": "G33*H33",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K33",
+    "f": "J33*H33",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I34",
+    "f": "G34*H34",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K34",
+    "f": "J34*H34",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I35",
+    "f": "G35*H35",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K35",
+    "f": "J35*H35",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I36",
+    "f": "G36*H36",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K36",
+    "f": "J36*H36",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I37",
+    "f": "G37*H37",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K37",
+    "f": "J37*H37",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I38",
+    "f": "G38*H38",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K38",
+    "f": "J38*H38",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I39",
+    "f": "G39*H39",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K39",
+    "f": "J39*H39",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I40",
+    "f": "G40*H40",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K40",
+    "f": "J40*H40",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "I41",
+    "f": "G41*H41",
+    "expr": "Bill_Rate_of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 100.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "100.0",
+     "176.0"
+    ],
+    "excel": "17600",
+    "rs": 281600.0,
+    "hp": 17600.0,
+    "exsig": 3
+   },
+   {
+    "wb": "247-24/1_247-24_golden.xlsx",
+    "sheet": "Main",
+    "cell": "K41",
+    "f": "J41*H41",
+    "expr": "Intercompany_Billing_Rate_Of_Resource*Worked_Hours",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n| 70.0 | 176.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "70.0",
+     "176.0"
+    ],
+    "excel": "12320",
+    "rs": 197120.0,
+    "hp": 12320.0,
+    "exsig": 4
+   }
+  ],
+  "D.ref-where-excel-numeric": [
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E5",
+    "f": "B5*C5",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F5",
+    "f": "(1+C5)*B5",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E6",
+    "f": "B6*C6",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F6",
+    "f": "(1+C6)*B6",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E7",
+    "f": "B7*C7",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F7",
+    "f": "(1+C7)*B7",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E8",
+    "f": "B8*C8",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "(1+C8)*B8",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E9",
+    "f": "B9*C9",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "(1+C9)*B9",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E10",
+    "f": "B10*C10",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F10",
+    "f": "(1+C10)*B10",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E11",
+    "f": "B11*C11",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F11",
+    "f": "(1+C11)*B11",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E12",
+    "f": "B12*C12",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F12",
+    "f": "(1+C12)*B12",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E13",
+    "f": "B13*C13",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F13",
+    "f": "(1+C13)*B13",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E14",
+    "f": "B14*C14",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F14",
+    "f": "(1+C14)*B14",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E15",
+    "f": "B15*C15",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F15",
+    "f": "(1+C15)*B15",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E16",
+    "f": "B16*C16",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F16",
+    "f": "(1+C16)*B16",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E17",
+    "f": "B17*C17",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F17",
+    "f": "(1+C17)*B17",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E18",
+    "f": "B18*C18",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F18",
+    "f": "(1+C18)*B18",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E19",
+    "f": "B19*C19",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F19",
+    "f": "(1+C19)*B19",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E20",
+    "f": "B20*C20",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F20",
+    "f": "(1+C20)*B20",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E21",
+    "f": "B21*C21",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F21",
+    "f": "(1+C21)*B21",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E22",
+    "f": "B22*C22",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F22",
+    "f": "(1+C22)*B22",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E23",
+    "f": "B23*C23",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F23",
+    "f": "(1+C23)*B23",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E24",
+    "f": "B24*C24",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 * x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/1_48643_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F24",
+    "f": "(1+C24)*B24",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = (1 + x1) * x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   }
+  ],
+  "BUG.shadowed-column-name": [
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "names": [
+     "1000_2999"
+    ]
+   }
+  ],
+  "D.semantic": [
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "221",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "221",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "237",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "237",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "241",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "241",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "317",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "317",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "221",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S6",
+    "f": "K6",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "221",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "237",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S7",
+    "f": "K7",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "237",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "241",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S8",
+    "f": "K8",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "241",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "O10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "317",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   },
+   {
+    "wb": "55468/1_55468_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "S10",
+    "f": "K10",
+    "expr": "1000_2999",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| zout = 10002999 |\n| --- |\n|  |\n",
+    "kinds": [],
+    "lits": [],
+    "excel": "317",
+    "rs": 10002999.0,
+    "hp": 10002999.0,
+    "exsig": 3
+   }
+  ],
+  "A.15sig": [
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R7",
+    "f": "Q7+N7",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.16 | 1.4984 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.16",
+     "1.4984"
+    ],
+    "excel": "1.6584",
+    "rs": 1.6583999999999999,
+    "hp": 1.6584
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U7",
+    "f": "T7-S7-R7",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 1.6584 | 10.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "1.6584",
+     "10.0"
+    ],
+    "excel": "5.4416",
+    "rs": 5.441599999999999,
+    "hp": 5.4416
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R8",
+    "f": "Q8+N8",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.065 | 0.5808 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.065",
+     "0.5808"
+    ],
+    "excel": "0.6458",
+    "rs": 0.6457999999999999,
+    "hp": 0.6458
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U8",
+    "f": "T8-S8-R8",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 0.6458 | 8.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "0.6458",
+     "8.0"
+    ],
+    "excel": "4.4542",
+    "rs": 4.454199999999999,
+    "hp": 4.4542
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R9",
+    "f": "Q9+N9",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.255 | 2.6104 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.255",
+     "2.6104"
+    ],
+    "excel": "2.8654",
+    "rs": 2.8653999999999997,
+    "hp": 2.8654
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R10",
+    "f": "Q10+N10",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.052 | 0.1964 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.052",
+     "0.1964"
+    ],
+    "excel": "0.2484",
+    "rs": 0.24839999999999998,
+    "hp": 0.2484
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U10",
+    "f": "T10-S10-R10",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 0.2484 | 8.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "0.2484",
+     "8.0"
+    ],
+    "excel": "4.8516",
+    "rs": 4.8515999999999995,
+    "hp": 4.8516
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R12",
+    "f": "Q12+N12",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.13 | 0.4532 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.13",
+     "0.4532"
+    ],
+    "excel": "0.5832",
+    "rs": 0.5831999999999999,
+    "hp": 0.5832
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R13",
+    "f": "Q13+N13",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.1 | 0.3388 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.1",
+     "0.3388"
+    ],
+    "excel": "0.4388",
+    "rs": 0.43879999999999997,
+    "hp": 0.4388
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R14",
+    "f": "Q14+N14",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.106 | 0.3464 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.106",
+     "0.3464"
+    ],
+    "excel": "0.4524",
+    "rs": 0.45239999999999997,
+    "hp": 0.4524
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U14",
+    "f": "T14-S14-R14",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 0.4524 | 12.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "0.4524",
+     "12.0"
+    ],
+    "excel": "8.6476",
+    "rs": 8.647599999999999,
+    "hp": 8.6476
+   },
+   {
+    "wb": "57262/1_57262_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U15",
+    "f": "T15-S15-R15",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 1.3084 | 32.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "1.3084",
+     "32.0"
+    ],
+    "excel": "27.7916",
+    "rs": 27.791600000000003,
+    "hp": 27.7916
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R7",
+    "f": "Q7+N7",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.16 | 1.4984 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.16",
+     "1.4984"
+    ],
+    "excel": "1.6584",
+    "rs": 1.6583999999999999,
+    "hp": 1.6584
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U7",
+    "f": "T7-S7-R7",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 1.6584 | 10.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "1.6584",
+     "10.0"
+    ],
+    "excel": "5.4416",
+    "rs": 5.441599999999999,
+    "hp": 5.4416
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R8",
+    "f": "Q8+N8",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.065 | 0.5808 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.065",
+     "0.5808"
+    ],
+    "excel": "0.6458",
+    "rs": 0.6457999999999999,
+    "hp": 0.6458
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U8",
+    "f": "T8-S8-R8",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": false,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 0.6458 | 8.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "0.6458",
+     "8.0"
+    ],
+    "excel": "4.4542",
+    "rs": 4.454199999999999,
+    "hp": 4.4542
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R9",
+    "f": "Q9+N9",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.255 | 2.6104 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.255",
+     "2.6104"
+    ],
+    "excel": "2.8654",
+    "rs": 2.8653999999999997,
+    "hp": 2.8654
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R10",
+    "f": "Q10+N10",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.052 | 0.1964 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.052",
+     "0.1964"
+    ],
+    "excel": "0.2484",
+    "rs": 0.24839999999999998,
+    "hp": 0.2484
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "U10",
+    "f": "T10-S10-R10",
+    "expr": "final_price_point-Postage-Total_Cost",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | x2 | zout = x2 - x0 - x1 |\n| --- | --- | --- | --- |\n| 2.9 | 0.2484 | 8.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "2.9",
+     "0.2484",
+     "8.0"
+    ],
+    "excel": "4.8516",
+    "rs": 4.8515999999999995,
+    "hp": 4.8516
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R12",
+    "f": "Q12+N12",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.13 | 0.4532 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.13",
+     "0.4532"
+    ],
+    "excel": "0.5832",
+    "rs": 0.5831999999999999,
+    "hp": 0.5832
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R13",
+    "f": "Q13+N13",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.1 | 0.3388 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.1",
+     "0.3388"
+    ],
+    "excel": "0.4388",
+    "rs": 0.43879999999999997,
+    "hp": 0.4388
+   },
+   {
+    "wb": "57262/1_57262_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "R14",
+    "f": "Q14+N14",
+    "expr": "Energy_Cost__Total+Material_Cost_Total",
+    "verdict": "CLEAN",
+    "shared": true,
+    "doc": "| x0 | x1 | zout = x0 + x1 |\n| --- | --- | --- |\n| 0.106 | 0.3464 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.106",
+     "0.3464"
+    ],
+    "excel": "0.4524",
+    "rs": 0.45239999999999997,
+    "hp": 0.4524
+   }
+  ]
+ }
+}

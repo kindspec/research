@@ -1,0 +1,133 @@
+  ..0/682 wb  14 formula cells  0 compared
+  ..250/682 wb  23178 formula cells  145 compared
+  ..500/682 wb  113625 formula cells  1718 compared
+A.15sig                                                   140
+A.exact                                                  1125
+A.ref-where-excel-errors                                  104
+A15.hp-also-differs-so-the-inputs-are-the-cause            71
+A15.hp-matches-excel-so-rowspec-float-is-the-cause         69
+A15.max-input-sigdigits-15                                 55
+A15.max-input-sigdigits-le14                               85
+D.float-accum                                               2
+D.ref-where-excel-numeric                                1755
+D.text-differs                                             82
+Dref.blank                                               1755
+EVALUABLE                                                3196
+EVALUABLE.aggregate                                        14
+NOTEVAL                                                   867
+agg.table-range-used                                        4
+chain.depends-on-a-formula-cell                           743
+chain.depends-only-on-literals                           2451
+cmp.excel-error                                           104
+cmp.excel-text                                             82
+cmp.numeric                                              3022
+compared                                                 3208
+distinct.sheets-contributing                               54
+distinct.workbooks-contributing                            37
+exc.array-formula                                        8379
+exc.no-cached-value                                     12434
+exc.no-header                                           62631
+exc.value-annotation-shaped                                 2
+formula-cells                                          161330
+if.A.exact                                                103
+if.D.ref-where-excel-numeric                                1
+if.Dref.blank                                               1
+if.EVALUABLE                                              104
+if.chain.depends-on-a-formula-cell                         58
+if.chain.depends-only-on-literals                          46
+if.cmp.numeric                                            104
+if.compared                                               104
+ifstr.A.exact                                              17
+ifstr.D.ref-where-excel-numeric                             1
+ifstr.Dref.blank                                            1
+ifstr.EVALUABLE                                            18
+ifstr.chain.depends-on-a-formula-cell                       3
+ifstr.chain.depends-only-on-literals                       15
+ifstr.cmp.numeric                                          18
+ifstr.compared                                             18
+noteval.Call                                              387
+noteval.If                                                363
+noteval.Op                                                114
+noteval.Parse                                               3
+notevalfull.Call:AND                                       89
+notevalfull.Call:AVERAGE                                   32
+notevalfull.Call:INT                                        3
+notevalfull.Call:MIN                                       90
+notevalfull.Call:OR                                        19
+notevalfull.Call:ROUND                                    154
+notevalfull.If:text-branch                                363
+notevalfull.Op:&                                           56
+notevalfull.Op:unary-plus                                  58
+notevalfull.Parse:other                                     3
+shared.expanded                                         95772
+shared.unresolved                                           0
+sumx.A.15sig                                               11
+sumx.A.exact                                              241
+sumx.A.ref-where-excel-errors                               5
+sumx.A15.hp-also-differs-so-the-inputs-are-the-cause        9
+sumx.A15.hp-matches-excel-so-rowspec-float-is-the-cause        2
+sumx.A15.max-input-sigdigits-15                             9
+sumx.A15.max-input-sigdigits-le14                           2
+sumx.D.ref-where-excel-numeric                            236
+sumx.Dref.blank                                           236
+sumx.EVALUABLE                                            493
+sumx.NOTEVAL                                               58
+sumx.chain.depends-on-a-formula-cell                      238
+sumx.chain.depends-only-on-literals                       255
+sumx.cmp.excel-error                                        5
+sumx.cmp.numeric                                          488
+sumx.compared                                             493
+sumx.noteval.Op                                            58
+sumx.notevalfull.Op:unary-plus                             58
+surface.if-lowercased                                     625
+surface.sum-expanded                                      551
+translatable                                            16511
+verdict.AGGREGATE                                          28
+verdict.CLEAN                                           16093
+verdict.CLEAN-WIDE                                        390
+verdict.NEEDS-HUMAN                                     98760
+verdict.UNTRANSLATABLE                                  37680
+wb.bad                                                      0
+wb.ok                                                     682
+
+  formula cells read                     161330
+  translatable                            16511
+  EVALUABLE (rowspec 4.2 parser)           3196  (+14 aggregates)
+  NOTEVAL   (parser refused)                867
+  compared                                 3208
+
+  AGREEMENT                                1369
+    exact double equality                  1125
+    equal to 15 significant digits          140
+    Excel errored, rowspec #REF!            104
+  BY DESIGN (out of the headline)          1837
+    blank operand   (Dref.blank)           1755
+    text passthrough (cmp.excel-text)        82
+  OTHER DISAGREEMENT                          2
+    D.float-accum                             2
+
+  excluding the two by-design classes: 1369 / 1371 = 99.85%
+
+  cells whose 4.2 tree contains an `if`
+    EVALUABLE                               104
+    compared                                104
+    agreement                               103
+    by design (blank/text)                    1
+    other disagreement                        0
+
+  ... of those, comparing a column against a STRING
+    EVALUABLE                                18
+    compared                                 18
+    agreement                                17
+    by design (blank/text)                    1
+    other disagreement                        0
+
+  --expand-sum attribution (cells whose SUM was rewritten)
+    compared                                493
+    agreement                               257
+    by design (blank/text)                  236
+    EVALUABLE attributable                  493
+
+    baseline-comparable (subtract the above):
+      compared                             2715
+      EVALUABLE                            2703

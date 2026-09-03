@@ -1,0 +1,120 @@
+Killing the server with os._exit(137) right after each git verb.
+`merge-tree` = before any write.  `hash-object` = blob written, no tree.
+`update-index`/`write-tree` = tree written, no commit.
+`commit-tree` = commit object exists, ref NOT updated.
+`update-ref` = the CAS itself completed, process dies after.
+
+--- SIGKILL after `git merge-tree` ---
+    child_died                       True
+    ref_moved_by_crashed_process     False
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           2
+    stale_index_files                []
+    lock_files_left                  []
+    retry1                           merged
+    retry2                           already-merged
+    tip_after_retry1                 b65618d3f744
+    tip_after_retry2                 b65618d3f744
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+--- SIGKILL after `git hash-object` ---
+    child_died                       True
+    ref_moved_by_crashed_process     False
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           3
+    stale_index_files                []
+    lock_files_left                  []
+    retry1                           merged
+    retry2                           already-merged
+    tip_after_retry1                 b65618d3f744
+    tip_after_retry2                 b65618d3f744
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+--- SIGKILL after `git update-index` ---
+    child_died                       True
+    ref_moved_by_crashed_process     False
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           3
+    stale_index_files                ['index-3242297-1787948996849606758']
+    lock_files_left                  []
+    retry1                           merged
+    retry2                           already-merged
+    tip_after_retry1                 b65618d3f744
+    tip_after_retry2                 b65618d3f744
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+--- SIGKILL after `git write-tree` ---
+    child_died                       True
+    ref_moved_by_crashed_process     False
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           4
+    stale_index_files                ['index-3242411-1787948997072697458']
+    lock_files_left                  []
+    retry1                           merged
+    retry2                           already-merged
+    tip_after_retry1                 51499946a3db
+    tip_after_retry2                 51499946a3db
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+--- SIGKILL after `git commit-tree` ---
+    child_died                       True
+    ref_moved_by_crashed_process     False
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           5
+    stale_index_files                []
+    lock_files_left                  []
+    retry1                           merged
+    retry2                           already-merged
+    tip_after_retry1                 0e40171e0467
+    tip_after_retry2                 0e40171e0467
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+--- SIGKILL after `git update-ref` ---
+    child_died                       True
+    ref_moved_by_crashed_process     True
+    fsck_after_kill_rc               0
+    fsck_after_kill_errors           []
+    orphaned_loose_objects           5
+    stale_index_files                []
+    lock_files_left                  []
+    retry1                           already-merged
+    retry2                           already-merged
+    tip_after_retry1                 0e40171e0467
+    tip_after_retry2                 0e40171e0467
+    DUPLICATE_COMMIT                 False
+    merge_commits_on_main            1
+    merged_content_correct           True
+    fsck_final_rc                    0
+    unreachable_after                2
+
+======================================================================
+temp-index files left in GIT_DIR/gws-tmp after a kill at: ['update-index', 'write-tree']
+  (bounded garbage: swept by sweep_tmp() after 1h; cannot be deleted
+   eagerly because another live process may own it. Not in GIT_DIR root,
+   not a ref, not an object -- fsck and clone are unaffected.)
+VERDICT: CRASH SAFE at every point

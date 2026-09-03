@@ -1,0 +1,93 @@
+
+==========================================================
+### 1. Do notes / custom refs transfer on CLONE by default?
+==========================================================
+-- local refs before push --
+  refs/bugs/abc123
+  refs/gws/conflicts/0001
+  refs/heads/main
+  refs/notes/commits
+-- push (default refspec) --
+-- refs that landed on the SERVER --
+  refs/heads/main
+-- fresh clone --
+-- refs in the clone --
+  refs/heads/main
+  refs/remotes/origin/HEAD
+  refs/remotes/origin/main
+-- git notes show HEAD --
+error: no note found for object 1a23056c06e42f84b50d9159394c45810da2d1cf.
+>> VERDICT: notes and custom refs are NOT pushed and NOT cloned by default.
+
+==========================================================
+### 2. Explicit refspecs — do they work? and what does a forge accept?
+==========================================================
+-- push notes explicitly --
+To ../origin.git
+ * [new reference]   refs/notes/commits -> refs/notes/commits
+-- push custom namespaces explicitly --
+To ../origin.git
+ * [new reference]   refs/bugs/abc123 -> refs/bugs/abc123
+ * [new reference]   refs/gws/conflicts/0001 -> refs/gws/conflicts/0001
+-- server refs now --
+  refs/bugs/abc123
+  refs/gws/conflicts/0001
+  refs/heads/main
+  refs/notes/commits
+-- default clone of a server that HAS them --
+  refs/heads/main
+  refs/remotes/origin/HEAD
+  refs/remotes/origin/main
+-- must ask explicitly: --
+  refs/gws/conflicts/0001
+  refs/heads/main
+  refs/notes/commits
+  refs/remotes/origin/HEAD
+  refs/remotes/origin/main
+>> Every participant must configure a custom refspec. Nothing in the repo can do it for them.
+
+==========================================================
+### 3. git notes MERGE: what happens when two people annotate the same object?
+==========================================================
+Overwriting existing notes for object 1a23056c06e42f84b50d9159394c45810da2d1cf
+Overwriting existing notes for object 1a23056c06e42f84b50d9159394c45810da2d1cf
+-- ours: A: first note
+-- theirs: B: conflicting note
+
+-- (3a) default strategy (manual) --
+Fast-forward
+exit=0
+-- the conflicted note ON DISK --
+
+-- (3b) -s union --
+Already up to date.
+result: 
+    B: conflicting note
+
+-- (3c) -s cat_sort_uniq --
+Overwriting existing notes for object 1a23056c06e42f84b50d9159394c45810da2d1cf
+Fast-forward
+    C: third
+>> notes merge strategies: manual|ours|theirs|union|cat_sort_uniq. NO structured/type-aware option.
+>> 'manual' uses a WORKTREE at .git/NOTES_MERGE_WORKTREE -> unusable in a bare/server context.
+
+==========================================================
+### 4. notes.rewriteRef: do notes survive rebase/amend?
+==========================================================
+-- default notes.rewriteRef: 'UNSET'
+-- after amend, note present? --
+error: no note found for object 1ea6bebe02a906dab7d2121e0786b1c1e175090a.
+-- with notes.rewriteRef set: --
+note on commit two
+>> notes copy-forward across rewrites requires LOCAL config (notes.rewriteRef). Same failure class.
+
+==========================================================
+### 5. Object cost of a ref-based op-log: 1000 tiny mutations
+==========================================================
+1000 ops appended in 7149 ms  => 139 ops/sec-ish
+loose objects: 3003
+du .git: 13M
+after gc: 532K
+-- reading the whole log back --
+1000
+rev-list: 4 ms

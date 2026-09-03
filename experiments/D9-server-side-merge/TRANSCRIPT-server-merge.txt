@@ -1,0 +1,81 @@
+
+==========================================================
+### SETUP: divergent edits to a CSV, pushed to a BARE server repo
+==========================================================
+alice changed apple QTY 1->5 ; bob changed apple PRICE 10->99 ; SAME LINE
+
+==========================================================
+### STEP 1: on the BARE server, merge-tree exposes the THREE STAGES
+==========================================================
+exit=1
+ee22d3cb8e066325de2963d991b8a460afcece44
+100644 bdb812c407eb05ed2690837f1d0ae5ddda8a87ec 1	s.csv
+100644 389cee0df6a51a779d79077f208c65cd13b344e1 2	s.csv
+100644 a600084d5cb3471fb40181eb39f9db92c09bbccb 3	s.csv
+
+Auto-merging s.csv
+CONFLICT (content): Merge conflict in s.csv
+
+stage1(base)=bdb812c407eb05ed2690837f1d0ae5ddda8a87ec  stage2(ours)=389cee0df6a51a779d79077f208c65cd13b344e1  stage3(theirs)=a600084d5cb3471fb40181eb39f9db92c09bbccb
+-- server can read all three WITHOUT a working tree: --
+  [BASE]
+     item,qty,price
+     apple,1,10
+     banana,2,20
+     cherry,3,30
+  [OURS]
+     item,qty,price
+     apple,1,99
+     banana,2,20
+     cherry,3,30
+  [THEIRS]
+     item,qty,price
+     apple,5,10
+     banana,2,20
+     cherry,3,30
+
+==========================================================
+### STEP 2: the server runs ITS OWN type-aware merge on the three blobs
+==========================================================
+-- cell-level 3-way merge result --
+   item,qty,price
+   apple,5,99
+   banana,2,20
+   cherry,3,30
+-- residual cell conflicts (structured, NOT markers) --
+[]
+
+==========================================================
+### STEP 3: server writes the result back as a real git commit — NO working tree
+==========================================================
+new main = cf61857
+-- s.csv on the server after the server-side merge --
+   item,qty,price
+   apple,5,99
+   banana,2,20
+   cherry,3,30
+-- is it a real merge commit? --
+   *   cf61857 merge alice into main (type-aware CSV merge, server-side)
+   |\  
+   | * cfa4e3b alice
+   * | 10aa916 bob
+   |/  
+
+==========================================================
+### STEP 4: a PLAIN git client with NO tooling clones and sees a correct, VALID CSV
+==========================================================
+git version used by the naive client: git version 2.47.3
+-- s.csv --
+   item,qty,price
+   apple,5,99
+   banana,2,20
+   cherry,3,30
+   parses as CSV: 4 rows, 3 cols
+-- .gitattributes present? --
+   ls: cannot access '.gitattributes': No such file or directory
+-- local merge driver config? --
+   (none)
+
+>> The type-aware merge RAN, on the SERVER, with zero client tooling,
+>> zero .gitattributes, and zero local git config. It is deployable.
+>> What it required: the server OWNS the repo and mediates the write.

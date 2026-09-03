@@ -1,0 +1,10 @@
+﻿sku,description,qty,unit_price,ordered,notes
+00123,"Widget, large",10,"1,234.50",2026-01-05,ok
+00456,"Gadget
+with newline",3,"1.234,50",05/01/2026,-
+789,Doohickey,-,12.00,Jan 5 2026,"=SUM(A1:A9)"
+00007,"He said ""hi""",7,0012.00,5-Jan-26,+1-555-0100
+0042,Ragged row,2
+0043,Extra fields,4,9.99,2026-01-06,note,EXTRA1,EXTRA2
+0044,Sci notation,1,1.5E3,44927,@SUM(1)
+0045,Negative paren,1,(45.00),2026/01/05,-

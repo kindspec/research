@@ -1,0 +1,106 @@
+{
+ "counts": {
+  "shared.expanded": 8579,
+  "shared.unresolved": 0,
+  "formula-cells": 10400,
+  "exc.array-formula": 234,
+  "verdict.UNTRANSLATABLE": 1621,
+  "verdict.NEEDS-HUMAN": 8536,
+  "exc.no-header": 281,
+  "verdict.AGGREGATE": 1,
+  "translatable": 9,
+  "compared": 1,
+  "cmp.numeric": 1,
+  "A.exact": 1,
+  "verdict.CLEAN-WIDE": 8,
+  "NOTEVAL": 8,
+  "noteval.Call": 8,
+  "notevalfull.Call:SUM": 8,
+  "wb.ok": 60,
+  "wb.bad": 0
+ },
+ "samples": {
+  "NOTEVAL": [
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H4",
+    "f": "SUM(B4:F4)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H5",
+    "f": "SUM(B5:F5)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H6",
+    "f": "SUM(B6:F6)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_golden.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H9",
+    "f": "SUM(B9:F9)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H4",
+    "f": "SUM(B4:F4)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H5",
+    "f": "SUM(B5:F5)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H6",
+    "f": "SUM(B6:F6)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "why": "Call:SUM"
+   },
+   {
+    "wb": "15387/1_15387_init.xlsx",
+    "sheet": "Sheet1",
+    "cell": "H9",
+    "f": "SUM(B9:F9)",
+    "expr": "SUM(A, B, C, D, E)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "why": "Call:SUM"
+   }
+  ]
+ }
+}

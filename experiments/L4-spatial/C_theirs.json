@@ -1,0 +1,22 @@
+{
+  "elements": [
+    {
+      "id": "api",
+      "label": "API Gateway",
+      "x": 100,
+      "y": 80
+    },
+    {
+      "id": "auth",
+      "label": "Auth Service",
+      "x": 100,
+      "y": 200
+    },
+    {
+      "id": "db",
+      "label": "Postgres",
+      "x": 222,
+      "y": 888
+    }
+  ]
+}

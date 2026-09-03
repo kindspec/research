@@ -1,0 +1,25 @@
+case                                                truth  permissive      strict-all      hybrid          demand-driven 
+----------------------------------------------------------------------------------------------------------------------------
+v1 baseline                                        240.00  CORRECT         CORRECT         CORRECT         CORRECT       
+v2 adds inert annotation (%owner)                  240.00  CORRECT         REFUSE          CORRECT         CORRECT       
+v2 adds unreferenced new binding (median)          240.00  CORRECT         REFUSE          REFUSE          CORRECT       
+v2 adds evaluation pragma (!filter)                120.00  SILENT-WRONG    REFUSE          REFUSE          REFUSE        
+v2 adds evaluation pragma (!round-half-even)       240.00  CORRECT         REFUSE          REFUSE          REFUSE        
+v2 unknown fn feeds the aggregate                  225.00  SILENT-WRONG    REFUSE          REFUSE          REFUSE        
+v2 semantic annotation (%unit-scale)            240000.00  SILENT-WRONG    REFUSE          SILENT-WRONG    SILENT-WRONG  
+git conflict markers                               reject  SILENT-WRONG    SAFE-REJECT     SAFE-REJECT     SAFE-REJECT   
+truncated mid-row                                  reject  SILENT-WRONG    SAFE-REJECT     SAFE-REJECT     SAFE-REJECT   
+duplicate binding from bad merge                   reject  SILENT-WRONG    SAFE-REJECT     SAFE-REJECT     SAFE-REJECT   
+stray prose line (paste accident)                  reject  SILENT-WRONG    SAFE-REJECT     SAFE-REJECT     SAFE-REJECT   
+row with a dropped cell                            reject  SILENT-WRONG    SAFE-REJECT     SAFE-REJECT     SAFE-REJECT   
+
+policy               CORRECT  SILENT-WRONG   SAFE-REJECT        REFUSE         CRASH
+permissive                 4             8             0             0             0
+strict-all                 1             0             5             6             0
+hybrid                     2             1             5             4             0
+demand-driven              3             1             5             3             0
+
+CORRECT     = produced the value the format's own semantics demand
+SILENT-WRONG= produced a number that is not the truth, with no error   <-- the category that matters
+SAFE-REJECT = refused a file that has no correct answer
+REFUSE      = refused a file that did have a correct answer (cost of caution, not a wrong answer)

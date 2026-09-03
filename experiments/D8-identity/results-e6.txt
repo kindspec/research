@@ -1,0 +1,38 @@
+== (i) BLAST RADIUS: edit the source sentence ==
+ mat0.md   | 2 +-
+ mat1.md   | 2 +-
+ mat2.md   | 2 +-
+ mat3.md   | 2 +-
+ mat4.md   | 2 +-
+ mat5.md   | 2 +-
+ mat6.md   | 2 +-
+ mat7.md   | 2 +-
+ policy.md | 2 +-
+ 9 files changed, 9 insertions(+), 9 deletions(-)
+
+== (ii) LOUD FAILURE: the named region is deleted ==
+# Procedure 0
+
+Before starting, confirm the limit.
+
+**#REF!(no region `scram-threshold` in policy.md)**
+
+Then proceed.
+
+   (materialised copy shows a STALE value instead:)
+   The reactor scram threshold is 4.2 sigma above baseline, measured over a
+== (iii) AMBIGUITY: two blocks claim the same name (scattered namespace) ==
+# Procedure 0
+
+Before starting, confirm the limit.
+
+**#REF!(region `scram-threshold` declared 2x in policy.md — ambiguous)**
+
+Then proceed.
+
+== (iv) does the duplicate NAME arise from a clean stock-git merge? ==
+   merge exit=0, markers=0
+   render of proc0.md after the clean merge:
+   **#REF!(region `scram-threshold` declared 2x in policy.md — ambiguous)**
+
+workdir: /tmp/tmpl22prh24

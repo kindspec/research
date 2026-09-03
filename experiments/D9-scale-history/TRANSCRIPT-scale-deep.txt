@@ -1,0 +1,45 @@
+=== DEEP HISTORY: 50001 commits, 200 files, pack 17M ===
+  revisions of docs/d7.md: 243
+
+--- NO commit-graph, NO midx ---
+  git rev-list --count HEAD                                 154 ms  50001
+  git log --oneline -- ONE FILE  (count)                    940 ms  243
+  git log --follow -- ONE FILE                              959 ms
+  git blame ONE FILE                                        984 ms
+  git log --oneline -1000                                     8 ms
+  git describe / merge-base HEAD HEAD~40000                 131 ms  2562ae54b0e25ec2690a933a05b3c2605f20789e
+  git checkout HEAD~49000 (distant)                         169 ms
+  git checkout back to tip                                   13 ms
+
+--- WRITE commit-graph + multi-pack-index ---
+  commit-graph write --reachable                            204 ms  (2.9M)
+  multi-pack-index write                                     40 ms  (5.4M)
+
+--- WITH commit-graph + midx ---
+  git rev-list --count HEAD                                  17 ms  50001
+  git log --oneline -- ONE FILE  (count)                    841 ms  243
+  git log --follow -- ONE FILE                              827 ms
+  git blame ONE FILE                                        836 ms
+  git checkout HEAD~49000 (distant)                          28 ms
+  git checkout back to tip                                   13 ms
+
+--- feature.manyFiles / core.untrackedCache / fsmonitor availability ---
+  git status (cold):
+    git status                                                4 ms
+  feature.manyFiles=true implies: index.version=4, core.untrackedCache=true, index.skipHash=true
+    git status (feature.manyFiles)                            4 ms
+  core.fsmonitor built-in available? 
+    fsmonitor accepted: fatal: fsmonitor--daemon not supported on this platform
+
+--- sparse-index / sparse-checkout ---
+  sparse index in use: true / docs/d0.md
+
+--- scalar available? ---
+/usr/bin/scalar
+  'git scalar' not present
+
+--- CLONE the deep repo ---
+  git clone (full, 50k commits)                            2164 ms
+     -> 23M
+  git clone --depth=1                                        25 ms
+     -> 220K

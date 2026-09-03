@@ -1,0 +1,307 @@
+
+===================================================================
+### 1. git merge
+===================================================================
+Auto-merging data.txt
+Merge made by the 'ort' strategy.
+ data.txt | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-BASE
+line3
+--- ours ---
+line1
+CONTESTED-OURS
+line3
+--- theirs ---
+line1
+CONTESTED-THEIRS
+line3
+
+===================================================================
+### 2. git rebase
+===================================================================
+Rebasing (1/1)Successfully rebased and updated refs/heads/main.
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-BASE
+line3
+--- ours ---
+line1
+CONTESTED-THEIRS
+line3
+--- theirs ---
+line1
+CONTESTED-OURS
+line3
+
+===================================================================
+### 3. git cherry-pick
+===================================================================
+Auto-merging data.txt
+[main e1d0b60] theirs
+ Date: Fri Aug 28 14:05:10 2026 -0400
+ 1 file changed, 10 insertions(+)
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-BASE
+line3
+--- ours ---
+line1
+CONTESTED-OURS
+line3
+--- theirs ---
+line1
+CONTESTED-THEIRS
+line3
+
+===================================================================
+### 4. git revert
+===================================================================
+Auto-merging data.txt
+[main 61961a0] Revert "ours"
+ Date: Fri Aug 28 14:05:11 2026 -0400
+ 1 file changed, 10 insertions(+)
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-OURS
+line3
+--- ours ---
+line1
+CONTESTED-LATER
+line3
+--- theirs ---
+line1
+CONTESTED-BASE
+line3
+
+===================================================================
+### 5. git stash pop
+===================================================================
+Auto-merging data.txt
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   data.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (6d514d431d03101bd62ca393da0cef2e29f6cf79)
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-OURS
+line3
+--- ours ---
+line1
+CONTESTED-COMMITTED
+line3
+--- theirs ---
+line1
+CONTESTED-STASHED
+line3
+
+===================================================================
+### 6. git pull --rebase (real remote)
+===================================================================
+From /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/work/r_pull_up
+   a95648a..3599b7c  main       -> origin/main
+Rebasing (1/1)Successfully rebased and updated refs/heads/main.
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-OURS
+line3
+--- ours ---
+line1
+CONTESTED-UPSTREAM
+line3
+--- theirs ---
+line1
+CONTESTED-LOCAL
+line3
+
+===================================================================
+### 6b. git pull (merge)
+===================================================================
+Already up to date.
+exit=0
+  >> driver NOT invoked
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-OURS
+line3
+--- ours ---
+line1
+CONTESTED-UPSTREAM
+line3
+--- theirs ---
+line1
+CONTESTED-LOCAL
+line3
+
+===================================================================
+### 7. git merge-tree (what forges use)
+===================================================================
+-- merge-tree --write-tree main feature:
+3a1612f8fb5075b9d552587652040fd98e6a8b2b
+exit=0
+  >> DRIVER INVOKED (1x)
+resulting data.txt in tree 3a1612f8fb5075b9d552587652040fd98e6a8b2b:
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-BASE
+line3
+--- ours ---
+line1
+CONTESTED-OURS
+line3
+--- theirs ---
+line1
+CONTESTED-THEIRS
+line3
+
+===================================================================
+### 8. git merge-file (plumbing)
+===================================================================
+exit=0
+  >> driver NOT invoked
+
+===================================================================
+### 9. git apply / am (patch application)
+===================================================================
+Applying: theirs
+Using index info to reconstruct a base tree...
+M	data.txt
+Falling back to patching base and 3-way merge...
+Auto-merging data.txt
+exit=0
+  >> DRIVER INVOKED (1x)
+--- data.txt ---
+### MERGED BY CUSTOM DRIVER ###
+--- base ---
+line1
+CONTESTED-BASE
+line3
+--- ours ---
+line1
+CONTESTED-OURS
+line3
+--- theirs ---
+line1
+CONTESTED-THEIRS
+line3
+
+===================================================================
+### 10. git checkout -m / restore --merge (re-create conflict)
+===================================================================
+(state check)
+  >> driver NOT invoked
+
+===================================================================
+### 11. COLLEAGUE CLONE: .gitattributes present, driver NOT in config
+===================================================================
+-- .gitattributes shipped in the clone:
+* text=auto
+data.txt merge=probe
+-- merge.probe.driver in cloned config: '<UNSET>'
+Auto-merging data.txt
+CONFLICT (content): Merge conflict in data.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+  >> driver NOT invoked
+--- data.txt (colleague result) ---
+line1
+<<<<<<< HEAD
+CONTESTED-OURS
+=======
+CONTESTED-THEIRS
+>>>>>>> origin/feature
+line3
+--- git status ---
+UU data.txt
+
+===================================================================
+### 12. What if driver is declared but the binary is MISSING (exit 127)?
+===================================================================
+/nonexistent/mergiraf-that-is-not-installed .merge_file_02MORN .merge_file_L7RAsM .merge_file_DXXlI5: 1: /nonexistent/mergiraf-that-is-not-installed: not found
+Auto-merging data.txt
+CONFLICT (content): Merge conflict in data.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+--- data.txt ---
+line1
+CONTESTED-OURS
+line3
+--- status ---
+UU data.txt
+
+===================================================================
+### 13. Driver exits NONZERO (signals conflict)
+===================================================================
+Auto-merging data.txt
+CONFLICT (content): Merge conflict in data.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+--- data.txt ---
+DRIVER SAYS CONFLICT
+--- status ---
+UU data.txt
+
+===================================================================
+### 14. Can the driver be configured FROM THE REPO? (.gitconfig in repo, include.path)
+===================================================================
+-- attempt: does git auto-read a repo-tracked config file? (no include configured)
+Auto-merging data.txt
+CONFLICT (content): Merge conflict in data.txt
+Automatic merge failed; fix conflicts and then commit the result.
+exit=1
+  >> driver NOT invoked
+--- data.txt ---
+line1
+<<<<<<< HEAD
+CONTESTED-OURS
+=======
+CONTESTED-THEIRS
+>>>>>>> feature
+line3
+
+===================================================================
+### FULL DRIVER INVOCATION LOG
+===================================================================
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_s3CzR4 .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_FDtHuN .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_TjA1Nt .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_KZGdDj .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_vcfRyk .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_4C9PfQ .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_rg8iEm .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_72E2wR .m
+DRIVER-RAN path=data.txt marker_size=7 caller_pid_cmd=/bin/sh -c /home/cam/repos/working-git-backed-gws/experiments/D3-merge-driver-deployment/driver.sh .merge_file_BE0ujB .m
+DRIVER-CONFLICT

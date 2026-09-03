@@ -1,0 +1,5 @@
+node api 1.8173 2.25 1.9498 0.5 "API Gateway" solid ellipse black lightgrey
+node auth 2.8312 1.25 1.9498 0.5 "Auth Service" solid ellipse black lightgrey
+node db 0.87285 0.25 1.4263 0.5 Postgres solid ellipse black lightgrey
+node queue 0.8034 1.25 1.6068 0.5 "Job Queue" solid ellipse black lightgrey
+node cache 2.8312 0.25 1.8776 0.5 "Redis Cache" solid ellipse black lightgrey

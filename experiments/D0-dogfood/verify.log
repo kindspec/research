@@ -1,0 +1,28 @@
+PASS iptv-channels: ledger covers every commit git reports for the path (7008 vs 7008)
+PASS iptv-channels: every non-excluded commit carries a verdict
+PASS iptv-channels: no commit has an unclassified outcome
+PASS iptv-blocklist: ledger covers every commit git reports for the path (339 vs 339)
+PASS iptv-blocklist: every non-excluded commit carries a verdict
+PASS iptv-blocklist: no commit has an unclassified outcome
+PASS country-codes: ledger covers every commit git reports for the path (74 vs 74)
+PASS country-codes: every non-excluded commit carries a verdict
+PASS country-codes: no commit has an unclassified outcome
+PASS iso-3166: ledger covers every commit git reports for the path (25 vs 25)
+PASS iso-3166: every non-excluded commit carries a verdict
+PASS iso-3166: no commit has an unclassified outcome
+PASS iptv-channels: every representable .mdtbl row round-trips to its CSV row (182272 ok, 0 harness-bug, 93 rows the format cannot write at all)
+PASS iptv-channels: canon changes nothing but padding whitespace inside values (4 already canonical, 1 not; {'padding-whitespace-in-a-value': 1})
+PASS iptv-blocklist: every representable .mdtbl row round-trips to its CSV row (29376 ok, 0 harness-bug, 0 rows the format cannot write at all)
+PASS iptv-blocklist: canon changes nothing but padding whitespace inside values (25 already canonical, 0 not; {})
+PASS country-codes: every representable .mdtbl row round-trips to its CSV row (6496 ok, 0 harness-bug, 0 rows the format cannot write at all)
+PASS country-codes: canon changes nothing but padding whitespace inside values (10 already canonical, 15 not; {'padding-whitespace-in-a-value': 32})
+PASS iso-3166: every representable .mdtbl row round-trips to its CSV row (6220 ok, 0 harness-bug, 0 rows the format cannot write at all)
+PASS iso-3166: canon changes nothing but padding whitespace inside values (11 already canonical, 0 not; {})
+PASS control: an unmodified real commit is accepted
+PASS control: a pipe injected into one value is refused
+PASS control: a duplicated row id is refused
+PASS control: carriage is 100% for identical ids and ~0% for shuffled ids (same 249/249, shuffled 3/249)
+PASS control: the witness refuses to pair a row that shares nothing (248 pairs of 249)
+PASS control: diff_size distinguishes a one-cell edit from a re-sort (one-cell 2 lines, re-sort 256 lines)
+
+all controls passed []

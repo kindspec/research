@@ -1,0 +1,7 @@
+| id | name | tier |
+| --- | --- | --- |
+| c_01 | Acme | gold |
+| c_03 | Cogent | gold |
+| c_04 | Delta | bronze |
+
+key := id

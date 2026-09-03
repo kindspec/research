@@ -1,0 +1,1424 @@
+{
+ "meta": {
+  "shards": [
+   "0/3",
+   "1/3",
+   "2/3"
+  ],
+  "files": 600,
+  "expand_sum": true,
+  "mutate": null
+ },
+ "counts": {
+  "shared.expanded": 35407,
+  "shared.unresolved": 0,
+  "formula-cells": 128799,
+  "verdict.UNTRANSLATABLE": 37045,
+  "verdict.CLEAN": 32384,
+  "translatable": 32579,
+  "EVALUABLE": 108,
+  "chain.depends-only-on-literals": 96,
+  "compared": 108,
+  "cmp.numeric": 108,
+  "A.exact": 60,
+  "surface.if-lowercased": 69,
+  "NOTEVAL": 849,
+  "noteval.Call": 738,
+  "notevalfull.Call:AND": 18,
+  "exc.array-formula": 4124,
+  "exc.no-header": 8611,
+  "verdict.NEEDS-HUMAN": 55051,
+  "D.ref-where-excel-numeric": 48,
+  "Dref.blank": 48,
+  "exc.no-cached-value": 31622,
+  "verdict.AGGREGATE": 63,
+  "noteval.Op": 60,
+  "notevalfull.Op:&": 60,
+  "verdict.CLEAN-WIDE": 132,
+  "notevalfull.Call:AVERAGE": 108,
+  "surface.sum-expanded": 75,
+  "sumx.EVALUABLE": 24,
+  "sumx.chain.depends-only-on-literals": 12,
+  "sumx.compared": 24,
+  "sumx.cmp.numeric": 24,
+  "sumx.A.exact": 24,
+  "chain.depends-on-a-formula-cell": 12,
+  "sumx.chain.depends-on-a-formula-cell": 12,
+  "sumx.NOTEVAL": 51,
+  "noteval.Cmp": 51,
+  "sumx.noteval.Cmp": 51,
+  "notevalfull.Cmp:lhs-not-a-name": 51,
+  "sumx.notevalfull.Cmp:lhs-not-a-name": 51,
+  "wb.ok": 600,
+  "wb.bad": 0,
+  "notevalfull.Call:INT": 612,
+  "distinct.workbooks-contributing": 18,
+  "distinct.sheets-contributing": 18
+ },
+ "wb": [
+  "10281/1_10281_answer.xlsx",
+  "10281/1_10281_input.xlsx",
+  "10281/2_10281_answer.xlsx",
+  "10281/2_10281_input.xlsx",
+  "10281/3_10281_answer.xlsx",
+  "10281/3_10281_input.xlsx",
+  "118-8/1_118-8_answer.xlsx",
+  "118-8/1_118-8_input.xlsx",
+  "118-8/2_118-8_answer.xlsx",
+  "118-8/2_118-8_input.xlsx",
+  "118-8/3_118-8_answer.xlsx",
+  "118-8/3_118-8_input.xlsx",
+  "15387/1_15387_answer.xlsx",
+  "15387/1_15387_input.xlsx",
+  "15387/2_15387_answer.xlsx",
+  "15387/2_15387_input.xlsx",
+  "15387/3_15387_answer.xlsx",
+  "15387/3_15387_input.xlsx"
+ ],
+ "sheet": [
+  "10281/1_10281_answer.xlsx\u0000Sheet1",
+  "10281/1_10281_input.xlsx\u0000Sheet1",
+  "10281/2_10281_answer.xlsx\u0000Sheet1",
+  "10281/2_10281_input.xlsx\u0000Sheet1",
+  "10281/3_10281_answer.xlsx\u0000Sheet1",
+  "10281/3_10281_input.xlsx\u0000Sheet1",
+  "118-8/1_118-8_answer.xlsx\u0000Invoice Template",
+  "118-8/1_118-8_input.xlsx\u0000Invoice Template",
+  "118-8/2_118-8_answer.xlsx\u0000Invoice Template",
+  "118-8/2_118-8_input.xlsx\u0000Invoice Template",
+  "118-8/3_118-8_answer.xlsx\u0000Invoice Template",
+  "118-8/3_118-8_input.xlsx\u0000Invoice Template",
+  "15387/1_15387_answer.xlsx\u0000Sheet1",
+  "15387/1_15387_input.xlsx\u0000Sheet1",
+  "15387/2_15387_answer.xlsx\u0000Sheet1",
+  "15387/2_15387_input.xlsx\u0000Sheet1",
+  "15387/3_15387_answer.xlsx\u0000Sheet1",
+  "15387/3_15387_input.xlsx\u0000Sheet1"
+ ],
+ "samples": {
+  "NOTEVAL": [
+   {
+    "wb": "10281/1_10281_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I15",
+    "f": "IF(AND(G15<1.05,G15>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/1_10281_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I16",
+    "f": "IF(AND(G16<1.05,G16>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/1_10281_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I17",
+    "f": "IF(AND(G17<1.05,G17>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/2_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I15",
+    "f": "IF(AND(G15<1.05,G15>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/2_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I16",
+    "f": "IF(AND(G16<1.05,G16>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/2_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I17",
+    "f": "IF(AND(G17<1.05,G17>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J3",
+    "f": "G3&H3&I3",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J4",
+    "f": "G4&H4&I4",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J5",
+    "f": "G5&H5&I5",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J6",
+    "f": "G6&H6&I6",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J7",
+    "f": "G7&H7&I7",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J8",
+    "f": "G8&H8&I8",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J9",
+    "f": "G9&H9&I9",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J10",
+    "f": "G10&H10&I10",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J3",
+    "f": "G3&H3&I3",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J4",
+    "f": "G4&H4&I4",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J5",
+    "f": "G5&H5&I5",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J6",
+    "f": "G6&H6&I6",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J7",
+    "f": "G7&H7&I7",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J8",
+    "f": "G8&H8&I8",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J9",
+    "f": "G9&H9&I9",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/2_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J10",
+    "f": "G10&H10&I10",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F2",
+    "f": "AVERAGE(B2:E2)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F3",
+    "f": "AVERAGE(B3:E3)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F4",
+    "f": "AVERAGE(B4:E4)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F5",
+    "f": "AVERAGE(B5:E5)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F6",
+    "f": "AVERAGE(B6:E6)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F7",
+    "f": "AVERAGE(B7:E7)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "AVERAGE(B8:E8)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "AVERAGE(B9:E9)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F10",
+    "f": "AVERAGE(B10:E10)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F11",
+    "f": "AVERAGE(B11:E11)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F12",
+    "f": "AVERAGE(B12:E12)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F13",
+    "f": "AVERAGE(B13:E13)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F14",
+    "f": "AVERAGE(B14:E14)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F15",
+    "f": "AVERAGE(B15:E15)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F16",
+    "f": "AVERAGE(B16:E16)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F17",
+    "f": "AVERAGE(B17:E17)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F18",
+    "f": "AVERAGE(B18:E18)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/1_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F19",
+    "f": "AVERAGE(B19:E19)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   }
+  ],
+  "D.ref-where-excel-numeric": [
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/1_118-8_input.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/2_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   }
+  ]
+ }
+}

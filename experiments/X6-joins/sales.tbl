@@ -1,0 +1,10 @@
+| id | item | region | total |
+| --- | --- | --- | --: |
+| r_01 | widget | EU | 100 |
+| r_02 | gadget | US | 250 |
+| r_03 | cog | EU | 40 |
+
+key := id
+all := sum(total)
+eu  := sum(total where region = "EU")
+us  := sum(total where region = "US")

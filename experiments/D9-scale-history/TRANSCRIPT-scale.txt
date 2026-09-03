@@ -1,0 +1,40 @@
+=== REPO SHAPE ===
+  commits:         1001
+  files:           2000
+  file-revisions:  25003 objects reachable
+  .git (loose):    234M
+  .git (packed):   17M
+  packfile:        15M
+  worktree size:   24M
+  revisions of docs/doc00001.md: 12
+
+=== A. THE TWO OPERATIONS A DOCUMENT APP NEEDS ===
+  git log --oneline -- one file (count)               85 ms   12
+  git log -- one file (full)                          83 ms
+  git log --follow -- one file                        84 ms
+  git blame one file                                  61 ms
+  git log -p -- one file (content history)            79 ms
+  git log --all --oneline (whole history)              7 ms
+
+=== B. WITHOUT vs WITH commit-graph ===
+  [no graph] git log --oneline | wc                    9 ms
+  [no graph] git rev-list --count HEAD                 5 ms
+  [no graph] git log --since=...                       7 ms
+  commit-graph write --reachable                      15 ms   (60K)
+  [graph]    git log --oneline | wc                    9 ms
+  [graph]    git rev-list --count HEAD                 2 ms
+
+=== C. CLONE COST ===
+  git clone (local, full)                           1024 ms
+     -> 16M
+  git clone --depth=1                                459 ms
+     -> 13M
+  git clone --filter=blob:none                       967 ms
+     -> 16M
+  git clone --filter=tree:0                          964 ms
+     -> 16M
+
+=== D. blame/log on a BLOBLESS partial clone (the mobile case) ===
+  git log --oneline -- one file                       87 ms   12
+  git blame one file (must refetch blobs)             58 ms
+     .git after blame: 16M

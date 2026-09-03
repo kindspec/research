@@ -1,0 +1,14 @@
+{
+ "cycles": {
+  "cycle2_s": 0.0003454419784247875,
+  "cycle2_hash": "2cc20006fbb8",
+  "cycle2_error": null,
+  "cycle100_s": 0.014953944977605715,
+  "cycle100_hash": "6f690e4b302c",
+  "cycle100_error": null,
+  "ring_far_edit_detected": true,
+  "self_hash": "c1461eedf658",
+  "self_error": null,
+  "self_s": 0.00016416999278590083
+ }
+}

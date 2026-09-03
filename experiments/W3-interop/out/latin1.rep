@@ -1,0 +1,4 @@
+REJECT not-utf8               file               byte 18: invalid continuation byte; declare an encoding to import
+-- 1 REJECT, 0 WARN, 0 NOTE
+
+== IMPORT REFUSED: 1 reject(s) ==

@@ -1,0 +1,52 @@
+{
+ "chain": [
+  {
+   "depth": 1,
+   "tip_cold_s": 0.0008806439873296767,
+   "tip_warm_s": 0.00021858297986909747,
+   "closure_hash_s": 0.00014777900651097298,
+   "opens_cold": 5,
+   "opens_warm": 5
+  },
+  {
+   "depth": 10,
+   "tip_cold_s": 0.002027379989158362,
+   "tip_warm_s": 0.0015504590119235218,
+   "closure_hash_s": 0.0014493069902528077,
+   "opens_cold": 23,
+   "opens_warm": 23
+  },
+  {
+   "depth": 25,
+   "tip_cold_s": 0.004220511007588357,
+   "tip_warm_s": 0.003793856012634933,
+   "closure_hash_s": 0.003664502000901848,
+   "opens_cold": 53,
+   "opens_warm": 53
+  },
+  {
+   "depth": 50,
+   "tip_cold_s": 0.008420393976848572,
+   "tip_warm_s": 0.008101682004053146,
+   "closure_hash_s": 0.007607159001054242,
+   "opens_cold": 103,
+   "opens_warm": 103
+  },
+  {
+   "depth": 100,
+   "tip_cold_s": 0.015306340006645769,
+   "tip_warm_s": 0.014900203997967765,
+   "closure_hash_s": 0.015792238002177328,
+   "opens_cold": 203,
+   "opens_warm": 203
+  },
+  {
+   "depth": 200,
+   "tip_cold_s": 0.03142913299961947,
+   "tip_warm_s": 0.03192611099802889,
+   "closure_hash_s": 0.03025577700464055,
+   "opens_cold": 403,
+   "opens_warm": 403
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+E1c {"n": 1000, "padded": true, "base_bytes": 145350, "diff_add": 1002, "diff_del": 1002, "diff_bytes": 293744, "diff_s": 0.0032502599933650345, "merge_conflicted": true, "pack_2rev_kb": 92.0146484375}
+E1c {"n": 1000, "padded": false, "base_bytes": 74445, "diff_add": 1, "diff_del": 1, "diff_bytes": 719, "diff_s": 0.001996030012378469, "merge_conflicted": false, "pack_2rev_kb": 45.8720703125}
+E1c {"n": 10000, "padded": true, "base_bytes": 1450350, "diff_add": 10002, "diff_del": 10002, "diff_bytes": 2930746, "diff_s": 0.01930274799815379, "merge_conflicted": true, "pack_2rev_kb": 634.55078125}
+E1c {"n": 10000, "padded": false, "base_bytes": 742582, "diff_add": 1, "diff_del": 1, "diff_bytes": 720, "diff_s": 0.00794082900392823, "merge_conflicted": false, "pack_2rev_kb": 175.8955078125}
+E1c {"n": 100000, "padded": true, "base_bytes": 14500350, "diff_add": 100002, "diff_del": 100002, "diff_bytes": 29300748, "diff_s": 0.17919147500651889, "merge_conflicted": true, "pack_2rev_kb": 6061.642578125}
+E1c {"n": 100000, "padded": false, "base_bytes": 7423706, "diff_add": 1, "diff_del": 1, "diff_bytes": 725, "diff_s": 0.06644609197974205, "merge_conflicted": false, "pack_2rev_kb": 1475.734375}

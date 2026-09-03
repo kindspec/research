@@ -1,0 +1,13 @@
+===== LOSS REPORT =====
+WARN   styles-dropped               workbook           styles.xml: 4 cell formats, 1 custom number formats -> all dropped (.tbl stores the lexical value only)
+WARN   frozen-pane-dropped          Orders             1 frozen/split panes dropped
+NOTE   region-boundary              Orders             data region inferred as rows 2-4; rows [5] have a different shape and were read as trailer/summary. This boundary is a GUESS: the file does not state where the table ends.
+NOTE   sidecar-restored             workbook           docProps/custom.xml gws.tbl restored key/aggregate names that OOXML has no place for
+
+0 REJECT / 2 WARN
+
+===== FORMULA VERDICTS =====
+CLEAN           Orders!F2    Orders[[#This Row],[qty]]*Orders[[#This Row],[   qty*unit
+AGGREGATE       Orders!F5    SUBTOTAL(109,Orders[total])                      sum(total)
+
+n=2  CLEAN=1 (50.0%)  AGGREGATE=1 (50.0%)

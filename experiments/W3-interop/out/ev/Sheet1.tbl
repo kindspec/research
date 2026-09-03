@@ -1,0 +1,9 @@
+| id | sku | region | total | who = lookup(Sheet2.tbl, sku, name) |
+| --- | --- | --- | --: | --- |
+| r1 | A-1 | EU | 100 |  |
+| r2 | A-2 | US | 250 |  |
+| r3 | A-9 | EU | 40 |  |
+
+key := id
+eu := sum(total where region = "EU")
+all := sum(total)

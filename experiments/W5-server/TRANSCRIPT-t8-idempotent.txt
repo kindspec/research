@@ -1,0 +1,21 @@
+run  status          main
+  1  merged          1cc8f23
+  2  already-merged  1cc8f23
+  3  already-merged  1cc8f23
+  4  already-merged  1cc8f23
+  5  already-merged  1cc8f23
+  6  already-merged  1cc8f23
+  7  already-merged  1cc8f23
+  8  already-merged  1cc8f23
+  9  already-merged  1cc8f23
+ 10  already-merged  1cc8f23
+
+merge commits on main : 1  (must be 1)
+total commits on main : 4
+b.tbl:
+  | id     | item | qty | unit |
+  | ------ | ---- | --: | ---: |
+  | r_0001 | a    |  11 |   50 |
+  
+  grand := sum(qty)
+fsck: 0 errors

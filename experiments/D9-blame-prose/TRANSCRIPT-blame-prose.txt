@@ -1,0 +1,79 @@
+
+==================================================
+### SETUP: three authors write three sentences, hard-wrapped at 72 cols
+==================================================
+On branch main
+nothing to commit, working tree clean
+-- blame BEFORE reflow --
+     10 author Alice
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  1) # The Report
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  2) 
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  3) Alice wrote this opening sentence about the quarterly results and it
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  4) runs across two wrapped lines because the file is hard wrapped.
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  5) 
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  6) Bob added this second paragraph concerning the supply chain, which
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  7) also happens to wrap onto a second physical line of the source file.
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  8) 
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  9) Carol contributed the closing paragraph summarising the outlook for
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400 10) the coming year and the risks that the board should be aware of now.
+
+==================================================
+### THE EVENT: Dave changes ONE WORD in Bob's paragraph and the editor rewraps to 80 cols
+==================================================
+-- the new file --
+  # The Report
+  
+  Alice wrote this opening sentence about the quarterly results and it runs across
+  two wrapped lines because the file is hard wrapped.
+  
+  Bob added this second paragraph concerning the logistics network, which also
+  happens to wrap onto a second physical line of the source file.
+  
+  Carol contributed the closing paragraph summarising the outlook for the coming
+  year and the risks that the board should be aware of now.
+
+==================================================
+### RESULT: git blame after the rewrap
+==================================================
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  1) # The Report
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  2) 
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400  3) Alice wrote this opening sentence about the quarterly results and it runs across
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400  4) two wrapped lines because the file is hard wrapped.
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  5) 
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400  6) Bob added this second paragraph concerning the logistics network, which also
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400  7) happens to wrap onto a second physical line of the source file.
+  ^1cbc43c (Alice 2026-08-28 14:15:07 -0400  8) 
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400  9) Carol contributed the closing paragraph summarising the outlook for the coming
+  b99781d8 (Dave  2026-08-28 14:15:07 -0400 10) year and the risks that the board should be aware of now.
+
+-- author attribution tally --
+      4 author Alice
+      6 author Dave
+
+-- does -w (ignore whitespace) rescue it? --
+      4 (Alice
+      6 (Dave
+-- does -M -C -C -C (detect moves/copies) rescue it? --
+      4 (Alice
+      6 (Dave
+
+-- git diff of that one-word commit --
+  b99781d dave: one word + rewrap
+   doc.md | 12 ++++++------
+   1 file changed, 6 insertions(+), 6 deletions(-)
+-- lines changed for a ONE WORD edit --
+  
+  6	6	doc.md
+
+==================================================
+### CONTROL: the same one-word edit with NO rewrap (one sentence per line)
+==================================================
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 1) # The Report
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 2) 
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 3) Alice paragraph one.
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 4) 
+  fee198c7 (Dave  2026-08-28 14:15:07 -0400 5) Bob paragraph about the logistics network.
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 6) 
+  ^803c7fe (Alice 2026-08-28 14:15:07 -0400 7) Carol paragraph three.
+-- numstat --
+  1	1	doc.md

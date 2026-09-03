@@ -1,0 +1,63 @@
+
+workbooks read OK: 800   unreadable: 0   formula cells classified: 27657
+  UNTRANSLATABLE      18051   65.3%
+  NEEDS-HUMAN          4807   17.4%
+  CLEAN                2672    9.7%
+  NO-HEADER            1983    7.2%
+  CLEAN-WIDE            134    0.5%
+  AGGREGATE              10    0.0%
+
+-- failure reasons --
+      7185  26.0%  UNTRANSLATABLE | range X spans rows other than this one; row order is not addressable
+      4116  14.9%  UNTRANSLATABLE | cross-sheet reference X: .tbl has no cross-sheet address
+      2761  10.0%  UNTRANSLATABLE | reference X is anchored to row N, not this row
+      2323   8.4%  NEEDS-HUMAN | column F has no header name
+      1430   5.2%  UNTRANSLATABLE | cross-sheet reference "X!$D$N:$D$N": .tbl has no cross-sheet address
+      1316   4.8%  UNTRANSLATABLE | cross-sheet reference "X!$AN": .tbl has no cross-sheet address
+       648   2.3%  UNTRANSLATABLE | N-D range X: not a column
+       403   1.5%  UNTRANSLATABLE | volatile/dynamic-reference function []
+       276   1.0%  NEEDS-HUMAN | column M has no header name
+       265   1.0%  NEEDS-HUMAN | whole-column structured reference [] is not a plain aggregate
+       243   0.9%  NEEDS-HUMAN | column K has no header name
+       239   0.9%  NEEDS-HUMAN | column I has no header name
+       223   0.8%  NEEDS-HUMAN | column J has no header name
+       180   0.7%  NEEDS-HUMAN | constant formula, no references
+       149   0.5%  NEEDS-HUMAN | horizontal range X covers a column with no header name
+       134   0.5%  CLEAN-WIDE | translates, but the source is WIDE: the row-wise range became an explicit column
+       124   0.4%  NEEDS-HUMAN | column B has no header name
+        79   0.3%  NEEDS-HUMAN | column A has no header name
+        66   0.2%  NEEDS-HUMAN | column L has no header name
+        59   0.2%  NEEDS-HUMAN | column G has no header name
+
+-- deduplicated by R1C1-normalised formula string (n=1420 distinct) --
+  UNTRANSLATABLE       1084   76.3%
+  CLEAN                 169   11.9%
+  NEEDS-HUMAN           150   10.6%
+  CLEAN-WIDE             13    0.9%
+  AGGREGATE               4    0.3%
+
+-- samples --
+  CLEAN           ">="&I2                                              -> ">="&start
+  CLEAN           "<="&J2                                              -> "<="&end
+  CLEAN           ">="&I2                                              -> ">="&start
+  CLEAN           "<="&J2                                              -> "<="&end
+  CLEAN           G2*H2                                                -> Bill_Rate_of_Resource*Worked_Hours
+  CLEAN           G2-30                                                -> Bill_Rate_of_Resource-30
+  AGGREGATE       SUM(D3:D9)                                           -> SUM over the whole of column AMOUNTS
+  AGGREGATE       SUBTOTAL(109,tblNomina[TOTAL])                       -> totals row SUBTOTAL
+  AGGREGATE       SUBTOTAL(109,tblNomina[TOTAL])                       -> totals row SUBTOTAL
+  AGGREGATE       SUM(O2:O6)                                           -> SUM over the whole of column AMOUNT
+  AGGREGATE       SUM(B4:B10)                                          -> SUM over the whole of column Base_Unit
+  AGGREGATE       SUM(B4:B10)                                          -> SUM over the whole of column Base_Unit
+  NEEDS-HUMAN     TEXT(C20,"dddd")                                     -> column C has no header name
+  NEEDS-HUMAN     TEXT(C20,"dddd")                                     -> column C has no header name
+  NEEDS-HUMAN     +SUMIFS($C$1:$C$43,$B$1:$B$43,$H3)                   -> column H has no header name
+  NEEDS-HUMAN     +SUMIFS($C$1:$C$43,$B$1:$B$43,$H3)                   -> column H has no header name
+  NEEDS-HUMAN     IF(NOT(ISBLANK(E3)),A3,"")                           -> column E has no header name
+  NEEDS-HUMAN     IF(NOT(ISBLANK(E3)),A3,"")                           -> column E has no header name
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A1' is anchored to row 1, not this row
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A2' is anchored to row 2, not this row
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A3' is anchored to row 3, not this row
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A4' is anchored to row 4, not this row
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A5' is anchored to row 5, not this row
+  UNTRANSLATABLE  INDEX($B$4:$B$15,SMALL(IF(LEFT($B$4:$B$15,2)="PK",ROW($B$1:$B$12)),ROW -> reference 'A6' is anchored to row 6, not this row

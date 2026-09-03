@@ -1,0 +1,232 @@
+==========================================================================
+### 100 MB blob claiming to be .tbl
+==========================================================================
+  [built a 95.0 MB .tbl blob]
+  status        : refused
+  reason        : big.tbl: stage 2 blob exceeds MAX_BLOB_BYTES
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 3.789s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### path contains '..' component
+==========================================================================
+  tree built via : raw(--literally): fatal: path ../../../etc/evil.tbl contains slash
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree 6f453c629602d5dbb6bda2636ede49d04e1a3b9d: fullPathname: contains full pathnames
+warning in tree 6f453c6296
+  wall          : 0.008s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### path is literally '..'
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : unsafe path component '..' in '..'
+  ref moved     : False
+  fsck rc       : 1  error in tree 332973013420d7f4d237249430f58f86b0f8cf56: hasDotdot: contains '..'
+error in tree 3e022ebabaa43c6d6cb525126
+  wall          : 0.008s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### absolute path in tree entry
+==========================================================================
+  tree built via : raw(--literally): fatal: path /tmp/W5-PWNED.tbl contains slash
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree 092dde8bb22dd63ed571606bddd8ecc307dc1415: fullPathname: contains full pathnames
+warning in tree 092dde8bb2
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### newline inside the path
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : unsafe path (control character U+000A): 'ev\nil.tbl'
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### carriage return + ANSI escape in path
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : unsafe path (control character U+000D): 'a\r\x1b[2Jb.tbl'
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### SYMLINK whose target conflicts
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : 'link.tbl': not a regular file (symlink); no type-aware merge
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### GITLINK (submodule) conflict
+==========================================================================
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:1299: collect_merge_info_callback: Assertion `mbase_null == is_null_oid(&names[0].oid)' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree c1fccce3ec8e1c7c43f2aaca8d18a2487ff30ec1: nullSha1: contains entries pointing to null sha1
+notice: HEAD po
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### .gitattributes conflicts (governs merge policy)
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : refusing to auto-merge '.gitattributes' (it governs merge policy)
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.008s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### a '.git' directory inside the tree
+==========================================================================
+  tree built via : raw(--literally): fatal: path .git/config contains slash
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree 38482a5fcc936f89f6b42044a86f5a80724d90de: fullPathname: contains full pathnames
+error in tree 38482a5fcc93
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### '.GIT' case-variant path
+==========================================================================
+  tree built via : raw(--literally): fatal: path .GIT/hooks/post-checkout contains slash
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree 3d1661d4062a69bba10352c21405d63f6a3cafd4: fullPathname: contains full pathnames
+error in tree 3d1661d4062a
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### '.git.' NTFS-alias path
+==========================================================================
+  tree built via : raw(--literally): fatal: path .git./config contains slash
+  status        : error
+  reason        : merge-tree failed: git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  ref moved     : False
+  fsck rc       : 1  error in tree 56d31e85e37841d429f420ae0b46ebae96a2e733: fullPathname: contains full pathnames
+error in tree 56d31e85e378
+  wall          : 0.007s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### 50k columns on the header line
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : base: 50000 columns exceeds MAX_COLS=512
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.057s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### NUL bytes inside a .tbl
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : base: NUL byte in a .tbl (not text)
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.017s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### invalid UTF-8 in a .tbl
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : not valid UTF-8: 'utf-8' codec can't decode byte 0xff in position 16: invalid start byte
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.016s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### a .tbl that is one 20 MB line
+==========================================================================
+  tree built via : mktree
+  status        : refused
+  reason        : line.tbl: stage 1 blob exceeds MAX_BLOB_BYTES
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.357s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+### conflict-ref namespace from a hostile branch name
+==========================================================================
+  tree built via : mktree
+  status        : conflict
+  reason        : 1 unresolved
+  ref moved     : False
+  fsck rc       : 0  notice: HEAD points to an unborn branch (master)
+  wall          : 0.023s
+  files escaped : none
+  VERDICT       : CONTAINED (refused, ref held)
+
+==========================================================================
+SUMMARY
+==========================================================================
+  OK           refused      100 MB blob claiming to be .tbl
+  OK           error        path contains '..' component
+  OK           refused      path is literally '..'
+  OK           error        absolute path in tree entry
+  OK           refused      newline inside the path
+  OK           refused      carriage return + ANSI escape in path
+  OK           refused      SYMLINK whose target conflicts
+  OK           error        GITLINK (submodule) conflict
+  OK           refused      .gitattributes conflicts (governs merge policy)
+  OK           error        a '.git' directory inside the tree
+  OK           error        '.GIT' case-variant path
+  OK           error        '.git.' NTFS-alias path
+  OK           refused      50k columns on the header line
+  OK           refused      NUL bytes inside a .tbl
+  OK           refused      invalid UTF-8 in a .tbl
+  OK           refused      a .tbl that is one 20 MB line
+  OK           conflict     conflict-ref namespace from a hostile branch name
+
+SECURITY FAILURES: NONE

@@ -1,0 +1,8 @@
+v1 WITHOUT an alternation construct    -> REJECT: line '? runningsum' -- v1 has no alternation construct
+v1 WITH   an alternation construct     -> OK
+                                          took fallback: %  running := 10          # fallback: v1-expressible, materialised by the v2 writer
+
+Conclusion: the downgrade path is only available if the ALTERNATION MECHANISM
+shipped in v1. It cannot be retrofitted, because a v1 reader meeting it for the
+first time has no rule that says 'this thing means: try the next branch'.
+ECMA-376 shipped MCE as Part 3 alongside Part 1 for exactly this reason.

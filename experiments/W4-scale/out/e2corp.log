@@ -1,0 +1,6 @@
+E2corpus {"docs": 100, "total_mb": 0.7087545394897461, "blocks": 4100, "parse_s": 0.012458281998988241, "roundtrip_s": 0.012889536010334268, "roundtrip_exact": 100, "mb_per_s": 56.89023089598592, "us_per_block": 3.038605365606888}
+E2corpus {"docs": 1000, "total_mb": 7.100802421569824, "blocks": 41000, "parse_s": 0.1232399639848154, "roundtrip_s": 0.12842573900707066, "roundtrip_exact": 1000, "mb_per_s": 57.61769309219147, "us_per_block": 3.005852780117449}
+E2corpus {"docs": 10000, "total_mb": 71.18137741088867, "blocks": 410000, "parse_s": 1.2496590640221257, "roundtrip_s": 1.2871046089858282, "roundtrip_exact": 10000, "mb_per_s": 56.96063787332989, "us_per_block": 3.047948936639331}
+E2bigdoc {"target_lines": 10000, "actual_lines": 10005, "mb": 0.550628662109375, "blocks": 2097, "parse_s": 0.007525404012994841, "roundtrip_s": 0.007855208008550107, "exact": true}
+E2bigdoc {"target_lines": 100000, "actual_lines": 100004, "mb": 5.502867698669434, "blocks": 21055, "parse_s": 0.08530448301462457, "roundtrip_s": 0.08481011798721738, "exact": true}
+DONE

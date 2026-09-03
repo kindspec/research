@@ -1,0 +1,118 @@
+{
+ "counts": {
+  "noteval.records": 21165,
+  "why.Call:IF": 1684,
+  "IF.cells": 12697,
+  "IF.cond.calls-a-function": 440,
+  "IF.condfn.AND": 317,
+  "IF.branches.string": 588,
+  "IF.EXPENSIVE": 6057,
+  "IF.expensive.because.non-numeric-branch": 5943,
+  "IF.expensive.because.condition-calls-a-function": 440,
+  "IF.expensive.because.multi-comparison": 491,
+  "why.BinOp:BitAnd": 76,
+  "no-function.BinOp:BitAnd": 76,
+  "why.Call:AVERAGE": 192,
+  "why.Call:SUM": 5309,
+  "SUM.cells": 5912,
+  "SUM.shape.plain-column-list": 3485,
+  "SUM.list.arity.5": 1344,
+  "SUM.only-blocker": 5849,
+  "why.not-python:SUM": 243,
+  "SUM.shape.needs-more": 51,
+  "IF.cond.multi-comparison": 51,
+  "IF.branches.number": 327,
+  "why.Call:INT": 621,
+  "why.not-python:IF": 10959,
+  "IF.cond.single-comparison": 12188,
+  "IF.condrhs.string": 8404,
+  "IF.branches.arith-or-name": 93,
+  "IF.CHEAP.numeric-if-simple-comparison": 6640,
+  "IF.branches.other|string": 542,
+  "IF.branches.arith-or-name|string": 490,
+  "SUM.list.arity.3": 44,
+  "SUM.list.arity.1": 1110,
+  "IF.condrhs.number": 3654,
+  "IF.branches.arith-or-name|nested-IF": 12,
+  "IF.condrhs.name": 121,
+  "IF.branches.nested-IF|string": 1616,
+  "SUM.list.arity.2": 969,
+  "IF.branches.other-call": 12,
+  "IF.condfn.OR": 150,
+  "IF.branches.nested-IF|number": 144,
+  "why.UnaryOp:UAdd": 384,
+  "no-function.UnaryOp:UAdd": 36,
+  "why.Call:MAX": 41,
+  "SUM.list.arity.4": 18,
+  "IF.branches.nested-IF|omitted": 27,
+  "IF.condrhs.expression": 9,
+  "why.Call:ROUND": 921,
+  "IF.branches.omitted|string": 459,
+  "IF.cond.bare-truthiness": 18,
+  "IF.branches.arith-or-name|number": 6334,
+  "IF.expensive.because.arity-2": 24,
+  "IF.branches.nested-IF": 1,
+  "why.Call:CEILING": 186,
+  "SUM.shape.whole-column-already-expressible": 2376,
+  "IF.branches.number|other-call": 2052,
+  "why.not-python:MIN": 3,
+  "why.not-python:?": 6,
+  "no-function.not-python:?": 6,
+  "why.Call:MIN": 540
+ },
+ "samples": {
+  "IF.cond.calls-a-function": [
+   "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+   "IF(AND(FILE<>0,SYSTEM<>0),\"see variance\",IF(AND(FILE<>0,SYSTEM=0),\"booked in file, not system\",IF(AND(FILE=0,SYSTEM<>0),",
+   "IF(OR(Column_1>=7,Column_2>=7),\"e\",IF(OR(Column_1=\"U\",Column_2=\"U\"),\"-\",\"-\"))",
+   "IF(AND(TEST_LEFT<>\"\",TEST_LEFT<=BATTERY_AMPERAGE*65%),1,0)",
+   "IF(AND(CODE_2=\"YEA\",OR(code=\"RJ\",code=\"T7\",code=\"T6\"),Error=\"No\",Subs<100),90,IF(AND(CODE_2=\"NAH\",OR(code=\"RJ\",code=\"T7\"",
+   "IF(OR(Exit_Price=\"\",Entry_Price=\"\",Shares=\"\",Position=\"\")=TRUE,\"\",IF(Position=\"LONG\",(Exit_Price-Entry_Price)*Shares,IF(",
+   "IF(OR(Exit_Price=\"\",Entry_Price=\"\",Position=\"\")=TRUE,\"\",IF(Position=\"LONG\",(Exit_Price-Entry_Price)/Entry_Price,IF(Posit",
+   "IF(OR(Entry_Price=\"\",Shares=\"\"),\"\",(Entry_Price*Shares))",
+   "IF(OR(Stop_Loss=\"\",Entry_Price=\"\",Position=\"\")=TRUE,\"\",IF(Position=\"LONG\",(Entry_Price-Stop_Loss)/Entry_Price,IF(Positio",
+   "IF(OR(Exposure=\"\",Risked__=\"\"),\"\",(Exposure*Risked__))"
+  ],
+  "no-function.BinOp:BitAnd": [
+   "NCM&MANUFACTURER&ORIGIN",
+   "\">=\"&start",
+   "\"<=\"&end",
+   "1&\" - \"&First_Name",
+   "1&\" - \"&Cond1"
+  ],
+  "SUM.shape.plain-column-list": [
+   "SUM(A, B, C, D, E)",
+   "SUM(Tier_1, Tier_2, Tier_3)",
+   "SUM(__60_000_____15, __90_000_____25, __120_000_____35)",
+   "SUM(Wk43, Wk44, Wk45, Wk46, Wk47, Wk48, Wk49, Wk50, Wk51, Wk52, Wk1, Wk2, Wk3, Wk4, Wk5, Wk6, Wk7, Wk8, Wk9, Wk10, Wk11,",
+   "SUM(White_Sheets-1)",
+   "SUM(__of_Pallets+Envelopes)",
+   "IF(Column1=\"A\",SUM(Column2, Column3)+10,SUM(Column2, Column3)-10)",
+   "SUM(Column2, Column3)",
+   "SUM(Total_Hours*Days_Billed)",
+   "SUM(April, Mai, Juni, Juli)"
+  ],
+  "SUM.shape.needs-more": [
+   "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))"
+  ],
+  "IF.CHEAP.numeric-if-simple-comparison": [
+   "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+   "IF(WITHOUT_PRESS=\"\",PCS_MTR,0)",
+   "IF(Impressive_Splash_page__Y_N=\"Y\",1,0)",
+   "IF(Quantity<>0,1,0)",
+   "IF(Amount>0,0,Bills)"
+  ],
+  "no-function.UnaryOp:UAdd": [
+   "+DENOMINATION*COUNT"
+  ],
+  "IF.cond.bare-truthiness": [
+   "IF(Shares,Shares*0.005,\"\")"
+  ],
+  "SUM.shape.whole-column-already-expressible": [
+   "SUM(Total)"
+  ],
+  "no-function.not-python:?": [
+   "+0_to_6_Month*0_to_6_Month"
+  ]
+ }
+}

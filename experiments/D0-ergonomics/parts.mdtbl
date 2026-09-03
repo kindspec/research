@@ -1,0 +1,21 @@
+# Parts inventory for the bench PSU rebuild
+# unit_cost is CAD, ex tax
+
+| id | part | vendor | ordered | qty | unit_cost | line_total = qty * unit_cost | vendor_total = sum(line_total where vendor = @vendor) | location | reorder_at | datasheet |
+| --- | --- | --- | --- | --: | --: | --: | --: | --- | --: | --- |
+| r_0005 | Binding posts | aliex | 2026-07-14 | 6 | 1.05 |  |  | bin-b1 | 2 | none |
+| r_0007 | Fan 80mm | digikey | 2026-07-21 | 2 | 6.50 |  |  | bin-a3 | 2 | none |
+| r_0002 | Heatsink 25mm | digikey | 2026-07-02 | 4 | 3.10 |  |  | bin-a3 | 2 | none |
+| r_0101 | Ferrite bead 10pk | digikey | 2026-08-05 | 1 | 4.25 |  |  | bin-a3 | 2 | none |
+| r_0001 | LM317 TO-220 | digikey | 2026-07-02 | 10 | 1.42 |  |  | bin-a3 | 2 | none |
+| r_0006 | Chassis 3U | mouser | 2026-07-21 | 2 | 1189.00 |  |  | floor | 2 | none |
+| r_0003 | Toroid 2x18V | mouser | 2026-07-09 | 1 | 39.95 |  |  | shelf-2 | 2 | none |
+| r_0008 | Panel meter v2 | aliex | 2026-08-03 | 2 | 11.40 |  |  | bin-b1 | 2 | none |
+| r_0102 | Rubber feet 4pk | aliex | 2026-08-06 | 3 | 2.15 |  |  | bin-b1 | 2 | none |
+
+key   := id
+order := by(ordered)
+grand := sum(line_total)
+items := count(part)
+dk    := sum(line_total where vendor = "digikey")
+aliex := sum(line_total where vendor = "aliex")

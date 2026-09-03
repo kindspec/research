@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+#!tbl 2
+| id | item | qty |
+=======
+| id | item | quantity |
+>>>>>>> edit
+| -- | ---- | --: |
+| r_1 | widget | 10 |

@@ -1,0 +1,127 @@
+########## git merge A ##########
+Auto-merging conf.yaml
+CONFLICT (content): Merge conflict in conf.yaml
+Auto-merging data.csv
+CONFLICT (content): Merge conflict in data.csv
+Auto-merging data.json
+CONFLICT (content): Merge conflict in data.json
+Auto-merging pic.svg
+CONFLICT (content): Merge conflict in pic.svg
+Auto-merging post.md
+CONFLICT (content): Merge conflict in post.md
+Auto-merging sheet.fods
+CONFLICT (content): Merge conflict in sheet.fods
+Automatic merge failed; fix conflicts and then commit the result.
+
+########## CONFLICTED FILES, VERBATIM ##########
+----------------------------------------- data.csv
+id,name,dept,salary
+1,Alice,Eng,100
+<<<<<<< HEAD
+2,Bob,Support,80
+=======
+2,Bob,Marketing,95
+>>>>>>> A
+3,Carol,Eng,110
+----------------------------------------- data.json
+{
+  "team": "core",
+  "members": [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+  ],
+<<<<<<< HEAD
+  "budget": 3000
+=======
+  "budget": 2000
+>>>>>>> A
+}
+----------------------------------------- pic.svg
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="100">
+  <rect x="10" y="10" width="50" height="30" fill="red"/>
+<<<<<<< HEAD
+  <circle cx="120" cy="50" r="20" fill="yellow"/>
+=======
+  <circle cx="120" cy="50" r="20" fill="green"/>
+>>>>>>> A
+  <text x="10" y="90">hello</text>
+</svg>
+----------------------------------------- conf.yaml
+title: Report
+<<<<<<< HEAD
+author: Alicia
+=======
+author: Alice Smith
+>>>>>>> A
+tags:
+  - a
+  - b
+draft: true
+----------------------------------------- post.md
+---
+title: Report
+<<<<<<< HEAD
+author: Alicia
+=======
+author: Alice Smith
+>>>>>>> A
+---
+
+# Heading
+
+Body text here.
+----------------------------------------- sheet.fods
+<?xml version="1.0"?>
+<office:document xmlns:office="urn:x" xmlns:table="urn:t">
+ <table:table table:name="S1">
+  <table:table-row><table:table-cell office:value="1"/></table:table-row>
+<<<<<<< HEAD
+  <table:table-row><table:table-cell office:value="99"/></table:table-row>
+=======
+  <table:table-row><table:table-cell office:value="22"/></table:table-row>
+>>>>>>> A
+ </table:table>
+</office:document>
+
+########## DOES IT STILL PARSE? ##########
+  data.csv     python csv             : parsed OK, 8 rows, widths=[1, 4]
+  data.json    python json            : json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 7 column 1 (char 101)
+  data.json    jq                     : jq: parse error: Invalid numeric literal at line 7, column 8
+  pic.svg      ElementTree            : xml.etree.ElementTree.ParseError: not well-formed (invalid token): line 3, column 1
+  conf.yaml    pyyaml                 :   in "conf.yaml", line 3, column 1
+  post.md      frontmatter            :     ^
+  sheet.fods   ElementTree            : xml.etree.ElementTree.ParseError: not well-formed (invalid token): line 5, column 1
+
+########## Same question under merge.conflictStyle=diff3 and zdiff3 ##########
+--- diff3, data.json:
+{
+  "team": "core",
+  "members": [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+  ],
+<<<<<<< HEAD
+  "budget": 3000
+||||||| 5cbd91c
+  "budget": 1000
+=======
+  "budget": 2000
+>>>>>>> A
+}
+    parse: json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 7 column 1 (char 101)
+--- zdiff3, data.json:
+{
+  "team": "core",
+  "members": [
+    {"id": 1, "name": "Alice"},
+    {"id": 2, "name": "Bob"}
+  ],
+<<<<<<< HEAD
+  "budget": 3000
+||||||| 5cbd91c
+  "budget": 1000
+=======
+  "budget": 2000
+>>>>>>> A
+}
+    parse: json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 7 column 1 (char 101)

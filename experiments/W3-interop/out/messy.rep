@@ -1,0 +1,30 @@
+NOTE   bom-stripped           file               UTF-8 BOM stripped (C4: no BOM)
+NOTE   crlf-normalised        file               CRLF -> LF (C4)
+NOTE   leading-zero           sku:2              '00123' kept as text (leading zero is data)
+WARN   thousands-sep          unit_price:2       '1,234.50' -> 1234.50 (grouping is presentation)
+NOTE   date                   ordered:2          '2026-01-05' recognised as iso, stored verbatim as text
+NOTE   leading-zero           sku:3              '00456' kept as text (leading zero is data)
+REJECT embedded-newline       description:3      cell contains a newline; one-row-per-line is the merge invariant (I6) and cannot hold it
+REJECT decimal-comma          unit_price:3       '1.234,50' is 1234.50 under de-DE and 1.23450 under en-US -- ambiguous VALUE, declare a locale
+REJECT ambiguous-date         ordered:3          '05/01/2026' is 5 Jan under en-GB and 1 May under en-US -- declare a date order
+WARN   excel-dash-null        notes:3            Excel '-' read as EMPTY, not the string '-'
+WARN   excel-dash-null        qty:4              Excel '-' read as EMPTY, not the string '-'
+NOTE   date                   ordered:4          'Jan 5 2026' recognised as mon-d-y, stored verbatim as text
+WARN   formula-looking-cell   notes:4            '=SUM(A1:A9)' begins with =+-@; stored as literal text (a .tbl cell can never be a formula)
+NOTE   leading-zero           sku:5              '00007' kept as text (leading zero is data)
+NOTE   date                   ordered:5          '5-Jan-26' recognised as d-mon-yy, stored verbatim as text
+WARN   formula-looking-cell   notes:5            '+1-555-0100' begins with =+-@; stored as literal text (a .tbl cell can never be a formula)
+REJECT ragged-row             row 6              3 fields, header has 6 -- no defensible fill
+REJECT ragged-row             row 7              8 fields, header has 6 -- no defensible fill
+NOTE   leading-zero           sku:8              '0044' kept as text (leading zero is data)
+NOTE   sci-notation           unit_price:8       '1.5E3' kept verbatim, parsed as number
+WARN   formula-looking-cell   notes:8            '@SUM(1)' begins with =+-@; stored as literal text (a .tbl cell can never be a formula)
+NOTE   leading-zero           sku:9              '0045' kept as text (leading zero is data)
+WARN   accounting-negative    unit_price:9       '(45.00)' -> -45.00
+NOTE   date                   ordered:9          '2026/01/05' recognised as iso-slash, stored verbatim as text
+WARN   excel-dash-null        notes:9            Excel '-' read as EMPTY, not the string '-'
+NOTE   row-ids                identity           carried=0 by_key=0 by_content=0 minted=5
+WARN   no-natural-key         identity           no key declared: ids are minted from content+position and are stable only while this .tbl is the source of truth (see re-import policy)
+-- 5 REJECT, 9 WARN, 13 NOTE
+
+== IMPORT REFUSED: 5 reject(s) ==

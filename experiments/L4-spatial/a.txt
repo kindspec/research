@@ -1,0 +1,10 @@
+node api  "API Gateway"
+node auth "Auth Service"
+node db   "Postgres"
+edge api -> auth
+edge auth -> db
+node cache "Redis"
+edge api -> cache
+
+@layout
+db { at: 400, 500 }

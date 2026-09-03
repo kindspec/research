@@ -1,0 +1,39 @@
+table:
+  columns:
+    - name: item
+    - name: qty
+    - name: unit
+    - name: total
+  rows:
+    - item: widget
+      qty: 10
+      unit: 12.00
+      total: null
+    - item: gadget
+      qty: 20
+      unit: 6.00
+      total: null
+    - item: sprocket
+      qty: 10
+      unit: 4.50
+      total: null
+    - item: flange
+      qty: 5
+      unit: 12.00
+      total: null
+    - item: cog
+      qty: 20
+      unit: 6.00
+      total: null
+    - item: bracket
+      qty: 7
+      unit: 9.25
+      total: null
+    - item: washer
+      qty: 10
+      unit: 4.50
+      total: null
+    - item: bolt
+      qty: 5
+      unit: 12.00
+      total: null

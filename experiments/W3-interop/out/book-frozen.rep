@@ -1,0 +1,52 @@
+===== LOSS REPORT =====
+REJECT multi-sheet                  workbook           3 sheets ['Orders', 'Rates', 'Archive']: .tbl is one table per file; a workbook is a directory, and cross-sheet references cannot survive the split
+WARN   defined-names                workbook           ['OrderQty', 'taxrate'] dropped (.tbl has no workbook-scope namespace)
+WARN   drawing-dropped              workbook           1 part(s) drawings/shapes/images dropped: ['xl/drawings/vmlDrawing1.vml']
+WARN   styles-dropped               workbook           styles.xml: 25 cell formats, 3 custom number formats -> all dropped (.tbl stores the lexical value only)
+REJECT merged-cells-dropped         Orders             1 merged cells dropped -- a merged cell has no row-per-line form
+WARN   comments-dropped             workbook           1 cell comment(s) dropped (no standoff channel on import)
+NOTE   region-boundary              Orders             data region inferred as rows 2-5; rows [6, 7] have a different shape and were read as trailer/summary. This boundary is a GUESS: the file does not state where the table ends.
+NOTE   column-frozen                Orders.tax         G2*Rates!$B$1  --  imported as CACHED VALUES under an explicit --freeze; renamed to tax_frozen so the bytes say it is not live
+NOTE   column-frozen                Orders.disc_unit   ROUND(D2*(1-VLOOKUP(E2,Rates!$A$4:$B$6,2,0)),2)  --  imported as CACHED VALUES under an explicit --freeze; renamed to disc_unit_frozen so the bytes say it is not live
+NOTE   column-frozen                Orders.share       G2/SUM(G$2:G$5)  --  imported as CACHED VALUES under an explicit --freeze; renamed to share_frozen so the bytes say it is not live
+REJECT cell-formula-untranslatable  Orders!B7          INDIRECT("G"&ROW()-6)  --  volatile/dynamic-reference function ['INDIRECT']
+REJECT cell-formula-untranslatable  Orders!C7          SUM(OFFSET(G$2,0,0,4,1))  --  volatile/dynamic-reference function ['OFFSET']
+REJECT cell-formula-untranslatable  Orders!D7          $G2  --  reference '$G2' is anchored to row 2, not this row
+WARN   cell-formula-needs-human     Orders!E7          SUMIF(E$2:E$5,"EMEA",G$2:G$5)  --  ['SUMIF'] is a filtered aggregate over other rows
+REJECT cell-formula-untranslatable  Orders!F7          Rates!B1  --  cross-sheet reference 'Rates!B1': .tbl has no cross-sheet address
+REJECT cell-formula-untranslatable  Orders!G7          SUM(Archive!G2:G100)  --  cross-sheet reference 'Archive!G2:G100': .tbl has no cross-sheet address
+REJECT cell-formula-untranslatable  Orders!H7          TODAY()  --  volatile/dynamic-reference function ['TODAY']
+REJECT cell-formula-untranslatable  Orders!I7          G2+G3+G4+G5  --  reference 'G5' is anchored to row 5, not this row
+WARN   cell-formula-needs-human     Orders!J7          TEXT(F2,"YYYY-MM")  --  ['TEXT'] outside the total/pure subset
+REJECT cell-formula-untranslatable  Orders!K7          SUM(C2:D5)  --  2-D range 'C2:D5': not a column
+REJECT cell-formula-untranslatable  Orders!L7          taxrate*G2  --  reference 'G2' is anchored to row 2, not this row
+WARN   not-tabular                  Archive            no header row found; skipped
+
+11 REJECT / 7 WARN
+
+===== FORMULA VERDICTS =====
+CLEAN           Orders!G2    C2*D2                                            qty*unit
+UNTRANSLATABLE  Orders!H2    G2*Rates!$B$1                                    cross-sheet reference 'Rates!$B$1': .tbl has no cross-sheet address
+CLEAN           Orders!I2    G2+H2                                            line_total+tax
+CLEAN           Orders!J2    IF(C2>10,"BIG","small")                          IF(qty>10,"BIG","small")
+UNTRANSLATABLE  Orders!K2    ROUND(D2*(1-VLOOKUP(E2,Rates!$A$4:$B$6,2,0)),2   cross-sheet reference 'Rates!$A$4:$B$6': .tbl has no cross-sheet addre
+UNTRANSLATABLE  Orders!L2    G2/SUM(G$2:G$5)                                  range 'G$2:G$5' spans rows other than this one; row order is not addre
+AGGREGATE       Orders!C6    SUM(C2:C5)                                       sum(qty)
+AGGREGATE       Orders!G6    SUM(G2:G5)                                       sum(line_total)
+AGGREGATE       Orders!H6    SUM(H2:H5)                                       sum(tax)
+AGGREGATE       Orders!I6    SUM(I2:I5)                                       sum(net)
+UNTRANSLATABLE  Orders!B7    INDIRECT("G"&ROW()-6)                            volatile/dynamic-reference function ['INDIRECT']
+UNTRANSLATABLE  Orders!C7    SUM(OFFSET(G$2,0,0,4,1))                         volatile/dynamic-reference function ['OFFSET']
+UNTRANSLATABLE  Orders!D7    $G2                                              reference '$G2' is anchored to row 2, not this row
+NEEDS-HUMAN     Orders!E7    SUMIF(E$2:E$5,"EMEA",G$2:G$5)                    ['SUMIF'] is a filtered aggregate over other rows
+UNTRANSLATABLE  Orders!F7    Rates!B1                                         cross-sheet reference 'Rates!B1': .tbl has no cross-sheet address
+UNTRANSLATABLE  Orders!G7    SUM(Archive!G2:G100)                             cross-sheet reference 'Archive!G2:G100': .tbl has no cross-sheet addre
+UNTRANSLATABLE  Orders!H7    TODAY()                                          volatile/dynamic-reference function ['TODAY']
+UNTRANSLATABLE  Orders!I7    G2+G3+G4+G5                                      reference 'G5' is anchored to row 5, not this row
+NEEDS-HUMAN     Orders!J7    TEXT(F2,"YYYY-MM")                               ['TEXT'] outside the total/pure subset
+UNTRANSLATABLE  Orders!K7    SUM(C2:D5)                                       2-D range 'C2:D5': not a column
+UNTRANSLATABLE  Orders!L7    taxrate*G2                                       reference 'G2' is anchored to row 2, not this row
+
+n=21  UNTRANSLATABLE=12 (57.1%)  AGGREGATE=4 (19.0%)  CLEAN=3 (14.3%)  NEEDS-HUMAN=2 (9.5%)
+
+== IMPORT REFUSED: 11 reject(s). No .tbl is authoritative until every one is resolved or explicitly frozen. ==

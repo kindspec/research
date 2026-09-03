@@ -1,0 +1,73 @@
+==========================================================================
+### A normal PUSH to the same branch lands mid-merge
+==========================================================================
+  (a plain user pushes to main inside the CAS window)
+  child: INTERFERENCE: git push srv-remote racer:main
+  child:   rc=0 To /home/cam/repos/working-git-backed-gws/experiments/W5-server/work-t6/push_race/srv.git
+  child:    5a3bb64..197a74e  racer -> main
+  server status : merged  attempts=2
+  main before   : 5a3bb64753c9
+  main after    : 0640938e3412
+  fsck          : rc=0
+  branches NOT reachable from main: none
+  --- b.tbl on the server now ---
+      | id     | item | qty | unit |
+      | ------ | ---- | --: | ---: |
+      | r_0001 | a    |  11 |   50 |
+      | r_0002 | b    |  22 |    7 |
+      
+      grand := sum(qty)
+
+==========================================================================
+### A FORCE-PUSH rewinds main mid-merge
+==========================================================================
+  (main is rewound to an ancestor while the merge is in flight)
+  child: INTERFERENCE: git push --force srv-remote HEAD~1:main
+  child:   rc=0 To /home/cam/repos/working-git-backed-gws/experiments/W5-server/work-t6/force_race/srv.git
+  child:  + c65f48e...76f42a4 HEAD~1 -> main (forced update)
+  server status : fast-forward  attempts=2
+  main before   : c65f48e5c307
+  main after    : 504f0a10dfb7
+  fsck          : rc=0
+  branches NOT reachable from main: ['racer']
+  --- b.tbl on the server now ---
+      | id     | item | qty | unit |
+      | ------ | ---- | --: | ---: |
+      | r_0001 | a    |  11 |    5 |
+      | r_0002 | b    |   2 |    7 |
+      
+      grand := sum(qty)
+
+==========================================================================
+### The SOURCE branch is deleted mid-merge
+==========================================================================
+  child: INTERFERENCE: git push srv-remote :topic
+  child:   rc=0 To /home/cam/repos/working-git-backed-gws/experiments/W5-server/work-t6/del_src/srv.git
+  child:  - [deleted]         topic
+  server status : merged  attempts=1
+  main before   : c65f48e5c307
+  main after    : 3574ad16edbe
+  fsck          : rc=0
+  branches NOT reachable from main: ['racer']
+  --- b.tbl on the server now ---
+      | id     | item | qty | unit |
+      | ------ | ---- | --: | ---: |
+      | r_0001 | a    |  11 |   50 |
+      | r_0002 | b    |   2 |    7 |
+      
+      grand := sum(qty)
+
+==========================================================================
+### The TARGET branch is deleted mid-merge
+==========================================================================
+  child: INTERFERENCE: git push srv-remote :main
+  child:   rc=0 To /home/cam/repos/working-git-backed-gws/experiments/W5-server/work-t6/del_dst/srv.git
+  child:  - [deleted]         main
+  server status : error  attempts=2
+  reason        : no such ref: refs/heads/main
+  main before   : c65f48e5c307
+  main after    : main
+  fsck          : rc=0
+  branches NOT reachable from main: ['topic', 'racer']
+  --- b.tbl on the server now ---
+

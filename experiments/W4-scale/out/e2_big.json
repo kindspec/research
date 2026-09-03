@@ -1,0 +1,22 @@
+{
+ "bigdocs": [
+  {
+   "target_lines": 10000,
+   "actual_lines": 10005,
+   "mb": 0.550628662109375,
+   "blocks": 2097,
+   "parse_s": 0.007525404012994841,
+   "roundtrip_s": 0.007855208008550107,
+   "exact": true
+  },
+  {
+   "target_lines": 100000,
+   "actual_lines": 100004,
+   "mb": 5.502867698669434,
+   "blocks": 21055,
+   "parse_s": 0.08530448301462457,
+   "roundtrip_s": 0.08481011798721738,
+   "exact": true
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+=== the bare 'server' repo ===
+  is-bare: true
+  .gitattributes IS in the tree: f.txt merge=probe
+  there is no working tree, so no checked-out .gitattributes file:
+branches config description HEAD hooks info objects refs 
+
+--- (a) forge WITHOUT the driver configured (the real world) ---
+    driver NOT run
+    exit=1
+    b1fc3c65536b985ba5d81577bd3e5c42d14c1346
+    100644 cee7cc010baac09686dc347251cdfc713dc740a9 1	f.txt
+    100644 5840eab85e5048915b8f9d546892d70568a314c3 2	f.txt
+    100644 c838bdde52221a94d48db576c9a16f98fb0f7b3f 3	f.txt
+    
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+
+--- (b) same bare repo, driver configured IN THE SERVER'S config ---
+    driver NOT run
+    exit=1  tree=b1fc3c65536b985ba5d81577bd3e5c42d14c1346
+100644 cee7cc010baac09686dc347251cdfc713dc740a9 1	f.txt
+100644 5840eab85e5048915b8f9d546892d70568a314c3 2	f.txt
+100644 c838bdde52221a94d48db576c9a16f98fb0f7b3f 3	f.txt
+
+Auto-merging f.txt
+CONFLICT (content): Merge conflict in f.txt
+
+=== CONCLUSION: the mechanism works server-side, but ONLY if the server operator
+=== installs the binary and writes merge.probe.driver into the server's git config.
+=== Nothing in the repository can cause that to happen.

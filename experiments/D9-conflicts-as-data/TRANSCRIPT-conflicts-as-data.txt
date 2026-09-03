@@ -1,0 +1,49 @@
+
+==========================================================
+### A. '-merge' vs 'binary' vs nothing: what the CLIENT gets on a real conflict
+==========================================================
+--- [(no attribute)] ---
+    file: item,qty|<<<<<<< HEAD|apple,3|=======|apple,2|>>>>>>> f|
+    parses as CSV? MALFORMED (ragged: [1, 2])
+    status: UU s.csv
+--- [s.csv -merge] ---
+    file: item,qty|apple,3|
+    parses as CSV? YES
+    status: UU s.csv
+--- [s.csv binary] ---
+    file: item,qty|apple,3|
+    parses as CSV? YES
+    status: UU s.csv
+
+==========================================================
+### B. SERVER records the residual conflict as DATA in refs/gws/conflicts/*
+==========================================================
+alice: price 10->55 ; bob: price 10->99  == a GENUINE cell conflict
+  stages: base=df2bbae954ef0b6e8c14b8456bdde6c99b9de54a ours=9b1b823f71ca648a28e058f05689c12000226437 theirs=14653d034632236b1ae41fc781b40f1f9c8562b8
+  recorded: refs/gws/conflicts/s.csv/apple/price
+  record contents:
+     {"path":"s.csv","row":"apple","column":"price","base":"10","ours":"99","theirs":"55","base_blob":"df2bbae954ef0b6e8c14b8456bdde6c99b9de54a","ours_blob":"9b1b823f71ca648a28e058f05689c12000226437","theirs_blob":"14653d034632236b1ae41fc781b40f1f9c8562b8"}
+==========================================================
+### C. What the PLAIN client sees after cloning
+==========================================================
+-- s.csv --
+   item,qty,price
+   apple,1,99
+   parses as CSV: 2 rows x 3 cols  ->  VALID
+-- refs the plain clone received --
+   refs/heads/main
+   (conflict records are invisible to a plain clone -- by design; our client fetches refs/gws/*)
+-- our client asks for them explicitly --
+   refs/gws/conflicts/s.csv/apple/price
+-- and reads the conflict as structured data, not markers --
+   {
+       "path": "s.csv",
+       "row": "apple",
+       "column": "price",
+       "base": "10",
+       "ours": "99",
+       "theirs": "55",
+       "base_blob": "df2bbae954ef0b6e8c14b8456bdde6c99b9de54a",
+       "ours_blob": "9b1b823f71ca648a28e058f05689c12000226437",
+       "theirs_blob": "14653d034632236b1ae41fc781b40f1f9c8562b8"
+   }

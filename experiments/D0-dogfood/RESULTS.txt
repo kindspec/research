@@ -1,0 +1,64 @@
+==============================================================================
+iptv-channels    commits=  7008 excl=  2 mdtbl_refused= 1993 ( 28.4%)  faithful= 28.5%  refimpl= 28.5%  csvmode=  2.6%
+                 carriage=223943930/224106943=99.9273% id_on_diff_row=1646 reminted=297644
+                 diff median line=1.0 byte=1.3377483443708609 aggregate line=2603994/2465674 byte=480440843/335226834
+                 canon nfc=1586 trim=1892 of 3606038361 cells; crlf commits=6758; defects={'field-count': 1, 'pipe-in-value': 184, 'newline-in-value': 1}
+iptv-blocklist   commits=   339 excl=  0 mdtbl_refused=    0 (  0.0%)  faithful=  0.0%  refimpl=  0.0%  csvmode=  0.0%
+                 carriage=376030/379808=99.0053% id_on_diff_row=429 reminted=4110
+                 diff median line=1.0 byte=1.311394263344124 aggregate line=22376/21364 byte=2109705/1548871
+                 canon nfc=0 trim=0 of 986395 cells; crlf commits=299; defects={}
+country-codes    commits=    74 excl=  1 mdtbl_refused=    0 (  0.0%)  faithful= 64.9%  refimpl= 98.6%  csvmode= 28.4%
+                 carriage=17275/17773=97.1980% id_on_diff_row=125 reminted=803
+                 diff median line=1.0 byte=1.2902374670184698 aggregate line=8456/8438 byte=3954600/3102848
+                 canon nfc=0 trim=96 of 825913 cells; crlf commits=11; defects={}
+iso-3166         commits=    25 excl=  0 mdtbl_refused=   14 ( 56.0%)  faithful= 56.0%  refimpl=100.0%  csvmode= 56.0%
+                 carriage=5858/5962=98.2556% id_on_diff_row=8 reminted=293
+                 diff median line=1.0 byte=1.5850902284846557 aggregate line=4110/4066 byte=384685/245567
+                 canon nfc=0 trim=224 of 52504 cells; crlf commits=3; defects={'field-count': 24}
+==============================================================================
+POOLED
+  commits 7446, excluded 3
+  T1 refusal rate (.mdtbl, mangled col names) : 2007/7446 = 26.95%   threshold >2% FAILS
+  T1 refusal rate (.mdtbl, names verbatim/SPEC): 2057/7446 = 27.63%
+  T1 refusal rate (.mdtbl, reference impl idents): 2093/7446 = 28.11%
+  T1 refusal rate (CSV mode, zero migration)  : 218/7446 = 2.93%
+  T2 row-id carriage : 224343093/224510486 = 99.925%   threshold <95% FAILS
+     id landed on a substantially different row: 2208
+  T3 diff size ratio (per-commit median): lines=1.0000 bytes=1.3364   threshold >1.5x FAILS
+     p90 lines=1.000 bytes=1.451; aggregate lines=1.056 bytes=1.432
+  T5 canon churn: NFC 1586 cells, trim 2212 cells of 3607903173 (0.000105%); CRLF commits 7071/7446
+     commits containing a value with '|': 1912; ragged: 124
+  T4 merges: 528 replayed, 0 excluded
+     (.mdtbl, csv) outcomes: {('clean', 'clean'): 382, ('conflict', 'clean'): 4, ('conflict', 'conflict'): 141, ('clean', 'conflict'): 1}
+     oracle: Counter({'clean': 482, 'conflict': 46})
+     mdtbl silent-wrong: 0
+     csv   silent-wrong: 0
+     mdtbl clean & invalid output: 197
+     inputs already invalid: 303
+     line_faithful guard true: 454/528
+     mdtbl conflicts where csv was clean: 4; reverse: 1
+------------------------------------------------------------------------------
+LARGEST REAL CHANGES (where locality matters most)
+corpus           rev         csv_l    md_l  ratio  +row  -row   rows
+iptv-channels    d3307e81    78385   78383  1.000 12092 12087  39195
+iptv-channels    a224d219    74640   74642  1.000 16439 16439  37319
+iptv-channels    5303aaa8    74640   74642  1.000 16421 16421  37319
+iptv-channels    fc0edf28    74386   74388  1.000  7978  7978  37192
+iptv-channels    bcab2227    74316   74318  1.000  8124  8124  37157
+iptv-channels    9487bbe7    74316   74318  1.000  8124  8124  37157
+iptv-channels    a12ba844    74316   74318  1.000  7978  7978  37157
+iptv-channels    af2785fb    62801   62803  1.000  8511  8378  31466
+iptv-channels    eea76d8c    62668   62670  1.000  8372  8372  31333
+iptv-channels    1474da8b    61004   61006  1.000  8462  8462  30501
+iptv-channels    6b71ec6d    61004   61006  1.000  8253  8253  30501
+iptv-channels    a71bed7d    59609   59609  1.000 12374 12373  29805
+iptv-channels    d505c0c0    59608   59608  1.000 12373 12373  29804
+iptv-channels    dc191c2d    59420   59422  1.000 12307 12307  29709
+iptv-channels    b6e403d9    59410   59412  1.000 11428 11432  29702
+pure re-sorts / mass rewrites with no row added or deleted, csv diff >200 lines: 110
+   iptv-channels 8674240a csv 5454 lines -> mdtbl 5452 lines (x1.000)
+   iptv-channels 13eac864 csv 4596 lines -> mdtbl 4596 lines (x1.000)
+   iptv-channels eb39413b csv 2714 lines -> mdtbl 2714 lines (x1.000)
+   iptv-channels 04b014d0 csv 2712 lines -> mdtbl 2712 lines (x1.000)
+   iptv-channels 788c575e csv 2320 lines -> mdtbl 2320 lines (x1.000)
+   iptv-blocklist a951edc6 csv 2256 lines -> mdtbl 2258 lines (x1.001)

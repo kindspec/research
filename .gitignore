@@ -1,0 +1,21 @@
+# Bulk inputs and generated state — see CORPORA.md
+corpora/
+corpus-hunt/
+verrepo/
+work/
+work-t*/
+*.git/
+snapshot/
+
+# Environments and build artifacts
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+*.so
+*.wasm
+*.bak
+
+# Scratch
+*.tar.gz
+*.7z

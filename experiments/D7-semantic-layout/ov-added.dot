@@ -1,0 +1,13 @@
+digraph G {
+  layout=neato;
+  api   [label="API Gateway"];
+  auth  [label="Auth Service"];
+  db    [label="Postgres", pos="2.5,0.1!"];   // Bob's manual nudge
+  queue [label="Job Queue"];
+  cache [label="Redis Cache"];
+  api -> auth;
+  auth -> db;
+  api -> queue;
+  queue -> db;
+  auth -> cache;
+}

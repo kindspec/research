@@ -1,0 +1,18 @@
+{
+ "counts": {
+  "UNTRANSLATABLE": 803806,
+  "NEEDS-HUMAN": 10960,
+  "CLEAN": 2604
+ },
+ "reasons": {
+  "UNTRANSLATABLE | cross-sheet reference \"X!QN\": .tbl has no cross-sheet address": 798664,
+  "NEEDS-HUMAN | column G has no header name": 2085,
+  "NEEDS-HUMAN | column B has no header name": 2133,
+  "NEEDS-HUMAN | column F has no header name": 4350,
+  "UNTRANSLATABLE | range X spans rows other than this one; row order is not addressable": 5142,
+  "NEEDS-HUMAN | column D has no header name": 140,
+  "NEEDS-HUMAN | column C has no header name": 1124,
+  "NEEDS-HUMAN | column I has no header name": 1126,
+  "NEEDS-HUMAN | column H has no header name": 2
+ }
+}

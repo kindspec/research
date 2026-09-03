@@ -1,0 +1,32 @@
+=== v2 input (a v1 reader does not understand %owner / %reviewed) ===
+| id   | item   | qty | unit  | total = qty * unit |
+| ---- | ------ | --: | ----: | -----------------: |
+| r_1  | widget |  10 | 12.00 |                    |
+| r_2  | gadget |  20 |  6.00 |                    |
+%owner alice
+%reviewed 2031-04-02
+
+grand := sum(total)
+
+=== Writer A: re-emit from the parsed model ===
+| id | item | qty | unit | total = qty * unit |
+| --- | --- | --- | --- | --- |
+| r_1 | widget | 10 | 12.00 |  |
+| r_2 | gadget | 20 | 6.00 |  |
+
+grand := sum(total)
+
+annotations surviving: NONE  <-- DATA LOSS
+
+=== Writer B: boundary splice (PASS5's 'parse boundaries, never re-emit') ===
+| id   | item   | qty | unit  | total = qty * unit |
+| ---- | ------ | --: | ----: | -----------------: |
+| r_1  | widget | 11   | 12.00 |                    |
+| r_2  | gadget |  20 |  6.00 |                    |
+%owner alice
+%reviewed 2031-04-02
+
+grand := sum(total)
+
+annotations surviving: ['%owner alice', '%reviewed 2031-04-02']
+lines changed vs input: 1

@@ -1,0 +1,63 @@
+{
+ "counts": {
+  "wb.ok": 68,
+  "formula-cells": 977479,
+  "has.IF": 798664,
+  "IF.calls": 798664,
+  "IF.arity.3": 798664,
+  "IF.cond.cmp-vs-ref": 798664,
+  "IF.branch1.ref": 798664,
+  "IF.branch2.number": 798664,
+  "IF.branchpair.number|ref": 798664,
+  "shared.expanded": 158958,
+  "has.SUM": 11402,
+  "SUM.calls": 11402,
+  "SUM.arity.1": 11402,
+  "SUM.arg.col-range": 11402,
+  "SUM.single-arg.col-range": 11402
+ },
+ "samples": {
+  "IF.cond.cmp-vs-ref": [
+   "$C$6<='Apr 2001'!Q12",
+   "$C$6<='Apr 2001'!Q13",
+   "$C$6<='Apr 2001'!Q14",
+   "$C$6<='Apr 2001'!Q15",
+   "$C$6<='Apr 2001'!Q16",
+   "$C$6<='Apr 2001'!Q17",
+   "$C$6<='Apr 2001'!Q18",
+   "$C$6<='Apr 2001'!Q19",
+   "$C$6<='Apr 2001'!Q20",
+   "$C$6<='Apr 2001'!Q21",
+   "$C$6<='Apr 2001'!Q22",
+   "$C$6<='Apr 2001'!Q23"
+  ],
+  "IF.branch1.ref": [
+   "'Apr 2001'!A12",
+   "'Apr 2001'!C12",
+   "'Apr 2001'!E12",
+   "'Apr 2001'!H12",
+   "'Apr 2001'!A13",
+   "'Apr 2001'!C13",
+   "'Apr 2001'!E13",
+   "'Apr 2001'!H13",
+   "'Apr 2001'!A14",
+   "'Apr 2001'!C14",
+   "'Apr 2001'!E14",
+   "'Apr 2001'!H14"
+  ],
+  "IF.branch2.number": [
+   "0"
+  ],
+  "SUM.arg.col-range": [
+   "B7:B30",
+   "C7:C30",
+   "E7:E30",
+   "F7:F30",
+   "G7:G30",
+   "H7:H30",
+   "D7:D30",
+   "I7:I30",
+   "J7:J30"
+  ]
+ }
+}

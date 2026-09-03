@@ -1,0 +1,82 @@
+  ..0/5458 wb  14 formula cells  0 compared
+  ..250/5458 wb  117264 formula cells  84 compared
+  ..500/5458 wb  122751 formula cells  84 compared
+  ..750/5458 wb  129287 formula cells  84 compared
+  ..1000/5458 wb  131411 formula cells  646 compared
+  ..1250/5458 wb  137144 formula cells  982 compared
+  ..1500/5458 wb  153800 formula cells  1066 compared
+  ..1750/5458 wb  159282 formula cells  1256 compared
+  ..2000/5458 wb  161866 formula cells  1256 compared
+  ..2250/5458 wb  166635 formula cells  1262 compared
+  ..2500/5458 wb  174303 formula cells  1574 compared
+  ..2750/5458 wb  183539 formula cells  1814 compared
+  ..3000/5458 wb  283870 formula cells  8289 compared
+  ..3250/5458 wb  362589 formula cells  9470 compared
+  ..3500/5458 wb  367714 formula cells  9476 compared
+  ..3750/5458 wb  603127 formula cells  9622 compared
+  ..4000/5458 wb  647264 formula cells  9661 compared
+  ..4250/5458 wb  742705 formula cells  9789 compared
+  ..4500/5458 wb  752892 formula cells  10275 compared
+  ..4750/5458 wb  773741 formula cells  10431 compared
+  ..5000/5458 wb  987228 formula cells  10983 compared
+  ..5250/5458 wb  991029 formula cells  10989 compared
+
+NOTEVAL expressions captured: 21165
+counter says NOTEVAL = 21165
+A.15sig                                        1000
+A.exact                                        5851
+A.ref-where-excel-errors                        593
+A15.hp-also-differs-so-the-inputs-are-the-cause      499
+A15.hp-matches-excel-so-rowspec-float-is-the-cause      501
+A15.max-input-sigdigits-15                      390
+A15.max-input-sigdigits-le14                    610
+BUG.shadowed-column-name                         96
+D.float-accum                                    12
+D.ref-where-excel-numeric                      9321
+D.semantic                                       48
+D.text-differs                                  504
+Dref.blank                                     9321
+EVALUABLE                                     48090
+NOTEVAL                                       21165
+agg.table-range-used                             24
+chain.depends-on-a-formula-cell                3422
+chain.depends-only-on-literals                13792
+cmp.excel-error                                 593
+cmp.excel-text                                  504
+cmp.numeric                                   16232
+compared                                      17329
+distinct.sheets-contributing                    310
+distinct.workbooks-contributing                 220
+exc.array-formula                             57020
+exc.duplicate-header-name                     30876
+exc.no-cached-value                          101435
+exc.no-header                                244244
+formula-cells                               1013559
+noteval.BinOp                                    76
+noteval.Call                                   9494
+noteval.UnaryOp                                 384
+noteval.not-python                            11211
+notevalfull.BinOp:BitAnd                         76
+notevalfull.Call:AVERAGE                        192
+notevalfull.Call:CEILING                        186
+notevalfull.Call:IF                            1684
+notevalfull.Call:INT                            621
+notevalfull.Call:MAX                             41
+notevalfull.Call:MIN                            540
+notevalfull.Call:ROUND                          921
+notevalfull.Call:SUM                           5309
+notevalfull.UnaryOp:UAdd                        384
+notevalfull.not-python:?                          6
+notevalfull.not-python:IF                     10959
+notevalfull.not-python:MIN                        3
+notevalfull.not-python:SUM                      243
+shared.expanded                              482536
+shared.unresolved                                 0
+translatable                                 170805
+verdict.AGGREGATE                               215
+verdict.CLEAN                                167987
+verdict.CLEAN-WIDE                             2603
+verdict.NEEDS-HUMAN                          543906
+verdict.UNTRANSLATABLE                       241828
+wb.bad                                            0
+wb.ok                                          5458

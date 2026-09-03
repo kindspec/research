@@ -1,0 +1,63 @@
+
+workbooks read OK: 5458   unreadable: 0   formula cells classified: 778418
+  NEEDS-HUMAN        440842   56.6%
+  UNTRANSLATABLE     225567   29.0%
+  CLEAN               88287   11.3%
+  NO-HEADER           23043    3.0%
+  CLEAN-WIDE            531    0.1%
+  AGGREGATE             148    0.0%
+
+-- failure reasons --
+    232915  29.9%  NEEDS-HUMAN | [] is a filtered aggregate over other rows
+    128690  16.5%  NEEDS-HUMAN | [] is a JOIN; .tbl has no join vocabulary
+     89353  11.5%  UNTRANSLATABLE | cross-sheet reference X: .tbl has no cross-sheet address
+     42726   5.5%  NEEDS-HUMAN | [] outside the total/pure subset
+     31239   4.0%  UNTRANSLATABLE | volatile/dynamic-reference function []
+     20394   2.6%  UNTRANSLATABLE | cross-sheet reference "X!WN": .tbl has no cross-sheet address
+     20394   2.6%  UNTRANSLATABLE | cross-sheet reference "X!XN": .tbl has no cross-sheet address
+     19111   2.5%  NEEDS-HUMAN | function(s) [] not in the .tbl subset
+     17250   2.2%  UNTRANSLATABLE | cross-sheet reference "X!$D$N:$D$N": .tbl has no cross-sheet address
+      9507   1.2%  UNTRANSLATABLE | cross-sheet reference "X!$A$N:$A$N": .tbl has no cross-sheet address
+      6781   0.9%  UNTRANSLATABLE | range X spans rows other than this one; row order is not addressable
+      6563   0.8%  NEEDS-HUMAN | constant formula, no references
+      5036   0.6%  UNTRANSLATABLE | reference X is anchored to row N, not this row
+      4391   0.6%  NEEDS-HUMAN | whole-column structured reference [] is not a plain aggregate
+      4354   0.6%  UNTRANSLATABLE | cross-sheet reference "X!$HN": .tbl has no cross-sheet address
+      3984   0.5%  UNTRANSLATABLE | cross-sheet reference "X!$AN": .tbl has no cross-sheet address
+      2880   0.4%  UNTRANSLATABLE | cross-sheet reference "X!$C$N:$C$N": .tbl has no cross-sheet address
+      2460   0.3%  UNTRANSLATABLE | cross-sheet reference "X!$B$N:$K$N": .tbl has no cross-sheet address
+      1947   0.3%  UNTRANSLATABLE | N-D range X: not a column
+      1299   0.2%  UNTRANSLATABLE | cross-sheet reference "X!$B$N:$B$N": .tbl has no cross-sheet address
+
+-- deduplicated by R1C1-normalised formula string (n=4130 distinct) --
+  UNTRANSLATABLE       2126   51.5%
+  NEEDS-HUMAN          1784   43.2%
+  CLEAN                 180    4.4%
+  CLEAN-WIDE             30    0.7%
+  AGGREGATE              10    0.2%
+
+-- samples --
+  CLEAN           F3+G3                                                -> Optimum_Moisture___Spec+Max_Moisture__
+  CLEAN           F3-H3                                                -> Optimum_Moisture___Spec-Min_Moisture__
+  CLEAN           F4+G4                                                -> Optimum_Moisture___Spec+Max_Moisture__
+  CLEAN           F4-H4                                                -> Optimum_Moisture___Spec-Min_Moisture__
+  CLEAN           IF(AND(G15<1.05,G15>0.95),"PASS","FAIL")             -> IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),"PASS","FAIL
+  CLEAN           IF(AND(G16<1.05,G16>0.95),"PASS","FAIL")             -> IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),"PASS","FAIL
+  AGGREGATE       SUM(D3:D9)                                           -> SUM over the whole of column AMOUNTS
+  AGGREGATE       SUM(D3:D9)                                           -> SUM over the whole of column AMOUNTS
+  AGGREGATE       SUM(D3:D9)                                           -> SUM over the whole of column AMOUNTS
+  AGGREGATE       SUM(G2:G5)                                           -> SUM over the whole of column BUYING
+  AGGREGATE       SUM(H2:H5)                                           -> SUM over the whole of column SELLING
+  AGGREGATE       SUM(J2:J5)                                           -> SUM over the whole of column BUYING
+  NEEDS-HUMAN     IF(MEDIAN(H15,VLOOKUP(B15,$A$3:$J$9,{9,10},0))=H15,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H16,VLOOKUP(B16,$A$3:$J$9,{9,10},0))=H16,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H17,VLOOKUP(B17,$A$3:$J$9,{9,10},0))=H17,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H15,VLOOKUP(B15,$A$3:$J$9,{9,10},0))=H15,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H16,VLOOKUP(B16,$A$3:$J$9,{9,10},0))=H16,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H17,VLOOKUP(B17,$A$3:$J$9,{9,10},0))=H17,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  UNTRANSLATABLE  G10/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G13/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G17/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G21/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G24/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G27/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable

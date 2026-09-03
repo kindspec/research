@@ -1,0 +1,68 @@
+=== THE THREE CONFIG STATES A CLONER CAN BE IN ===
+
+--- STATE 1: nothing in config (plain clone, tool not installed) ---
+git merge      :
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+    Automatic merge failed; fix conflicts and then commit the result.
+    exit=1
+git merge-tree :
+    fa3282eaf6ea41ea7937940542f59864e3bdb17b
+    100644 506fb13c0403627985416d72da1a07f1dd670295 1	f.txt
+    100644 8e2aaaea8d4dcf3ed9a461315f4a8f674f379e4b 2	f.txt
+    100644 c267d8d2242988993a73cbf42b117e96ca34780d 3	f.txt
+    
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+    exit=0
+
+--- STATE 2: merge.probe.name set, merge.probe.driver MISSING ---
+git merge      :
+    fatal: custom merge driver probe lacks command line.
+git merge-tree :
+    fatal: custom merge driver probe lacks command line.
+    exit=0
+
+--- STATE 3: driver set but executable missing on PATH ---
+git merge      :
+    mergiraf-not-installed merge .merge_file_cvjJGu .merge_file_PolO6O .merge_file_9OSu9Z -o .merge_file_PolO6O: 1: mergiraf-not-installed: not found
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+    Automatic merge failed; fix conflicts and then commit the result.
+    resulting file:
+      a
+      O
+      z
+git merge-tree :
+    mergiraf-not-installed merge .merge_file_JhNZED .merge_file_O7i5Uf .merge_file_Dw4I0e -o .merge_file_O7i5Uf: 1: mergiraf-not-installed: not found
+    02d3add511dd0162ae8e96379fb6bd58c54d80ce
+    100644 506fb13c0403627985416d72da1a07f1dd670295 1	f.txt
+    100644 8e2aaaea8d4dcf3ed9a461315f4a8f674f379e4b 2	f.txt
+    100644 c267d8d2242988993a73cbf42b117e96ca34780d 3	f.txt
+    
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+    exit=0
+
+=== BUILT-IN 'union' DRIVER: the only merge driver that IS repo-portable ===
+    Auto-merging f.txt
+    Merge made by the 'ort' strategy.
+     f.txt | 1 +
+     1 file changed, 1 insertion(+)
+    result:
+      a
+      O
+      T
+      z
+    (union = concatenate both sides, NO markers, ALWAYS 'clean'. Ships in .gitattributes; needs zero local config.)
+
+=== '-merge' / 'binary' attribute: refuse to merge at all ===
+    warning: Cannot merge binary files: f.txt (HEAD vs. feature)
+    Auto-merging f.txt
+    CONFLICT (content): Merge conflict in f.txt
+    Automatic merge failed; fix conflicts and then commit the result.
+    result (ours kept verbatim, no markers, marked conflicted):
+      a
+      O
+      z
+      UU f.txt

@@ -1,0 +1,14 @@
+[
+ {
+  "n": 10000,
+  "merge_tree_s": 0.05636214101104997,
+  "merge_tree_rc": 0,
+  "clean": true
+ },
+ {
+  "n": 100000,
+  "merge_tree_s": 0.5025108240079135,
+  "merge_tree_rc": 0,
+  "clean": true
+ }
+]

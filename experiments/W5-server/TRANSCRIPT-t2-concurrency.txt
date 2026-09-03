@@ -1,0 +1,41 @@
++ echo '### BARE CAS RETRY LOOP'
+### BARE CAS RETRY LOOP
++ python3 t2_concurrency.py 2 8 16 32 64 128 192 256
++ head -14
+MODE=BARE CAS RETRY
+cpus=12  git=git version 2.47.3
+
+   N  elapsed  merges/s  att/mean  att/max  att/tot   p50 s   max s  lost  fsck
+-------------------------------------------------------------------------------
+   2    0.053      37.7      1.50        2        3   0.044   0.044     0    ok
+   8    0.332      24.1      4.50        8       36   0.162   0.324     0    ok
+  16    0.848      18.9      7.06       11      113   0.395   0.833     0    ok
+  32    1.932      16.6     10.38       18      332   1.138   1.899     0    ok
+  64    5.008      12.8     16.05       32     1027   3.194   4.953     0    ok
+ 128   15.657       8.2     25.27       50     3235  10.019  15.486     6    ok
+ 192   30.244       6.3     29.56       50     5676  20.450  29.898    37    ok
+ 256   39.258       6.5     29.96       50     7671  26.053  38.995    69    ok
+
+Exception ignored on flushing sys.stdout:
+BrokenPipeError: [Errno 32] Broken pipe
++ echo
+
++ echo '### QUEUED (flock per ref)'
+### QUEUED (flock per ref)
++ W5_QUEUE=1
++ python3 t2_concurrency.py 2 8 16 32 64 128 192 256
++ head -14
+MODE=QUEUED (flock per ref)
+cpus=12  git=git version 2.47.3
+
+   N  elapsed  merges/s  att/mean  att/max  att/tot   p50 s   max s  lost  fsck
+-------------------------------------------------------------------------------
+   2    0.052      38.2      1.00        1        2   0.043   0.043     0    ok
+   8    0.241      33.1      1.00        1        8   0.140   0.232     0    ok
+  16    0.497      32.2      1.00        1       16   0.258   0.477     0    ok
+  32    1.037      30.9      1.00        1       32   0.509   1.001     0    ok
+  64    2.183      29.3      1.00        1       64   1.038   2.121     0    ok
+ 128    4.772      26.8      1.00        1      128   2.124   4.639     0    ok
+ 192    8.030      23.9      1.00        1      192   3.391   7.833     0    ok
+ 256   11.664      21.9      1.00        1      256   4.895  11.359     0    ok
+

@@ -1,0 +1,6 @@
+| id | sku | name | tier |
+| --- | --- | --- | --- |
+| k1 | A-1 | Acme | gold |
+| k2 | A-2 | Borax | silver |
+
+key := sku

@@ -1,0 +1,52 @@
+40-row table. Each side changed exactly ONE cell, in different rows.
+  {
+   "attempts": 1,
+   "clean_from_git": true,
+   "commit": "24220cedd38539619a31fc7821cf0b581efd9bb6",
+   "conflict_ref": null,
+   "git_calls": 13,
+   "ref": "refs/heads/main",
+   "resolved": [],
+   "status": "merged",
+   "tree": "47e768dd47ea4beccb9c1b857c3c65e18bbe66e8",
+   "unresolved": 0
+  }
+  parents of the merge: 3 (1 commit + 2 parents = 3)
+
+--- diff of the merge commit against its FIRST parent (ours) ---
+   b.tbl | 2 +-
+   1 file changed, 1 insertion(+), 1 deletion(-)
+  changed lines: 2
+  (a perfect merge would change exactly 1 line: theirs' single cell)
+
+--- the actual changed lines ---
+  -| r_0005 | item5  |  15 |  7.50 |
+  +| r_0005 | item5  |  99 |  7.50 |
+
+==================================================================
+### PART 2: a merge the SERVER actually re-renders (same-line conflict)
+==================================================================
+Both sides edited DIFFERENT CELLS OF THE SAME LINE -> git conflicts,
+the type-aware merger runs, and the file is re-rendered from the model.
+  {
+   "attempts": 1,
+   "clean_from_git": false,
+   "commit": "73f2500076830328ef017f9b7532742812dfe079",
+   "conflict_ref": null,
+   "git_calls": 21,
+   "ref": "refs/heads/main",
+   "resolved": [
+    "b.tbl"
+   ],
+   "status": "merged",
+   "tree": "92621fd3411552072875ef204c2727d0a886165b",
+   "unresolved": 0
+  }
+
+--- diff of merge vs its first parent (ours) ---
+   b.tbl | 2 +-
+   1 file changed, 1 insertion(+), 1 deletion(-)
+  changed lines: 2
+  (2 = one line replaced. >2 means the re-render churned unrelated lines.)
+  -| r_0007 | item7  |  21 | 99.50 |
+  +| r_0007 | item7  |  77 | 99.50 |

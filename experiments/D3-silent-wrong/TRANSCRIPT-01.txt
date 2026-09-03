@@ -1,0 +1,312 @@
+
+################################################################
+# S1  CSV + A1 formulas: two row inserts, clean merge, WRONG TOTAL
+################################################################
+--- git merge B ---
+    Auto-merging sheet.csv
+    Merge made by the 'ort' strategy.
+     sheet.csv | 1 +
+     1 file changed, 1 insertion(+)
+    (merge exit=0)
+--- merged sheet.csv ---
+    item,qty,price,total
+    a,10,10,=B2*C2
+    new-b,10,10,=B3*C3
+    b,10,10,=B3*C3
+    c,10,10,=B4*C4
+    d,10,10,=B5*C5
+    e,10,10,=B6*C6
+    new-a,10,10,=B7*C7
+    f,10,10,=B7*C7
+    TOTAL,,,=SUM(D2:D8)
+--- rows: 9 data+header lines
+--- TOTAL cell evaluates to: 100.0
+--- CORRECT answer (8 items x 100): 800
+
+################################################################
+# S2  CSV: column inserted on one side, row edited on other -> COLUMN SHEAR
+################################################################
+--- git merge B ---
+    Auto-merging t.csv
+    CONFLICT (content): Merge conflict in t.csv
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged t.csv ---
+    <<<<<<< HEAD
+    id,name,salary
+    1,Alice,100
+    2,Bob,90
+    3,Carol,110
+    4,Dave,999
+    5,Eve,105
+    =======
+    id,name,dept,salary
+    1,Alice,Eng,100
+    2,Bob,Eng,90
+    3,Carol,Eng,110
+    4,Dave,Eng,95
+    5,Eve,Eng,105
+    >>>>>>> B
+--- column widths seen by a CSV parser:
+    Counter({3: 6, 4: 6, 1: 3})
+     ['<<<<<<< HEAD']
+     ['id', 'name', 'salary']
+     ['1', 'Alice', '100']
+     ['2', 'Bob', '90']
+     ['3', 'Carol', '110']
+     ['4', 'Dave', '999']
+     ['5', 'Eve', '105']
+     ['=======']
+     ['id', 'name', 'dept', 'salary']
+     ['1', 'Alice', 'Eng', '100']
+     ['2', 'Bob', 'Eng', '90']
+     ['3', 'Carol', 'Eng', '110']
+     ['4', 'Dave', 'Eng', '95']
+     ['5', 'Eve', 'Eng', '105']
+     ['>>>>>>> B']
+
+################################################################
+# S3  Markdown reference-style links: duplicate label, CLEAN merge, WRONG TARGET
+################################################################
+--- git merge B ---
+    Auto-merging doc.md
+    CONFLICT (content): Merge conflict in doc.md
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged doc.md ---
+    # Report
+    
+    See the [spec][1] for details.
+    
+    Intro paragraph. Compare the [old version][2].
+    
+    More text. Also read the [appendix][2].
+    
+    Conclusion.
+    
+    [1]: https://example.com/original-spec
+    <<<<<<< HEAD
+    [2]: https://example.com/version-1
+    =======
+    [2]: https://example.com/appendix-B
+    >>>>>>> B
+--- both [2] references now resolve to the SAME url (CommonMark: first definition wins):
+    definitions: [('1', 'https://example.com/original-spec'), ('2', 'https://example.com/version-1'), ('2', 'https://example.com/appendix-B')]
+    link "spec" -> https://example.com/original-spec
+    link "old version" -> https://example.com/version-1
+    link "appendix" -> https://example.com/version-1
+
+################################################################
+# S4  Markdown numbered headings / TOC: clean merge, DUPLICATE SECTION NUMBERS
+################################################################
+--- git merge B ---
+    Auto-merging doc.md
+    CONFLICT (content): Merge conflict in doc.md
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged doc.md ---
+    # Manual
+    
+    ## Contents
+    1. Setup
+    <<<<<<< HEAD
+    2. Usage
+    3. Troubleshooting
+    =======
+    2. Configuration
+    3. Usage
+    >>>>>>> B
+    4. Reference
+    
+    ## 1. Setup
+    setup text
+    
+    ## 2. Configuration
+    config text
+    
+    ## 3. Usage
+    usage text
+    
+    <<<<<<< HEAD
+    ## 3. Troubleshooting
+    trouble text
+    
+    =======
+    >>>>>>> B
+    ## 4. Reference
+    ref text
+--- heading numbers present:
+    ## 1.
+    ## 2.
+    ## 3.
+    ## 3.
+    ## 4.
+
+################################################################
+# S5  JSON: concurrent array appends -> CLEAN merge, DUPLICATE ids
+################################################################
+--- git merge B ---
+    Auto-merging cfg.json
+    Merge made by the 'ort' strategy.
+     cfg.json | 1 +
+     1 file changed, 1 insertion(+)
+    (merge exit=0)
+--- merged cfg.json ---
+    {
+      "users": [
+        {"id": 1, "role": "admin"},
+        {"id": 6, "role": "viewer"},
+        {"id": 2, "role": "viewer"},
+        {"id": 3, "role": "viewer"},
+        {"id": 4, "role": "viewer"},
+        {"id": 5, "role": "viewer"},
+        {"id": 6, "role": "editor"}
+      ],
+      "seats": 6
+    }
+    parses OK. ids = [1, 6, 2, 3, 4, 5, 6]
+    duplicate ids: [6]
+    len(users) = 7  but "seats" = 6  <-- INVARIANT BROKEN
+
+################################################################
+# S6  YAML: concurrent key add -> DUPLICATE KEY, parser silently takes the last
+################################################################
+--- git merge B ---
+    Auto-merging c.yaml
+    Merge made by the 'ort' strategy.
+     c.yaml | 1 +
+     1 file changed, 1 insertion(+)
+    (merge exit=0)
+--- merged c.yaml ---
+    name: svc
+    timeout: 30
+    replicas: 2
+    image: app:1.0
+    port: 8080
+    env: prod
+    region: us-east
+    timeout: 90
+    pyyaml: parses OK, timeout = 90  (one of the two writers silently lost)
+
+################################################################
+# S7  YAML frontmatter: concurrent tag-list edits -> clean merge, wrong list
+################################################################
+--- git merge B ---
+    Auto-merging post.md
+    Merge made by the 'ort' strategy.
+     post.md | 1 +
+     1 file changed, 1 insertion(+)
+    (merge exit=0)
+--- merged post.md ---
+    ---
+    title: Post
+    tags:
+      - alpha
+      - NEW-FROM-B
+      - beta
+      - gamma
+      - delta
+      - NEW-FROM-A
+    draft: true
+    ---
+    
+    Body.
+
+################################################################
+# S8  SVG: concurrent <defs> additions -> DUPLICATE id, first-wins, WRONG COLOURS
+################################################################
+--- git merge B ---
+    Auto-merging d.svg
+    CONFLICT (content): Merge conflict in d.svg
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged d.svg ---
+    <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+      <defs>
+    <<<<<<< HEAD
+        <linearGradient id="grad1"><stop offset="0%" stop-color="blue"/></linearGradient>
+    =======
+        <linearGradient id="grad1"><stop offset="0%" stop-color="red"/></linearGradient>
+    >>>>>>> B
+      </defs>
+      <rect id="r1" x="0" y="0" width="100" height="100" fill="url(#grad1)"/>
+      <rect id="r2" x="110" y="0" width="100" height="100" fill="#ccc"/>
+      <rect id="r3" x="220" y="0" width="100" height="100" fill="url(#grad1)"/>
+      <g id="layer-annotations">
+      </g>
+    </svg>
+    XML error: not well-formed (invalid token): line 3, column 1
+
+################################################################
+# S9  SVG: concurrent viewBox change vs. new geometry -> silently mis-scaled
+################################################################
+--- git merge B ---
+    Auto-merging v.svg
+    CONFLICT (content): Merge conflict in v.svg
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged v.svg ---
+    <<<<<<< HEAD
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400">
+      <rect x="10" y="10" width="20" height="20" fill="red"/>
+      <line x1="0" y1="0" x2="100" y2="100" stroke="black"/>
+      <text x="50" y="95" font-size="8">caption</text>
+      <circle cx="80" cy="20" r="10" fill="green"/>
+    =======
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="400" height="400">
+      <rect x="100" y="100" width="200" height="200" fill="red"/>
+      <line x1="0" y1="0" x2="1000" y2="1000" stroke="black"/>
+      <text x="500" y="950" font-size="80">caption</text>
+    >>>>>>> B
+    </svg>
+    -> viewBox is 0 0 1000 1000; the newly added circle uses cx=80 cy=20 r=10 in the OLD 100x100 space.
+    -> it renders at 8% of the intended position, effectively invisible. XML is valid; git said clean.
+
+################################################################
+# S10  merge=union (the ONLY repo-portable custom-ish driver) on CSV -> DUPLICATED ROWS
+################################################################
+--- git merge B ---
+    Auto-merging u.csv
+    Merge made by the 'ort' strategy.
+     u.csv | 1 +
+     1 file changed, 1 insertion(+)
+    (merge exit=0)
+--- merged u.csv (git reported CLEAN) ---
+    id,name
+    1,Alice
+    2,Bob
+    3,Dave
+    3,Carol
+    -> two different records now share id=3, and no marker anywhere.
+
+################################################################
+# S11  CSV: row REORDER on one side, row EDIT on other -> lost edit + duplicate
+################################################################
+--- git merge B ---
+    Auto-merging r.csv
+    CONFLICT (content): Merge conflict in r.csv
+    Automatic merge failed; fix conflicts and then commit the result.
+    (merge exit=1)
+--- merged r.csv ---
+    id,name,qty
+    <<<<<<< HEAD
+    1,item1,10
+    2,item2,20
+    3,item3,30
+    4,item4,4000
+    5,item5,50
+    6,item6,60
+    7,item7,70
+    =======
+    >>>>>>> B
+    8,item8,80
+    7,item7,70
+    6,item6,60
+    5,item5,50
+    4,item4,40
+    3,item3,30
+    2,item2,20
+    1,item1,10
+    ids: ['<<<<<<< HEAD', '1', '2', '3', '4', '5', '6', '7', '=======', '>>>>>>> B', '8', '7', '6', '5', '4', '3', '2', '1']
+    duplicates: ['1', '2', '3', '4', '5', '6', '7']
+    qty for id=4 : 40  (the edit was 4000)

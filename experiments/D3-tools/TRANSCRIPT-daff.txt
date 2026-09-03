@@ -1,0 +1,91 @@
+daff version: 1.4.2
+
+############ D1: same row, different columns (git FALSE-CONFLICTS) ############
+    Auto-merging t.csv
+    Merge made by the 'ort' strategy.
+     t.csv | 2 +-
+     1 file changed, 1 insertion(+), 1 deletion(-)
+--- result:
+    id,name,email,phone,dept
+    1,Alice,a@x.com,555-0001,Eng
+    2,Bob,bob@new.com,555-9999,Sales
+    3,Carol,c@x.com,555-0003,Eng
+
+############ D2: column insert on one side + row edit on other (git FALSE-CONFLICTS) ############
+    Auto-merging t.csv
+    Merge made by the 'ort' strategy.
+     t.csv | 8 ++++----
+     1 file changed, 4 insertions(+), 4 deletions(-)
+--- result:
+    id,name,dept,salary
+    1,Alice,Eng,100
+    2,Bob,Eng,90
+    3,Carol,Eng,999
+
+############ D3: row reorder + row edit (git mangles badly) ############
+    Auto-merging t.csv
+    Merge made by the 'ort' strategy.
+     t.csv | 14 +++++++-------
+     1 file changed, 7 insertions(+), 7 deletions(-)
+--- result:
+    id,name,qty
+    8,item8,80
+    7,item7,70
+    6,item6,60
+    5,item5,50
+    4,item4,4000
+    3,item3,30
+    2,item2,20
+    1,item1,10
+
+############ D4: A REAL conflict — both edit the SAME cell ############
+    1 conflict
+    Auto-merging t.csv
+    CONFLICT (content): Merge conflict in t.csv
+    Automatic merge failed; fix conflicts and then commit the result.
+--- result (note daff's in-band conflict encoding, and whether CSV stays parseable):
+    id,name,qty
+    1,a,10
+    2,b,((( 20 ))) 999 /// 222
+    3,c,30
+    csv parses OK; row widths: Counter({3: 4})
+      ['id', 'name', 'qty']
+      ['1', 'a', '10']
+      ['2', 'b', '((( 20 ))) 999 /// 222']
+      ['3', 'c', '30']
+--- git status:
+    UU t.csv
+
+############ D5: A1 FORMULAS — does a table merger help? ############
+    Auto-merging t.csv
+    Merge made by the 'ort' strategy.
+     t.csv | 1 +
+     1 file changed, 1 insertion(+)
+--- result:
+         1	item,qty,price,total
+         2	a,1,100,=B2*C2
+         3	NEW-B,10,100,=B3*C3
+         4	b,2,100,=B3*C3
+         5	c,3,100,=B4*C4
+         6	d,4,100,=B5*C5
+         7	e,5,100,=B6*C6
+         8	NEW-A,20,100,=B7*C7
+         9	f,6,100,=B7*C7
+        10	TOTAL,,,=SUM(D2:D8)
+--- evaluated:
+    a      intended=     100 computed=     100
+    NEW-B  intended=    1000 computed=    1000
+    b      intended=     200 computed=    1000  <-- WRONG
+    c      intended=     300 computed=     200  <-- WRONG
+    d      intended=     400 computed=     300  <-- WRONG
+    e      intended=     500 computed=     400  <-- WRONG
+    NEW-A  intended=    2000 computed=     500  <-- WRONG
+    f      intended=     600 computed=     500  <-- WRONG
+    TOTAL intended=5100 computed=3500
+
+############ D6: daff's diff format (the 'highlighter') ############
+    !,,,+++,
+    @@,id,name,dept,salary
+    +,1,Alice,Eng,100
+    +,2,Bob,Eng,90
+    ->,3,Carol,Eng,999->110

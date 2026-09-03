@@ -1,0 +1,33 @@
+{
+  "elements": [
+    {
+      "id": "api",
+      "label": "API Gateway",
+      "x": 100,
+      "y": 80
+    },
+    {
+      "id": "auth",
+      "label": "Auth Service",
+      "x": 100,
+      "y": 200
+    },
+    {
+      "id": "db",
+      "label": "Postgres",
+<<<<<<< b2.txt
+      "x": 100,
+      "y": 320
+    },
+    {
+      "id": "cache",
+      "label": "Redis",
+      "x": 260,
+      "y": 200
+=======
+      "x": 400,
+      "y": 500
+>>>>>>> B_theirs.json
+    }
+  ]
+}

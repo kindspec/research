@@ -1,0 +1,36 @@
+  ..0/68 wb  44038 formula cells  0 compared
+A.exact                                                 30720
+D.ref-where-excel-numeric                                7632
+Dref.blank                                               7632
+EVALUABLE                                               38352
+chain.depends-only-on-literals                          38352
+cmp.numeric                                             38352
+compared                                                38352
+distinct.sheets-contributing                             1598
+distinct.workbooks-contributing                            47
+formula-cells                                          976328
+shared.expanded                                        158958
+shared.unresolved                                           0
+translatable                                            38352
+verdict.CLEAN                                           38352
+verdict.NEEDS-HUMAN                                    127910
+verdict.UNTRANSLATABLE                                 810066
+wb.bad                                                      0
+wb.ok                                                      68
+
+  formula cells read                     976328
+  translatable                            38352
+  EVALUABLE (rowspec 4.2 parser)          38352  (+0 aggregates)
+  NOTEVAL   (parser refused)                  0
+  compared                                38352
+
+  AGREEMENT                               30720
+    exact double equality                 30720
+    equal to 15 significant digits            0
+    Excel errored, rowspec #REF!              0
+  BY DESIGN (out of the headline)          7632
+    blank operand   (Dref.blank)           7632
+    text passthrough (cmp.excel-text)         0
+  OTHER DISAGREEMENT                          0
+
+  excluding the two by-design classes: 30720 / 30720 = 100.00%

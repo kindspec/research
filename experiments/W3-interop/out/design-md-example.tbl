@@ -1,0 +1,7 @@
+| id     | item     | qty | unit  | total = qty * unit |
+| ------ | -------- | --: | ----: | -----------------: |
+| r_7f3a | widget   |  10 | 12.00 |                    |
+| r_2d15 | gadget   |  20 |  6.00 |                    |
+
+key   := id
+grand := sum(total)

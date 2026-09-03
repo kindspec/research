@@ -1,0 +1,27 @@
+git version: git version 2.47.3
+
+==========================================================
+### REF FORMAT = files
+==========================================================
+  actual format: files
+  on-disk refs storage: main 
+  (a) concurrent CAS on ONE ref: 3/16 succeeded
+  (b) concurrent writes to 16 DISTINCT refs: 16/16 succeeded
+  (c) 20000 refs created (batched 100/txn): 27329 ms
+      ref count: 20017
+      refs storage size: 79M+
+      for-each-ref (20k): 400 ms
+      ONE more ref update at 20k refs: 2 ms
+
+==========================================================
+### REF FORMAT = reftable
+==========================================================
+  actual format: reftable
+  on-disk refs storage: 0x000000000001-0x000000000002-4803a351.ref tables.list .git/refs/heads 
+  (a) concurrent CAS on ONE ref: 3/16 succeeded
+  (b) concurrent writes to 16 DISTINCT refs: 16/16 succeeded
+  (c) 20000 refs created (batched 100/txn): 28380 ms
+      ref count: 20017
+      refs storage size: 548K8.0K+
+      for-each-ref (20k): 248 ms
+      ONE more ref update at 20k refs: 2 ms

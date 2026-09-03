@@ -1,0 +1,16 @@
+#usda 1.0
+
+over "Diagram"
+{
+    over "queue"
+    {
+        double3 xformOp:translate = (700, 300, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    over "db"
+    {
+        double3 xformOp:translate = (400, 500, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}

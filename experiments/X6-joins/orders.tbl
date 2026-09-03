@@ -1,0 +1,8 @@
+| id | customer | amount | who = lookup(customers.tbl, customer, name) | tier = lookup(customers.tbl, customer, tier) |
+| --- | --- | --: | --- | --- |
+| o_01 | c_01 | 100 |  |  |
+| o_02 | c_02 | 250 |  |  |
+| o_03 | c_99 | 40 |  |  |
+
+key := id
+total := sum(amount)

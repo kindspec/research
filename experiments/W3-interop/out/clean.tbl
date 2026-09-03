@@ -1,0 +1,8 @@
+| id       | sku | item     | qty | unit  | total = qty*unit |
+| -------- | --- | -------- | --- | ----- | ---------------- |
+| r_8f47e7 | A-1 | widget   | 10  | 12.00 |                  |
+| r_ec123b | A-2 | gadget   | 20  | 6.00  |                  |
+| r_298b7d | A-3 | sprocket | 5   | 3.50  |                  |
+
+key   := sku
+grand := sum(total)

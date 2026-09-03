@@ -1,0 +1,2838 @@
+{
+ "meta": {
+  "shard": "4/8",
+  "files": 682,
+  "expand_sum": true,
+  "mutate": null
+ },
+ "counts": {
+  "shared.expanded": 50246,
+  "shared.unresolved": 0,
+  "formula-cells": 157651,
+  "verdict.UNTRANSLATABLE": 35637,
+  "exc.array-formula": 10433,
+  "exc.no-header": 17350,
+  "verdict.NEEDS-HUMAN": 96495,
+  "verdict.CLEAN": 14812,
+  "translatable": 15086,
+  "EVALUABLE": 2133,
+  "chain.depends-only-on-literals": 1458,
+  "compared": 2144,
+  "cmp.numeric": 2032,
+  "A.exact": 689,
+  "D.ref-where-excel-numeric": 1199,
+  "Dref.blank": 1199,
+  "exc.no-cached-value": 12183,
+  "verdict.CLEAN-WIDE": 245,
+  "NOTEVAL": 759,
+  "noteval.Call": 406,
+  "notevalfull.Call:AVERAGE": 21,
+  "surface.sum-expanded": 608,
+  "sumx.EVALUABLE": 550,
+  "sumx.chain.depends-only-on-literals": 50,
+  "sumx.compared": 550,
+  "sumx.cmp.numeric": 550,
+  "sumx.A.exact": 471,
+  "chain.depends-on-a-formula-cell": 675,
+  "sumx.chain.depends-on-a-formula-cell": 500,
+  "verdict.AGGREGATE": 29,
+  "surface.if-lowercased": 684,
+  "if.EVALUABLE": 48,
+  "ifstr.EVALUABLE": 21,
+  "if.chain.depends-only-on-literals": 45,
+  "ifstr.chain.depends-only-on-literals": 18,
+  "if.compared": 48,
+  "ifstr.compared": 21,
+  "cmp.excel-text": 14,
+  "if.cmp.excel-text": 14,
+  "ifstr.cmp.excel-text": 14,
+  "D.text-differs": 14,
+  "if.D.text-differs": 14,
+  "ifstr.D.text-differs": 14,
+  "notevalfull.Call:INT": 3,
+  "noteval.Op": 97,
+  "notevalfull.Op:%": 4,
+  "noteval.If": 256,
+  "notevalfull.If:text-branch": 256,
+  "EVALUABLE.aggregate": 11,
+  "A.15sig": 142,
+  "sumx.A.15sig": 11,
+  "A15.hp-matches-excel-so-rowspec-float-is-the-cause": 90,
+  "sumx.A15.hp-matches-excel-so-rowspec-float-is-the-cause": 2,
+  "A15.max-input-sigdigits-le14": 104,
+  "sumx.A15.max-input-sigdigits-le14": 2,
+  "notevalfull.Op:&": 26,
+  "if.cmp.numeric": 34,
+  "ifstr.cmp.numeric": 7,
+  "if.A.exact": 33,
+  "ifstr.A.exact": 6,
+  "A15.max-input-sigdigits-15": 38,
+  "sumx.D.ref-where-excel-numeric": 68,
+  "sumx.Dref.blank": 68,
+  "notevalfull.Op:unary-plus": 67,
+  "notevalfull.Call:AND": 6,
+  "sumx.NOTEVAL": 58,
+  "sumx.noteval.Op": 58,
+  "sumx.notevalfull.Op:unary-plus": 58,
+  "cmp.excel-error": 98,
+  "A.ref-where-excel-errors": 98,
+  "A15.hp-also-differs-so-the-inputs-are-the-cause": 52,
+  "if.chain.depends-on-a-formula-cell": 3,
+  "ifstr.chain.depends-on-a-formula-cell": 3,
+  "if.D.ref-where-excel-numeric": 1,
+  "ifstr.D.ref-where-excel-numeric": 1,
+  "if.Dref.blank": 1,
+  "ifstr.Dref.blank": 1,
+  "notevalfull.Call:CEILING": 31,
+  "notevalfull.Call:ROUNDDOWN": 342,
+  "D.float-accum": 2,
+  "notevalfull.Call:OR": 1,
+  "notevalfull.Call:MIN": 1,
+  "notevalfull.Call:ROUND": 1,
+  "agg.table-range-used": 3,
+  "sumx.A15.hp-also-differs-so-the-inputs-are-the-cause": 9,
+  "sumx.A15.max-input-sigdigits-15": 9,
+  "wb.ok": 682,
+  "wb.bad": 0,
+  "distinct.workbooks-contributing": 36,
+  "distinct.sheets-contributing": 40
+ },
+ "wb": [
+  "118-8/3_118-8_answer.xlsx",
+  "15387/1_15387_answer.xlsx",
+  "298-22/1_298-22_answer.xlsx",
+  "32093/1_32093_answer.xlsx",
+  "32895/1_32895_answer.xlsx",
+  "32902/2_32902_answer.xlsx",
+  "33094/2_33094_answer.xlsx",
+  "34493/3_34493_answer.xlsx",
+  "37086/3_37086_answer.xlsx",
+  "37615/3_37615_answer.xlsx",
+  "3911/1_3911_answer.xlsx",
+  "42058/3_42058_answer.xlsx",
+  "42181/1_42181_answer.xlsx",
+  "45181/1_45181_answer.xlsx",
+  "45372/1_45372_answer.xlsx",
+  "46121/3_46121_answer.xlsx",
+  "48357/2_48357_answer.xlsx",
+  "48643/2_48643_answer.xlsx",
+  "49490/2_49490_answer.xlsx",
+  "49613/3_49613_answer.xlsx",
+  "49939/2_49939_answer.xlsx",
+  "50051/1_50051_answer.xlsx",
+  "50442/2_50442_answer.xlsx",
+  "51661/3_51661_answer.xlsx",
+  "53174/1_53174_answer.xlsx",
+  "54474/3_54474_answer.xlsx",
+  "54513/2_54513_answer.xlsx",
+  "55392/3_55392_answer.xlsx",
+  "55572/3_55572_answer.xlsx",
+  "56419/3_56419_answer.xlsx",
+  "56637/2_56637_answer.xlsx",
+  "56953/1_56953_answer.xlsx",
+  "57262/1_57262_answer.xlsx",
+  "58781/3_58781_answer.xlsx",
+  "58890/1_58890_answer.xlsx",
+  "59932/3_59932_answer.xlsx"
+ ],
+ "sheet": [
+  "118-8/3_118-8_answer.xlsx\u0000Invoice Template",
+  "15387/1_15387_answer.xlsx\u0000Sheet1",
+  "298-22/1_298-22_answer.xlsx\u0000Sheet1",
+  "32093/1_32093_answer.xlsx\u0000Sheet1",
+  "32895/1_32895_answer.xlsx\u0000Sales",
+  "32902/2_32902_answer.xlsx\u0000Sheet1",
+  "33094/2_33094_answer.xlsx\u0000Sheet1",
+  "34493/3_34493_answer.xlsx\u0000Pallet Log",
+  "37086/3_37086_answer.xlsx\u0000Sheet1",
+  "37615/3_37615_answer.xlsx\u0000Example",
+  "3911/1_3911_answer.xlsx\u0000denomination",
+  "42058/3_42058_answer.xlsx\u0000Tabelle1",
+  "42181/1_42181_answer.xlsx\u0000Sheet1",
+  "45181/1_45181_answer.xlsx\u0000Sheet1",
+  "45372/1_45372_answer.xlsx\u0000Sheet1",
+  "46121/3_46121_answer.xlsx\u00002022",
+  "48357/2_48357_answer.xlsx\u0000Data",
+  "48357/2_48357_answer.xlsx\u0000Data 2",
+  "48643/2_48643_answer.xlsx\u0000Sheet1",
+  "49490/2_49490_answer.xlsx\u0000Sheet1",
+  "49613/3_49613_answer.xlsx\u0000CALCS",
+  "49613/3_49613_answer.xlsx\u0000DATA",
+  "49939/2_49939_answer.xlsx\u0000Sheet1",
+  "50051/1_50051_answer.xlsx\u0000Sheet1",
+  "50442/2_50442_answer.xlsx\u0000CALCS",
+  "50442/2_50442_answer.xlsx\u0000DATA",
+  "51661/3_51661_answer.xlsx\u0000SHOP",
+  "53174/1_53174_answer.xlsx\u0000Sheet1",
+  "54474/3_54474_answer.xlsx\u0000WHP",
+  "54513/2_54513_answer.xlsx\u0000Sheet1",
+  "55392/3_55392_answer.xlsx\u0000Bank Balance",
+  "55392/3_55392_answer.xlsx\u0000YTD Budget & Summary",
+  "55572/3_55572_answer.xlsx\u0000Sheet4",
+  "56419/3_56419_answer.xlsx\u0000Sheet1",
+  "56637/2_56637_answer.xlsx\u0000Sheet1",
+  "56953/1_56953_answer.xlsx\u0000Sheet2",
+  "57262/1_57262_answer.xlsx\u0000Sheet1",
+  "58781/3_58781_answer.xlsx\u0000Sheet2",
+  "58890/1_58890_answer.xlsx\u0000COM",
+  "59932/3_59932_answer.xlsx\u0000Sort"
+ ],
+ "samples": {
+  "D.ref-where-excel-numeric": [
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J20",
+    "f": "G20*I20",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J21",
+    "f": "G21*I21",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J22",
+    "f": "G22*I22",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J23",
+    "f": "G23*I23",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J24",
+    "f": "G24*I24",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J25",
+    "f": "G25*I25",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J26",
+    "f": "G26*I26",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "118-8/3_118-8_answer.xlsx",
+    "sheet": "Invoice Template",
+    "cell": "J27",
+    "f": "G27*I27",
+    "expr": "Qty*Price",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Qty*Price",
+    "doc": "| x0 | x1 | zout = x1*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D9",
+    "f": "C9-B9",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D10",
+    "f": "C10-B10",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D15",
+    "f": "C15-B15",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D16",
+    "f": "C16-B16",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D17",
+    "f": "C17-B17",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D21",
+    "f": "C21-B21",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D22",
+    "f": "C22-B22",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D23",
+    "f": "C23-B23",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D24",
+    "f": "C24-B24",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D25",
+    "f": "C25-B25",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D26",
+    "f": "C26-B26",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D27",
+    "f": "C27-B27",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D28",
+    "f": "C28-B28",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D29",
+    "f": "C29-B29",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D30",
+    "f": "C30-B30",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D31",
+    "f": "C31-B31",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D32",
+    "f": "C32-B32",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D33",
+    "f": "C33-B33",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D34",
+    "f": "C34-B34",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D35",
+    "f": "C35-B35",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D36",
+    "f": "C36-B36",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D37",
+    "f": "C37-B37",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F42",
+    "f": "SUM(D42*E42)",
+    "expr": "SUM(Total_Hours*Days_Billed)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "((Total_Hours*Days_Billed))",
+    "doc": "| x0 | x1 | zout = ((x1*x0)) |\n| --- | --- | --- |\n|  | 57.2 |  |\n",
+    "kinds": [
+     "blank",
+     "number"
+    ],
+    "lits": [
+     "",
+     "57.2"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F43",
+    "f": "SUM(D43*E43)",
+    "expr": "SUM(Total_Hours*Days_Billed)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "((Total_Hours*Days_Billed))",
+    "doc": "| x0 | x1 | zout = ((x1*x0)) |\n| --- | --- | --- |\n|  | 28.6 |  |\n",
+    "kinds": [
+     "blank",
+     "number"
+    ],
+    "lits": [
+     "",
+     "28.6"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "42058/3_42058_answer.xlsx",
+    "sheet": "Tabelle1",
+    "cell": "D10",
+    "f": "SUM(E10:P10)",
+    "expr": "SUM(April, Mai, Juni, Juli, August, September, Okt_, November, Dezember, Januar, Februar, M\u00e4rz)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((April)+(Mai)+(Juni)+(Juli)+(August)+(September)+(Okt_)+(November)+(Dezember)+(Januar)+(Februar)+(M\u00e4rz))",
+    "doc": "| x0 | x1 | x2 | x3 | x4 | x5 | x6 | x7 | x8 | x9 | x10 | x11 | zout = ((x0)+(x7)+(x6)+(x5)+(x1)+(x11)+(x10)+(x9)+(x2)+(x4)+(x3)+(x8)) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2.112 |  |  |  |  | 2.354 | 2.758 | 1.995 |  |  |  |  |  |\n",
+    "kinds": [
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank",
+     "number",
+     "number",
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "2.112",
+     "",
+     "",
+     "",
+     "",
+     "2.354",
+     "2.758",
+     "1.995",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "excel": "9.219",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "42058/3_42058_answer.xlsx",
+    "sheet": "Tabelle1",
+    "cell": "D14",
+    "f": "SUM(E14:P14)",
+    "expr": "SUM(April, Mai, Juni, Juli, August, September, Okt_, November, Dezember, Januar, Februar, M\u00e4rz)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((April)+(Mai)+(Juni)+(Juli)+(August)+(September)+(Okt_)+(November)+(Dezember)+(Januar)+(Februar)+(M\u00e4rz))",
+    "doc": "| x0 | x1 | x2 | x3 | x4 | x5 | x6 | x7 | x8 | x9 | x10 | x11 | zout = ((x0)+(x7)+(x6)+(x5)+(x1)+(x11)+(x10)+(x9)+(x2)+(x4)+(x3)+(x8)) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 0.394 |  |  |  |  | 0.454 | 0.3 | 0.262 |  |  |  |  |  |\n",
+    "kinds": [
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank",
+     "number",
+     "number",
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "0.394",
+     "",
+     "",
+     "",
+     "",
+     "0.454",
+     "0.3",
+     "0.262",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "excel": "1.41",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "42058/3_42058_answer.xlsx",
+    "sheet": "Tabelle1",
+    "cell": "D16",
+    "f": "SUM(E16:P16)",
+    "expr": "SUM(April, Mai, Juni, Juli, August, September, Okt_, November, Dezember, Januar, Februar, M\u00e4rz)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((April)+(Mai)+(Juni)+(Juli)+(August)+(September)+(Okt_)+(November)+(Dezember)+(Januar)+(Februar)+(M\u00e4rz))",
+    "doc": "| x0 | x1 | x2 | x3 | x4 | x5 | x6 | x7 | x8 | x9 | x10 | x11 | zout = ((x0)+(x7)+(x6)+(x5)+(x1)+(x11)+(x10)+(x9)+(x2)+(x4)+(x3)+(x8)) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 0.13 |  |  |  |  | 0.38 | 0.466 | 0.29 |  |  |  |  |  |\n",
+    "kinds": [
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank",
+     "number",
+     "number",
+     "number",
+     "blank",
+     "blank",
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "0.13",
+     "",
+     "",
+     "",
+     "",
+     "0.38",
+     "0.466",
+     "0.29",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "excel": "1.266",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "45372/1_45372_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E2",
+    "f": "SUM(B2:C2)",
+    "expr": "SUM(Actual_Value, Forecast_Value)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((Actual_Value)+(Forecast_Value))",
+    "doc": "| x0 | x1 | zout = ((x0)+(x1)) |\n| --- | --- | --- |\n| 42.0 |  |  |\n",
+    "kinds": [
+     "number",
+     "blank"
+    ],
+    "lits": [
+     "42.0",
+     ""
+    ],
+    "excel": "42",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "45372/1_45372_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E3",
+    "f": "SUM(B3:C3)",
+    "expr": "SUM(Actual_Value, Forecast_Value)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((Actual_Value)+(Forecast_Value))",
+    "doc": "| x0 | x1 | zout = ((x0)+(x1)) |\n| --- | --- | --- |\n| 45.0 |  |  |\n",
+    "kinds": [
+     "number",
+     "blank"
+    ],
+    "lits": [
+     "45.0",
+     ""
+    ],
+    "excel": "45",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "45372/1_45372_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E4",
+    "f": "SUM(B4:C4)",
+    "expr": "SUM(Actual_Value, Forecast_Value)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "((Actual_Value)+(Forecast_Value))",
+    "doc": "| x0 | x1 | zout = ((x0)+(x1)) |\n| --- | --- | --- |\n| 45.0 |  |  |\n",
+    "kinds": [
+     "number",
+     "blank"
+    ],
+    "lits": [
+     "45.0",
+     ""
+    ],
+    "excel": "45",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "45372/1_45372_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E5",
+    "f": "SUM(B5:C5)",
+    "expr": "SUM(Actual_Value, Forecast_Value)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "((Actual_Value)+(Forecast_Value))",
+    "doc": "| x0 | x1 | zout = ((x0)+(x1)) |\n| --- | --- | --- |\n| 24.0 |  |  |\n",
+    "kinds": [
+     "number",
+     "blank"
+    ],
+    "lits": [
+     "24.0",
+     ""
+    ],
+    "excel": "24",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "45372/1_45372_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E6",
+    "f": "SUM(B6:C6)",
+    "expr": "SUM(Actual_Value, Forecast_Value)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "((Actual_Value)+(Forecast_Value))",
+    "doc": "| x0 | x1 | zout = ((x0)+(x1)) |\n| --- | --- | --- |\n| 48.0 |  |  |\n",
+    "kinds": [
+     "number",
+     "blank"
+    ],
+    "lits": [
+     "48.0",
+     ""
+    ],
+    "excel": "48",
+    "rs": "#REF!(x1)"
+   }
+  ],
+  "NOTEVAL": [
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F2",
+    "f": "AVERAGE(B2:E2)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F3",
+    "f": "AVERAGE(B3:E3)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F4",
+    "f": "AVERAGE(B4:E4)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F5",
+    "f": "AVERAGE(B5:E5)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F6",
+    "f": "AVERAGE(B6:E6)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F7",
+    "f": "AVERAGE(B7:E7)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "AVERAGE(B8:E8)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "AVERAGE(B9:E9)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F10",
+    "f": "AVERAGE(B10:E10)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F11",
+    "f": "AVERAGE(B11:E11)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F12",
+    "f": "AVERAGE(B12:E12)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F13",
+    "f": "AVERAGE(B13:E13)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F14",
+    "f": "AVERAGE(B14:E14)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F15",
+    "f": "AVERAGE(B15:E15)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F16",
+    "f": "AVERAGE(B16:E16)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F17",
+    "f": "AVERAGE(B17:E17)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F18",
+    "f": "AVERAGE(B18:E18)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/2_14625_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F19",
+    "f": "AVERAGE(B19:E19)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "32438/2_32438_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J2",
+    "f": "I2-INT(I2)",
+    "expr": "Time-INT(Time)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Time-INT(Time)",
+    "why": "Call:INT",
+    "msg": "column 'zout': unknown function 'INT'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "32438/2_32438_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J3",
+    "f": "I3-INT(I3)",
+    "expr": "Time-INT(Time)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Time-INT(Time)",
+    "why": "Call:INT",
+    "msg": "column 'zout': unknown function 'INT'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "32438/2_32438_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J4",
+    "f": "I4-INT(I4)",
+    "expr": "Time-INT(Time)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time-INT(Time)",
+    "why": "Call:INT",
+    "msg": "column 'zout': unknown function 'INT'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "H4",
+    "f": "IF(A4=\"\",\"\",G4*15%)",
+    "expr": "IF(Date=\"\",\"\",Amount*15%)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Date=\"\",\"\",Amount*15%)",
+    "why": "Op:%",
+    "msg": "column 'zout': '%' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "I4",
+    "f": "IF(A4=\"\",\"\",G4+H4)",
+    "expr": "IF(Date=\"\",\"\",Amount+VAT)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Date=\"\",\"\",Amount+VAT)",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Date=\"\",\"\",Amount+VAT)'"
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "H5",
+    "f": "IF(A5=\"\",\"\",G5*15%)",
+    "expr": "IF(Date=\"\",\"\",Amount*15%)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Date=\"\",\"\",Amount*15%)",
+    "why": "Op:%",
+    "msg": "column 'zout': '%' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "I5",
+    "f": "IF(A5=\"\",\"\",G5+H5)",
+    "expr": "IF(Date=\"\",\"\",Amount+VAT)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Date=\"\",\"\",Amount+VAT)",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Date=\"\",\"\",Amount+VAT)'"
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "H6",
+    "f": "IF(A6=\"\",\"\",G6*15%)",
+    "expr": "IF(Date=\"\",\"\",Amount*15%)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Date=\"\",\"\",Amount*15%)",
+    "why": "Op:%",
+    "msg": "column 'zout': '%' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "I6",
+    "f": "IF(A6=\"\",\"\",G6+H6)",
+    "expr": "IF(Date=\"\",\"\",Amount+VAT)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Date=\"\",\"\",Amount+VAT)",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Date=\"\",\"\",Amount+VAT)'"
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "H7",
+    "f": "IF(A7=\"\",\"\",G7*15%)",
+    "expr": "IF(Date=\"\",\"\",Amount*15%)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Date=\"\",\"\",Amount*15%)",
+    "why": "Op:%",
+    "msg": "column 'zout': '%' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "32895/1_32895_answer.xlsx",
+    "sheet": "Purchases",
+    "cell": "I7",
+    "f": "IF(A7=\"\",\"\",G7+H7)",
+    "expr": "IF(Date=\"\",\"\",Amount+VAT)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Date=\"\",\"\",Amount+VAT)",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Date=\"\",\"\",Amount+VAT)'"
+   },
+   {
+    "wb": "36236/3_36236_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F2",
+    "f": "A2&IF(A2=B2,\"\",\", \"&B2)",
+    "expr": "Company_A&IF(Company_A=Company_B,\"\",\", \"&Company_B)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Company_A&if(Company_A=Company_B,\"\",\", \"&Company_B)",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F7",
+    "f": "IF(D7>0.17,57.2,IF(D7<=0.17,28.6,\"\"))*E7",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F8",
+    "f": "IF(D8>0.17,57.2,IF(D8<=0.17,28.6,\"\"))*E8",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F9",
+    "f": "IF(D9>0.17,57.2,IF(D9<=0.17,28.6,\"\"))*E9",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F10",
+    "f": "IF(D10>0.17,57.2,IF(D10<=0.17,28.6,\"\"))*E10",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F11",
+    "f": "IF(D11>0.17,57.2,IF(D11<=0.17,28.6,\"\"))*E11",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F12",
+    "f": "IF(D12>0.17,57.2,IF(D12<=0.17,28.6,\"\"))*E12",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F13",
+    "f": "IF(D13>0.17,57.2,IF(D13<=0.17,28.6,\"\"))*E13",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F14",
+    "f": "IF(D14>0.17,57.2,IF(D14<=0.17,28.6,\"\"))*E14",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F15",
+    "f": "IF(D15>0.17,57.2,IF(D15<=0.17,28.6,\"\"))*E15",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "F16",
+    "f": "IF(D16>0.17,57.2,IF(D16<=0.17,28.6,\"\"))*E16",
+    "expr": "IF(Total_Hours>0.17,57.2,IF(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed",
+    "why": "If:text-branch",
+    "msg": "column 'zout': expected a value in 'if(Total_Hours>0.17,57.2,if(Total_Hours<=0.17,28.6,\"\"))*Days_Billed'"
+   }
+  ],
+  "D.text-differs": [
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G2",
+    "f": "IF(C2=\"\",B2,C2)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor | Jim |  |\n",
+    "kinds": [
+     "text",
+     "text"
+    ],
+    "lits": [
+     "Connor",
+     "Jim"
+    ],
+    "excel": "Jim",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G3",
+    "f": "IF(C3=\"\",B3,C3)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G4",
+    "f": "IF(C4=\"\",B4,C4)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G5",
+    "f": "IF(C5=\"\",B5,C5)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G6",
+    "f": "IF(C6=\"\",B6,C6)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G7",
+    "f": "IF(C7=\"\",B7,C7)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G8",
+    "f": "IF(C8=\"\",B8,C8)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G9",
+    "f": "IF(C9=\"\",B9,C9)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G10",
+    "f": "IF(C10=\"\",B10,C10)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor | Susan |  |\n",
+    "kinds": [
+     "text",
+     "text"
+    ],
+    "lits": [
+     "Connor",
+     "Susan"
+    ],
+    "excel": "Susan",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G11",
+    "f": "IF(C11=\"\",B11,C11)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G12",
+    "f": "IF(C12=\"\",B12,C12)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G13",
+    "f": "IF(C13=\"\",B13,C13)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G14",
+    "f": "IF(C14=\"\",B14,C14)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/1_32093_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G15",
+    "f": "IF(C15=\"\",B15,C15)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   }
+  ],
+  "A.15sig": [
+   {
+    "wb": "33094/2_33094_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "Z5",
+    "f": "SUM(C5:Y5)",
+    "expr": "SUM(Wk43, Wk44, Wk45, Wk46, Wk47, Wk48, Wk49, Wk50, Wk51, Wk52, Wk1, Wk2, Wk3, Wk4, Wk5, Wk6, Wk7, Wk8, Wk9, Wk10, Wk11,",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((Wk43)+(Wk44)+(Wk45)+(Wk46)+(Wk47)+(Wk48)+(Wk49)+(Wk50)+(Wk51)+(Wk52)+(Wk1)+(Wk2)+(Wk3)+(Wk4)+(Wk5)+(Wk6)+(Wk7)+(Wk8)+(",
+    "doc": "| x0 | x1 | x2 | x3 | x4 | x5 | x6 | x7 | x8 | x9 | x10 | x11 | x12 | x13 | x14 | x15 | x16 | x17 | x18 | x19 | x20 | x21 | x22 | zout = ((x8)+(x9)+(x10)+(x11)+(x12)+(x13)+(x14)+(x16)+(x17)+(x18)+(x0)+(x5)+(x6)+(x7)+(x15)+(x19)+(x20)+(x21)+(x22)+(x1)+(x2)+(x3)+(x4)) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 1.3 | 1.3 | 1.3 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "1.3",
+     "1.3",
+     "1.3",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0",
+     "0.0"
+    ],
+    "excel": "3.9",
+    "rs": 3.9000000000000004,
+    "hp": 3.9
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D8",
+    "f": "C8-B8",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 0.166666666666667 | 0.458333333333333 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.166666666666667",
+     "0.458333333333333"
+    ],
+    "excel": "0.291666666666666",
+    "rs": 0.29166666666666596,
+    "hp": 0.291666666666666
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D11",
+    "f": "C11-B11",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 0.354166666666667 | 0.697916666666667 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.354166666666667",
+     "0.697916666666667"
+    ],
+    "excel": "0.34375",
+    "rs": 0.34374999999999994,
+    "hp": 0.34375
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D12",
+    "f": "C12-B12",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 0.322916666666667 | 0.565972222222222 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.322916666666667",
+     "0.565972222222222"
+    ],
+    "excel": "0.243055555555555",
+    "rs": 0.24305555555555497,
+    "hp": 0.243055555555555
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D13",
+    "f": "C13-B13",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 0.458333333333333 | 0.666666666666667 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.458333333333333",
+     "0.666666666666667"
+    ],
+    "excel": "0.208333333333334",
+    "rs": 0.20833333333333398,
+    "hp": 0.208333333333334
+   },
+   {
+    "wb": "37615/3_37615_answer.xlsx",
+    "sheet": "Example",
+    "cell": "D19",
+    "f": "C19-B19",
+    "expr": "Time_Out-Time_In",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Time_Out-Time_In",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 0.329861111111111 | 0.559027777777778 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.329861111111111",
+     "0.559027777777778"
+    ],
+    "excel": "0.229166666666667",
+    "rs": 0.22916666666666702,
+    "hp": 0.229166666666667
+   },
+   {
+    "wb": "42058/3_42058_answer.xlsx",
+    "sheet": "Tabelle1",
+    "cell": "D15",
+    "f": "SUM(E15:H15)",
+    "expr": "SUM(April, Mai, Juni, Juli)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "((April)+(Mai)+(Juni)+(Juli))",
+    "doc": "| x0 | x1 | x2 | x3 | zout = ((x0)+(x3)+(x2)+(x1)) |\n| --- | --- | --- | --- | --- |\n| 0.32 | 0.4 | 0.41 | 0.3 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.32",
+     "0.4",
+     "0.41",
+     "0.3"
+    ],
+    "excel": "1.43",
+    "rs": 1.4300000000000002,
+    "hp": 1.43
+   },
+   {
+    "wb": "48643/2_48643_answer.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E4",
+    "f": "B4*C4",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n| 1500.0 | 0.07 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "1500.0",
+     "0.07"
+    ],
+    "excel": "105",
+    "rs": 105.00000000000001,
+    "hp": 105.0
+   },
+   {
+    "wb": "49613/3_49613_answer.xlsx",
+    "sheet": "CALCS",
+    "cell": "E6",
+    "f": "C6/D6",
+    "expr": "TOTAL_TIME/ENTRIES",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "TOTAL_TIME/ENTRIES",
+    "doc": "| x0 | x1 | zout = x1/x0 |\n| --- | --- | --- |\n| 3.0 | 1.1875 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "3.0",
+     "1.1875"
+    ],
+    "excel": "0.395833333333333",
+    "rs": 0.3958333333333333,
+    "hp": 0.3958333333333333
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K2",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 17.0 | 16.7 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "17.0",
+     "16.7"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.3000000000000007,
+    "hp": -0.3
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L3",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 17.0 | 24.06 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "17.0",
+     "24.06"
+    ],
+    "excel": "7.06",
+    "rs": 7.059999999999999,
+    "hp": 7.06
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K5",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 24.69 | 24.39 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "24.69",
+     "24.39"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.3000000000000007,
+    "hp": -0.3
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L5",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 24.69 | 26.92 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "24.69",
+     "26.92"
+    ],
+    "excel": "2.23",
+    "rs": 2.2300000000000004,
+    "hp": 2.23
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K6",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 8.64 | 9.8 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "8.64",
+     "9.8"
+    ],
+    "excel": "1.16",
+    "rs": 1.1600000000000001,
+    "hp": 1.16
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L6",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 8.64 | 10.42 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "8.64",
+     "10.42"
+    ],
+    "excel": "1.78",
+    "rs": 1.7799999999999994,
+    "hp": 1.78
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L7",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 18.18 | 19.89 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "18.18",
+     "19.89"
+    ],
+    "excel": "1.71",
+    "rs": 1.7100000000000009,
+    "hp": 1.71
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K8",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 12.0 | 12.2 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "12.0",
+     "12.2"
+    ],
+    "excel": "0.199999999999999",
+    "rs": 0.1999999999999993,
+    "hp": 0.2
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L8",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 12.0 | 12.88 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "12.0",
+     "12.88"
+    ],
+    "excel": "0.880000000000001",
+    "rs": 0.8800000000000008,
+    "hp": 0.88
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K9",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 9.83 | 11.28 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "9.83",
+     "11.28"
+    ],
+    "excel": "1.45",
+    "rs": 1.4499999999999993,
+    "hp": 1.45
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L9",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 9.83 | 13.51 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "9.83",
+     "13.51"
+    ],
+    "excel": "3.68",
+    "rs": 3.6799999999999997,
+    "hp": 3.68
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K10",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 12.88 | 13.1 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "12.88",
+     "13.1"
+    ],
+    "excel": "0.219999999999999",
+    "rs": 0.21999999999999886,
+    "hp": 0.22
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L10",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 12.88 | 13.6 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "12.88",
+     "13.6"
+    ],
+    "excel": "0.719999999999999",
+    "rs": 0.7199999999999989,
+    "hp": 0.72
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K11",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 4.0 | 4.43 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "4.0",
+     "4.43"
+    ],
+    "excel": "0.43",
+    "rs": 0.4299999999999997,
+    "hp": 0.43
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L11",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 4.0 | 4.78 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "4.0",
+     "4.78"
+    ],
+    "excel": "0.78",
+    "rs": 0.7800000000000002,
+    "hp": 0.78
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K12",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.05 | 18.9 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.05",
+     "18.9"
+    ],
+    "excel": "-0.150000000000002",
+    "rs": -0.15000000000000213,
+    "hp": -0.15
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L12",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.05 | 19.45 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.05",
+     "19.45"
+    ],
+    "excel": "0.399999999999999",
+    "rs": 0.3999999999999986,
+    "hp": 0.4
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K13",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 20.65 | 22.25 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "20.65",
+     "22.25"
+    ],
+    "excel": "1.6",
+    "rs": 1.6000000000000014,
+    "hp": 1.6
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L13",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 20.65 | 21.5 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "20.65",
+     "21.5"
+    ],
+    "excel": "0.850000000000001",
+    "rs": 0.8500000000000014,
+    "hp": 0.85
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K14",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 10.7 | 10.66 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "10.7",
+     "10.66"
+    ],
+    "excel": "-0.0399999999999991",
+    "rs": -0.03999999999999915,
+    "hp": -0.04
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K15",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.55 | 21.0 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.55",
+     "21.0"
+    ],
+    "excel": "1.45",
+    "rs": 1.4499999999999993,
+    "hp": 1.45
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L15",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.55 | 21.65 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.55",
+     "21.65"
+    ],
+    "excel": "2.1",
+    "rs": 2.099999999999998,
+    "hp": 2.1
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K17",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 5.46 | 6.15 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "5.46",
+     "6.15"
+    ],
+    "excel": "0.69",
+    "rs": 0.6900000000000004,
+    "hp": 0.69
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L17",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 5.46 | 6.35 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "5.46",
+     "6.35"
+    ],
+    "excel": "0.89",
+    "rs": 0.8899999999999997,
+    "hp": 0.89
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K18",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.25 | 23.6 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.25",
+     "23.6"
+    ],
+    "excel": "4.35",
+    "rs": 4.350000000000001,
+    "hp": 4.35
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L18",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.25 | 24.9 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.25",
+     "24.9"
+    ],
+    "excel": "5.65",
+    "rs": 5.649999999999999,
+    "hp": 5.65
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K19",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 6.33 | 6.9 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "6.33",
+     "6.9"
+    ],
+    "excel": "0.57",
+    "rs": 0.5700000000000003,
+    "hp": 0.57
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L19",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 6.33 | 9.56 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "6.33",
+     "9.56"
+    ],
+    "excel": "3.23",
+    "rs": 3.2300000000000004,
+    "hp": 3.23
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K21",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.3 | 20.15 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.3",
+     "20.15"
+    ],
+    "excel": "0.849999999999998",
+    "rs": 0.8499999999999979,
+    "hp": 0.85
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "L21",
+    "f": "Table1[[#This Row],[HIGH]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "HIGH-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "HIGH-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 19.3 | 21.21 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "19.3",
+     "21.21"
+    ],
+    "excel": "1.91",
+    "rs": 1.9100000000000001,
+    "hp": 1.91
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K22",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 14.97 | 14.67 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "14.97",
+     "14.67"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.3000000000000007,
+    "hp": -0.3
+   }
+  ],
+  "D.float-accum": [
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K4",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 17.99 | 17.69 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "17.99",
+     "17.69"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.29999999999999716,
+    "hp": -0.3,
+    "exsig": 15
+   },
+   {
+    "wb": "50442/2_50442_answer.xlsx",
+    "sheet": "DATA",
+    "cell": "K25",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 14.36 | 14.06 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "14.36",
+     "14.06"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.29999999999999893,
+    "hp": -0.3,
+    "exsig": 15
+   }
+  ]
+ }
+}

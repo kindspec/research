@@ -1,0 +1,48 @@
+Overwriting existing notes for object 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+Overwriting existing notes for object 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+ours   ref: 148d2830f59546189ad2a0df4e0ccb0b62e75450  -> OURS note
+theirs ref: 4787084855ef31e235c25ed339750bef8a5a65b7   -> THEIRS note
+merge-base: e09fbd7f3315127a057b55e7150ed6244edf81eb
+
+=== (a) default 'manual' strategy on a GENUINE divergence ===
+Automatic notes merge failed. Fix conflicts in .git/NOTES_MERGE_WORKTREE and commit the result with 'git notes merge --commit', or abort the merge with 'git notes merge --abort'.
+Auto-merging notes for 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+CONFLICT (content): Merge conflict in notes for object 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+exit=1
+--- .git/NOTES_MERGE_WORKTREE contents ---
+  file: 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+    <<<<<<< refs/notes/commits
+    OURS note
+    =======
+    THEIRS note
+    >>>>>>> refs/notes/theirs
+--- git status / NOTES_MERGE_REF ---
+ref: refs/notes/commits
+
+=== (b) -s union ===
+    OURS note
+    
+    THEIRS note
+
+=== (c) can 'git notes merge' run in a BARE repo (i.e. server-side)? ===
+refs: refs/notes/commits refs/notes/theirs 
+Automatic notes merge failed. Fix conflicts in NOTES_MERGE_WORKTREE and commit the result with 'git notes merge --commit', or abort the merge with 'git notes merge --abort'.
+Auto-merging notes for 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+CONFLICT (content): Merge conflict in notes for object 2ac6f8ec992d7f503d3125923bf68022c1cbc53d
+exit=0
+
+=== (d) notes.rewriteRef DEFAULT value per docs ===
+	   "notes.rewriteRef" below.
+
+	   This setting can be overridden with the GIT_NOTES_REWRITE_REF
+	   environment variable, which must be a colon separated list of refs
+	   or globs.
+
+       notes.rewriteMode
+	   When copying notes during a rewrite (see the
+	   "notes.rewrite.<command>" option), determines what to do if the
+--
+       notes.rewriteRef
+	   When copying notes during a rewrite, specifies the (fully qualified)
+	   ref whose notes should be copied. May be a glob, in which case notes
+	   in all matching refs will be copied. You may also specify this

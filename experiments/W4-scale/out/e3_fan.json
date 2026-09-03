@@ -1,0 +1,37 @@
+{
+ "fanin": [
+  {
+   "fanin": 10,
+   "cold_s": 0.015557224018266425,
+   "warm_s": 0.011893114016856998,
+   "after_hub_edit_s": 0.015318172983825207,
+   "cold_miss": 1,
+   "warm_hit": 1,
+   "inv_miss": 0,
+   "warm_opens": 50,
+   "inv_opens": 50
+  },
+  {
+   "fanin": 100,
+   "cold_s": 0.12484383300761692,
+   "warm_s": 0.11867793800774962,
+   "after_hub_edit_s": 0.12500847500632517,
+   "cold_miss": 1,
+   "warm_hit": 1,
+   "inv_miss": 0,
+   "warm_opens": 500,
+   "inv_opens": 500
+  },
+  {
+   "fanin": 1000,
+   "cold_s": 1.2139837499998976,
+   "warm_s": 1.208604479994392,
+   "after_hub_edit_s": 1.5023428299755324,
+   "cold_miss": 1,
+   "warm_hit": 1,
+   "inv_miss": 0,
+   "warm_opens": 5000,
+   "inv_opens": 5000
+  }
+ ]
+}

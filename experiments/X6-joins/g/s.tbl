@@ -1,0 +1,11 @@
+| id | region | rep | amount | region_total = sum(amount where region = @region) | rep_in_region = sum(amount where region = @region and rep = @rep) |
+| --- | --- | --- | --: | --: | --: |
+| r_01 | EU | ann | 100 |  |  |
+| r_05 | EU | cara | 25 |  |  |
+| r_02 | EU | bob | 40 |  |  |
+| r_03 | US | ann | 250 |  |  |
+| r_04 | EU | ann | 60 |  |  |
+| r_06 | US | bob | 30 |  |  |
+
+key := id
+all := sum(amount)

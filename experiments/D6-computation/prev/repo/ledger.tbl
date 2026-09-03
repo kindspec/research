@@ -1,0 +1,9 @@
+| date       | memo      | amount | balance = prev.balance + amount |
+| ---------- | --------- | -----: | ------------------------------: |
+| 2026-01-02 | opening   | 1000   |                                 |
+| 2026-01-03 | refund    |  250   |                                 |
+| 2026-01-05 | rent      | -400   |                                 |
+| 2026-01-31 | salary    |  900   |                                 |
+| 2026-02-02 | fees      |  -75   |                                 |
+
+closing := last(balance)

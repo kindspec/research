@@ -1,0 +1,137 @@
+git version: git version 2.47.3
+
+==========================================================
+### 1. NON-BARE (developer laptop) baseline: git merge-tree --write-tree
+==========================================================
+9ac762a0163869dec6a04ef3ef1aee5d58f5e67c
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	b.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	b.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	b.csv
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	p.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	p.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	p.csv
+
+
+==========================================================
+### 2. BARE repo (a forge). Same objects. Same .gitattributes IN THE TREE.
+==========================================================
+is-bare: true
+.gitattributes in HEAD tree:
+    u.csv merge=union
+    b.csv binary
+    p.csv merge=probe
+$GIT_DIR/info/attributes exists? 
+ls: cannot access 'info/attributes': No such file or directory
+
+-- merge-tree in the BARE repo --
+exit=1
+bf18fc4d60197d8d83bcb65f9d6df597d74466e4
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	b.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	b.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	b.csv
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	p.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	p.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	p.csv
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	u.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	u.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	u.csv
+
+Auto-merging b.csv
+CONFLICT (content): Merge conflict in b.csv
+Auto-merging p.csv
+CONFLICT (content): Merge conflict in p.csv
+Auto-merging u.csv
+CONFLICT (content): Merge conflict in u.csv
+
+-- resulting u.csv (merge=union) in bare merge --
+    <<<<<<< main
+    total,300
+    =======
+    total,200
+    >>>>>>> feat
+-- resulting b.csv (binary) in bare merge --
+    <<<<<<< main
+    total,300
+    =======
+    total,200
+    >>>>>>> feat
+-- resulting p.csv (merge=probe) in bare merge --
+    <<<<<<< main
+    total,300
+    =======
+    total,200
+    >>>>>>> feat
+
+==========================================================
+### 3. Does attr.tree (git 2.40+) make the bare repo read .gitattributes?
+==========================================================
+exit=1
+9ac762a0163869dec6a04ef3ef1aee5d58f5e67c
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	b.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	b.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	b.csv
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	p.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	p.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	p.csv
+
+warning: Cannot merge binary files: b.csv (main vs. feat)
+Auto-merging b.csv
+CONFLICT (content): Merge conflict in b.csv
+Auto-merging p.csv
+CONFLICT (content): Merge conflict in p.csv
+Auto-merging u.csv
+-- u.csv with attr.tree=HEAD --
+    total,300
+    total,200
+-- b.csv with attr.tree=HEAD --
+    total,300
+
+==========================================================
+### 4. Same, but attributes placed in $GIT_DIR/info/attributes (server operator action)
+==========================================================
+    u.csv merge=union
+    b.csv binary
+    p.csv merge=probe
+exit=1
+9ac762a0163869dec6a04ef3ef1aee5d58f5e67c
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	b.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	b.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	b.csv
+100644 428e96a734092cffd5438e2d7ea74714be44bbc5 1	p.csv
+100644 b563d7b370770651f1fd0ac90434264efeb968ca 2	p.csv
+100644 9a6013ba67e11b20ecb05345cb9973ef92e944df 3	p.csv
+
+warning: Cannot merge binary files: b.csv (main vs. feat)
+Auto-merging b.csv
+CONFLICT (content): Merge conflict in b.csv
+Auto-merging p.csv
+CONFLICT (content): Merge conflict in p.csv
+Auto-merging u.csv
+-- u.csv --
+    total,300
+    total,200
+-- b.csv --
+    total,300
+
+==========================================================
+### 5. The path Gitea/Forgejo actually take: temp WORKTREE + real 'git merge'
+==========================================================
+.gitattributes checked out? .gitattributes
+warning: Cannot merge binary files: b.csv (HEAD vs. origin/feat)
+Auto-merging b.csv
+CONFLICT (content): Merge conflict in b.csv
+Auto-merging p.csv
+CONFLICT (content): Merge conflict in p.csv
+Auto-merging u.csv
+-- u.csv --
+    total,300
+    total,200
+-- b.csv --
+    total,300
+UU b.csv
+-- p.csv (custom driver, undefined) --
+    <<<<<<< HEAD
+    total,300
+    =======
+    total,200
+    >>>>>>> origin/feat

@@ -1,0 +1,10 @@
+| item     | qty | unit  | total = qty * unit |
+| -------- | --: | ----: | -----------------: |
+| widget   |  10 | 12.00 |                    |
+<<<<<<< HEAD
+| gadget   |  20 | 18.00 |                    |
+=======
+| gadget   |  20 | 30.00 |                    |
+>>>>>>> bob
+
+grand := sum(total)

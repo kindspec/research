@@ -1,0 +1,27 @@
+#usda 1.0
+(
+    defaultPrim = "Diagram"
+)
+
+def Scope "Diagram"
+{
+    def Xform "api" ( kind = "component" )
+    {
+        custom string label = "API Gateway"
+    }
+
+    def Xform "auth" ( kind = "component" )
+    {
+        custom string label = "Auth Service"
+    }
+
+    def Xform "db" ( kind = "component" )
+    {
+        custom string label = "Postgres"
+    }
+
+    def Xform "queue" ( kind = "component" )
+    {
+        custom string label = "Job Queue"
+    }
+}

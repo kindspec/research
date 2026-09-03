@@ -1,0 +1,47 @@
+{
+ "correctness": {
+  "deep_edit_detected": true,
+  "cycle_error": "reference cycle: x.tbl -> y.tbl -> x.tbl",
+  "self_error": "reference cycle: s.tbl -> s.tbl",
+  "shipped_cycle_result": "d522a2f37d6c",
+  "shipped_self_result": "c67122b7e864"
+ },
+ "chain": [
+  {
+   "depth": 10,
+   "baseline_s": 0.009670085011748597,
+   "dag_s": 0.0026772650016937405,
+   "speedup": 3.611926725830626
+  },
+  {
+   "depth": 25,
+   "baseline_s": 0.05445835099089891,
+   "dag_s": 0.005152038007508963,
+   "speedup": 10.570254123033886
+  },
+  {
+   "depth": 50,
+   "baseline_s": 0.21095837498432957,
+   "dag_s": 0.010394084005383775,
+   "speedup": 20.296004426658516
+  },
+  {
+   "depth": 100,
+   "baseline_s": 0.7950367020093836,
+   "dag_s": 0.02263652699184604,
+   "speedup": 35.12184984453515
+  },
+  {
+   "depth": 200,
+   "baseline_s": 3.212392585002817,
+   "dag_s": 0.042277644999558106,
+   "speedup": 75.9832432728075
+  },
+  {
+   "depth": 400,
+   "baseline_s": 20.150085642002523,
+   "dag_s": 0.2152717360004317,
+   "speedup": 93.6030247926375
+  }
+ ]
+}

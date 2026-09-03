@@ -1,0 +1,16 @@
+research is licensed per directory, following the same split as the rest of
+kindspec.
+
+  *.md, design-findings/, findings/     CC-BY-4.0
+  experiments/                          MIT
+
+Full texts are in LICENSES/.
+
+WHY THE SPLIT
+
+The prose is a record and is meant to be quoted, so it carries attribution.
+The experiment code is meant to be re-run, adapted and lifted into an
+implementation without obligation, so it does not.
+
+This repository redistributes no third-party corpora. Where an experiment reads
+one, CORPORA.md names it and its upstream licence governs it, not this file.

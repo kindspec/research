@@ -1,0 +1,3 @@
+*.tbl merge=gws-table
+*.md  diff=gws-prose
+*.csv -merge

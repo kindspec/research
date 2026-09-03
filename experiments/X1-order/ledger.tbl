@@ -1,0 +1,10 @@
+| id     | date | amount | balance = cumulative(amount) | move = delta(amount) |
+| ------ | ---: | -----: | ---------------------------: | -------------------: |
+| r_0001 |    1 | 100.00 |                              |                      |
+| r_0002 |    3 | -30.00 |                              |                      |
+| r_0003 |    5 |  50.00 |                              |                      |
+
+key   := id
+order := by(date)
+grand := sum(amount)
+low   := min(balance)

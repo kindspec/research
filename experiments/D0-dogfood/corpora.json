@@ -1,0 +1,6 @@
+{
+  "iptv-channels":  {"repo": "/tmp/d0corpora/iptv_full",  "path": "data/channels.csv",     "natkey": "id",                 "csvkey": "id"},
+  "iptv-blocklist": {"repo": "/tmp/d0corpora/iptv_full",  "path": "data/blocklist.csv",    "natkey": "channel",            "csvkey": null},
+  "country-codes":  {"repo": "/tmp/d0corpora/cc_full",    "path": "data/country-codes.csv","natkey": "ISO3166-1-Alpha-3",  "csvkey": "ISO3166-1-Alpha-3"},
+  "iso-3166":       {"repo": "/tmp/d0corpora/iso_full",   "path": "all/all.csv",           "natkey": "alpha-3",            "csvkey": "alpha-3"}
+}

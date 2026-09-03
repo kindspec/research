@@ -1,0 +1,67 @@
+
+==================================================================
+### 1. THE SERVER (bare repo, no attributes, no config)
+==================================================================
+  blob = bb5e5d670c3249bc2616f3097d0d3e01fd466475
+    | id     | item     | qty |  unit |
+    | ------ | -------- | --: | ----: |
+    | r_0001 | widget   |  10 | 12.00 |
+    | r_0002 | gadget   |  25 |  6.50 |
+    
+    grand := sum(qty)
+
+==================================================================
+### 2. A LOCAL USER WITH THE TOOL INSTALLED (.gitattributes + merge driver)
+==================================================================
+  local config:
+    merge.gws.name gws type-aware merge
+    merge.gws.driver python3 /home/cam/repos/working-git-backed-gws/experiments/W5-server/work-t7/clientmerge.py %O %A %B %P
+  .gitattributes: *.tbl merge=gws
+  git merge exit=0
+  blob = bb5e5d670c3249bc2616f3097d0d3e01fd466475
+    | id     | item     | qty |  unit |
+    | ------ | -------- | --: | ----: |
+    | r_0001 | widget   |  10 | 12.00 |
+    | r_0002 | gadget   |  25 |  6.50 |
+    
+    grand := sum(qty)
+
+==================================================================
+### 3. A LOCAL USER WITH NO TOOLING (stock git) -- the colleague who just clones
+==================================================================
+  git merge exit=1  (1 = conflict)
+  NOTE: .gitattributes says 'merge=gws' but no such driver is configured.
+        git does NOT fail; it silently falls back to the default text merge:
+  working-tree file:
+    | id     | item     | qty | unit  |
+    | ------ | -------- | --: | ----: |
+    | r_0001 | widget   |  10 | 12.00 |
+    <<<<<<< HEAD
+    | r_0002 | gadget   |  20 |  6.50 |
+    =======
+    | r_0002 | gadget   |  25 |  6.00 |
+    >>>>>>> topic
+    
+    grand := sum(qty)
+  git status: UU b.tbl
+
+==================================================================
+### COMPARISON
+==================================================================
+  server blob : bb5e5d670c3249bc2616f3097d0d3e01fd466475
+  local  blob : bb5e5d670c3249bc2616f3097d0d3e01fd466475
+  IDENTICAL -- a local merge and a server merge produce the same bytes.
+
+  no-tooling user: got a file with 1 conflict marker(s)
+  and git left the merge UNRESOLVED, so nothing was committed.
+
+==================================================================
+### 4. WHAT IF THE NO-TOOLING USER RESOLVES BY HAND AND PUSHES?
+==================================================================
+  they committed: 8536885
+  does the committed file still contain markers? no
+  push accepted by a bare repo: 8536885
+
+>> NOTHING in git stops this. The server only mediates merges it performs.
+>> A direct push of a corrupt artifact needs a pre-receive hook, which
+>> github.com does not offer (GitHub Enterprise Server only).

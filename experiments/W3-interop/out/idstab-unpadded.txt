@@ -1,0 +1,37 @@
+=== SCENARIO 1: edits + delete + 2 inserts + REORDER, key stable ===
+
+### id carried back in the re-export: True
+method        kept  of  wrong-new reused-wrong  git diff +/-   DUPLICATE IDS
+M1 position      2   5          3            1  +5/-4   dup-ids=0
+M2 content       3   5          2            0  +5/-4   dup-ids=0
+M3 natkey        5   5          0            0  +5/-4   dup-ids=0
+M4 three-tier     5   5          0            0  +5/-4   dup-ids=0
+M5 M4+order      5   5          0            0  +4/-3   dup-ids=0
+
+### id carried back in the re-export: False
+method        kept  of  wrong-new reused-wrong  git diff +/-   DUPLICATE IDS
+M1 position      2   5          3            1  +5/-4   dup-ids=0
+M2 content       3   5          2            0  +5/-4   dup-ids=0
+M3 natkey        5   5          0            0  +5/-4   dup-ids=0
+M4 three-tier     5   5          0            0  +5/-4   dup-ids=0
+M5 M4+order      5   5          0            0  +4/-3   dup-ids=0
+
+=== SCENARIO 2: the natural KEY of one row is corrected (A-3 -> A-3X), nothing else changes ===
+
+### id carried back in the re-export: False
+method        kept  of  wrong-new reused-wrong  git diff +/-   DUPLICATE IDS
+M1 position      5   5          0            0  +1/-1   dup-ids=0
+M2 content       5   5          0            0  +1/-1   dup-ids=0
+M3 natkey        5   5          0            0  +1/-1   dup-ids=0
+M4 three-tier     5   5          0            0  +1/-1   dup-ids=0
+M5 M4+order      5   5          0            0  +1/-1   dup-ids=0
+
+=== SCENARIO 3: the source now contains a DUPLICATE row (A-6 twice) ===
+
+### id carried back in the re-export: False
+method        kept  of  wrong-new reused-wrong  git diff +/-   DUPLICATE IDS
+M1 position      6   6          1            0  +1/-0   dup-ids=0
+M2 content       7   6          0            0  +1/-0   dup-ids=1
+M3 natkey        7   6          0            0  +1/-0   dup-ids=1
+M4 three-tier     6   6          1            0  +1/-0   dup-ids=0
+M5 M4+order      6   6          1            0  +1/-0   dup-ids=0

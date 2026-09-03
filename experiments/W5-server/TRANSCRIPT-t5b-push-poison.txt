@@ -1,0 +1,48 @@
+### building a client repo containing a malformed tree object
+  malformed tree = 414f7b91136626499d0e2c47d9e8ceb3e6243155
+  commit         = e079aa182a3ae082b03c659994251144f99375af
+  git fsck says  : error in tree 414f7b91136626499d0e2c47d9e8ceb3e6243155: fullPathname: contains full pathnames
+
+==================================================================
+### push to a bare repo with receive.fsckObjects=false
+==================================================================
+  (git's DEFAULT for receive.fsckObjects is 'false')
+  PUSH ACCEPTED (exit 0)
+  poison ref on server: e079aa182a3ae082b03c659994251144f99375af
+
+==================================================================
+### push to a bare repo with receive.fsckObjects=true
+==================================================================
+  (git's DEFAULT for receive.fsckObjects is 'false')
+    remote: error: object 414f7b91136626499d0e2c47d9e8ceb3e6243155: fullPathname: contains full pathnames        
+    remote: fatal: fsck error in packed object        
+    error: remote unpack failed: unpack-objects abnormal exit
+    To ../srv.git
+     ! [remote rejected] poison -> poison (unpacker error)
+    error: failed to push some refs to '../srv.git'
+  PUSH REJECTED (exit 1)
+  poison ref on server: (absent)
+
+==================================================================
+### effect on the server, with the poison accepted (default config)
+==================================================================
+--- direct git merge-tree against the poison ref ---
+t5b_push_poison.sh: line 51: 3244284 Aborted                 git -C srv.git merge-tree --write-tree main poison > /dev/null 2> "$W/mt.err"
+    git: merge-ort.c:3772: record_entry_for_tree: Assertion `strchr(basename, '/') == NULL' failed.
+  exit=134   (134 = SIGABRT / assertion failure)
+
+--- the gws server on the same input ---
+  {
+   "attempts": 1,
+   "git_calls": 5,
+   "reason": "fast-forward: post-merge validation: unsafe path component '..' in '../../../etc/evil.tbl'",
+   "status": "refused"
+  }
+  exit=1
+--- did the ref move? ---
+  main = b2d6300
+
+>> The server SURVIVES (subprocess isolation: SIGABRT in the child is just
+>> a non-zero exit) and refuses. But merges against that ref are
+>> permanently broken, and git's DEFAULT config accepts the poison.
+>> OPERATIONAL REQUIREMENT: receive.fsckObjects=true on the server repo.

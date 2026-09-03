@@ -1,0 +1,10 @@
+digraph G {
+  api   [label="API Gateway"];
+  auth  [label="Auth Service"];
+  db    [label="Postgres"];
+  queue [label="Job Queue"];
+  api -> auth;
+  auth -> db;
+  api -> queue;
+  queue -> db;
+}

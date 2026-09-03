@@ -1,0 +1,32 @@
+{
+ "top_touched": [
+  [
+   "data/t0406.tbl",
+   63
+  ],
+  [
+   "data/t0519.tbl",
+   62
+  ],
+  [
+   "data/t0025.tbl",
+   61
+  ],
+  [
+   "data/t0532.tbl",
+   61
+  ],
+  [
+   "data/t0399.tbl",
+   61
+  ]
+ ],
+ "log_hot_s": 0.4436735899944324,
+ "log_hot_commits": 63,
+ "log_follow_hot_s": 0.5689450830104761,
+ "blame_hot_s": 0.5232902800198644,
+ "log_p_hot_s": 0.3082835729874205,
+ "show_HEAD_s": 0.003856205992633477,
+ "grep_s": 0.17344747498282231,
+ "count_objects": "count: 0; size: 0; in-pack: 26303; packs: 1; size-pack: 10636; prune-packable: 0; garbage: 0; size-garbage: 0; "
+}

@@ -1,0 +1,113 @@
+
+workbooks read OK: 5458   unreadable: 0   formula cells classified: 778418
+  NEEDS-HUMAN        447546   57.5%
+  UNTRANSLATABLE     218056   28.0%
+  CLEAN               88287   11.3%
+  NO-HEADER           23043    3.0%
+  CLEAN-LOOKUP          681    0.1%
+  CLEAN-WIDE            531    0.1%
+  AGGREGATE             148    0.0%
+  AGGREGATE-FILTER      126    0.0%
+
+-- failure reasons --
+    228603  29.4%  NEEDS-HUMAN | [] is a filtered aggregate over other rows
+    121633  15.6%  NEEDS-HUMAN | [] is a JOIN; .tbl has no join vocabulary
+     88510  11.4%  UNTRANSLATABLE | cross-sheet reference X: .tbl has no cross-sheet address
+     42726   5.5%  NEEDS-HUMAN | [] outside the total/pure subset
+     31239   4.0%  UNTRANSLATABLE | volatile/dynamic-reference function []
+     20394   2.6%  UNTRANSLATABLE | cross-sheet reference "X!WN": .tbl has no cross-sheet address
+     20394   2.6%  UNTRANSLATABLE | cross-sheet reference "X!XN": .tbl has no cross-sheet address
+     19111   2.5%  NEEDS-HUMAN | function(s) [] not in the .tbl subset
+     14734   1.9%  NEEDS-HUMAN | SUMIFS with N predicates: the grammar has one `where col = "lit"` and no conjunction
+      6781   0.9%  UNTRANSLATABLE | range X spans rows other than this one; row order is not addressable
+      6563   0.8%  NEEDS-HUMAN | constant formula, no references
+      5322   0.7%  UNTRANSLATABLE | SUMIF range is in another workbook file
+      5036   0.6%  UNTRANSLATABLE | reference X is anchored to row N, not this row
+      4539   0.6%  UNTRANSLATABLE | cross-sheet reference "X!$A$N:$A$N": .tbl has no cross-sheet address
+      4437   0.6%  UNTRANSLATABLE | VLOOKUP target is a link to ANOTHER WORKBOOK FILE ([]Sheet!...): the referenced artifact i
+      4391   0.6%  NEEDS-HUMAN | whole-column structured reference [] is not a plain aggregate
+      4354   0.6%  UNTRANSLATABLE | cross-sheet reference "X!$HN": .tbl has no cross-sheet address
+      4254   0.5%  UNTRANSLATABLE | cross-sheet reference "X!$D$N:$D$N": .tbl has no cross-sheet address
+      3948   0.5%  UNTRANSLATABLE | cross-sheet reference "X!$AN": .tbl has no cross-sheet address
+      2880   0.4%  UNTRANSLATABLE | cross-sheet reference "X!$C$N:$C$N": .tbl has no cross-sheet address
+
+-- deduplicated by R1C1-normalised formula string (n=4130 distinct) --
+  UNTRANSLATABLE       2148   52.0%
+  NEEDS-HUMAN          1696   41.1%
+  CLEAN                 180    4.4%
+  CLEAN-LOOKUP           55    1.3%
+  CLEAN-WIDE             30    0.7%
+  AGGREGATE-FILTER       11    0.3%
+  AGGREGATE              10    0.2%
+
+-- extended-grammar instrumentation --
+       126  ifagg.CLEAN
+        12  ifagg.comparison-criterion
+        21  ifagg.computed-criterion
+       489  ifagg.criterion-is-cell-ref
+        72  ifagg.cross-sheet
+      5322  ifagg.external-workbook
+         3  ifagg.grouped-literal
+      1504  ifagg.horizontal-range
+     14861  ifagg.multi-predicate
+        66  ifagg.numeric-literal-criterion
+       309  ifagg.range-not-a-plain-ref
+     23376  ifagg.total
+       576  ifagg.unnamed-column
+         6  lk.2d
+       681  lk.CLEAN
+        75  lk.approximate
+      4767  lk.external-workbook
+       966  lk.first-column-not-a-key
+         3  lk.fn.HLOOKUP
+     14037  lk.fn.INDEX
+      7775  lk.fn.VLOOKUP
+         3  lk.hlookup
+      3603  lk.index-arity
+       120  lk.index-not-literal
+      8386  lk.index-shape
+       275  lk.index-without-match
+       174  lk.key-not-a-ref
+       108  lk.key-not-same-row
+         6  lk.match-not-exact
+      1686  lk.table-not-a-range
+     21815  lk.total
+       959  lk.value-column-unnamed
+
+-- samples --
+  CLEAN           F3+G3                                                -> Optimum_Moisture___Spec+Max_Moisture__
+  CLEAN           F3-H3                                                -> Optimum_Moisture___Spec-Min_Moisture__
+  CLEAN           F4+G4                                                -> Optimum_Moisture___Spec+Max_Moisture__
+  CLEAN           F4-H4                                                -> Optimum_Moisture___Spec-Min_Moisture__
+  CLEAN           IF(AND(G15<1.05,G15>0.95),"PASS","FAIL")             -> IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),"PASS","FAIL")
+  CLEAN           IF(AND(G16<1.05,G16>0.95),"PASS","FAIL")             -> IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),"PASS","FAIL")
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A2,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A3,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A4,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A5,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A6,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  CLEAN-LOOKUP    INDEX(Sheet1!B$2:B$17,MATCH($A7,Sheet1!$D$2:$D$17,0)) -> lookup(Sheet1.tbl, Existing_Data_Fields, Deal_Name)
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE-FILTER COUNTIF(S:S,"Y")                                     -> count(Matches_ where Matches_ = "Y")
+  AGGREGATE       SUM(D3:D9)                                           -> sum(AMOUNTS)
+  AGGREGATE       SUM(D3:D9)                                           -> sum(AMOUNTS)
+  AGGREGATE       SUM(D3:D9)                                           -> sum(AMOUNTS)
+  AGGREGATE       SUM(G2:G5)                                           -> sum(BUYING)
+  AGGREGATE       SUM(H2:H5)                                           -> sum(SELLING)
+  AGGREGATE       SUM(J2:J5)                                           -> sum(BUYING)
+  NEEDS-HUMAN     IF(MEDIAN(H15,VLOOKUP(B15,$A$3:$J$9,{9,10},0))=H15,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H16,VLOOKUP(B16,$A$3:$J$9,{9,10},0))=H16,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H17,VLOOKUP(B17,$A$3:$J$9,{9,10},0))=H17,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H15,VLOOKUP(B15,$A$3:$J$9,{9,10},0))=H15,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H16,VLOOKUP(B16,$A$3:$J$9,{9,10},0))=H16,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  NEEDS-HUMAN     IF(MEDIAN(H17,VLOOKUP(B17,$A$3:$J$9,{9,10},0))=H17,"Pass","Fail") -> ['VLOOKUP'] is a JOIN; .tbl has no join vocabulary
+  UNTRANSLATABLE  G10/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G13/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G17/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G21/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G24/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable
+  UNTRANSLATABLE  G27/SUM($G$10:$G$31)                                 -> range '$G$10:$G$31' spans rows other than this one; row order is not addressable

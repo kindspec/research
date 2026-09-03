@@ -1,0 +1,3417 @@
+{
+ "meta": {
+  "shard": "7/8",
+  "files": 682,
+  "expand_sum": true,
+  "mutate": null
+ },
+ "counts": {
+  "shared.expanded": 37186,
+  "shared.unresolved": 0,
+  "formula-cells": 103915,
+  "verdict.CLEAN": 22079,
+  "translatable": 22379,
+  "EVALUABLE": 9844,
+  "chain.depends-only-on-literals": 2576,
+  "compared": 3755,
+  "cmp.numeric": 3653,
+  "A.exact": 1605,
+  "verdict.UNTRANSLATABLE": 19021,
+  "surface.if-lowercased": 2011,
+  "NOTEVAL": 1246,
+  "noteval.Call": 712,
+  "notevalfull.Call:AND": 27,
+  "exc.no-header": 8125,
+  "verdict.NEEDS-HUMAN": 57824,
+  "exc.no-cached-value": 11281,
+  "verdict.AGGREGATE": 22,
+  "noteval.Op": 107,
+  "notevalfull.Op:&": 102,
+  "exc.array-formula": 4691,
+  "verdict.CLEAN-WIDE": 278,
+  "notevalfull.Call:AVERAGE": 29,
+  "surface.sum-expanded": 836,
+  "sumx.EVALUABLE": 819,
+  "sumx.chain.depends-only-on-literals": 237,
+  "sumx.compared": 819,
+  "sumx.cmp.numeric": 814,
+  "sumx.A.exact": 456,
+  "chain.depends-on-a-formula-cell": 1171,
+  "sumx.chain.depends-on-a-formula-cell": 582,
+  "sumx.NOTEVAL": 17,
+  "noteval.Cmp": 17,
+  "sumx.noteval.Cmp": 17,
+  "notevalfull.Cmp:lhs-not-a-name": 17,
+  "sumx.notevalfull.Cmp:lhs-not-a-name": 17,
+  "A.15sig": 325,
+  "A15.hp-also-differs-so-the-inputs-are-the-cause": 245,
+  "A15.max-input-sigdigits-15": 207,
+  "agg.table-range-used": 1,
+  "EVALUABLE.aggregate": 8,
+  "if.EVALUABLE": 1082,
+  "ifstr.EVALUABLE": 1024,
+  "if.chain.depends-only-on-literals": 25,
+  "ifstr.chain.depends-only-on-literals": 25,
+  "if.compared": 83,
+  "ifstr.compared": 25,
+  "cmp.excel-text": 96,
+  "if.cmp.excel-text": 14,
+  "ifstr.cmp.excel-text": 14,
+  "D.text-differs": 96,
+  "if.D.text-differs": 14,
+  "ifstr.D.text-differs": 14,
+  "notevalfull.Op:%": 4,
+  "noteval.If": 404,
+  "notevalfull.If:text-branch": 404,
+  "D.ref-where-excel-numeric": 1721,
+  "sumx.D.ref-where-excel-numeric": 194,
+  "Dref.blank": 1721,
+  "sumx.Dref.blank": 194,
+  "sumx.A.15sig": 164,
+  "A15.hp-matches-excel-so-rowspec-float-is-the-cause": 80,
+  "sumx.A15.hp-matches-excel-so-rowspec-float-is-the-cause": 1,
+  "A15.max-input-sigdigits-le14": 118,
+  "sumx.A15.max-input-sigdigits-le14": 17,
+  "notevalfull.Call:OR": 31,
+  "sumx.A15.hp-also-differs-so-the-inputs-are-the-cause": 163,
+  "sumx.A15.max-input-sigdigits-15": 147,
+  "notevalfull.Call:TRUE": 9,
+  "noteval.Parse": 6,
+  "notevalfull.Parse:if-arity": 3,
+  "notevalfull.Call:ROUND": 153,
+  "notevalfull.Parse:other": 3,
+  "exc.duplicate-header-name": 6095,
+  "if.exc.duplicate-header-name": 999,
+  "ifstr.exc.duplicate-header-name": 999,
+  "notevalfull.Call:CEILING": 31,
+  "notevalfull.Call:ROUNDDOWN": 342,
+  "if.cmp.numeric": 69,
+  "ifstr.cmp.numeric": 11,
+  "if.A.exact": 69,
+  "ifstr.A.exact": 11,
+  "cmp.excel-error": 6,
+  "sumx.cmp.excel-error": 5,
+  "A.ref-where-excel-errors": 6,
+  "sumx.A.ref-where-excel-errors": 5,
+  "D.float-accum": 2,
+  "notevalfull.Op:unary-plus": 1,
+  "if.chain.depends-on-a-formula-cell": 58,
+  "exc.value-annotation-shaped": 2,
+  "notevalfull.Call:MIN": 90,
+  "wb.ok": 682,
+  "wb.bad": 0,
+  "distinct.workbooks-contributing": 41,
+  "distinct.sheets-contributing": 56
+ },
+ "wb": [
+  "10281/1_10281_input.xlsx",
+  "15387/2_15387_input.xlsx",
+  "247-24/3_247-24_input.xlsx",
+  "31202/1_31202_input.xlsx",
+  "32093/2_32093_input.xlsx",
+  "32895/2_32895_input.xlsx",
+  "32902/3_32902_input.xlsx",
+  "33094/3_33094_input.xlsx",
+  "36097/1_36097_input.xlsx",
+  "42181/2_42181_input.xlsx",
+  "43026/1_43026_input.xlsx",
+  "43657/1_43657_input.xlsx",
+  "44287/1_44287_input.xlsx",
+  "45181/2_45181_input.xlsx",
+  "48357/3_48357_input.xlsx",
+  "48643/3_48643_input.xlsx",
+  "49490/3_49490_input.xlsx",
+  "49782/1_49782_input.xlsx",
+  "49939/3_49939_input.xlsx",
+  "50051/2_50051_input.xlsx",
+  "50154/1_50154_input.xlsx",
+  "50442/3_50442_input.xlsx",
+  "50534/1_50534_input.xlsx",
+  "52541/1_52541_input.xlsx",
+  "52964/1_52964_input.xlsx",
+  "53174/2_53174_input.xlsx",
+  "54513/3_54513_input.xlsx",
+  "55468/1_55468_input.xlsx",
+  "55979/1_55979_input.xlsx",
+  "56563/2_56563_input.xlsx",
+  "56599/1_56599_input.xlsx",
+  "566-40/2_566-40_input.xlsx",
+  "56637/3_56637_input.xlsx",
+  "56953/2_56953_input.xlsx",
+  "57262/2_57262_input.xlsx",
+  "58656/1_58656_input.xlsx",
+  "58890/2_58890_input.xlsx",
+  "70-3/1_70-3_input.xlsx",
+  "CF_22493/1_CF_22493_input.xlsx",
+  "CF_3712/1_CF_3712_input.xlsx",
+  "CF_6540/1_CF_6540_input.xlsx"
+ ],
+ "sheet": [
+  "10281/1_10281_input.xlsx\u0000Sheet1",
+  "15387/2_15387_input.xlsx\u0000Sheet1",
+  "247-24/3_247-24_input.xlsx\u0000Main",
+  "31202/1_31202_input.xlsx\u0000NOMINA",
+  "32093/2_32093_input.xlsx\u0000Sheet1",
+  "32895/2_32895_input.xlsx\u0000Sales",
+  "32902/3_32902_input.xlsx\u0000Sheet1",
+  "33094/3_33094_input.xlsx\u0000Sheet1",
+  "36097/1_36097_input.xlsx\u0000Sheet1",
+  "42181/2_42181_input.xlsx\u0000Sheet1",
+  "43026/1_43026_input.xlsx\u0000summary",
+  "43657/1_43657_input.xlsx\u0000Jul-22 (2)",
+  "44287/1_44287_input.xlsx\u0000monthly_rolling",
+  "45181/2_45181_input.xlsx\u0000Sheet1",
+  "48357/3_48357_input.xlsx\u0000Data",
+  "48357/3_48357_input.xlsx\u0000Data 2",
+  "48643/3_48643_input.xlsx\u0000Sheet1",
+  "49490/3_49490_input.xlsx\u0000Sheet1",
+  "49782/1_49782_input.xlsx\u0000Granite",
+  "49782/1_49782_input.xlsx\u0000Huff",
+  "49782/1_49782_input.xlsx\u0000Leo",
+  "49782/1_49782_input.xlsx\u0000Pond Cove",
+  "49782/1_49782_input.xlsx\u0000Smith",
+  "49939/3_49939_input.xlsx\u0000Sheet1",
+  "50051/2_50051_input.xlsx\u0000Sheet1",
+  "50154/1_50154_input.xlsx\u0000Sheet1",
+  "50442/3_50442_input.xlsx\u0000CALCS",
+  "50442/3_50442_input.xlsx\u0000DATA",
+  "50534/1_50534_input.xlsx\u0000Dec 14",
+  "50534/1_50534_input.xlsx\u0000Dec 21",
+  "50534/1_50534_input.xlsx\u0000Dec 28",
+  "50534/1_50534_input.xlsx\u0000Dec 7",
+  "50534/1_50534_input.xlsx\u0000NOV 23",
+  "50534/1_50534_input.xlsx\u0000Nov 30",
+  "50534/1_50534_input.xlsx\u0000nOV 16",
+  "52541/1_52541_input.xlsx\u0000Sheet1",
+  "52964/1_52964_input.xlsx\u0000Sheet1",
+  "53174/2_53174_input.xlsx\u0000Sheet1",
+  "54513/3_54513_input.xlsx\u0000Sheet1",
+  "55468/1_55468_input.xlsx\u0000Sheet1",
+  "55979/1_55979_input.xlsx\u0000Calc",
+  "56563/2_56563_input.xlsx\u0000AB",
+  "56599/1_56599_input.xlsx\u0000Sheet1",
+  "566-40/2_566-40_input.xlsx\u0000Order Sheet Final",
+  "56637/3_56637_input.xlsx\u0000Sheet1",
+  "56953/2_56953_input.xlsx\u0000Sheet2",
+  "57262/2_57262_input.xlsx\u0000Sheet1",
+  "58656/1_58656_input.xlsx\u0000DATA",
+  "58656/1_58656_input.xlsx\u0000EXAMPLE",
+  "58890/2_58890_input.xlsx\u0000COM",
+  "70-3/1_70-3_input.xlsx\u0000Sheet1",
+  "CF_22493/1_CF_22493_input.xlsx\u0000House Budget",
+  "CF_22493/1_CF_22493_input.xlsx\u0000Money In Checking",
+  "CF_22493/1_CF_22493_input.xlsx\u0000Money In Checking Next Month",
+  "CF_3712/1_CF_3712_input.xlsx\u0000Purchases",
+  "CF_6540/1_CF_6540_input.xlsx\u0000Sheet1"
+ ],
+ "samples": {
+  "NOTEVAL": [
+   {
+    "wb": "10281/1_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I15",
+    "f": "IF(AND(G15<1.05,G15>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/1_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I16",
+    "f": "IF(AND(G16<1.05,G16>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "10281/1_10281_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "I17",
+    "f": "IF(AND(G17<1.05,G17>0.95),\"PASS\",\"FAIL\")",
+    "expr": "IF(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(AND(Max_Moisture__<1.05,Max_Moisture__>0.95),\"PASS\",\"FAIL\")",
+    "why": "Call:AND",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J3",
+    "f": "G3&H3&I3",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J4",
+    "f": "G4&H4&I4",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J5",
+    "f": "G5&H5&I5",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J6",
+    "f": "G6&H6&I6",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J7",
+    "f": "G7&H7&I7",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J8",
+    "f": "G8&H8&I8",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J9",
+    "f": "G9&H9&I9",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "13894/1_13894_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "J10",
+    "f": "G10&H10&I10",
+    "expr": "NCM&MANUFACTURER&ORIGIN",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "NCM&MANUFACTURER&ORIGIN",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F2",
+    "f": "AVERAGE(B2:E2)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F3",
+    "f": "AVERAGE(B3:E3)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": false,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F4",
+    "f": "AVERAGE(B4:E4)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F5",
+    "f": "AVERAGE(B5:E5)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F6",
+    "f": "AVERAGE(B6:E6)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F7",
+    "f": "AVERAGE(B7:E7)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "AVERAGE(B8:E8)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "AVERAGE(B9:E9)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F10",
+    "f": "AVERAGE(B10:E10)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F11",
+    "f": "AVERAGE(B11:E11)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F12",
+    "f": "AVERAGE(B12:E12)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F13",
+    "f": "AVERAGE(B13:E13)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F14",
+    "f": "AVERAGE(B14:E14)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F15",
+    "f": "AVERAGE(B15:E15)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F16",
+    "f": "AVERAGE(B16:E16)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F17",
+    "f": "AVERAGE(B17:E17)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F18",
+    "f": "AVERAGE(B18:E18)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "14625/3_14625_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F19",
+    "f": "AVERAGE(B19:E19)",
+    "expr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "AVERAGE(Jan, Feb, Mar, Apr)",
+    "why": "Call:AVERAGE",
+    "msg": "column 'zout': unknown function 'AVERAGE'; \u00a74.2 admits if() in an expression, and cumulative/prior/delta/sum/count/min/max/avg as the whole formula"
+   },
+   {
+    "wb": "17-35/3_17-35_input.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "M2",
+    "f": "\">=\"&I2",
+    "expr": "\">=\"&start",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "\">=\"&start",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "17-35/3_17-35_input.xlsx",
+    "sheet": "FILTER 5b",
+    "cell": "N2",
+    "f": "\"<=\"&J2",
+    "expr": "\"<=\"&end",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "\"<=\"&end",
+    "why": "Op:&",
+    "msg": "column 'zout': '&' is not an operator in this format; \u00a74.2 admits + - * / and unary minus. `^` alone means exponent in one spreadsheet lineage and exclusive-or "
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M3",
+    "f": "SUM(IF((C3=\"A\")+(D3=\"D\")+(E3=\"D\")+(F3=\"A\")+(G3=\"C\")+(H3=\"D\")+(I3=\"C\")+(J3=\"B\")+(K3=\"B\")+(L3=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M5",
+    "f": "SUM(IF((C5=\"A\")+(D5=\"D\")+(E5=\"D\")+(F5=\"A\")+(G5=\"C\")+(H5=\"D\")+(I5=\"C\")+(J5=\"B\")+(K5=\"B\")+(L5=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M7",
+    "f": "SUM(IF((C7=\"A\")+(D7=\"D\")+(E7=\"D\")+(F7=\"A\")+(G7=\"C\")+(H7=\"D\")+(I7=\"C\")+(J7=\"B\")+(K7=\"B\")+(L7=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M8",
+    "f": "SUM(IF((C8=\"A\")+(D8=\"D\")+(E8=\"D\")+(F8=\"A\")+(G8=\"C\")+(H8=\"D\")+(I8=\"C\")+(J8=\"B\")+(K8=\"B\")+(L8=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M9",
+    "f": "SUM(IF((C9=\"A\")+(D9=\"D\")+(E9=\"D\")+(F9=\"A\")+(G9=\"C\")+(H9=\"D\")+(I9=\"C\")+(J9=\"B\")+(K9=\"B\")+(L9=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M10",
+    "f": "SUM(IF((C10=\"A\")+(D10=\"D\")+(E10=\"D\")+(F10=\"A\")+(G10=\"C\")+(H10=\"D\")+(I10=\"C\")+(J10=\"B\")+(K10=\"B\")+(L10=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M11",
+    "f": "SUM(IF((C11=\"A\")+(D11=\"D\")+(E11=\"D\")+(F11=\"A\")+(G11=\"C\")+(H11=\"D\")+(I11=\"C\")+(J11=\"B\")+(K11=\"B\")+(L11=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M12",
+    "f": "SUM(IF((C12=\"A\")+(D12=\"D\")+(E12=\"D\")+(F12=\"A\")+(G12=\"C\")+(H12=\"D\")+(I12=\"C\")+(J12=\"B\")+(K12=\"B\")+(L12=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   },
+   {
+    "wb": "18385/1_18385_input.xlsx",
+    "sheet": "Math 3",
+    "cell": "M13",
+    "f": "SUM(IF((C13=\"A\")+(D13=\"D\")+(E13=\"D\")+(F13=\"A\")+(G13=\"C\")+(H13=\"D\")+(I13=\"C\")+(J13=\"B\")+(K13=\"B\")+(L13=\"B\"),1,0))",
+    "expr": "SUM(IF((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0))",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "((if((A=\"A\")+(D=\"D\")+(D=\"D\")+(A=\"A\")+(C=\"C\")+(D=\"D\")+(C=\"C\")+(B=\"B\")+(B=\"B\")+(B=\"B\"),1,0)))",
+    "why": "Cmp:lhs-not-a-name",
+    "msg": "column 'zout': the left of a comparison in if() must be a column name (\u00a74.2 rule 10)"
+   }
+  ],
+  "A.15sig": [
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I2",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 1071.42857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "1071.42857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "7500",
+    "rs": 7499.99999999999,
+    "hp": 7499.99999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I3",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 285.714285714286 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "285.714285714286",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2000",
+    "rs": 2000.000000000002,
+    "hp": 2000.000000000002
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I4",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 542.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "542.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "3800",
+    "rs": 3800.000000000001,
+    "hp": 3800.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I5",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 314.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "314.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2200",
+    "rs": 2199.999999999998,
+    "hp": 2199.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I6",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 257.142857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "257.142857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1800",
+    "rs": 1799.999999999999,
+    "hp": 1799.999999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I7",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I8",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I10",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 1071.42857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "1071.42857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "7500",
+    "rs": 7499.99999999999,
+    "hp": 7499.99999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I11",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 285.714285714286 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "285.714285714286",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2000",
+    "rs": 2000.000000000002,
+    "hp": 2000.000000000002
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I12",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 542.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "542.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "3800",
+    "rs": 3800.000000000001,
+    "hp": 3800.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I13",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 314.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "314.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2200",
+    "rs": 2199.999999999998,
+    "hp": 2199.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I14",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 257.142857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "257.142857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1800",
+    "rs": 1799.999999999999,
+    "hp": 1799.999999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I15",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I16",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I18",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 214.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "214.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1500",
+    "rs": 1499.999999999998,
+    "hp": 1499.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I19",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 1071.42857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "1071.42857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "7500",
+    "rs": 7499.99999999999,
+    "hp": 7499.99999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I20",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 285.714285714286 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "285.714285714286",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2000",
+    "rs": 2000.000000000002,
+    "hp": 2000.000000000002
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I21",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 542.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "542.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "3800",
+    "rs": 3800.000000000001,
+    "hp": 3800.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I22",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 314.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "314.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2200",
+    "rs": 2199.999999999998,
+    "hp": 2199.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I23",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 257.142857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "257.142857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1800",
+    "rs": 1799.999999999999,
+    "hp": 1799.999999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I24",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I25",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I27",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 214.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "214.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1500",
+    "rs": 1499.999999999998,
+    "hp": 1499.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I28",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 1071.42857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "1071.42857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "7500",
+    "rs": 7499.99999999999,
+    "hp": 7499.99999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I29",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 285.714285714286 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "285.714285714286",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2000",
+    "rs": 2000.000000000002,
+    "hp": 2000.000000000002
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I30",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 542.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "542.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "3800",
+    "rs": 3800.000000000001,
+    "hp": 3800.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I31",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 314.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "314.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2200",
+    "rs": 2199.999999999998,
+    "hp": 2199.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I32",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 257.142857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "257.142857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1800",
+    "rs": 1799.999999999999,
+    "hp": 1799.999999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I33",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I34",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I36",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 214.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "214.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1500",
+    "rs": 1499.999999999998,
+    "hp": 1499.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I37",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 357.142857142857 | 12.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "357.142857142857",
+     "12.0",
+     "0.0"
+    ],
+    "excel": "5000",
+    "rs": 4999.999999999998,
+    "hp": 4999.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I38",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 1071.42857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "1071.42857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "7500",
+    "rs": 7499.99999999999,
+    "hp": 7499.99999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I39",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 285.714285714286 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "285.714285714286",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2000",
+    "rs": 2000.000000000002,
+    "hp": 2000.000000000002
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I40",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 542.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "542.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "3800",
+    "rs": 3800.000000000001,
+    "hp": 3800.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I41",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 314.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "314.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "2200",
+    "rs": 2199.999999999998,
+    "hp": 2199.999999999998
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I42",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 257.142857142857 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "257.142857142857",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1800",
+    "rs": 1799.999999999999,
+    "hp": 1799.999999999999
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I43",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I44",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 242.857142857143 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "242.857142857143",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1700",
+    "rs": 1700.000000000001,
+    "hp": 1700.000000000001
+   },
+   {
+    "wb": "31202/1_31202_input.xlsx",
+    "sheet": "NOMINA",
+    "cell": "I46",
+    "f": "(tblNomina[[#This Row],[DAYS WORKED]]+(tblNomina[[#This Row],[DAYS WORKED]]/6))*tblNomina[[#This Row],[DAILY WAGE]]-tblN",
+    "expr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "(DAYS_WORKED+(DAYS_WORKED/6))*DAILY_WAGE-DEDUCTIONS+ADDITIONS",
+    "doc": "| x0 | x1 | x2 | x3 | zout = (x2+(x2/6))*x1-x3+x0 |\n| --- | --- | --- | --- | --- |\n| 0.0 | 214.285714285714 | 6.0 | 0.0 |  |\n",
+    "kinds": [
+     "number",
+     "number",
+     "number",
+     "number"
+    ],
+    "lits": [
+     "0.0",
+     "214.285714285714",
+     "6.0",
+     "0.0"
+    ],
+    "excel": "1500",
+    "rs": 1499.999999999998,
+    "hp": 1499.999999999998
+   }
+  ],
+  "D.text-differs": [
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G2",
+    "f": "IF(C2=\"\",B2,C2)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor | David |  |\n",
+    "kinds": [
+     "text",
+     "text"
+    ],
+    "lits": [
+     "Connor",
+     "David"
+    ],
+    "excel": "David",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G3",
+    "f": "IF(C3=\"\",B3,C3)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G4",
+    "f": "IF(C4=\"\",B4,C4)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G5",
+    "f": "IF(C5=\"\",B5,C5)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G6",
+    "f": "IF(C6=\"\",B6,C6)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G7",
+    "f": "IF(C7=\"\",B7,C7)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G8",
+    "f": "IF(C8=\"\",B8,C8)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G9",
+    "f": "IF(C9=\"\",B9,C9)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Connor",
+     ""
+    ],
+    "excel": "Connor",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G10",
+    "f": "IF(C10=\"\",B10,C10)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Connor | Susan |  |\n",
+    "kinds": [
+     "text",
+     "text"
+    ],
+    "lits": [
+     "Connor",
+     "Susan"
+    ],
+    "excel": "Susan",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G11",
+    "f": "IF(C11=\"\",B11,C11)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G12",
+    "f": "IF(C12=\"\",B12,C12)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G13",
+    "f": "IF(C13=\"\",B13,C13)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G14",
+    "f": "IF(C14=\"\",B14,C14)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "32093/2_32093_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "G15",
+    "f": "IF(C15=\"\",B15,C15)",
+    "expr": "IF(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "if(Office_1=\"\",Assigned_employee_2023,Office_1)",
+    "doc": "| x0 | x1 | zout = if(x1=\"\",x0,x1) |\n| --- | --- | --- |\n| Gayle |  |  |\n",
+    "kinds": [
+     "text",
+     "blank"
+    ],
+    "lits": [
+     "Gayle",
+     ""
+    ],
+    "excel": "Gayle",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T3",
+    "f": "E3",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Amazon Credit Card |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Amazon Credit Card"
+    ],
+    "excel": "Amazon Credit Card",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T4",
+    "f": "E4",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Animal Care |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Animal Care"
+    ],
+    "excel": "Animal Care",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T5",
+    "f": "E5",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| AT&T Telephone |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "AT&T Telephone"
+    ],
+    "excel": "AT&T Telephone",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T6",
+    "f": "E6",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Auto Insurance (USAA) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Auto Insurance (USAA)"
+    ],
+    "excel": "Auto Insurance (USAA)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T7",
+    "f": "E7",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Auto Maintenance/Repair |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Auto Maintenance/Repair"
+    ],
+    "excel": "Auto Maintenance/Repair",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T8",
+    "f": "E8",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Burial Insurance (Lincoln Heritage) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Burial Insurance (Lincoln Heritage)"
+    ],
+    "excel": "Burial Insurance (Lincoln Heritage)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T9",
+    "f": "E9",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Capital Ona/Walmart |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Capital Ona/Walmart"
+    ],
+    "excel": "Capital Ona/Walmart",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T10",
+    "f": "E10",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Care Credit (Synchrony) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Care Credit (Synchrony)"
+    ],
+    "excel": "Care Credit (Synchrony)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T11",
+    "f": "E11",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Comenity Bank (Good Sams) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Comenity Bank (Good Sams)"
+    ],
+    "excel": "Comenity Bank (Good Sams)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T12",
+    "f": "E12",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Dental Insurane (MetLife) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Dental Insurane (MetLife)"
+    ],
+    "excel": "Dental Insurane (MetLife)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T13",
+    "f": "E13",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Dining Out |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Dining Out"
+    ],
+    "excel": "Dining Out",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T14",
+    "f": "E14",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Dish Network |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Dish Network"
+    ],
+    "excel": "Dish Network",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T15",
+    "f": "E15",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Doctors, Dentist, Hospitals, Lab, Xray, Etc. |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Doctors, Dentist, Hospitals, Lab, Xray, Etc."
+    ],
+    "excel": "Doctors, Dentist, Hospitals, Lab, Xray, Etc.",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T16",
+    "f": "E16",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Entertainment |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Entertainment"
+    ],
+    "excel": "Entertainment",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T17",
+    "f": "E17",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Fuel |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Fuel"
+    ],
+    "excel": "Fuel",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T18",
+    "f": "E18",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Glambag Plus |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Glambag Plus"
+    ],
+    "excel": "Glambag Plus",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T19",
+    "f": "E19",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Google Discovery Plus |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Google Discovery Plus"
+    ],
+    "excel": "Google Discovery Plus",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T20",
+    "f": "E20",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Groceries |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Groceries"
+    ],
+    "excel": "Groceries",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T21",
+    "f": "E21",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Home Owners Insurance Foremost) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Home Owners Insurance Foremost)"
+    ],
+    "excel": "Home Owners Insurance Foremost)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T22",
+    "f": "E22",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Home Repair/Maintenance |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Home Repair/Maintenance"
+    ],
+    "excel": "Home Repair/Maintenance",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T23",
+    "f": "E23",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| House Payment (AR Coley, LLC) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "House Payment (AR Coley, LLC)"
+    ],
+    "excel": "House Payment (AR Coley, LLC)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T24",
+    "f": "E24",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Household, Cleaning Supplies, Etc. |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Household, Cleaning Supplies, Etc."
+    ],
+    "excel": "Household, Cleaning Supplies, Etc.",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T25",
+    "f": "E25",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Life Insurance (Foresters) |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Life Insurance (Foresters)"
+    ],
+    "excel": "Life Insurance (Foresters)",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T26",
+    "f": "E26",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Miscellaneous |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Miscellaneous"
+    ],
+    "excel": "Miscellaneous",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T27",
+    "f": "E27",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Netflix |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Netflix"
+    ],
+    "excel": "Netflix",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "CF_22493/1_CF_22493_input.xlsx",
+    "sheet": "House Budget",
+    "cell": "T29",
+    "f": "E29",
+    "expr": "Monthly_Budget",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Monthly_Budget",
+    "doc": "| x0 | zout = x0 |\n| --- | --- |\n| Pacific Gas & Electric |  |\n",
+    "kinds": [
+     "text"
+    ],
+    "lits": [
+     "Pacific Gas & Electric"
+    ],
+    "excel": "Pacific Gas & Electric",
+    "rs": "#REF!(x0)"
+   }
+  ],
+  "D.ref-where-excel-numeric": [
+   {
+    "wb": "32902/3_32902_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "SUM(C8:E8)",
+    "expr": "SUM(__60_000_____15, __90_000_____25, __120_000_____35)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "((__60_000_____15)+(__90_000_____25)+(__120_000_____35))",
+    "doc": "| x0 | x1 | x2 | zout = ((x1)+(x2)+(x0)) |\n| --- | --- | --- | --- |\n|  |  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "32902/3_32902_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "SUM(C9:E9)",
+    "expr": "SUM(__60_000_____15, __90_000_____25, __120_000_____35)",
+    "verdict": "CLEAN-WIDE",
+    "shared": true,
+    "rexpr": "((__60_000_____15)+(__90_000_____25)+(__120_000_____35))",
+    "doc": "| x0 | x1 | x2 | zout = ((x1)+(x2)+(x0)) |\n| --- | --- | --- | --- |\n|  |  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E5",
+    "f": "B5*C5",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  | 0.01 |  |\n",
+    "kinds": [
+     "blank",
+     "number"
+    ],
+    "lits": [
+     "",
+     "0.01"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F5",
+    "f": "(1+C5)*B5",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  | 0.01 |  |\n",
+    "kinds": [
+     "blank",
+     "number"
+    ],
+    "lits": [
+     "",
+     "0.01"
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E6",
+    "f": "B6*C6",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F6",
+    "f": "(1+C6)*B6",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E7",
+    "f": "B7*C7",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F7",
+    "f": "(1+C7)*B7",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E8",
+    "f": "B8*C8",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F8",
+    "f": "(1+C8)*B8",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E9",
+    "f": "B9*C9",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F9",
+    "f": "(1+C9)*B9",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E10",
+    "f": "B10*C10",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F10",
+    "f": "(1+C10)*B10",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E11",
+    "f": "B11*C11",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F11",
+    "f": "(1+C11)*B11",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E12",
+    "f": "B12*C12",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F12",
+    "f": "(1+C12)*B12",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E13",
+    "f": "B13*C13",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F13",
+    "f": "(1+C13)*B13",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E14",
+    "f": "B14*C14",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F14",
+    "f": "(1+C14)*B14",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E15",
+    "f": "B15*C15",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F15",
+    "f": "(1+C15)*B15",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E16",
+    "f": "B16*C16",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F16",
+    "f": "(1+C16)*B16",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E17",
+    "f": "B17*C17",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F17",
+    "f": "(1+C17)*B17",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E18",
+    "f": "B18*C18",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F18",
+    "f": "(1+C18)*B18",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E19",
+    "f": "B19*C19",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F19",
+    "f": "(1+C19)*B19",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E20",
+    "f": "B20*C20",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F20",
+    "f": "(1+C20)*B20",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E21",
+    "f": "B21*C21",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F21",
+    "f": "(1+C21)*B21",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E22",
+    "f": "B22*C22",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F22",
+    "f": "(1+C22)*B22",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "E23",
+    "f": "B23*C23",
+    "expr": "Deposit*Efficiency",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "Deposit*Efficiency",
+    "doc": "| x0 | x1 | zout = x0*x1 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x0)"
+   },
+   {
+    "wb": "48643/3_48643_input.xlsx",
+    "sheet": "Sheet1",
+    "cell": "F23",
+    "f": "(1+C23)*B23",
+    "expr": "(1+Efficiency)*Deposit",
+    "verdict": "CLEAN",
+    "shared": true,
+    "rexpr": "(1+Efficiency)*Deposit",
+    "doc": "| x0 | x1 | zout = (1+x1)*x0 |\n| --- | --- | --- |\n|  |  |  |\n",
+    "kinds": [
+     "blank",
+     "blank"
+    ],
+    "lits": [
+     "",
+     ""
+    ],
+    "excel": "0",
+    "rs": "#REF!(x1)"
+   }
+  ],
+  "D.float-accum": [
+   {
+    "wb": "50442/3_50442_input.xlsx",
+    "sheet": "DATA",
+    "cell": "K4",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 17.99 | 17.69 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "17.99",
+     "17.69"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.29999999999999716,
+    "hp": -0.3,
+    "exsig": 15
+   },
+   {
+    "wb": "50442/3_50442_input.xlsx",
+    "sheet": "DATA",
+    "cell": "K25",
+    "f": "Table1[[#This Row],[EXIT]]-Table1[[#This Row],[ENTRY]]",
+    "expr": "EXIT-ENTRY",
+    "verdict": "CLEAN",
+    "shared": false,
+    "rexpr": "EXIT-ENTRY",
+    "doc": "| x0 | x1 | zout = x1-x0 |\n| --- | --- | --- |\n| 14.36 | 14.06 |  |\n",
+    "kinds": [
+     "number",
+     "number"
+    ],
+    "lits": [
+     "14.36",
+     "14.06"
+    ],
+    "excel": "-0.300000000000001",
+    "rs": -0.29999999999999893,
+    "hp": -0.3,
+    "exsig": 15
+   }
+  ]
+ }
+}

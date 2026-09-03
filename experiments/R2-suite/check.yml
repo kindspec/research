@@ -1,0 +1,16 @@
+# The portable enforcement point. Hooks are not cloned and merge drivers need
+# local config that never travels; a workflow file is a tracked file the forge
+# executes with nothing installed locally.
+name: conformance
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: validate every artifact (in-file namespaces)
+        run: python3 conformance/runner.py
+      - name: validate the corpus (cross-file namespaces)
+        run: python3 conformance/corpus_check.py .
+      - name: the suite must be able to fail
+        run: python3 conformance/mutants.py
