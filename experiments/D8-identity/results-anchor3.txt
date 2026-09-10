@@ -1,0 +1,26 @@
+
+### rust-book src/*.md gap=5  pairs=47  oracle-confident anchors=849
+   block types: code=189 heading=80 html=65 list=55 prose=460
+   naive  correct  99.1%   LOUD-refusal   0.5%   SILENT-WRONG  0.47%  (n=4)  by type: code=3 html=1
+   hard   correct  97.9%   LOUD-refusal   2.0%   SILENT-WRONG  0.12%  (n=1)  by type: code=1
+
+### rust-book src/*.md gap=25  pairs=19  oracle-confident anchors=200
+   block types: code=30 heading=17 html=14 list=15 prose=124
+   naive  correct  97.5%   LOUD-refusal   0.5%   SILENT-WRONG  2.00%  (n=4)  by type: code=4
+   hard   correct  94.0%   LOUD-refusal   5.0%   SILENT-WRONG  1.00%  (n=2)  by type: code=2
+
+### obsidian-help en/*.md gap=5  pairs=23  oracle-confident anchors=343
+   block types: code=10 heading=58 list=35 prose=240
+   naive  correct  98.5%   LOUD-refusal   0.9%   SILENT-WRONG  0.58%  (n=2)  by type: list=1 prose=1
+   hard   correct  97.7%   LOUD-refusal   2.3%   SILENT-WRONG  0.00%  (n=0)
+### obsidian-help en/*.md gap=25: too few (0)
+
+### cmspec *.md gap=5  pairs=6  oracle-confident anchors=73
+   block types: list=20 prose=53
+   naive  correct 100.0%   LOUD-refusal   0.0%   SILENT-WRONG  0.00%  (n=0)
+   hard   correct  94.5%   LOUD-refusal   5.5%   SILENT-WRONG  0.00%  (n=0)
+
+### cmspec *.md gap=25  pairs=3  oracle-confident anchors=56
+   block types: code=1 list=18 prose=36 table=1
+   naive  correct 100.0%   LOUD-refusal   0.0%   SILENT-WRONG  0.00%  (n=0)
+   hard   correct  98.2%   LOUD-refusal   1.8%   SILENT-WRONG  0.00%  (n=0)
