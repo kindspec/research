@@ -247,12 +247,32 @@ grounds that it requires a UI layer between bytes and human.
 
 ## 3. Adjudication, with the measurements
 
+**Provenance.** The raw output of all three anchor scripts is committed beside
+them: `experiments/D8-identity/results-anchor.txt` (`anchor_eval.py`),
+`results-anchor2.txt` (`anchor_eval2.py`), `results-anchor3.txt`
+(`anchor_eval3.py`). Those three files were produced on 2026-09-09 against these
+partial clones:
+
+```
+rust-book      github.com/rust-lang/book             1500248d8f230566e4ec9f27fcbb8fe9e2898ab1
+obsidian-help  github.com/obsidianmd/obsidian-help   327a782e90481268361b5ccccdb0c224b2b13fe6
+cmspec         github.com/commonmark/commonmark-spec 3da939428d80f146f270cd1765e4ba462e96bb1b
+```
+
+`anchor_eval.py` and `anchor_eval2.py` take `<repo> <pathglob> <gap>` and were
+run over all three corpora at gap ∈ {1, 5, 25}. `anchor_eval3.py` takes no
+arguments and sweeps its own six arms. **The original pass did not record its
+corpus commits**, so the arms below are the 2026-09-09 clone; where that changed
+a number, §3.2 says which one and by how much.
+
 ### 3.1 Under stock git, a stored id survives exactly when the block is unchanged
 
-`anchor_eval2.py`. For each of hundreds of real (commit_i, commit_j) pairs from
-`rust-lang/book`, an `^id` is materialised into every block at commit_i and the
-author's *real* subsequent edit is applied by stock `git merge-file` — i.e. a
-rebase, which is what actually happens when one person cites a block while
+`anchor_eval2.py` for the rates below, `anchor_eval.py` for the cross-tabulation
+after them — two different samples, and the text says which is which. For each
+of hundreds of real (commit_i, commit_j) pairs from `rust-lang/book`, an `^id`
+is materialised into every block at commit_i and the author's *real* subsequent
+edit is applied by stock `git merge-file` — i.e. a rebase, which is what
+actually happens when one person cites a block while
 another edits it. Independent oracle: git-style line correspondence (a different
 algorithm at a different granularity); blocks the oracle cannot classify
 confidently are excluded and reported.
@@ -273,12 +293,23 @@ confidently are excluded and reported.
   STORED    correct 80.0%   loud 20.0%  SILENT-WRONG 0.0%
 ```
 
-The cross-tabulation is the finding. At gap=1, of 999 blocks: `SURVIVED/EXACT`
-= 649 and `CONFLICT/EXACT` = 2. **The stored id survives if and only if the
-block's bytes did not change** — which is exactly the condition under which an
-exact-quote match trivially succeeds. Under stock git, a stored id and an
-exact-quote anchor have *the same domain of success*. The id adds bytes, a
-namespace to collide in, and a write on the read path, and buys nothing.
+Every figure in that block reproduced exactly on 2026-09-09, including the
+oracle-confident subset sizes (999, 849, 200) and the samples they came from
+(1087, 1141, 533) — `results-anchor2.txt`, arms 1–3.
+
+The cross-tabulation is the finding, and it comes from the *other* script.
+`anchor_eval2.py` does not print a stored/computed cross-tab; `anchor_eval.py`
+does, on its own smaller sample — `results-anchor.txt` arm 1: 37 version-pairs
+and 762 block-anchors, against `anchor_eval2.py`'s 44 pairs and 999
+oracle-confident anchors of 1087. Of those **762** blocks: `SURVIVED` = 701,
+`EXACT` = 651, `SURVIVED/EXACT` = 649 and `CONFLICT/EXACT` = 2. (This section
+previously attributed the last two of those to the 999-block subset, which
+never produced them; 701 and 651 are stated here for the first time.) **The
+stored id survives if and only if the block's bytes did not change** — which is
+exactly the condition under which an exact-quote match trivially succeeds.
+Under stock git, a stored id and an exact-quote anchor have *the same domain of
+success*. The id adds bytes, a namespace to collide in, and a write on the read
+path, and buys nothing.
 
 This is not a defect of the experiment; it is a consequence of PASS4/I6. The
 line merger is what will actually run (merge drivers are undeployable — GitLab:
@@ -297,24 +328,108 @@ worst place in the system to put them.
 `anchor_eval3.py` classifies every silent-wrong by block type:
 
 ```
-### rust-book gap=5   849 anchors   code=189 heading=80 html=65 list=55 prose=460
-   naive  correct 99.1%  LOUD 0.5%  SILENT-WRONG 0.47% (n=4)  by type: code=3 html=1
-   hard   correct 97.9%  LOUD 2.0%  SILENT-WRONG 0.12% (n=1)  by type: code=1
+### rust-book src/*.md gap=5  pairs=47  oracle-confident anchors=849
+   block types: code=189 heading=80 html=65 list=55 prose=460
+   naive  correct  99.1%   LOUD-refusal   0.5%   SILENT-WRONG  0.47%  (n=4)  by type: code=3 html=1
+   hard   correct  97.9%   LOUD-refusal   2.0%   SILENT-WRONG  0.12%  (n=1)  by type: code=1
 
-### rust-book gap=25  200 anchors   code=30 heading=17 html=14 list=15 prose=124
-   naive  correct 97.5%  LOUD 0.5%  SILENT-WRONG 2.00% (n=4)  by type: code=4
-   hard   correct 94.0%  LOUD 5.0%  SILENT-WRONG 1.00% (n=2)  by type: code=2
+### rust-book src/*.md gap=25  pairs=19  oracle-confident anchors=200
+   block types: code=30 heading=17 html=14 list=15 prose=124
+   naive  correct  97.5%   LOUD-refusal   0.5%   SILENT-WRONG  2.00%  (n=4)  by type: code=4
+   hard   correct  94.0%   LOUD-refusal   5.0%   SILENT-WRONG  1.00%  (n=2)  by type: code=2
 
-### obsidian-help gap=5  384 anchors  heading=78 list=90 prose=212
-   naive  correct 98.7%  LOUD 0.8%  SILENT-WRONG 0.52% (n=2)  by type: list=2
-   hard   correct 97.1%  LOUD 2.6%  SILENT-WRONG 0.26% (n=1)  by type: list=1
+### obsidian-help en/*.md gap=5  pairs=23  oracle-confident anchors=343
+   block types: code=10 heading=58 list=35 prose=240
+   naive  correct  98.5%   LOUD-refusal   0.9%   SILENT-WRONG  0.58%  (n=2)  by type: list=1 prose=1
+   hard   correct  97.7%   LOUD-refusal   2.3%   SILENT-WRONG  0.00%  (n=0)
+### obsidian-help en/*.md gap=25: too few (0)
 
-### cmspec gap=5 and gap=25: SILENT-WRONG 0.00% in both arms
+### cmspec *.md gap=5  pairs=6  oracle-confident anchors=73
+   block types: list=20 prose=53
+   naive  correct 100.0%   LOUD-refusal   0.0%   SILENT-WRONG  0.00%  (n=0)
+   hard   correct  94.5%   LOUD-refusal   5.5%   SILENT-WRONG  0.00%  (n=0)
+
+### cmspec *.md gap=25  pairs=3  oracle-confident anchors=56
+   block types: code=1 list=18 prose=36 table=1
+   naive  correct 100.0%   LOUD-refusal   0.0%   SILENT-WRONG  0.00%  (n=0)
+   hard   correct  98.2%   LOUD-refusal   1.8%   SILENT-WRONG  0.00%  (n=0)
 ```
 
-Across **885 prose-block anchors in three corpora, there was not one silent
-mis-anchor.** Every failure was a code fence, a raw-HTML block, or a
-table-of-contents list item:
+That is `results-anchor3.txt`, unedited. Two things in it differ from what this
+section carried before, and both are recorded rather than absorbed:
+
+- **`cmspec` was measured, not skipped.** `anchor_eval3.py:92` drops any arm
+  with fewer than 50 oracle-confident anchors and prints `too few (N)`. The
+  earlier one-line `cmspec` summary carried no anchor count, which is
+  indistinguishable from a skip. It is a real measurement: 73 anchors at gap=5
+  and 56 at gap=25, 0.00% silent-wrong under both policies in both arms. The
+  arm that *is* skipped is `obsidian-help` gap=25 — `too few (0)`, which is why
+  it never appeared here. Not because the corpus is shallow: 13 of its 176
+  `en/*.md` files have the 26 commits the arm needs (deepest 64). The script
+  samples 14 files at `seed=7`, and the deepest file that sample drew has 19,
+  so gap=25 has no `(C_i, C_j)` pair to evaluate at all.
+- **`obsidian-help` gap=5 differs, and the old figures cannot be reconciled
+  bucket by bucket.** They were `384 anchors  heading=78 list=90 prose=212` —
+  but 78 + 90 + 212 = 380. `anchor_eval3.py` increments `EV` and the `TY:`
+  bucket in the same statement, so the buckets always sum to the anchor count.
+  The old line is therefore a bad transcription with roughly four anchors of
+  some bucket dropped, and a missing `code=4` is as good a guess as no code
+  bucket having existed. Which half is corrupt is decidable from the old line's
+  own printed rate: 2/384 = 0.52%, which is what it printed, and 2/380 = 0.53%,
+  which it did not. So `384` is the real `EV` and the bucket list is the damaged
+  half. (The hardened rate cannot arbitrate — 1/384 and 1/380 both round to
+  0.26%.) Nothing per-bucket can be compared across the two runs; the totals
+  can, because one of them has just been shown to be the printed value. 343
+  anchors against 384, and the naive arm's two silent mis-anchors typed
+  `list=1 prose=1` rather than `list=2`. The `rust-book` arms are unchanged to
+  the digit. The likeliest cause is that the corpus moved
+  between the runs — `obsidian-help` is the most actively edited of the three —
+  but the original clone's commit was not recorded, so that is an inference and
+  not a measurement.
+
+**The denominator, stated exactly.** Summing the `prose=` bucket over the five
+arms that produced a measurement:
+
+```
+rust-book      gap=5    prose=460
+rust-book      gap=25   prose=124
+obsidian-help  gap=5    prose=240
+cmspec         gap=5    prose= 53
+cmspec         gap=25   prose= 36
+                        --------
+                             913
+```
+
+This section previously said **885**, which is that same sum over the original
+run's figures — 460 + 124 + 212 + 53 + 36. The 89 that never reconciled were the
+two `cmspec` arms, which is what made the missing `cmspec` counts load-bearing
+rather than cosmetic. Either number is a count of anchor *evaluations*, not of
+distinct blocks: it is five arms over three corpora, and the gap=5 and gap=25
+arms of one corpus re-sample the same files.
+
+**And the claim that denominator carried does not survive the re-run.** One of
+the naive policy's silent mis-anchors is now typed `prose` — `obsidian-help`,
+`en/Obsidian Sync/Version history.md`:
+
+```
+'---\naliases:\n  - Sync history\n---'    ->  '## Sync history'
+```
+
+That block is YAML frontmatter. `btype()` has no rule for frontmatter, so it
+falls through to `prose`. It is a defect in the *classifier*, not a
+counterexample to the finding — frontmatter is structured data, which is exactly
+the category the paragraph below says the failures concentrate in — but the
+harness prints `prose=1`, and what the harness prints is what this section may
+claim:
+
+> Across **913 prose-typed anchors in five arms over three corpora, the naive
+> policy made one silent mis-anchor and the hardened policy made none.** The one
+> naive failure is a YAML frontmatter block the type classifier calls prose.
+
+The by-type breakdown is what carries the finding and it needs no denominator at
+all: every other silent-wrong in every arm is a code fence, a raw-HTML block,
+or a list item — a table of contents in `rust-book`, a numbered procedure in
+`obsidian-help`:
 
 ```
 '```rust,ignore\nf64::powi(2.0, 3)\n```'          ->  '```rust,ignore\ndimensions.0 * dimensions.1\n```'
@@ -1413,9 +1528,12 @@ rows and minted block ids are now all instances of one defect.
 1. **The oracle's confident subset shrinks with edit distance** — 92% of blocks
    at gap=1, 74% at gap=5, 38% at gap=25. The gap=25 numbers are computed on 200
    confidently-classified anchors out of 533. The direction of the result is not
-   in doubt (the silent-wrong counts are 0 for prose in every arm), but the
-   gap=25 precision figures carry real uncertainty and a larger corpus study
-   would be worth doing.
+   in doubt, but state the prose counts exactly, because they are no longer all
+   zero: under the hardened policy the silent-wrong count is 0 for prose in
+   every arm; under the naive policy it is 0 in every arm except `obsidian-help`
+   gap=5, which has 1 — a YAML frontmatter block, per item 8 below. The gap=25
+   precision figures carry real uncertainty and a larger corpus study would be
+   worth doing.
 2. **All three corpora are technical documentation in English.** Prose-block
    uniqueness (100% / 99.4% at ≥40 chars) may not hold for meeting notes, legal
    boilerplate, or templated documents, which are exactly the duplicate-heavy
@@ -1444,7 +1562,12 @@ rows and minted block ids are now all instances of one defect.
    tooling that assumes base36; and Obsidian Publish's rendering of block ids
    was not checkable (JS shell). Neither affects the argument — the length is 6
    either way — but neither is confirmed.
-8. **Nobody has published re-anchoring rates.** The numbers in §3 appear to be
+8. **`btype()` has no rule for YAML frontmatter**, so it classifies a
+   frontmatter block as `prose`. The 2026-09-09 re-run's single prose-typed
+   silent-wrong is exactly that (§3.2). Any future harness should add the rule
+   — and say that it did, rather than quoting a cleaner number as though the
+   classifier had always had it.
+9. **Nobody has published re-anchoring rates.** The numbers in §3 appear to be
    the only measurements of block- and span-level re-anchoring over real
    version-control history. That is a reason to distrust them until someone
    reproduces them, not a reason to be pleased.

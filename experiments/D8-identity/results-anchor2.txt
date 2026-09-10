@@ -1,0 +1,123 @@
+
+### rust-book src/*.md gap=1  pairs=44  anchors=1087  oracle-confident=999 (92%)
+  oracle: SURVIVED=994 DELETED=5 UNKNOWN=88
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct             997   99.8%
+     missed (LOUD)         0    0.0%   <- refused; safe
+     WRONG (SILENT)        2    0.2%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct             976   97.7%
+     conflict (LOUD)      23    2.3%
+     WRONG (SILENT)        0    0.0%
+     ex[FUZZY_RISKY] '- [An I/O Project](ch12-00-an-io-project.md)'
+            -> '- [Concurrency](ch16-00-concurrency.md)'
+     ex[FUZZY_RISKY] '```rust,should_panic\n{{#rustdoc_include ../listings/ch12-an-io-project'
+            -> '```rust\n{{#rustdoc_include ../listings/ch12-an-io-project/listing-12-0'
+
+### rust-book src/*.md gap=5  pairs=47  anchors=1141  oracle-confident=849 (74%)
+  oracle: SURVIVED=785 DELETED=64 UNKNOWN=292
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct             841   99.1%
+     missed (LOUD)         4    0.5%   <- refused; safe
+     WRONG (SILENT)        4    0.5%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct             753   88.7%
+     conflict (LOUD)      96   11.3%
+     WRONG (SILENT)        0    0.0%
+     ex[FUZZY_RISKY] '```rust,ignore\nf64::powi(2.0, 3)\n```'
+            -> '```rust,ignore\ndimensions.0 * dimensions.1\n```'
+     ex[FUZZY] '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+            -> '```rust\nlet s = String::from("hello");\n```'
+     ex[FUZZY_RISKY] '<!-- Old heading. Do not remove or links may break. -->\n<a id="ways-va'
+            -> '<!-- Old headings. Do not remove or links may break. -->'
+     ex[FUZZY_RISKY] '```rust,ignore,does_not_compile\n{{#rustdoc_include ../listings/ch12-an'
+            -> '```rust,ignore,does_not_compile\n{{#rustdoc_include ../listings/ch12-an'
+
+### rust-book src/*.md gap=25  pairs=19  anchors=533  oracle-confident=200 (38%)
+  oracle: SURVIVED=145 DELETED=55 UNKNOWN=333
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct             195   97.5%
+     missed (LOUD)         1    0.5%   <- refused; safe
+     WRONG (SILENT)        4    2.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct             160   80.0%
+     conflict (LOUD)      40   20.0%
+     WRONG (SILENT)        0    0.0%
+     ex[FUZZY_RISKY] '```rust,ignore\nf64::powi(2.0, 3)\n```'
+            -> '```rust,ignore\ndimensions.0 * dimensions.1\n```'
+     ex[FUZZY] '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+            -> '```rust\nlet s = String::from("hello");\n```'
+     ex[FUZZY] '```toml\n[dependencies]\n\nrand = "0.3.14"\n```'
+            -> '```toml\n[dependencies]\nrand = "0.9.0"\n```'
+     ex[FUZZY] '```rust,ignore\n.expect("Failed to read line");\n```'
+            -> '```rust,ignore\nio::stdin().read_line(&mut guess).expect("Failed to rea'
+
+### obsidian-help en/*.md gap=1  pairs=29  anchors=528  oracle-confident=504 (95%)
+  oracle: SURVIVED=503 DELETED=1 UNKNOWN=24
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct             503   99.8%
+     missed (LOUD)         1    0.2%   <- refused; safe
+     WRONG (SILENT)        0    0.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct             480   95.2%
+     conflict (LOUD)      24    4.8%
+     WRONG (SILENT)        0    0.0%
+
+### obsidian-help en/*.md gap=5  pairs=23  anchors=456  oracle-confident=343 (75%)
+  oracle: SURVIVED=341 DELETED=2 UNKNOWN=113
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct             338   98.5%
+     missed (LOUD)         3    0.9%   <- refused; safe
+     WRONG (SILENT)        2    0.6%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct             288   84.0%
+     conflict (LOUD)      55   16.0%
+     WRONG (SILENT)        0    0.0%
+     ex[FUZZY_RISKY] '---\naliases:\n  - Sync history\n---'
+            -> '## Sync history'
+     ex[FUZZY] '1. Open **Settings**.\n2. In the sidebar, under **Plugin options**, sel'
+            -> '1. Open **Settings**.\n2. In the sidebar, under **Core plugins***, sele'
+
+### obsidian-help en/*.md gap=25  pairs=0  anchors=0  oracle-confident=0 (0%)
+  oracle: SURVIVED=0 DELETED=0 UNKNOWN=0
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct               0    0.0%
+     missed (LOUD)         0    0.0%   <- refused; safe
+     WRONG (SILENT)        0    0.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct               0    0.0%
+     conflict (LOUD)       0    0.0%
+     WRONG (SILENT)        0    0.0%
+
+### cmspec *.md gap=1  pairs=7  anchors=89  oracle-confident=89 (100%)
+  oracle: SURVIVED=89 DELETED=0 UNKNOWN=0
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct              89  100.0%
+     missed (LOUD)         0    0.0%   <- refused; safe
+     WRONG (SILENT)        0    0.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct              88   98.9%
+     conflict (LOUD)       1    1.1%
+     WRONG (SILENT)        0    0.0%
+
+### cmspec *.md gap=5  pairs=6  anchors=86  oracle-confident=73 (85%)
+  oracle: SURVIVED=73 DELETED=0 UNKNOWN=13
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct              73  100.0%
+     missed (LOUD)         0    0.0%   <- refused; safe
+     WRONG (SILENT)        0    0.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct              66   90.4%
+     conflict (LOUD)       7    9.6%
+     WRONG (SILENT)        0    0.0%
+
+### cmspec *.md gap=25  pairs=3  anchors=79  oracle-confident=56 (71%)
+  oracle: SURVIVED=52 DELETED=4 UNKNOWN=23
+  COMPUTED anchoring (quote+ctx+fuzzy, nothing stored in the file):
+     correct              56  100.0%
+     missed (LOUD)         0    0.0%   <- refused; safe
+     WRONG (SILENT)        0    0.0%   (of which anchored to a deleted block's replacement: 0)
+  STORED ^id under stock-git 3-way merge (concurrent id-write + edit):
+     correct              47   83.9%
+     conflict (LOUD)       9   16.1%
+     WRONG (SILENT)        0    0.0%
