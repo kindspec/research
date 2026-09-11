@@ -370,24 +370,44 @@ section carried before, and both are recorded rather than absorbed:
   `en/*.md` files have the 26 commits the arm needs (deepest 64). The script
   samples 14 files at `seed=7`, and the deepest file that sample drew has 19,
   so gap=25 has no `(C_i, C_j)` pair to evaluate at all.
-- **`obsidian-help` gap=5 differs, and the old figures cannot be reconciled
-  bucket by bucket.** They were `384 anchors  heading=78 list=90 prose=212` —
-  but 78 + 90 + 212 = 380. `anchor_eval3.py` increments `EV` and the `TY:`
-  bucket in the same statement, so the buckets always sum to the anchor count.
-  The old line is therefore a bad transcription with roughly four anchors of
-  some bucket dropped, and a missing `code=4` is as good a guess as no code
-  bucket having existed. Which half is corrupt is decidable from the old line's
-  own printed rate: 2/384 = 0.52%, which is what it printed, and 2/380 = 0.53%,
-  which it did not. So `384` is the real `EV` and the bucket list is the damaged
-  half. (The hardened rate cannot arbitrate — 1/384 and 1/380 both round to
-  0.26%.) Nothing per-bucket can be compared across the two runs; the totals
-  can, because one of them has just been shown to be the printed value. 343
-  anchors against 384, and the naive arm's two silent mis-anchors typed
+- **`obsidian-help` gap=5 differs, and the old bucket line was abridged, not
+  corrupt.** It read `384 anchors  heading=78 list=90 prose=212` — and
+  78 + 90 + 212 = 380, four short of the anchor count, while `anchor_eval3.py`
+  increments `EV` and the `TY:` bucket in the same statement so the buckets
+  always sum to it.
+
+  **This section previously concluded the figures "cannot be reconciled bucket
+  by bucket" and guessed a missing `code=4`. Both were wrong.** Re-running the
+  harness at the pin prints the full list:
+
+  ```
+  obsidian-help en/*.md gap=5  oracle-confident anchors=384
+     block types: code=2 heading=78 list=90 prose=212 table=2
+  ```
+
+  `2 + 78 + 90 + 212 + 2 = 384`, exactly. The missing four are **`code=2` and
+  `table=2`** — the two *smallest* buckets, dropped when the line was
+  transcribed by hand. The data was intact the whole time; only the
+  presentation lost its tail. D8's other two by-type lines (849, 200) sum
+  correctly, so this one line was the only abridged one.
+
+  Reproduced by the blockspec spike harness at this section's own pin
+  (kindspec/blockspec `spike/results/corpus-drift.txt`), which is why the
+  correction exists: the guess stood here until a downstream consumer re-ran the
+  arm and printed what the earlier line had truncated.
+
+  The 2/384 = 0.52% arithmetic that identified `384` as the real `EV` was sound
+  and still holds — it was the half of the old reasoning that was right. What it
+  could not do was say *which* buckets were missing, and the earlier text
+  overreached by guessing rather than re-running.
+
+  Per-bucket comparison across the two runs is therefore possible after all:
+  343 anchors against 384, and the naive arm's two silent mis-anchors typed
   `list=1 prose=1` rather than `list=2`. The `rust-book` arms are unchanged to
-  the digit. The likeliest cause is that the corpus moved
-  between the runs — `obsidian-help` is the most actively edited of the three —
-  but the original clone's commit was not recorded, so that is an inference and
-  not a measurement.
+  the digit. The likeliest cause is that the corpus moved between the runs —
+  `obsidian-help` is the most actively edited of the three — but the original
+  clone's commit was not recorded, so that is an inference and not a
+  measurement.
 
 **The denominator, stated exactly.** Summing the `prose=` bucket over the five
 arms that produced a measurement:
