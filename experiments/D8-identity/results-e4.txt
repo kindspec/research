@@ -1,0 +1,71 @@
+
+### rust-book  files=112  blocks>=20ch=5425
+type           n   dup in same file   dup anywhere in corpus
+code         948         6 ( 0.6%)            16 (  1.7%)
+heading      455         0 ( 0.0%)             8 (  1.8%)
+html         934       220 (23.6%)           263 ( 28.2%)
+list          90         0 ( 0.0%)             0 (  0.0%)
+prose       2985         0 ( 0.0%)             4 (  0.1%)
+table         13         0 ( 0.0%)             0 (  0.0%)
+
+### obsidian-help  files=176  blocks>=20ch=4572
+type           n   dup in same file   dup anywhere in corpus
+code         322        25 ( 7.8%)            28 (  8.7%)
+heading      603         0 ( 0.0%)            29 (  4.8%)
+html           3         0 ( 0.0%)             0 (  0.0%)
+list         709         0 ( 0.0%)             0 (  0.0%)
+prose       2855        32 ( 1.1%)            83 (  2.9%)
+table         80         0 ( 0.0%)             0 (  0.0%)
+
+### cmspec  files=2  blocks>=20ch=45
+type           n   dup in same file   dup anywhere in corpus
+code           2         0 ( 0.0%)             0 (  0.0%)
+list          12         0 ( 0.0%)             0 (  0.0%)
+prose         31         0 ( 0.0%)             0 (  0.0%)
+
+### rust-book  files=112  blocks>=40ch=4994
+type           n   dup in same file   dup anywhere in corpus
+code         909         6 ( 0.7%)            14 (  1.5%)
+heading      172         0 ( 0.0%)             0 (  0.0%)
+html         873       197 (22.6%)           229 ( 26.2%)
+list          89         0 ( 0.0%)             0 (  0.0%)
+prose       2938         0 ( 0.0%)             0 (  0.0%)
+table         13         0 ( 0.0%)             0 (  0.0%)
+
+### obsidian-help  files=176  blocks>=40ch=3662
+type           n   dup in same file   dup anywhere in corpus
+code         284        22 ( 7.7%)            25 (  8.8%)
+heading       67         0 ( 0.0%)             0 (  0.0%)
+html           2         0 ( 0.0%)             0 (  0.0%)
+list         703         0 ( 0.0%)             0 (  0.0%)
+prose       2526        16 ( 0.6%)            48 (  1.9%)
+table         80         0 ( 0.0%)             0 (  0.0%)
+
+### cmspec  files=2  blocks>=40ch=42
+type           n   dup in same file   dup anywhere in corpus
+code           2         0 ( 0.0%)             0 (  0.0%)
+list          12         0 ( 0.0%)             0 (  0.0%)
+prose         28         0 ( 0.0%)             0 (  0.0%)
+
+### rust-book  files=112  blocks>=120ch=3195
+type           n   dup in same file   dup anywhere in corpus
+code         273         2 ( 0.7%)             2 (  0.7%)
+html         293        16 ( 5.5%)            17 (  5.8%)
+list          81         0 ( 0.0%)             0 (  0.0%)
+prose       2535         0 ( 0.0%)             0 (  0.0%)
+table         13         0 ( 0.0%)             0 (  0.0%)
+
+### obsidian-help  files=176  blocks>=120ch=2137
+type           n   dup in same file   dup anywhere in corpus
+code          90         5 ( 5.6%)             5 (  5.6%)
+heading        2         0 ( 0.0%)             0 (  0.0%)
+html           2         0 ( 0.0%)             0 (  0.0%)
+list         552         0 ( 0.0%)             0 (  0.0%)
+prose       1414         4 ( 0.3%)            21 (  1.5%)
+table         77         0 ( 0.0%)             0 (  0.0%)
+
+### cmspec  files=2  blocks>=120ch=23
+type           n   dup in same file   dup anywhere in corpus
+code           2         0 ( 0.0%)             0 (  0.0%)
+list           8         0 ( 0.0%)             0 (  0.0%)
+prose         13         0 ( 0.0%)             0 (  0.0%)

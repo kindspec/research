@@ -7,6 +7,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from anchor_eval import blocks, git
 from anchor_eval3 import btype
 
+MINLEN = int(sys.argv[1]) if len(sys.argv)>1 else 20
+
 for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md'),('corpora/cmspec','*.md')]:
     files=[f for f in git(repo,'ls-files',glob).split('\n') if f.endswith('.md')]
     per_file_dup=Counter(); corpus=Counter(); tot=Counter(); nfiles=0
@@ -14,7 +16,7 @@ for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/
         try: t=open(os.path.join(repo,f),encoding='utf-8').read()
         except Exception: continue
         nfiles+=1
-        bs=[b for b in blocks(t) if len(b['content'])>=20]
+        bs=[b for b in blocks(t) if len(b['content'])>=MINLEN]
         c=Counter(b['content'] for b in bs)
         for b in bs:
             ty=btype(b['content']); tot[ty]+=1
@@ -25,8 +27,8 @@ for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/
         try: t=open(os.path.join(repo,f),encoding='utf-8').read()
         except Exception: continue
         for b in blocks(t):
-            if len(b['content'])>=20 and corpus[b['content']]>1: cross[btype(b['content'])]+=1
-    print(f"\n### {os.path.basename(repo)}  files={nfiles}  blocks>=20ch={sum(tot.values())}")
+            if len(b['content'])>=MINLEN and corpus[b['content']]>1: cross[btype(b['content'])]+=1
+    print(f"\n### {os.path.basename(repo)}  files={nfiles}  blocks>={MINLEN}ch={sum(tot.values())}")
     print(f"{'type':<9}{'n':>7}{'dup in same file':>19}{'dup anywhere in corpus':>25}")
     for ty in sorted(tot):
         n=tot[ty]

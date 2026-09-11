@@ -250,7 +250,8 @@ grounds that it requires a UI layer between bytes and human.
 **Provenance.** The raw output of all three anchor scripts is committed beside
 them: `experiments/D8-identity/results-anchor.txt` (`anchor_eval.py`),
 `results-anchor2.txt` (`anchor_eval2.py`), `results-anchor3.txt`
-(`anchor_eval3.py`). Those three files were produced on 2026-09-09 against these
+(`anchor_eval3.py`). Those three files were produced on 2026-09-09, and
+`results-e4.txt` (`e4_uniqueness.py`, §3.3) on 2026-09-10, against these
 partial clones:
 
 ```
@@ -261,9 +262,10 @@ cmspec         github.com/commonmark/commonmark-spec 3da939428d80f146f270cd1765e
 
 `anchor_eval.py` and `anchor_eval2.py` take `<repo> <pathglob> <gap>` and were
 run over all three corpora at gap ∈ {1, 5, 25}. `anchor_eval3.py` takes no
-arguments and sweeps its own six arms. **The original pass did not record its
-corpus commits**, so the arms below are the 2026-09-09 clone; where that changed
-a number, §3.2 says which one and by how much.
+arguments and sweeps its own six arms. `e4_uniqueness.py` takes `<minlen>` and
+was run at 20, 40 and 120. **The original pass did not record its corpus
+commits**, so the arms below are the 2026-09-09 clone; where that changed a
+number, §3.2 and §3.3 say which one and by how much.
 
 ### 3.1 Under stock git, a stored id survives exactly when the block is unchanged
 
@@ -447,25 +449,110 @@ mechanisms cover disjoint halves of the substrate with no gap between them.
 
 ### 3.3 Is a quote a unique key in real prose? Measured: yes.
 
-`e4_uniqueness.py`, on the checked-out working trees:
+`e4_uniqueness.py <minlen>` (`minlen` defaults to 20), on the checked-out
+working trees at the three commits pinned in §3 above. The raw output of all
+three runs — 20, 40 and 120 — is committed beside the script as
+`experiments/D8-identity/results-e4.txt`. The 40 and 120 arms, verbatim from
+that file, are the ones this subsection argues from:
 
 ```
-corpus           minlen  prose blocks  dup in file  dup in corpus
-rust-book            40          2938      0 (0.00%)       0 ( 0.00%)
-rust-book           120          2535      0 (0.00%)       0 ( 0.00%)
-obsidian-help        40          2515     16 (0.64%)      40 ( 1.59%)
-obsidian-help       120          1408      4 (0.28%)      21 ( 1.49%)
+### rust-book  files=112  blocks>=40ch=4994
+type           n   dup in same file   dup anywhere in corpus
+code         909         6 ( 0.7%)            14 (  1.5%)
+heading      172         0 ( 0.0%)             0 (  0.0%)
+html         873       197 (22.6%)           229 ( 26.2%)
+list          89         0 ( 0.0%)             0 (  0.0%)
+prose       2938         0 ( 0.0%)             0 (  0.0%)
+table         13         0 ( 0.0%)             0 (  0.0%)
+
+### obsidian-help  files=176  blocks>=40ch=3662
+type           n   dup in same file   dup anywhere in corpus
+code         284        22 ( 7.7%)            25 (  8.8%)
+heading       67         0 ( 0.0%)             0 (  0.0%)
+html           2         0 ( 0.0%)             0 (  0.0%)
+list         703         0 ( 0.0%)             0 (  0.0%)
+prose       2526        16 ( 0.6%)            48 (  1.9%)
+table         80         0 ( 0.0%)             0 (  0.0%)
+
+### cmspec  files=2  blocks>=40ch=42
+type           n   dup in same file   dup anywhere in corpus
+code           2         0 ( 0.0%)             0 (  0.0%)
+list          12         0 ( 0.0%)             0 (  0.0%)
+prose         28         0 ( 0.0%)             0 (  0.0%)
 ```
 
-A prose block of ≥40 characters is unique within its file in 100.0% of
-rust-book's 2,938 blocks and 99.4% of obsidian-help's 2,515. Code and raw HTML
-are not: raw-HTML blocks in rust-book duplicate at **23.6%** within a single
-file. Same split as §3.2, from a different direction.
+```
+### rust-book  files=112  blocks>=120ch=3195
+type           n   dup in same file   dup anywhere in corpus
+code         273         2 ( 0.7%)             2 (  0.7%)
+html         293        16 ( 5.5%)            17 (  5.8%)
+list          81         0 ( 0.0%)             0 (  0.0%)
+prose       2535         0 ( 0.0%)             0 (  0.0%)
+table         13         0 ( 0.0%)             0 (  0.0%)
+
+### obsidian-help  files=176  blocks>=120ch=2137
+type           n   dup in same file   dup anywhere in corpus
+code          90         5 ( 5.6%)             5 (  5.6%)
+heading        2         0 ( 0.0%)             0 (  0.0%)
+html           2         0 ( 0.0%)             0 (  0.0%)
+list         552         0 ( 0.0%)             0 (  0.0%)
+prose       1414         4 ( 0.3%)            21 (  1.5%)
+table         77         0 ( 0.0%)             0 (  0.0%)
+
+### cmspec  files=2  blocks>=120ch=23
+type           n   dup in same file   dup anywhere in corpus
+code           2         0 ( 0.0%)             0 (  0.0%)
+list           8         0 ( 0.0%)             0 (  0.0%)
+prose         13         0 ( 0.0%)             0 (  0.0%)
+```
+
+A prose block of ≥40 characters is unique within its file in **100.0%** of
+rust-book's 2,938 prose blocks (0 duplicated) and **99.4%** of obsidian-help's
+2,526 (16 duplicated). Code and raw HTML are not: raw-HTML blocks in rust-book
+duplicate within a single file at 22.6% at ≥40, and at **23.6%** at the script's
+default ≥20 — `html 934 220 (23.6%)` in the `minlen=20` arm of `results-e4.txt`,
+which is the threshold that 23.6% has always belonged to. Same split as §3.2,
+from a different direction.
 
 Crucially, the residual ambiguity is **detectable at resolve time** — the
 resolver reads the whole file and sees two matches — so it becomes a loud
 `#REF!`, not a silent wrong answer. Stored ids have no such property: §1.2 showed
 a duplicate id arriving through a *clean merge* with nothing to see.
+
+**Provenance correction, 2026-09-10 (kindspec/research#5).** Until this revision
+§3.3 showed a four-row `corpus / minlen / prose blocks / dup in file / dup in
+corpus` table that **the committed script could not produce**: `e4_uniqueness.py`
+took no arguments and hardcoded a single `>=20` threshold, so it had no `minlen`
+to vary, it printed one block per corpus with a row per block type rather than
+one row per corpus, and its percentages are emitted to one decimal where the
+table showed two. There was no `results-e4.txt` either. The script now takes
+`minlen` and all three runs are committed. Re-measured at the §3 pins, two of
+the four prose rows moved, both in `obsidian-help`:
+
+```
+corpus         minlen  superseded value              measured 2026-09-10
+rust-book          40  2938   0 (0.00%)   0 (0.00%)   2938   0 (0.0%)   0 (0.0%)
+rust-book         120  2535   0 (0.00%)   0 (0.00%)   2535   0 (0.0%)   0 (0.0%)
+obsidian-help      40  2515  16 (0.64%)  40 (1.59%)   2526  16 (0.6%)  48 (1.9%)
+obsidian-help     120  1408   4 (0.28%)  21 (1.49%)   1414   4 (0.3%)  21 (1.5%)
+```
+
+The two rust-book rows reproduce exactly. obsidian-help's prose-block counts are
+11 and 6 higher, and its corpus-wide duplicate count at ≥40 is 48 rather than
+40. The superseded values are recorded here rather than overwritten silently: the
+derived claim above recomputes to 99.3666%, which still rounds to the 99.4% it
+always read, but the population it is taken over is now 2,526 blocks and not
+2,515.
+
+Two things the re-measurement settles that the old table left ambiguous. First,
+the **23.6%** raw-HTML figure belongs to `minlen=20`, not to the 40 of the table
+printed beside it; at 40 the same measurement is 22.6% of 873 blocks. Second,
+rust-book prose has **zero** duplicates at 40 and at 120, so the `0.00%` the old
+table claimed for those rows was right. The nonzero row that raised the question
+— `prose 2985 0 ( 0.0%) 4 ( 0.1%)` — is the `minlen=20` arm, where blocks of
+20–39 characters are in scope, and it contradicts nothing in the table. Had it
+been nonzero at 40 the paragraph above would still stand: a second match is
+visible to the resolver, and a visible ambiguity is a loud `#REF!`.
 
 ### 3.4 The standoff case: arbitrary sub-block spans, two-stage anchoring
 

@@ -21,10 +21,13 @@ blockspec's design brief comes from the first two.
 
 These three move. `design-findings/D8-identity.md` §3 pins the commit of each
 clone the anchor evaluations in `results-anchor*.txt` were run against, because
-one of those arms did change when it was re-run against a later clone. That pin
-covers the anchor evaluations only — **the 40-character uniqueness measurement
-named above is neither pinned nor currently reproducible**, per
-kindspec/research#5.
+one of those arms did change when it was re-run against a later clone. **The
+40-character uniqueness measurement named above is now pinned to those same
+three commits and reproducible**: `e4_uniqueness.py` takes a `minlen` argument
+and its output at 20, 40 and 120 is committed as
+`experiments/D8-identity/results-e4.txt`. Two of the four prose figures §3.3
+quoted moved when it was re-measured; §3.3 records the superseded values.
+Resolves kindspec/research#5.
 
 ## Benchmark archives
 
