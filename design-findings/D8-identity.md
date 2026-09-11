@@ -377,37 +377,50 @@ section carried before, and both are recorded rather than absorbed:
   always sum to it.
 
   **This section previously concluded the figures "cannot be reconciled bucket
-  by bucket" and guessed a missing `code=4`. Both were wrong.** Re-running the
-  harness at the pin prints the full list:
+  by bucket" and guessed a missing `code=4`. Both were wrong.** Running the
+  harness against **`a3985b58`** — not §3's pin, but the tree §3.3 identifies as
+  the original run's, seven first-parent commits behind it — prints the full
+  line:
 
   ```
-  obsidian-help en/*.md gap=5  oracle-confident anchors=384
+  ### obsidian-help en/*.md gap=5  pairs=31  oracle-confident anchors=384
      block types: code=2 heading=78 list=90 prose=212 table=2
   ```
 
   `2 + 78 + 90 + 212 + 2 = 384`, exactly. The missing four are **`code=2` and
-  `table=2`** — the two *smallest* buckets, dropped when the line was
-  transcribed by hand. The data was intact the whole time; only the
-  presentation lost its tail. D8's other two by-type lines (849, 200) sum
-  correctly, so this one line was the only abridged one.
+  `table=2`**, the two *smallest* buckets. The data was intact the whole time;
+  only the presentation lost its tail. How they went missing is not measured —
+  a hand transcription that stopped at the three largest buckets is the obvious
+  reading, and it is an inference, not a result.
 
-  Reproduced by the blockspec spike harness at this section's own pin
-  (kindspec/blockspec `spike/results/corpus-drift.txt`), which is why the
-  correction exists: the guess stood here until a downstream consumer re-ran the
-  arm and printed what the earlier line had truncated.
+  **Mind which tree.** At §3's pin this arm gives `pairs=23`, `anchors=343`,
+  `code=10 heading=58 list=35 prose=240` — the figures in `results-anchor3.txt`
+  above. The 384 line belongs to `a3985b58` alone. An earlier version of this
+  correction said "at the pin" while quoting the 384 line, because the
+  downstream harness it came from uses "pin" for `a3985b58`: two repositories,
+  two meanings, one word. `pairs=31` against `pairs=23` is the field that
+  separates them, which is why the block above is quoted whole.
+
+  Reproduced by the blockspec spike harness at `d6298f3` (kindspec/blockspec
+  `spike/results/corpus-drift.txt`), which is why the correction exists: the
+  guess stood here until a downstream consumer re-ran the arm and printed what
+  the earlier line had truncated.
 
   The 2/384 = 0.52% arithmetic that identified `384` as the real `EV` was sound
   and still holds — it was the half of the old reasoning that was right. What it
   could not do was say *which* buckets were missing, and the earlier text
-  overreached by guessing rather than re-running.
+  overreached by guessing rather than re-running. Nor was this the only abridged
+  line: the original `cmspec` summary two bullets above dropped its anchor count
+  and every bucket. `rust-book`'s two by-type lines do sum (849, 200).
 
   Per-bucket comparison across the two runs is therefore possible after all:
   343 anchors against 384, and the naive arm's two silent mis-anchors typed
   `list=1 prose=1` rather than `list=2`. The `rust-book` arms are unchanged to
-  the digit. The likeliest cause is that the corpus moved between the runs —
-  `obsidian-help` is the most actively edited of the three — but the original
-  clone's commit was not recorded, so that is an inference and not a
-  measurement.
+  the digit. The cause is the corpus moving between the runs, and that is now
+  close to measured rather than inferred: `a3985b58` reproduces the original arm
+  exactly — 384 anchors, the full bucket line, naive 0.52% (n=2) `list=2`,
+  hardened 0.26% (n=1) `list=1`. The original clone's commit was never recorded;
+  the tree whose output it reproduces has been identified.
 
 **The denominator, stated exactly.** Summing the `prose=` bucket over the five
 arms that produced a measurement:
