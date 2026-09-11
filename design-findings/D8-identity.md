@@ -410,7 +410,7 @@ section carried before, and both are recorded rather than absorbed:
   and still holds — it was the half of the old reasoning that was right. What it
   could not do was say *which* buckets were missing, and the earlier text
   overreached by guessing rather than re-running. Nor was this the only abridged
-  line: the original `cmspec` summary two bullets above dropped its anchor count
+  line: the original `cmspec` summary in the bullet above dropped its anchor count
   and every bucket. `rust-book`'s two by-type lines do sum (849, 200).
 
   Per-bucket comparison across the two runs is therefore possible after all:
