@@ -555,11 +555,13 @@ reproducible there.
 is a discrepancy at a *fixed* tree, not between trees. The old table's own
 percentage rules out a transcription slip for 48: 40/2515 = 1.5905% → **1.59%**,
 which is what it showed, where 48/2515 = 1.9085% → 1.91%. So 40 was the
-numerator actually used. Sweeping the 40 most recent first-parent
-`obsidian-help` commits finds no tree with that pair — every tree giving
-`prose_n=2515` gives 48, and 40 does not occur at any `prose_n` in the range
-swept, whose `(prose_n, dup in file, dup in corpus)` triples are 2426/14/41,
-2427/14/41, 2440/14/42, 2457/14/42, 2466/16/43, 2467/16/43 and 2515/16/48.
+numerator actually used. Sweeping the 60 most recent first-parent
+`obsidian-help` commits from the pin finds no tree with that pair — every tree
+giving `prose_n=2515` gives 48, and the corpus-wide count takes only the values
+41, 42, 43 and 48 across the range, whose
+`(prose_n, dup in file, dup in corpus)` triples are 2426/14/41, 2427/14/41,
+2440/14/42, 2457/14/42, 2466/16/43, 2467/16/43, 2515/16/48, 2526/16/48 and
+2527/16/48.
 **`(2515, 40)` is not producible by this script at any tree examined.** It is
 left recorded as unreconciled rather than folded in with the drift.
 
