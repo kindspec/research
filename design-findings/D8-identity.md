@@ -527,7 +527,7 @@ to vary, it printed one block per corpus with a row per block type rather than
 one row per corpus, and its percentages are emitted to one decimal where the
 table showed two. There was no `results-e4.txt` either. The script now takes
 `minlen` and all three runs are committed. Re-measured at the §3 pins, two of
-the four prose rows moved, both in `obsidian-help`:
+the four prose rows moved, both in `obsidian-help`, for two different reasons:
 
 ```
 corpus         minlen  superseded value              measured 2026-09-10
@@ -537,9 +537,33 @@ obsidian-help      40  2515  16 (0.64%)  40 (1.59%)   2526  16 (0.6%)  48 (1.9%)
 obsidian-help     120  1408   4 (0.28%)  21 (1.49%)   1414   4 (0.3%)  21 (1.5%)
 ```
 
-The two rust-book rows reproduce exactly. obsidian-help's prose-block counts are
-11 and 6 higher, and its corpus-wide duplicate count at ≥40 is 48 rather than
-40. The superseded values are recorded here rather than overwritten silently: the
+The two rust-book rows reproduce exactly. The `obsidian-help` changes have **two
+different causes, and only one of them is corpus drift** — keeping them apart is
+the whole point of pinning the clones, so they are stated separately.
+
+**Drift, reconciled.** The prose-block counts are 11 and 6 higher because the
+original run used an earlier `obsidian-help` tree than the §3 pin, and that tree
+is identifiable. At `a3985b58` — the commit the local corpus cache sits at,
+seven first-parent commits behind the pin — this script prints
+`prose 2515 16 ( 0.6%) 48 ( 1.9%)` at ≥40 and
+`prose 1408 4 ( 0.3%) 21 ( 1.5%)` at ≥120, reproducing the old table's `2515`,
+its `16`, and its entire ≥120 row. Eleven of the old table's twelve figures are
+reproducible there.
+
+**Not drift, and unreconciled.** The twelfth is the ≥40 corpus-wide count of
+**40**. At the very tree that produces `2515` this script prints **48**, so this
+is a discrepancy at a *fixed* tree, not between trees. The old table's own
+percentage rules out a transcription slip for 48: 40/2515 = 1.5905% → **1.59%**,
+which is what it showed, where 48/2515 = 1.9085% → 1.91%. So 40 was the
+numerator actually used. Sweeping the 40 most recent first-parent
+`obsidian-help` commits finds no tree with that pair — every tree giving
+`prose_n=2515` gives 48, and 40 does not occur at any `prose_n` in the range
+swept, whose `(prose_n, dup in file, dup in corpus)` triples are 2426/14/41,
+2427/14/41, 2440/14/42, 2457/14/42, 2466/16/43, 2467/16/43 and 2515/16/48.
+**`(2515, 40)` is not producible by this script at any tree examined.** It is
+left recorded as unreconciled rather than folded in with the drift.
+
+The superseded values are recorded here rather than overwritten silently: the
 derived claim above recomputes to 99.3666%, which still rounds to the 99.4% it
 always read, but the population it is taken over is now 2,526 blocks and not
 2,515.
