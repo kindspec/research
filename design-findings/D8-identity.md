@@ -285,6 +285,15 @@ another edits it. Independent oracle: git-style line correspondence (a different
 algorithm at a different granularity); blocks the oracle cannot classify
 confidently are excluded and reported.
 
+**Only the stored arm merges.** The computed arm performs no merge in any of
+these scripts: it builds the anchor from the file at `commit_i` and resolves it
+directly against the file at `commit_j`, `gap` commits to that file later, with
+every version between them skipped. `anchor_eval3.py`, whose by-type breakdown
+§3.2 quotes, has no stored arm and never merges at all; it imported `merge3`
+without calling it until kindspec/research#6 removed the import. Read §3.2 as
+version-skip re-anchoring, not as a rebase. kindspec/blockspec#8 retracted a
+downstream claim that had read it as one.
+
 ```
 ### rust-book src/*.md gap=1   oracle-confident anchors=999  (92% of sample)
   COMPUTED (quote+context+fuzzy, nothing in the file)

@@ -19,7 +19,23 @@ FUZZ = 0.5          # git's rename-detection threshold, as used in L3
 CTX  = 48           # chars of prefix/suffix context (Hypothes.is uses 32)
 
 def git(repo, *a):
-    return subprocess.run(['git','-C',repo,*a], capture_output=True, text=True).stdout
+    r = subprocess.run(['git','-C',repo,*a], capture_output=True, text=True)
+    if r.returncode != 0:
+        sys.exit(f"git -C {repo} {' '.join(a)}: exit {r.returncode}: {r.stderr.strip()}")
+    return r.stdout
+
+def md_files(repo, pathglob):
+    """Tracked .md files under pathglob. None is a broken corpus, never a zero."""
+    files = [f for f in git(repo,'ls-files',pathglob).split('\n') if f.endswith('.md')]
+    if not files:
+        sys.exit(f"{repo}: no tracked .md files match {pathglob!r}; wrong corpus path?")
+    return files
+
+def show(repo, rev, path):
+    """path at rev, or '' when rev's tree lacks it -- `git log -- path` lists the
+    commit that deletes or moves a file, and the callers skip an empty side."""
+    if not git(repo,'ls-tree',rev,'--',path).strip(): return ''
+    return git(repo,'show',f'{rev}:{path}')
 
 def blocks(text):
     """Boundary-only block parse (L3): blank-line separated, fences respected."""
@@ -119,7 +135,7 @@ def conflict_regions(txt):
 
 def run(repo, pathglob, gap, sample_files=12, sample_blocks=25, seed=7):
     rnd = random.Random(seed)
-    files = [f for f in git(repo,'ls-files',pathglob).split('\n') if f.endswith('.md')]
+    files = md_files(repo, pathglob)
     rnd.shuffle(files); files = files[:sample_files]
     tally = Counter(); pairs = 0; agree=0; disagree=0; both=0
     examples = []
@@ -128,7 +144,7 @@ def run(repo, pathglob, gap, sample_files=12, sample_blocks=25, seed=7):
         if len(cs) < gap+1: continue
         for start in range(0, len(cs)-gap, max(1,(len(cs)-gap)//3 or 1)):
             ci, cj = cs[start], cs[start+gap]
-            ti = git(repo,'show',f'{ci}:{f}'); tj = git(repo,'show',f'{cj}:{f}')
+            ti = show(repo,ci,f); tj = show(repo,cj,f)
             if not ti or not tj or ti == tj: continue
             bi, bj = blocks(ti), blocks(tj)
             if len(bi) < 4: continue
