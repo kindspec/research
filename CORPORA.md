@@ -50,6 +50,16 @@ Resolves kindspec/research#5.
 The differential's headline figure and its two documented caveats
 (kindspec/rowspec#27, #28) come from these.
 
+**Committed output reproduces corpus content verbatim.** The `samples` in the
+`.json` files under `experiments/E1-differential/out/`, its `fixed/` and `full/`
+subdirectories included, and the reports in `experiments/W3-interop/out/`
+quote formulas, header text and sheet names exactly as the workbooks hold them.
+For TmplEnron that includes personal names from the public Enron corpus, in
+one case with a toll-free pager number written into the same header. This was
+reviewed on 2026-10-07 and left in place: it comes from a widely redistributed
+public research corpus, and removing it from the current tree would not remove
+it from the repository's history.
+
 ## Replay corpora — the dogfood run
 
 `D0-dogfood` replayed 7,446 real commits and 528 real three-way merges from four
