@@ -4,6 +4,7 @@ kindspec.
   *.md, design-findings/, findings/     CC-BY-4.0
   experiments/                          MIT
 
+except the third-party files listed in NOTICE, which keep their own licences.
 Full texts are in LICENSES/.
 
 WHY THE SPLIT
@@ -12,5 +13,11 @@ The prose is a record and is meant to be quoted, so it carries attribution.
 The experiment code is meant to be re-run, adapted and lifted into an
 implementation without obligation, so it does not.
 
-This repository redistributes no third-party corpora. Where an experiment reads
-one, CORPORA.md names it and its upstream licence governs it, not this file.
+THIRD-PARTY MATERIAL
+
+No corpus an experiment reads is committed here; CORPORA.md names each one, and
+its upstream licence governs it, not this file. The repository does carry a
+few third-party sample files, and modified copies of them, under experiments/.
+NOTICE lists each with its source, licence and copyright holder. Committed
+measurement output also quotes excerpts of the corpora it measured, and that
+material remains under its upstream terms.

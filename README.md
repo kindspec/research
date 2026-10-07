@@ -55,5 +55,6 @@ nothing to do with tables.
 ## Licensing
 
 Prose — `*.md`, `design-findings/`, `findings/` — is **CC-BY-4.0**.
-Experiment code and its output — `experiments/` — is **MIT**.
-Full texts in `LICENSES/`. See [LICENSE](LICENSE).
+Experiment code and its output — `experiments/` — is **MIT**, except the
+third-party sample files listed in [NOTICE](NOTICE), which keep their own
+licences. Full texts in `LICENSES/`. See [LICENSE](LICENSE).

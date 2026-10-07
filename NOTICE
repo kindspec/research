@@ -1,0 +1,82 @@
+research — third-party files
+
+Most of this repository is original work, licensed as LICENSE describes. The
+files below are not. Each is a copy of a published file, or was derived from
+one, and is redistributed under that file's own licence, not under LICENSE's
+per-directory split. Full licence texts are in LICENSES/.
+
+Each source is the upstream file at the commit named, and the copy here is
+byte-identical to it: the git blob hashes match. Files listed as "derived" are
+modified copies, made for the experiment in the same directory (edited,
+merged, re-serialised or unpacked), and are not upstream's work as published.
+
+
+experiments/D7-slides/real.pptx
+  Source:     https://github.com/microsoft/BCTech/blob/bff8c7dda3698a7823c51fd6b83b1d1112f6ebcb/samples/MachineLearning/images/architecture.pptx
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) Microsoft Corporation. All rights reserved.
+  Derived:    experiments/D7-slides/alice.pptx, bob.pptx, m.xml, pm.xml,
+              and the unpacked trees x/, xa/ and xb/
+
+experiments/D7-canvas-formats/excalidraw/real2.excalidraw
+  Source:     https://github.com/slimtoolkit/slim/blob/2817f6449b5d9aeb073dbca8bf51a302bc09e565/assets/images/docs/SlimHow.excalidraw
+  Licence:    Apache-2.0 (LICENSES/Apache-2.0.txt)
+  Copyright:  Copyright 2015-2022 SlimToolkit.
+  Derived:    experiments/D7-canvas-formats/excalidraw/*.json
+
+experiments/D7-canvas-formats/excalidraw/real1.excalidraw
+  Source:     https://github.com/WhatsApp/erlang-language-platform/blob/68677d4d15da4b7f6cf48ab3b8edc375ae90d000/docs/ELP-parser-dataflow.excalidraw
+  Licence:    Apache-2.0 OR MIT, at the recipient's option, as upstream is
+              dual-licensed (LICENSES/Apache-2.0.txt, LICENSES/MIT.txt)
+  Copyright:  Copyright (c) Meta Platforms, Inc. and affiliates.
+
+experiments/D7-canvas-formats/drawio/real.drawio
+  Source:     https://github.com/agntcy/docs/blob/3b17ad64d678363586ba2c8ee400c117cef96ba1/docs/assets/service_compositon.drawio
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Copyright:  Copyright AGNTCY Contributors (https://github.com/agntcy)
+  Derived:    every other file in experiments/D7-canvas-formats/drawio/
+
+experiments/D7-canvas-formats/jsoncanvas/real.canvas
+  Source:     https://github.com/miaomiaomiao1113/Claude-code-architecture-instruction/blob/8dde72b7d762366c1d67619aeaab014578bfe820/Claude-Code-Architecture.canvas
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Copyright:  GitHub user miaomiaomiao1113; upstream names no other holder
+  Derived:    every other file in experiments/D7-canvas-formats/jsoncanvas/
+
+experiments/D7-canvas-formats/tldraw/real.tldr
+  Source:     https://github.com/dalenguyen/pdfun/blob/594a6de2fec2ced6235e48e0b382e31e11668896/docs/architectures/pdf-chat.tldr
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) 2024 Dale Nguyen
+  Derived:    every other file in experiments/D7-canvas-formats/tldraw/
+
+experiments/D7-canvas-formats/svg/real.svg
+  Source:     https://github.com/excalidraw/excalidraw/blob/d6cd8b78f11742e9107dd4cd9cee564120ae599b/packages/excalidraw/tests/fixtures/svg-image-exporting-reference.svg
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) 2020 Excalidraw
+  Note:       embeds, base64-encoded, the same repository's
+              packages/excalidraw/tests/fixtures/deer.png
+
+experiments/D7-usd/HelloWorld.usda
+experiments/D7-usd/Sphere.usda
+  Source:     https://github.com/PixarAnimationStudios/OpenUSD/blob/2eb01f5cd4c2dae4e1ef9912ca27a93083bb6ef4/extras/usd/tutorials/authoringVariants/HelloWorld.usda
+              https://github.com/PixarAnimationStudios/OpenUSD/blob/2eb01f5cd4c2dae4e1ef9912ca27a93083bb6ef4/extras/usd/tutorials/convertingLayerFormats/Sphere.usda
+  Licence:    Tomorrow Open Source Technology License 1.0, which is
+              Apache-2.0 with a different section 6
+              (LICENSES/LicenseRef-TOST-1.0.txt)
+  Copyright:  Copyright 2016 Pixar
+  Upstream NOTICE.txt, reproduced as section 4(d) of that licence requires:
+
+    Universal Scene Description
+    Copyright 2016 Pixar
+    All rights reserved.
+
+    This product includes software developed at:
+    Pixar (http://www.pixar.com/).
+
+
+Measurement output
+
+Committed experiment output also quotes the corpora it measured: short
+excerpts of markdown in experiments/D8-identity/results-*.txt, and formulas,
+header text and sheet names from spreadsheets under experiments/E1-differential/,
+experiments/E4-if-sum/ and experiments/W3-interop/. Those corpora are named in
+CORPORA.md, and the quoted material remains under its upstream terms.

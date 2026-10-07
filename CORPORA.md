@@ -2,9 +2,16 @@
 # Corpora — what was measured, and where it came from
 
 The experiments in this repository read 1.9 GB of third-party corpora and
-generated git histories. None of it is redistributed here. This file names each
+generated git histories. None of it is committed here. This file names each
 one so a result can be **reproduced rather than trusted**, which is the same
 standard the specs themselves are held to.
+
+That covers the corpora, not everything third-party in the repository.
+Committed output quotes excerpts of these corpora, and a handful of third-party
+sample files that are not corpora — the real-world canvas, diagram, slide and
+USD files the D7 experiments use — are committed, most alongside modified
+copies. [NOTICE](NOTICE) lists each with its source, licence and copyright
+holder.
 
 Sizes are the on-disk size of the working copy at the time of the run.
 
