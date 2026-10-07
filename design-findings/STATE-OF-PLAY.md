@@ -1,5 +1,10 @@
 # State of play, and what must be settled before planning
 
+> **Historical as of 2026-08-30**, the last entry in its campaign log. The
+> current state of play is
+> [`STATE.md`](https://github.com/kindspec/.github/blob/main/STATE.md) in
+> `kindspec/.github`.
+
 > **Historical.** A–O below were the open list *before* the design passes and
 > the rowspec build. They are closed or superseded; the record is kept because
 > the sequencing argument is still the one being followed. Current state is at
@@ -104,8 +109,16 @@ by-design classes**, 0.13% wrong numbers, and **not one unexplained
 disagreement**. 38,352 cells from 47 Enron business workbooks, 30,720
 bit-exact, zero wrong. The 48 wrong numbers were all one root cause — `_ast()`
 called `ast.parse`, so §4.2 was normative prose while Python's grammar was what
-ran. See `docs/rationale.md`. It also closed the arithmetic model: 501 cells
+ran. See rowspec's
+[`docs/rationale.md`](https://github.com/kindspec/rowspec/blob/main/docs/rationale.md).
+It also closed the arithmetic model: 501 cells
 separated a decimal implementation from a binary64 one, both conformant.
+
+> **Read with E5.** `design-findings/E5-differential-rerun.md` re-ran this
+> differential against §4.2's own parser, reproduced the Enron figures above
+> bit-identically (§1), and calls its own agreement percentage *"substantively
+> much smaller than its magnitude suggests"* (§0). Among its reasons (§2):
+> *"Non-zero exact agreements contributed by TmplEnron: zero."*
 
 **M0 (adversarial suite author)** wrote 51 cases against §4.2 without reading
 the reference, found the `#REF!` originating-name relabelling, a cycle whose
