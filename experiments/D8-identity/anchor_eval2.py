@@ -10,7 +10,7 @@ Blocks the oracle cannot confidently classify are EXCLUDED, and reported.
 import subprocess, sys, os, re, difflib, random, tempfile, hashlib
 from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from anchor_eval import git, blocks, anchor_of, reanchor, inject_ids, merge3, conflict_regions, MARK, FUZZ
+from anchor_eval import git, md_files, show, blocks, anchor_of, reanchor, inject_ids, merge3, conflict_regions, MARK, FUZZ
 
 def line_oracle(ti, tj, bi, bj):
     li, lj = ti.splitlines(), tj.splitlines()
@@ -47,14 +47,14 @@ def line_oracle(ti, tj, bi, bj):
 
 def run(repo, pathglob, gap, sample_files=14, sample_blocks=30, seed=7):
     rnd = random.Random(seed); t = Counter(); pairs=0; wrongs=[]
-    files = [f for f in git(repo,'ls-files',pathglob).split('\n') if f.endswith('.md')]
+    files = md_files(repo, pathglob)
     rnd.shuffle(files); files=files[:sample_files]
     for f in files:
         cs = [c for c in git(repo,'log','--format=%H','--reverse','--',f).split('\n') if c]
         if len(cs) < gap+1: continue
         for start in range(0, len(cs)-gap, max(1,(len(cs)-gap)//3 or 1)):
             ci,cj = cs[start], cs[start+gap]
-            ti,tj = git(repo,'show',f'{ci}:{f}'), git(repo,'show',f'{cj}:{f}')
+            ti,tj = show(repo,ci,f), show(repo,cj,f)
             if not ti or not tj or ti==tj: continue
             bi,bj = blocks(ti), blocks(tj)
             if len(bi)<4 or len(bj)<4: continue

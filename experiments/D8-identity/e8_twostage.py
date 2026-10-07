@@ -8,7 +8,7 @@ Compared head-to-head with the one-stage sliding-window anchorer of E7.
 import sys,os,re,difflib,random
 from collections import Counter
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
-from anchor_eval import git, blocks, anchor_of
+from anchor_eval import git, md_files, show, blocks, anchor_of
 from anchor_eval2 import line_oracle
 from anchor_eval3 import reanchor2, btype
 from e7_span_anchor import spans_in, anchor as spananchor, find as find1, CTX
@@ -29,13 +29,13 @@ def find2(tj, bj, blkanc, spananc):
 
 def run(repo,glob,gap,sf=14,sb=20,seed=3):
     rnd=random.Random(seed); t=Counter()
-    files=[f for f in git(repo,'ls-files',glob).split('\n') if f.endswith('.md')]
+    files=md_files(repo,glob)
     rnd.shuffle(files); files=files[:sf]
     for f in files:
         cs=[c for c in git(repo,'log','--format=%H','--reverse','--',f).split('\n') if c]
         if len(cs)<gap+1: continue
         for start in range(0,len(cs)-gap,max(1,(len(cs)-gap)//3 or 1)):
-            ti,tj=git(repo,'show',f'{cs[start]}:{f}'),git(repo,'show',f'{cs[start+gap]}:{f}')
+            ti,tj=show(repo,cs[start],f),show(repo,cs[start+gap],f)
             if not ti or not tj or ti==tj: continue
             bi,bj=blocks(ti),blocks(tj)
             if len(bi)<4 or len(bj)<4: continue
