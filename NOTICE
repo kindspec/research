@@ -141,3 +141,24 @@ TmplEnron
 The other files in those output directories hold counters and normalised
 reason strings, or were produced from the authored inputs in
 experiments/W3-interop/in/, and stay under LICENSE's MIT label.
+
+obsidian-help
+  Source:     https://github.com/obsidianmd/obsidian-help at
+              327a782e90481268361b5ccccdb0c224b2b13fe6, the commit
+              design-findings/D8-identity.md section 3 pins
+  Licence:    none; the repository has no licence file at that commit and
+              GitHub reports no licence for it
+  Quoted:     four short excerpts, 188 bytes of text in total (201 bytes as
+              the escaped literals are written), in
+              experiments/D8-identity/results-anchor2.txt lines 76-79. They
+              are the ex[...] examples anchor_eval2.py prints for the
+              obsidian-help gap=5 arm: two blocks from
+              en/Obsidian Sync/Version history.md at earlier commits, and the
+              blocks they were wrongly anchored to. They are quoted as research
+              evidence for the anchor analysis in D8 section 3.
+  Elsewhere:  design-findings/D8-identity.md section 3.2 quotes the first of
+              those two pairs again, and names two of the corpus's block ids,
+              ^obsidian-sync-status and ^blockquote-system-limitation. No other
+              text from obsidian-help is committed: no line of 20 or more
+              characters from en/*.md at the pin, or from any version of the
+              14 files the harnesses sample, appears in any other tracked file.
