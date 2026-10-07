@@ -8,8 +8,10 @@ C_i and the block it resolved to at C_j. Quotes are cut at 70 characters, as
 anchor_eval2.py's ex[...] lines are.
 
 It is a copy of anchor_eval3.run()'s loop, so it checks itself: each arm's
-oracle-confident count and per-policy WRONG count must equal what
-anchor_eval3.run() returns, or the script exits non-zero.
+oracle-confident count, per-policy WRONG count and per-policy, per-type
+WRONG tally must equal what anchor_eval3.run() returns, or the script exits
+non-zero. The printed cases themselves are checked only by diffing against
+the committed results-anchor3-wrongs.txt.
 
 Run from the directory holding corpora/, like anchor_eval3.py.
 """
@@ -60,7 +62,7 @@ def wrongs(repo, glob, gap, sf=14, sb=30, seed=7):
                     st, hit = reanchor2(tj, anc, bj, hard)
                     ok = (hit == tgt) if truth == 'SURVIVED' else (hit is None)
                     if (hit is None and truth == 'SURVIVED') or ok: continue
-                    t[lab] += 1
+                    t[lab] += 1; t[f'{lab}:WRONG:{ty}'] += 1
                     out.append((lab, ty, st, truth, f, ci, cj, anc['quote'],
                                 None if hit is None else bj[hit]['content']))
     return t, out
@@ -76,6 +78,9 @@ if __name__ == '__main__':
             for key, mine in (('EV', t['EV']), ('naive:WRONG', t['naive']), ('hard:WRONG', t['hard'])):
                 if mine != ref[key]:
                     sys.exit(f"{repo} gap={gap}: {key} {mine} here, {ref[key]} in anchor_eval3.run()")
+            for key in sorted({k for k in (*t, *ref) if ':WRONG:' in k}):
+                if t[key] != ref[key]:
+                    sys.exit(f"{repo} gap={gap}: {key} {t[key]} here, {ref[key]} in anchor_eval3.run()")
             print(f"\n### {os.path.basename(repo)} {glob} gap={gap}  oracle-confident anchors={t['EV']}"
                   f"  naive WRONG={t['naive']}  hard WRONG={t['hard']}")
             for lab, ty, st, truth, f, ci, cj, q, h in out:
