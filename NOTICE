@@ -1,0 +1,169 @@
+research — third-party files
+
+Most of this repository is original work, licensed as LICENSE describes. The
+files below are not. Each is a copy of a published file, or was derived from
+one, and is redistributed under that file's own licence, not under LICENSE's
+per-directory split. Full licence texts are in LICENSES/.
+
+Each source is the upstream file at the commit named, and the copy here is
+byte-identical to it: the git blob hashes match. Files listed as "derived" are
+modified copies, made for the experiment in the same directory (edited,
+merged, re-serialised or unpacked), and are not upstream's work as published.
+
+
+experiments/D7-slides/real.pptx
+  Source:     https://github.com/microsoft/BCTech/blob/bff8c7dda3698a7823c51fd6b83b1d1112f6ebcb/samples/MachineLearning/images/architecture.pptx
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) Microsoft Corporation. All rights reserved.
+  Derived:    experiments/D7-slides/alice.pptx, bob.pptx, m.xml, pm.xml,
+              and the unpacked trees x/, xa/ and xb/
+
+experiments/D7-canvas-formats/excalidraw/real2.excalidraw
+  Source:     https://github.com/slimtoolkit/slim/blob/2817f6449b5d9aeb073dbca8bf51a302bc09e565/assets/images/docs/SlimHow.excalidraw
+  Licence:    Apache-2.0 (LICENSES/Apache-2.0.txt)
+  Copyright:  Copyright 2015-2022 SlimToolkit.
+  Derived:    experiments/D7-canvas-formats/excalidraw/*.json
+
+experiments/D7-canvas-formats/excalidraw/real1.excalidraw
+  Source:     https://github.com/WhatsApp/erlang-language-platform/blob/68677d4d15da4b7f6cf48ab3b8edc375ae90d000/docs/ELP-parser-dataflow.excalidraw
+  Licence:    Apache-2.0 OR MIT, at the recipient's option, as upstream is
+              dual-licensed (LICENSES/Apache-2.0.txt, LICENSES/MIT.txt)
+  Copyright:  Copyright (c) Meta Platforms, Inc. and affiliates.
+
+experiments/D7-canvas-formats/drawio/real.drawio
+  Source:     https://github.com/agntcy/docs/blob/3b17ad64d678363586ba2c8ee400c117cef96ba1/docs/assets/service_compositon.drawio
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Copyright:  Copyright AGNTCY Contributors (https://github.com/agentcy) [sic]
+              -- upstream's README at that commit, quoted as written
+  Derived:    every other file in experiments/D7-canvas-formats/drawio/
+
+experiments/D7-canvas-formats/jsoncanvas/real.canvas
+  Source:     https://github.com/miaomiaomiao1113/Claude-code-architecture-instruction/blob/8dde72b7d762366c1d67619aeaab014578bfe820/Claude-Code-Architecture.canvas
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Copyright:  GitHub user miaomiaomiao1113; upstream names no other holder
+  Derived:    every other file in experiments/D7-canvas-formats/jsoncanvas/
+
+experiments/D7-canvas-formats/tldraw/real.tldr
+  Source:     https://github.com/dalenguyen/pdfun/blob/594a6de2fec2ced6235e48e0b382e31e11668896/docs/architectures/pdf-chat.tldr
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) 2024 Dale Nguyen
+  Derived:    every other file in experiments/D7-canvas-formats/tldraw/
+
+experiments/D7-canvas-formats/svg/real.svg
+  Source:     https://github.com/excalidraw/excalidraw/blob/d6cd8b78f11742e9107dd4cd9cee564120ae599b/packages/excalidraw/tests/fixtures/svg-image-exporting-reference.svg
+  Licence:    MIT (LICENSES/MIT.txt)
+  Copyright:  Copyright (c) 2020 Excalidraw
+  Note:       embeds, base64-encoded, the same repository's
+              packages/excalidraw/tests/fixtures/deer.png
+
+experiments/D7-usd/HelloWorld.usda
+experiments/D7-usd/Sphere.usda
+  Source:     https://github.com/PixarAnimationStudios/OpenUSD/blob/2eb01f5cd4c2dae4e1ef9912ca27a93083bb6ef4/extras/usd/tutorials/authoringVariants/HelloWorld.usda
+              https://github.com/PixarAnimationStudios/OpenUSD/blob/2eb01f5cd4c2dae4e1ef9912ca27a93083bb6ef4/extras/usd/tutorials/convertingLayerFormats/Sphere.usda
+  Licence:    Tomorrow Open Source Technology License 1.0, which is
+              Apache-2.0 with a different section 6
+              (LICENSES/LicenseRef-TOST-1.0.txt). At 2eb01f5 the same terms
+              were titled "Modified Apache 2.0 License"; OpenUSD renamed them
+              in 9009f97a91 ("Replace the APACHE License with the TOST
+              License in License.txt", 2024-06-04), and sections 1-9 are
+              word-for-word the same in both. The licence text here is lines
+              5-180 of LICENSE.txt at OpenUSD release
+              ee47c679abde5b467a7b6a41f3b2285564a4222e, identical to the same
+              lines at 9009f97a91 and at dev 03a8104a75.
+  Copyright:  Copyright 2016 Pixar
+  Upstream NOTICE.txt, reproduced as section 4(d) of that licence requires:
+
+    Universal Scene Description
+    Copyright 2016 Pixar
+    All rights reserved.
+
+    This product includes software developed at:
+    Pixar (http://www.pixar.com/).
+
+
+Measurement output
+
+Committed experiment output also quotes the corpora it measured. Short
+excerpts of markdown appear in experiments/D8-identity/results-*.txt.
+Formulas, header text and sheet names from two spreadsheet corpora appear in
+the files below, which are therefore licensed as the corpus they quote
+requires, not as MIT. No committed file quotes EUSES or VFUSE: W3-interop
+could not read their legacy .xls formulas (design-findings/W3-interop.md 1.2).
+
+SpreadsheetBench
+  Source:     https://huggingface.co/datasets/KAKA22/SpreadsheetBench
+              (revision ab0b742b0fc95b946f212d80ac7771b5531272e4 when this
+              notice was written; the revision the runs read was not recorded)
+  Licence:    CC-BY-SA-4.0 (LICENSES/CC-BY-SA-4.0.txt)
+  Attribution: SpreadsheetBench, by Zeyao Ma, Bohan Zhang, Jing Zhang et al.,
+              "SpreadsheetBench: Towards Challenging Real World Spreadsheet
+              Manipulation", arXiv:2406.14991
+  Changes:    formulas and header text extracted from the workbooks, rewritten
+              into .tbl expressions and classified. The files below are
+              adapted material and are licensed CC-BY-SA-4.0.
+  Files:      every .json under experiments/E1-differential/out/ except the
+              six TmplEnron files listed below, and
+              experiments/E4-if-sum/out/accept.json
+              experiments/E4-if-sum/out/classified.json
+              experiments/E4-if-sum/out/sb912.json
+              experiments/W3-interop/out/corpus.json
+              experiments/W3-interop/out/sb400-ceiling.json
+              experiments/W3-interop/out/sb400-strict.json
+              experiments/W3-interop/out/sb400b.txt
+              experiments/W3-interop/out/sb400c.txt
+              experiments/W3-interop/out/sb912-ceiling.json
+              experiments/W3-interop/out/sb912-ceiling.txt
+              experiments/W3-interop/out/sb912-strict.json
+              experiments/W3-interop/out/sb912-strict.txt
+              experiments/W3-interop/out/x-ext400.txt
+              experiments/W3-interop/out/x-ext912.json
+              experiments/W3-interop/out/x-ext912.txt
+              experiments/W3-interop/out/x-extceil912.json
+              experiments/W3-interop/out/x-extceil912.txt
+
+TmplEnron
+  Source:     https://doi.org/10.6084/m9.figshare.5838600 (figshare 5838600;
+              v4 when this notice was written)
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Attribution: TmplEnron (2018). TmplEnron. figshare. Dataset.
+              https://doi.org/10.6084/m9.figshare.5838600.v4
+  Changes:    formulas, header text and sheet names extracted from the
+              workbooks, rewritten into .tbl expressions and classified.
+  Files:      experiments/E1-differential/out/TmplEnron.json
+              experiments/E1-differential/out/enron.json
+              experiments/E1-differential/out/enron-v2.json
+              experiments/E1-differential/out/fixed/tmpl.json
+              experiments/E1-differential/out/full/tmpl.json
+              experiments/E1-differential/out/v3-tmpl-base.json
+              experiments/E4-if-sum/out/enron.json
+              experiments/W3-interop/out/enron.txt
+
+The other files in those output directories hold counters and normalised
+reason strings, or were produced from the authored inputs in
+experiments/W3-interop/in/, and stay under LICENSE's MIT label.
+
+obsidian-help
+  Source:     https://github.com/obsidianmd/obsidian-help at
+              327a782e90481268361b5ccccdb0c224b2b13fe6, the commit
+              design-findings/D8-identity.md section 3 pins
+  Licence:    none; the repository has no licence file at that commit and
+              GitHub reports no licence for it
+  Quoted:     four short excerpts, 188 bytes of text in total (201 bytes as
+              the escaped literals are written): two blocks from
+              en/Obsidian Sync/Version history.md at earlier commits, and the
+              blocks they were wrongly anchored to. They are quoted as research
+              evidence for the anchor analysis in D8 section 3, in two files,
+              each carrying the same four:
+                experiments/D8-identity/results-anchor2.txt lines 76-79,
+                  the ex[...] examples anchor_eval2.py prints for the
+                  obsidian-help gap=5 arm
+                experiments/D8-identity/results-anchor3-wrongs.txt lines
+                  41-45, anchor_eval3_wrongs.py's silent-wrong cases for the
+                  same arm
+  Elsewhere:  design-findings/D8-identity.md section 3.2 quotes the first of
+              those two pairs a third time, and names two of the corpus's
+              block ids, ^obsidian-sync-status and
+              ^blockquote-system-limitation. No other
+              text from obsidian-help is committed: no line of 20 or more
+              characters from en/*.md at the pin, or from any version of the
+              14 files the harnesses sample, appears in any other tracked file.

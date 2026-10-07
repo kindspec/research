@@ -55,5 +55,9 @@ nothing to do with tables.
 ## Licensing
 
 Prose — `*.md`, `design-findings/`, `findings/` — is **CC-BY-4.0**.
-Experiment code and its output — `experiments/` — is **MIT**.
-Full texts in `LICENSES/`. See [LICENSE](LICENSE).
+Experiment code and its output — `experiments/` — is **MIT**, with three
+exceptions listed file by file in [NOTICE](NOTICE): output that quotes
+SpreadsheetBench is **CC-BY-SA-4.0** and output that quotes TmplEnron is
+**CC-BY-4.0**, because quoted corpus content stays under the corpus's terms;
+and third-party sample files keep their own licences. Full texts in
+`LICENSES/`. See [LICENSE](LICENSE).
