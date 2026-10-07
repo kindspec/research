@@ -33,7 +33,8 @@ experiments/D7-canvas-formats/excalidraw/real1.excalidraw
 experiments/D7-canvas-formats/drawio/real.drawio
   Source:     https://github.com/agntcy/docs/blob/3b17ad64d678363586ba2c8ee400c117cef96ba1/docs/assets/service_compositon.drawio
   Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
-  Copyright:  Copyright AGNTCY Contributors (https://github.com/agntcy)
+  Copyright:  Copyright AGNTCY Contributors (https://github.com/agentcy) [sic]
+              -- upstream's README at that commit, quoted as written
   Derived:    every other file in experiments/D7-canvas-formats/drawio/
 
 experiments/D7-canvas-formats/jsoncanvas/real.canvas
@@ -61,7 +62,14 @@ experiments/D7-usd/Sphere.usda
               https://github.com/PixarAnimationStudios/OpenUSD/blob/2eb01f5cd4c2dae4e1ef9912ca27a93083bb6ef4/extras/usd/tutorials/convertingLayerFormats/Sphere.usda
   Licence:    Tomorrow Open Source Technology License 1.0, which is
               Apache-2.0 with a different section 6
-              (LICENSES/LicenseRef-TOST-1.0.txt)
+              (LICENSES/LicenseRef-TOST-1.0.txt). At 2eb01f5 the same terms
+              were titled "Modified Apache 2.0 License"; OpenUSD renamed them
+              in 9009f97a91 ("Replace the APACHE License with the TOST
+              License in License.txt", 2024-06-04), and sections 1-9 are
+              word-for-word the same in both. The licence text here is lines
+              5-180 of LICENSE.txt at OpenUSD release
+              ee47c679abde5b467a7b6a41f3b2285564a4222e, identical to the same
+              lines at 9009f97a91 and at dev 03a8104a75.
   Copyright:  Copyright 2016 Pixar
   Upstream NOTICE.txt, reproduced as section 4(d) of that licence requires:
 
@@ -75,8 +83,61 @@ experiments/D7-usd/Sphere.usda
 
 Measurement output
 
-Committed experiment output also quotes the corpora it measured: short
-excerpts of markdown in experiments/D8-identity/results-*.txt, and formulas,
-header text and sheet names from spreadsheets under experiments/E1-differential/,
-experiments/E4-if-sum/ and experiments/W3-interop/. Those corpora are named in
-CORPORA.md, and the quoted material remains under its upstream terms.
+Committed experiment output also quotes the corpora it measured. Short
+excerpts of markdown appear in experiments/D8-identity/results-*.txt.
+Formulas, header text and sheet names from two spreadsheet corpora appear in
+the files below, which are therefore licensed as the corpus they quote
+requires, not as MIT. No committed file quotes EUSES or VFUSE: W3-interop
+could not read their legacy .xls formulas (design-findings/W3-interop.md 1.2).
+
+SpreadsheetBench
+  Source:     https://huggingface.co/datasets/KAKA22/SpreadsheetBench
+              (revision ab0b742b0fc95b946f212d80ac7771b5531272e4 when this
+              notice was written; the revision the runs read was not recorded)
+  Licence:    CC-BY-SA-4.0 (LICENSES/CC-BY-SA-4.0.txt)
+  Attribution: SpreadsheetBench, by Zeyao Ma, Bohan Zhang, Jing Zhang et al.,
+              "SpreadsheetBench: Towards Challenging Real World Spreadsheet
+              Manipulation", arXiv:2406.14991
+  Changes:    formulas and header text extracted from the workbooks, rewritten
+              into .tbl expressions and classified. The files below are
+              adapted material and are licensed CC-BY-SA-4.0.
+  Files:      every .json under experiments/E1-differential/out/ except the
+              six TmplEnron files listed below, and
+              experiments/E4-if-sum/out/accept.json
+              experiments/E4-if-sum/out/classified.json
+              experiments/E4-if-sum/out/sb912.json
+              experiments/W3-interop/out/corpus.json
+              experiments/W3-interop/out/sb400-ceiling.json
+              experiments/W3-interop/out/sb400-strict.json
+              experiments/W3-interop/out/sb400b.txt
+              experiments/W3-interop/out/sb400c.txt
+              experiments/W3-interop/out/sb912-ceiling.json
+              experiments/W3-interop/out/sb912-ceiling.txt
+              experiments/W3-interop/out/sb912-strict.json
+              experiments/W3-interop/out/sb912-strict.txt
+              experiments/W3-interop/out/x-ext400.txt
+              experiments/W3-interop/out/x-ext912.json
+              experiments/W3-interop/out/x-ext912.txt
+              experiments/W3-interop/out/x-extceil912.json
+              experiments/W3-interop/out/x-extceil912.txt
+
+TmplEnron
+  Source:     https://doi.org/10.6084/m9.figshare.5838600 (figshare 5838600;
+              v4 when this notice was written)
+  Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+  Attribution: TmplEnron (2018). TmplEnron. figshare. Dataset.
+              https://doi.org/10.6084/m9.figshare.5838600.v4
+  Changes:    formulas, header text and sheet names extracted from the
+              workbooks, rewritten into .tbl expressions and classified.
+  Files:      experiments/E1-differential/out/TmplEnron.json
+              experiments/E1-differential/out/enron.json
+              experiments/E1-differential/out/enron-v2.json
+              experiments/E1-differential/out/fixed/tmpl.json
+              experiments/E1-differential/out/full/tmpl.json
+              experiments/E1-differential/out/v3-tmpl-base.json
+              experiments/E4-if-sum/out/enron.json
+              experiments/W3-interop/out/enron.txt
+
+The other files in those output directories hold counters and normalised
+reason strings, or were produced from the authored inputs in
+experiments/W3-interop/in/, and stay under LICENSE's MIT label.

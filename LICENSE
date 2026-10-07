@@ -2,10 +2,13 @@ research is licensed per directory, following the same split as the rest of
 kindspec.
 
   *.md, design-findings/, findings/     CC-BY-4.0
-  experiments/                          MIT
+  experiments/                          MIT, except:
+    output that quotes SpreadsheetBench   CC-BY-SA-4.0
+    output that quotes TmplEnron          CC-BY-4.0
+    third-party sample files              their own licences
 
-except the third-party files listed in NOTICE, which keep their own licences.
-Full texts are in LICENSES/.
+NOTICE lists every file in the three exceptions, with its source and
+attribution. Full texts are in LICENSES/.
 
 WHY THE SPLIT
 
@@ -20,4 +23,6 @@ its upstream licence governs it, not this file. The repository does carry a
 few third-party sample files, and modified copies of them, under experiments/.
 NOTICE lists each with its source, licence and copyright holder. Committed
 measurement output also quotes excerpts of the corpora it measured, and that
-material remains under its upstream terms.
+material remains under its upstream terms: the MIT label does not cover it,
+which is why the output files that quote SpreadsheetBench and TmplEnron carry
+those corpora's licences in the table above.
