@@ -149,16 +149,21 @@ obsidian-help
   Licence:    none; the repository has no licence file at that commit and
               GitHub reports no licence for it
   Quoted:     four short excerpts, 188 bytes of text in total (201 bytes as
-              the escaped literals are written), in
-              experiments/D8-identity/results-anchor2.txt lines 76-79. They
-              are the ex[...] examples anchor_eval2.py prints for the
-              obsidian-help gap=5 arm: two blocks from
+              the escaped literals are written): two blocks from
               en/Obsidian Sync/Version history.md at earlier commits, and the
               blocks they were wrongly anchored to. They are quoted as research
-              evidence for the anchor analysis in D8 section 3.
+              evidence for the anchor analysis in D8 section 3, in two files,
+              each carrying the same four:
+                experiments/D8-identity/results-anchor2.txt lines 76-79,
+                  the ex[...] examples anchor_eval2.py prints for the
+                  obsidian-help gap=5 arm
+                experiments/D8-identity/results-anchor3-wrongs.txt lines
+                  41-45, anchor_eval3_wrongs.py's silent-wrong cases for the
+                  same arm
   Elsewhere:  design-findings/D8-identity.md section 3.2 quotes the first of
-              those two pairs again, and names two of the corpus's block ids,
-              ^obsidian-sync-status and ^blockquote-system-limitation. No other
+              those two pairs a third time, and names two of the corpus's
+              block ids, ^obsidian-sync-status and
+              ^blockquote-system-limitation. No other
               text from obsidian-help is committed: no line of 20 or more
               characters from en/*.md at the pin, or from any version of the
               14 files the harnesses sample, appears in any other tracked file.
