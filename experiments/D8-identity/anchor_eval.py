@@ -24,8 +24,12 @@ def git(repo, *a):
         sys.exit(f"git -C {repo} {' '.join(a)}: exit {r.returncode}: {r.stderr.strip()}")
     return r.stdout
 
-def md_files(repo, pathglob):
-    """Tracked .md files under pathglob. None is a broken corpus, never a zero."""
+def md_files(repo, pathglob, history=True):
+    """Tracked .md files under pathglob. None is a broken corpus, never a zero.
+    A harness that walks history refuses a shallow clone, whose files all have
+    one commit: every arm would report a plausible `too few (0)`."""
+    if history and git(repo,'rev-parse','--is-shallow-repository').strip() == 'true':
+        sys.exit(f"{repo}: shallow clone; this harness walks file history and needs a full clone")
     files = [f for f in git(repo,'ls-files',pathglob).split('\n') if f.endswith('.md')]
     if not files:
         sys.exit(f"{repo}: no tracked .md files match {pathglob!r}; wrong corpus path?")

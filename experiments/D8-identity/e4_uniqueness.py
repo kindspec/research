@@ -10,7 +10,7 @@ from anchor_eval3 import btype
 MINLEN = int(sys.argv[1]) if len(sys.argv)>1 else 20
 
 for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md'),('corpora/cmspec','*.md')]:
-    files=md_files(repo,glob)
+    files=md_files(repo,glob,history=False)
     per_file_dup=Counter(); corpus=Counter(); tot=Counter(); nfiles=0
     for f in files:
         try: t=open(os.path.join(repo,f),encoding='utf-8').read()
