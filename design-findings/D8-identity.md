@@ -9,9 +9,9 @@ Experiments: `experiments/D8-identity/`. Corpora: `rust-lang/book` (6,286
 commits), `obsidian-help` (2,623), `commonmark-spec` (1,848), cloned as partial
 clones and evaluated over real commit history.
 
-> **These commit counts describe the original clone, not the pins in §3.** At
-> §3's pins `rust-lang/book` has 6,287 commits and `obsidian-help` 2,630;
-> `commonmark-spec`'s pin has 1,848. §3 names the trees the committed
+> **The `rust-lang/book` and `obsidian-help` counts describe the original
+> clone, not the pins in §3.** At §3's pins they have 6,287 and 2,630 commits;
+> `commonmark-spec`'s pin has the stated 1,848. §3 names the trees the committed
 > artifacts reproduce at, and §3.2's "Mind which tree" says which figures
 > belong to which.
 
