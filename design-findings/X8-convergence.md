@@ -18,6 +18,12 @@ sure that the number of columns in the file has not changed"* — which is a
 field-count check, one of the eleven refusals in the spec, written by hand by
 people who had never seen it.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** X9 finds this
+> claim *"wrong in three of the four cases"*: *"one registry hand-rolled 26
+> lines of structural checking, and a second adopted an existing tool rather
+> than writing one."* The "observed, hand-rolled demand" bullet under "What all
+> three say" cites this paragraph. The text is kept as originally written.
+
 ## Line 2 — prior art
 
 The format ideas have real precedent and must be credited:
