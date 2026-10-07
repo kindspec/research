@@ -1,7 +1,8 @@
 # State of play, and what must be settled before planning
 
 > **Historical as of 2026-08-30**, the last entry in its campaign log. The
-> current state of play is
+> banner below, which says the current state is under "Campaign log", is out
+> of date from that date. The current state of play is
 > [`STATE.md`](https://github.com/kindspec/.github/blob/main/STATE.md) in
 > `kindspec/.github`.
 
