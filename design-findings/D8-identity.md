@@ -269,7 +269,10 @@ cmspec         github.com/commonmark/commonmark-spec 3da939428d80f146f270cd1765e
 `anchor_eval.py` and `anchor_eval2.py` take `<repo> <pathglob> <gap>` and were
 run over all three corpora at gap ∈ {1, 5, 25}. `anchor_eval3.py` takes no
 arguments and sweeps its own six arms. `e4_uniqueness.py` takes `<minlen>` and
-was run at 20, 40 and 120. **The original pass did not record its corpus
+was run at 20, 40 and 120. `corpus_depth.py` and `anchor_eval3_wrongs.py` take
+no arguments; their output, `results-depth.txt` and
+`results-anchor3-wrongs.txt`, was produced on 2026-10-07 at the same three
+commits. **The original pass did not record its corpus
 commits**, so the arms below are the 2026-09-09 clone; where that changed a
 number, §3.2 and §3.3 say which one and by how much.
 
@@ -284,6 +287,15 @@ actually happens when one person cites a block while
 another edits it. Independent oracle: git-style line correspondence (a different
 algorithm at a different granularity); blocks the oracle cannot classify
 confidently are excluded and reported.
+
+**Only the stored arm merges.** The computed arm performs no merge in any of
+these scripts: it builds the anchor from the file at `commit_i` and resolves it
+directly against the file at `commit_j`, `gap` commits to that file later, with
+every version between them skipped. `anchor_eval3.py`, whose by-type breakdown
+§3.2 quotes, has no stored arm and never merges at all; it imported `merge3`
+without calling it until kindspec/research#6 removed the import. Read §3.2 as
+version-skip re-anchoring, not as a rebase. kindspec/blockspec#8 retracted a
+downstream claim that had read it as one.
 
 ```
 ### rust-book src/*.md gap=1   oracle-confident anchors=999  (92% of sample)
@@ -375,7 +387,10 @@ section carried before, and both are recorded rather than absorbed:
   it never appeared here. Not because the corpus is shallow: 13 of its 176
   `en/*.md` files have the 26 commits the arm needs (deepest 64). The script
   samples 14 files at `seed=7`, and the deepest file that sample drew has 19,
-  so gap=25 has no `(C_i, C_j)` pair to evaluate at all.
+  so gap=25 has no `(C_i, C_j)` pair to evaluate at all. These three figures
+  come from `results-depth.txt` (`corpus_depth.py`), which gives each
+  corpus's depth per gap and per `seed=7` sample, so every `too few (N)` and
+  `pairs=0` line can be checked rather than taken from this paragraph.
 - **`obsidian-help` gap=5 differs, and the old bucket line was abridged, not
   corrupt.** It read `384 anchors  heading=78 list=90 prose=212` — and
   78 + 90 + 212 = 380, four short of the anchor count, while `anchor_eval3.py`
@@ -455,6 +470,10 @@ the naive policy's silent mis-anchors is now typed `prose` — `obsidian-help`,
 ```
 '---\naliases:\n  - Sync history\n---'    ->  '## Sync history'
 ```
+
+That pair, and every other silent-wrong behind the counts above, is in
+`results-anchor3-wrongs.txt` (`anchor_eval3_wrongs.py`), which walks the same
+arms and refuses to print unless its counts match `anchor_eval3.py`'s.
 
 That block is YAML frontmatter. `btype()` has no rule for frontmatter, so it
 falls through to `prose`. It is a defect in the *classifier*, not a
@@ -1733,6 +1752,8 @@ experiments/D8-identity/
   anchor_eval.py      stored-id vs computed-anchor, head to head over real history
   anchor_eval2.py     + independent line-correspondence oracle
   anchor_eval3.py     + block-type breakdown and the hardened acceptance policy
+  anchor_eval3_wrongs.py  every silent-wrong anchor_eval3.py counts, printed
+  corpus_depth.py     per-file commit depth: which arms each sample can fill
   e1_stock_git_ids.sh block ids under stock git: 5 cases
   e2_controlled.sh    controlled arms incl. the clean-merge id collision
   e3_dup.sh           copy-paste duplicate id through a clean merge
