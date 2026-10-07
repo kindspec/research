@@ -1,0 +1,48 @@
+
+### rust-book  src/*.md  files=112  deepest=157
+   files with >= gap+1 commits, whole corpus:  gap=1: 112  gap=5: 106  gap=25: 57
+   seed=7 sample of 12: deepest=151  files with >= gap+1 commits:  gap=1: 12  gap=5: 11  gap=25: 6
+   seed=7 sample of 14: deepest=157  files with >= gap+1 commits:  gap=1: 14  gap=5: 13  gap=25: 7
+   sample of 14, in draw order (depth  file):
+       19  src/ch12-02-reading-a-file.md
+        6  src/ch20-03-advanced-types.md
+       39  src/ch15-05-interior-mutability.md
+        9  src/ch18-01-what-is-oo.md
+      151  src/SUMMARY.md
+       22  src/ch13-00-functional-features.md
+       67  src/ch11-01-writing-tests.md
+       10  src/ch11-00-testing.md
+       46  src/ch05-00-structs.md
+        4  src/ch18-00-oop.md
+       46  src/ch04-01-what-is-ownership.md
+       30  src/ch12-05-working-with-environment-variables.md
+      157  src/ch02-00-guessing-game-tutorial.md
+       21  src/ch12-01-accepting-command-line-arguments.md
+
+### obsidian-help  en/*.md  files=176  deepest=64
+   files with >= gap+1 commits, whole corpus:  gap=1: 165  gap=5: 121  gap=25: 13
+   seed=7 sample of 12: deepest=19  files with >= gap+1 commits:  gap=1: 10  gap=5: 8  gap=25: 0
+   seed=7 sample of 14: deepest=19  files with >= gap+1 commits:  gap=1: 12  gap=5: 9  gap=25: 0
+   sample of 14, in draw order (depth  file):
+        8  en/User interface/Pop-out windows.md
+        9  en/Obsidian Sync/Status icon and messages.md
+       19  en/Obsidian/Community code of conduct.md
+        9  en/Obsidian/Official website.md
+        7  en/Extending Obsidian/Obsidian Headless.md
+        3  en/Import notes/Importer.md
+        7  en/Plugins/Word count.md
+        3  en/Editing and formatting/Embed web pages.md
+        7  en/Plugins/Bookmarks.md
+        1  en/Bases/Layouts/Kanban view.md
+        1  en/Extending Obsidian/Community directory.md
+       12  en/Import notes/Import from Evernote.md
+        5  en/Plugins/Outline.md
+       15  en/Obsidian Sync/Version history.md
+
+### cmspec  *.md  files=2  deepest=87
+   files with >= gap+1 commits, whole corpus:  gap=1: 2  gap=5: 2  gap=25: 1
+   seed=7 sample of 12: deepest=87  files with >= gap+1 commits:  gap=1: 2  gap=5: 2  gap=25: 1
+   seed=7 sample of 14: deepest=87  files with >= gap+1 commits:  gap=1: 2  gap=5: 2  gap=25: 1
+   sample of 14, in draw order (depth  file):
+       87  README.md
+        8  RELEASE_CHECKLIST.md

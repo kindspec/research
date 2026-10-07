@@ -1,0 +1,51 @@
+
+### rust-book src/*.md gap=5  oracle-confident anchors=849  naive WRONG=4  hard WRONG=1
+   naive code    FUZZY     oracle=SURVIVED src/ch05-00-structs.md  2e76ef73..cf9e0a8a
+         '```rust,ignore\nf64::powi(2.0, 3)\n```'
+      -> '```rust,ignore\ndimensions.0 * dimensions.1\n```'
+   naive code    FUZZY     oracle=SURVIVED src/ch04-01-what-is-ownership.md  0e9061cb..5c71aac6
+         '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+      -> '```rust\nlet s = String::from("hello");\n```'
+   hard  code    FUZZY     oracle=SURVIVED src/ch04-01-what-is-ownership.md  0e9061cb..5c71aac6
+         '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+      -> '```rust\nlet s = String::from("hello");\n```'
+   naive html    FUZZY     oracle=SURVIVED src/ch04-01-what-is-ownership.md  72ef94c3..8a613045
+         '<!-- Old heading. Do not remove or links may break. -->\n<a id="ways-va'
+      -> '<!-- Old headings. Do not remove or links may break. -->'
+   naive code    FUZZY     oracle=SURVIVED src/ch12-05-working-with-environment-variables.md  3a30e4c1..d7c0e477
+         '```rust,ignore,does_not_compile\n{{#rustdoc_include ../listings/ch12-an'
+      -> '```rust,ignore,does_not_compile\n{{#rustdoc_include ../listings/ch12-an'
+
+### rust-book src/*.md gap=25  oracle-confident anchors=200  naive WRONG=4  hard WRONG=2
+   naive code    FUZZY     oracle=SURVIVED src/ch05-00-structs.md  ca7a5f39..8dc8c796
+         '```rust,ignore\nf64::powi(2.0, 3)\n```'
+      -> '```rust,ignore\ndimensions.0 * dimensions.1\n```'
+   naive code    FUZZY     oracle=SURVIVED src/ch04-01-what-is-ownership.md  50b54b71..72ef94c3
+         '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+      -> '```rust\nlet s = String::from("hello");\n```'
+   hard  code    FUZZY     oracle=SURVIVED src/ch04-01-what-is-ownership.md  50b54b71..72ef94c3
+         '```rust\nlet s1 = String::from("hello");\nlet s2 = s1;\n```'
+      -> '```rust\nlet s = String::from("hello");\n```'
+   naive code    FUZZY     oracle=SURVIVED src/ch02-00-guessing-game-tutorial.md  85b02530..4a08b68c
+         '```toml\n[dependencies]\n\nrand = "0.3.14"\n```'
+      -> '```toml\n[dependencies]\nrand = "0.9.0"\n```'
+   hard  code    FUZZY     oracle=SURVIVED src/ch02-00-guessing-game-tutorial.md  85b02530..4a08b68c
+         '```toml\n[dependencies]\n\nrand = "0.3.14"\n```'
+      -> '```toml\n[dependencies]\nrand = "0.9.0"\n```'
+   naive code    FUZZY     oracle=SURVIVED src/ch02-00-guessing-game-tutorial.md  85b02530..4a08b68c
+         '```rust,ignore\n.expect("Failed to read line");\n```'
+      -> '```rust,ignore\nio::stdin().read_line(&mut guess).expect("Failed to rea'
+
+### obsidian-help en/*.md gap=5  oracle-confident anchors=343  naive WRONG=2  hard WRONG=0
+   naive prose   FUZZY     oracle=SURVIVED en/Obsidian Sync/Version history.md  c26bca2f..ed9ed5e6
+         '---\naliases:\n  - Sync history\n---'
+      -> '## Sync history'
+   naive list    FUZZY     oracle=SURVIVED en/Obsidian Sync/Version history.md  0672ffd9..43278665
+         '1. Open **Settings**.\n2. In the sidebar, under **Plugin options**, sel'
+      -> '1. Open **Settings**.\n2. In the sidebar, under **Core plugins***, sele'
+
+### obsidian-help en/*.md gap=25  oracle-confident anchors=0  naive WRONG=0  hard WRONG=0
+
+### cmspec *.md gap=5  oracle-confident anchors=73  naive WRONG=0  hard WRONG=0
+
+### cmspec *.md gap=25  oracle-confident anchors=56  naive WRONG=0  hard WRONG=0

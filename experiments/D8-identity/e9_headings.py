@@ -4,7 +4,7 @@ survive N commits of real editing?  And is it unique within its file?"""
 import sys,os,re,random
 from collections import Counter
 sys.path.insert(0,'.')
-from anchor_eval import git
+from anchor_eval import git, md_files, show
 def slugs(t):
     out=[]
     for m in re.finditer(r'^(#{1,6})\s+(.+?)\s*$', t, re.M):
@@ -13,7 +13,7 @@ def slugs(t):
     return out
 print(f"{'corpus':<16}{'gap':>5}{'pairs':>7}{'headings':>10}{'survived':>12}{'renamed/gone':>14}")
 for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
-    files=[f for f in git(repo,'ls-files',glob).split('\n') if f.endswith('.md')]
+    files=md_files(repo,glob)
     rnd=random.Random(7); rnd.shuffle(files); files=files[:30]
     for gap in (1,5,25,100):
         tot=0; surv=0; pairs=0
@@ -21,7 +21,7 @@ for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/
             cs=[c for c in git(repo,'log','--format=%H','--reverse','--',f).split('\n') if c]
             if len(cs)<gap+1: continue
             for st in range(0,len(cs)-gap,max(1,(len(cs)-gap)//3 or 1)):
-                ti,tj=git(repo,'show',f'{cs[st]}:{f}'),git(repo,'show',f'{cs[st+gap]}:{f}')
+                ti,tj=show(repo,cs[st],f),show(repo,cs[st+gap],f)
                 if not ti or not tj: continue
                 a,b=slugs(ti),set(slugs(tj))
                 if not a: continue
@@ -30,7 +30,7 @@ for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/
 # uniqueness of heading slugs within a file
 print()
 for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
-    files=[f for f in git(repo,'ls-files',glob).split('\n') if f.endswith('.md')]
+    files=md_files(repo,glob)
     tot=0; dup=0; nf=0
     for f in files:
         p=os.path.join(repo,f)
