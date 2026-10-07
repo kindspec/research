@@ -1,5 +1,11 @@
 # The tabular artifact format — normative specification (draft 0)
 
+> **Superseded.** This is the table kind's spec as it stood before rowspec. The
+> normative specification is now rowspec's
+> [`SPEC.md`](https://github.com/kindspec/rowspec/blob/main/SPEC.md). This file
+> is not normative: where it and rowspec's `SPEC.md` disagree, `SPEC.md` wins
+> (see `README.md`). "This document DEFINES the format" below is historical.
+
 Status: draft. This document DEFINES the format. Where it and the conformance
 suite disagree, **the suite wins** and this document is in error — that ordering
 is deliberate, and is the lesson of CommonMark's founding grievance that early
