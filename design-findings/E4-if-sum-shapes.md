@@ -137,9 +137,22 @@ Corrected:
 
 | | claimed | measured |
 |---|---|---|
-| cells `SUM` would admit | 5,552 | **51** (5,861 are already expressible) |
+| cells `SUM` would admit | 5,309 | **51** (5,861 are already expressible) |
 | cells `IF` would admit | 12,643 | **6,640** (6,057 need a value model) |
-| total, no value-model change | 17,952 | **12,501** |
+| total — claimed: cells to close; measured: §4's static prediction (5,861 + 6,640) | 17,952 | **12,501** |
+
+> **Corrected after publication (kindspec/research#1).** The `claimed` column
+> now uses one `SUM` figure throughout: 5,309, E1's
+> `notevalfull.Call:SUM` (`experiments/E1-differential/out/sb912.txt:40`),
+> which is what the 17,952 total was built from (5,309 + 12,643). The row
+> previously read 5,552, §1's figure, which adds `notevalfull.not-python:SUM`
+> (243, line 45) — the same two buckets `IF`'s 12,643 already combines
+> (1,684 + 10,959, lines 35 and 43). The last row previously read "total,
+> no value-model change". In the `measured` column it is not a column sum:
+> 12,501 is §4's static prediction, the 5,861 `SUM` cells §2 classifies as
+> expressible plus the 6,640 cheap `IF` cells, not the 51 `SUM` would newly
+> admit. §4a measures it against the real parser: 12,168 accepted with `if`
+> and the `SUM` rewrite.
 
 12,501 of 21,165 is still 59.1% of the gap and it is worth having. But the two
 features are not peers, the work is not where the names said it was, and the

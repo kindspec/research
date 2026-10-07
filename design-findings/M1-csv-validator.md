@@ -88,6 +88,9 @@ field (with a `difflib` suggestion), a bad type name, and `order` without
 Beyond the thirteen, the sidecar also buys **declared column types** — which is
 the check the four hand-rolled registry validators were actually written to do.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** X9 finds the
+> four-hand-rolled-validators claim *"wrong in three of the four cases."*
+
 ## 3. Real public datasets — false positives first
 
 1,564 CSVs across three repositories, 19 seconds, **16 refused (1.0%)**.

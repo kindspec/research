@@ -75,6 +75,13 @@ suite**, arrived at independently by people who had never read it. And the
 pasted-rows-with-line-numbers habit is demand for nominal row addressing *in the
 review channel*.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** Reading the
+> registries' code, X9 finds the four-registries claim *"wrong in three of the
+> four cases"*: *"one registry hand-rolled 26 lines of structural checking,
+> and a second adopted an existing tool rather than writing one. The bolded
+> CONTRIBUTING warning is iptv-org's, singular."* The text is kept as
+> originally written.
+
     Demand exists for the VALIDATOR. It does not exist for the MERGE.
 
 That fits the namespace audit exactly: 9 of 11 namespaces are protected by
@@ -99,6 +106,11 @@ Stated plainly: **the merge story is the theory; the validator is the product.**
 Leading with 480-vs-660 sells a problem nobody reports having. Leading with
 "your CSV contract, checked in CI" sells something four registries built by hand.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** X9 finds the
+> four-registries claim *"wrong in three of the four cases"*: *"one registry
+> hand-rolled 26 lines of structural checking, and a second adopted an existing
+> tool rather than writing one."* The text above is kept as originally written.
+
 ## Two honest caveats, in both directions
 
 **For the design.** A silent failure leaves no complaint by definition, so
@@ -118,3 +130,8 @@ driven by the validator. Do not build a business plan on the merge story. And
 before writing a line of production code, get the spec and suite in front of one
 of the four named registries and find out whether they would replace their
 hand-rolled check with it.
+
+> **Correction — see `design-findings/X9-demand-correction.md`.** X9's
+> per-registry verdicts are *"mostly negative"*: keep iptv-org's script, keep
+> country-codes' Frictionless, no verdict available for toolleeo, and ccao is
+> *"the only genuine fit, and additive rather than a replacement."*

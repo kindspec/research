@@ -9,6 +9,11 @@ Where a claim is unverified it is marked. Where I was wrong, the correction is
 in the text rather than in a footnote — there are seven of them, and the pattern
 they form is itself a finding.
 
+> **§21's demand evidence was overstated.** Its claim that four registries
+> each hand-rolled a validator is corrected in
+> `design-findings/X9-demand-correction.md`, which finds it *"wrong in three of
+> the four cases."* Notes in §21 mark the affected paragraphs.
+
 ---
 
 ## 1. Verdict
@@ -1345,6 +1350,12 @@ sure that the number of columns in the file has not changed"* — a field-count
 check, one of the eleven refusals in the spec, written by hand by people who had
 never seen it.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** Reading the
+> registries' code, X9 finds this paragraph *"wrong in three of the four
+> cases"*: *"one registry hand-rolled 26 lines of structural checking, and a
+> second adopted an existing tool rather than writing one."* The paragraph is
+> kept as originally written.
+
 **And the methodology is the only part with no prior art.** The format ideas all
 have ancestors that must be credited — ClassSheets (ASE 2005), Object
 Spreadsheets (Onward! 2016), Lotus Improv, and above all **Coopy/daff**, which
@@ -1392,6 +1403,11 @@ Build it as infrastructure, not a product. Lead with the validator, not with
 hand-rolling the check. And before writing production code, put the spec and
 the suite in front of one of the four named registries and find out whether they
 would replace their own script with it.
+
+> **Correction — see `design-findings/X9-demand-correction.md`.** X9's
+> per-registry verdicts are *"mostly negative"*: keep iptv-org's script, keep
+> country-codes' Frictionless, no verdict available for toolleeo, and ccao is
+> *"the only genuine fit, and additive rather than a replacement."*
 
 The one caveat that cuts the other way: the demand research got HTTP 403 from
 Reddit on every attempt and exhausted its search budget, so the largest hole

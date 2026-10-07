@@ -956,6 +956,12 @@ deliverable and does **not** support the *merge-correctness* half: with a bot an
 a PR queue serialising the writes, the concurrent-insert silent-wrong merge that
 motivates I2 and the 480-vs-660 case **does not arise for them**.
 
+> **Correction — see `design-findings/M3-registry-fit.md` §1.3 and
+> `design-findings/X9-demand-correction.md`.** M3 corrects this section: the
+> "four registries each wrote a CI check" claim *"is true of three at most."*
+> X9 then finds it *"wrong in three of the four cases."* The text is kept as
+> originally written.
+
 **And the population cannot pay.** These are volunteer OSS registries and civic
 data offices. The only entity found in this whole search that charges money for
 adjacent work is xltrail at USD 35/user/month — a micro-entity selling an *audit
@@ -985,6 +991,10 @@ product from a file format and a conformance suite.
 open-data registries who have already built the validator half of this design by
 hand, do not experience the merge half, and have no money; the only population
 with a legal obligation that matches the design has never been asked.*
+
+> **Correction** — the "built the validator half … by hand" clause is
+> corrected by `design-findings/M3-registry-fit.md` §1.3 and
+> `design-findings/X9-demand-correction.md`; see the note in §5 above.
 
 *(One more prevalence contrast for §4.5: `"one file per" yaml data in:readme` →
 **7,577** public repos, versus **73** for `recutils`/`recfile`, the closest
