@@ -75,6 +75,13 @@ suite**, arrived at independently by people who had never read it. And the
 pasted-rows-with-line-numbers habit is demand for nominal row addressing *in the
 review channel*.
 
+> **Correction — see `design-findings/X9-demand-correction.md`.** Reading the
+> registries' code, X9 finds the four-registries claim *"wrong in three of the
+> four cases"*: *"one registry hand-rolled 26 lines of structural checking,
+> and a second adopted an existing tool rather than writing one. The bolded
+> CONTRIBUTING warning is iptv-org's, singular."* The text is kept as
+> originally written.
+
     Demand exists for the VALIDATOR. It does not exist for the MERGE.
 
 That fits the namespace audit exactly: 9 of 11 namespaces are protected by

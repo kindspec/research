@@ -44,6 +44,9 @@ on in three unrelated places — the parser needs it for 9 of 11 namespaces, CI
 needs it because nothing else travels, and the merge server needs it because
 `git merge-tree` cannot see its own clean-but-wrong outcomes.
 
+> **Correction:** the "observed (hand-rolled) demand" is corrected by
+> `design-findings/X9-demand-correction.md`.
+
 ## 2. Settled, with evidence in `design-findings/`
 
 - Two primitives: text, and ordered entity maps. Tables are the first kind.

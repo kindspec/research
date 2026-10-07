@@ -9,10 +9,10 @@ Where a claim is unverified it is marked. Where I was wrong, the correction is
 in the text rather than in a footnote — there are seven of them, and the pattern
 they form is itself a finding.
 
-> **§21 is partly retracted.** Its demand evidence for the validator — four
-> registries that each hand-rolled one — is corrected in
-> `design-findings/X9-demand-correction.md`, which finds the claim *"wrong in
-> three of the four cases."* Notes in §21 mark the affected paragraphs.
+> **§21's demand evidence was overstated.** Its claim that four registries
+> each hand-rolled a validator is corrected in
+> `design-findings/X9-demand-correction.md`, which finds it *"wrong in three of
+> the four cases."* Notes in §21 mark the affected paragraphs.
 
 ---
 
