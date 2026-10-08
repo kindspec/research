@@ -267,16 +267,19 @@ cmspec         github.com/commonmark/commonmark-spec 3da939428d80f146f270cd1765e
 ```
 
 The harnesses carry this table as `PINS` in
-`experiments/D8-identity/corpus_pin.py`, and every one of them checks it before
-reading a corpus (kindspec/research#15): it prints each corpus's `HEAD` to
-stderr and exits non-zero when that `HEAD` is not the pin. A full clone at
+`experiments/D8-identity/corpus_pin.py`, and every harness that reads a corpus
+checks it before reading (kindspec/research#15): it prints each corpus's `HEAD`
+to stderr and exits non-zero when that `HEAD` is not the pin, or when a tracked
+file differs from it — `e4_uniqueness.py` and `e9_headings.py` read the working
+tree, so an edit at the right `HEAD` moves their figures too. Untracked files do
+not count, because every file list comes from `git ls-files`. A full clone at
 another commit otherwise ran cleanly and printed different figures — `cmspec`
 at `1c1d581`, forty first-parent commits behind the pin, gives `pairs=3
 anchors=65` for the gap=5 arm of `anchor_eval3.py`, against `pairs=6
 anchors=73` here. The `HEAD` lines go to stderr so the committed `results-*.txt`,
 which are stdout, are unchanged. A run deliberately at another tree sets
 `D8_ALLOW_UNPINNED=1`; it still prints the `HEAD`, with a warning naming the
-pin. Change this table and `PINS` together.
+pin or the dirty tree. Change this table and `PINS` together.
 
 `anchor_eval.py` and `anchor_eval2.py` take `<repo> <pathglob> <gap>` and were
 run over all three corpora at gap ∈ {1, 5, 25}. `anchor_eval3.py` takes no
@@ -1766,7 +1769,7 @@ experiments/D8-identity/
   anchor_eval3.py     + block-type breakdown and the hardened acceptance policy
   anchor_eval3_wrongs.py  every silent-wrong anchor_eval3.py counts, printed
   corpus_depth.py     per-file commit depth: which arms each sample can fill
-  corpus_pin.py       the §3 corpus pins; every harness refuses a corpus off them
+  corpus_pin.py       the §3 corpus pins; harnesses refuse a corpus off them or dirty
   e1_stock_git_ids.sh block ids under stock git: 5 cases
   e2_controlled.sh    controlled arms incl. the clean-merge id collision
   e3_dup.sh           copy-paste duplicate id through a clean merge
