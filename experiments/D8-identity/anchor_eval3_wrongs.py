@@ -71,7 +71,8 @@ def clip(s, n=70):
     return None if s is None else s[:n]
 
 if __name__ == '__main__':
-    for repo, glob in [('corpora/rust-book', 'src/*.md'), ('corpora/obsidian-help', 'en/*.md'), ('corpora/cmspec', '*.md')]:
+    from corpus_pin import check; check(*(r for r, _ in anchor_eval3.CORPORA))
+    for repo, glob in anchor_eval3.CORPORA:
         for gap in (5, 25):
             t, out = wrongs(repo, glob, gap)
             ref, _ = anchor_eval3.run(repo, glob, gap)

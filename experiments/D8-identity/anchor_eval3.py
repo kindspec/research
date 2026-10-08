@@ -83,8 +83,11 @@ def run(repo,glob,gap,sf=14,sb=30,seed=7):
                     if cls=='WRONG': t[f'{lab}:WRONG:{ty}']+=1
     return t,pairs
 
+CORPORA=[('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md'),('corpora/cmspec','*.md')]
+
 if __name__=='__main__':
-    for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md'),('corpora/cmspec','*.md')]:
+    from corpus_pin import check; check(*(r for r,_ in CORPORA))
+    for repo,glob in CORPORA:
         for gap in (5,25):
             try: t,p=run(repo,glob,gap)
             except Exception as e: print(repo,glob,gap,'ERR',e); raise

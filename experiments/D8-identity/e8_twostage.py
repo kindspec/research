@@ -11,7 +11,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from anchor_eval import git, md_files, show, blocks, anchor_of
 from anchor_eval2 import line_oracle
 from anchor_eval3 import reanchor2, btype
-from e7_span_anchor import spans_in, anchor as spananchor, find as find1, CTX
+from corpus_pin import check
+from e7_span_anchor import CORPORA, spans_in, anchor as spananchor, find as find1, CTX
 
 def find2(tj, bj, blkanc, spananc):
     st, bi_ = reanchor2(tj, blkanc, bj, hard=True)
@@ -58,7 +59,8 @@ def run(repo,glob,gap,sf=14,sb=20,seed=3):
                                 t[f'{lab}:'+('correct' if lo-2<=pos<=hi else 'WRONG')]+=1
     return t
 
-for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
+check(*(r for r,_ in CORPORA))
+for repo,glob in CORPORA:
     for gap in (5,25):
         t=run(repo,glob,gap); n=t['N']
         if n<40: continue

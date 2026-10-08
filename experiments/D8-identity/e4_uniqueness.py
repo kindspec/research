@@ -5,11 +5,13 @@ import sys, os, re, subprocess
 from collections import Counter
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from anchor_eval import blocks, md_files
-from anchor_eval3 import btype
+from anchor_eval3 import btype, CORPORA
+from corpus_pin import check
 
 MINLEN = int(sys.argv[1]) if len(sys.argv)>1 else 20
 
-for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md'),('corpora/cmspec','*.md')]:
+check(*(r for r,_ in CORPORA))
+for repo,glob in CORPORA:
     files=md_files(repo,glob,history=False)
     per_file_dup=Counter(); corpus=Counter(); tot=Counter(); nfiles=0
     for f in files:

@@ -3,8 +3,11 @@
 survive N commits of real editing?  And is it unique within its file?"""
 import sys,os,re,random
 from collections import Counter
-sys.path.insert(0,'.')
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from anchor_eval import git, md_files, show
+from corpus_pin import check
+CORPORA=[('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]
+check(*(r for r,_ in CORPORA))
 def slugs(t):
     out=[]
     for m in re.finditer(r'^(#{1,6})\s+(.+?)\s*$', t, re.M):
@@ -12,7 +15,7 @@ def slugs(t):
         out.append(s)
     return out
 print(f"{'corpus':<16}{'gap':>5}{'pairs':>7}{'headings':>10}{'survived':>12}{'renamed/gone':>14}")
-for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
+for repo,glob in CORPORA:
     files=md_files(repo,glob)
     rnd=random.Random(7); rnd.shuffle(files); files=files[:30]
     for gap in (1,5,25,100):
@@ -29,7 +32,7 @@ for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/
         if tot: print(f"{os.path.basename(repo):<16}{gap:>5}{pairs:>7}{tot:>10}{100*surv/tot:>11.1f}%{100*(tot-surv)/tot:>13.1f}%")
 # uniqueness of heading slugs within a file
 print()
-for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
+for repo,glob in CORPORA:
     files=md_files(repo,glob)
     tot=0; dup=0; nf=0
     for f in files:
