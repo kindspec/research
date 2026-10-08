@@ -11,7 +11,9 @@ and `pairs=0` line in results-anchor*.txt can be read against it.
 Depth is `git log --format=%H -- <file>`, the list the harnesses walk.
 Run from the directory holding corpora/, like anchor_eval3.py.
 """
-import random, subprocess, sys
+import os, random, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from corpus_pin import check
 
 CORPORA = [('corpora/rust-book', 'src/*.md'), ('corpora/obsidian-help', 'en/*.md'), ('corpora/cmspec', '*.md')]
 GAPS = (1, 5, 25)
@@ -23,6 +25,7 @@ def git(repo, *a):
         sys.exit(f"git -C {repo} {' '.join(a)}: exit {r.returncode}: {r.stderr.strip()}")
     return r.stdout
 
+check(*(r for r, _ in CORPORA))
 for repo, glob in CORPORA:
     files = [f for f in git(repo, 'ls-files', glob).split('\n') if f.endswith('.md')]
     if not files:

@@ -14,6 +14,8 @@ from collections import Counter
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from anchor_eval import git, md_files, show, blocks
 from anchor_eval2 import line_oracle
+from corpus_pin import check
+CORPORA=[('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]
 
 CTX=32
 def spans_in(block, rnd, k=2):
@@ -87,7 +89,8 @@ def run(repo,glob,gap,sf=14,sb=20,seed=3):
                             t['res:'+('correct' if lo-2<=pos<=hi else 'WRONG_block')]+=1
     return t
 
-for repo,glob in [('corpora/rust-book','src/*.md'),('corpora/obsidian-help','en/*.md')]:
+check(*(r for r,_ in CORPORA))  # also on import: this module runs its sweep at import time
+for repo,glob in CORPORA:
     for gap in (5,25):
         t=run(repo,glob,gap); n=t['N']
         if n<40: print(f"### {os.path.basename(repo)} gap={gap}: too few"); continue

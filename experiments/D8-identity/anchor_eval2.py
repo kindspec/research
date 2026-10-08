@@ -96,6 +96,7 @@ def run(repo, pathglob, gap, sample_files=14, sample_blocks=30, seed=7):
 
 if __name__=='__main__':
     repo,glob,gap = sys.argv[1],sys.argv[2],int(sys.argv[3])
+    from corpus_pin import check; check(repo)
     t,pairs,wrongs = run(repo,glob,gap)
     ev=t['EV']; tot=ev+t['ORACLE:UNKNOWN']
     print(f"\n### {os.path.basename(repo)} {glob} gap={gap}  pairs={pairs}  anchors={tot}  oracle-confident={ev} ({100*ev/max(1,tot):.0f}%)")

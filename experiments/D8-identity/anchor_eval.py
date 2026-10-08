@@ -179,6 +179,8 @@ def run(repo, pathglob, gap, sample_files=12, sample_blocks=25, seed=7):
 
 if __name__ == '__main__':
     repo, glob, gap = sys.argv[1], sys.argv[2], int(sys.argv[3])
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from corpus_pin import check; check(repo)
     t, pairs = run(repo, glob, gap)
     print(f'\n=== {os.path.basename(repo)}  {glob}  gap={gap} commits   version-pairs={pairs} ===')
     tot = sum(v for k,v in t.items() if k.startswith('C:'))
