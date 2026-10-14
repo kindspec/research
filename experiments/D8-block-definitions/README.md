@@ -12,7 +12,7 @@ modelling choice that this output informs but does not decide.
     measure.py       the measurement
     arms.json        the seven arms: blockspec spike/PRE-REGISTRATION-2.md §6.2, verbatim
     results.txt      measure.py's stdout over all seven arms
-    red_states.sh    every refusal measure.py makes, shown to fire
+    red_states.sh    every refusal measure.py makes, one case per die() call, shown to fire
     red-states.txt   red_states.sh's stdout
 
 ## Why a parser, and which
@@ -45,10 +45,10 @@ frontmatter included, as D8 did; D8's `btype()` types frontmatter as `prose`
 | b | top-node | a top-level node; a list is one node | the node's source lines, stripped |
 | b2 | top-node-text | (b), less code and raw-HTML nodes | as (b) |
 | d | top-items | (b), with each top-level list replaced by its items | an item: its source lines, marker removed from the first, each line left-stripped |
-| d2 | items-any | a list item at any depth; a parent item contains its sub-items | as (d) |
+| d2 | items-any | a list item at any depth; a parent item contains its sub-items | as (d); inside a block quote, the `>` prefix is removed from each line first |
 | e | section | a top-level heading through the line before the next top-level heading of the same or higher rank, plus any text before the first heading | the section's source lines, stripped |
 | e2 | section-flat | a top-level heading through the line before the next top-level heading of any rank, plus any text before the first heading | as (e) |
-| f | leaf | a paragraph, heading, code block, HTML block, table or thematic break, at any depth | per type: inline source; `#` per rank plus the heading text; fence markup, info string and body; the HTML; the table's lines, each stripped |
+| f | leaf | a paragraph, heading, code block, HTML block, table or thematic break, at any depth | per type: inline source; `#` per rank plus the heading text; fence markup, info string and body; the HTML; the table's lines, each stripped; for a thematic break, its markup alone (`---`, `***`), so every break of one style is the same content |
 | f0 | d8-chunk | a D8 chunk of any type | the chunk, stripped |
 
 **Candidate (c), a list as one block, is (b).** A top-level list is one
@@ -122,7 +122,9 @@ every arm where the count is not zero, found every one to be a link reference
 definition, which CommonMark parses into no node. That classification is not
 in `measure.py`.
 
-`red_states.sh` runs each refusal and passes a case only when both the exit
+`red_states.sh` has one case for each `die()` call in `measure.py`, including
+the `git()` wrapper's, which an invalid pathspec reaches. It passes a case only
+when both the exit
 code and the message are the expected ones, so a case cannot pass on an earlier
 refusal. That rule caught one: before the no-block check was moved ahead of the
 D8-arms check, the no-block case exited 2 for the wrong reason and was reported

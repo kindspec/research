@@ -84,7 +84,9 @@ experiments/D7-usd/Sphere.usda
 Measurement output
 
 Committed experiment output also quotes the corpora it measured. Short
-excerpts of markdown appear in experiments/D8-identity/results-*.txt.
+excerpts of markdown appear in experiments/D8-identity/results-*.txt, and
+experiments/D8-block-definitions/README.md quotes two short strings from
+rust-lang/book: a filename caption and an HTML comment.
 Formulas, header text and sheet names from two spreadsheet corpora appear in
 the files below, which are therefore licensed as the corpus they quote
 requires, not as MIT. No committed file quotes EUSES or VFUSE: W3-interop

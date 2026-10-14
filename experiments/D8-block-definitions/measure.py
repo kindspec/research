@@ -183,6 +183,7 @@ def validate(d8, d8dir, arms):
 # ------------------------------------------------------------- the blocks
 
 MARKER = re.compile(r"^[ \t]*(?:[-*+]|\d{1,9}[.)])(?:[ \t]+|$)")
+QUOTE = re.compile(r"^(?:[ \t]*>[ \t]?)+")
 TOPTYPE = {
     "paragraph_open": "paragraph", "heading_open": "heading", "bullet_list_open": "list",
     "ordered_list_open": "list", "blockquote_open": "quote", "fence": "code",
@@ -208,7 +209,12 @@ def units(md, d8, text):
     toks = md.parse(body)
     heads = []
     covered = [False] * len(lines)
+    quotes = 0
     for i, t in enumerate(toks):
+        if t.type == "blockquote_open":
+            quotes += 1
+        elif t.type == "blockquote_close":
+            quotes -= 1
         if t.nesting == -1 or not t.block or t.map is None:
             continue
         if t.level == 0:
@@ -225,6 +231,8 @@ def units(md, d8, text):
                 heads.append((t.map[0], int(t.tag[1:])))
         if t.type == "list_item_open":
             ls = lines[t.map[0]:t.map[1]]
+            if quotes:
+                ls = [QUOTE.sub("", l, count=1) for l in ls]
             c = "\n".join([MARKER.sub("", ls[0], count=1)] + [l.lstrip() for l in ls[1:]]).strip()
             out["d2"].append(("item", c))
             if t.level == 1:
@@ -347,7 +355,8 @@ def main():
         code, _, arm_name = a.show.partition(":")
         arm = next((x for x in arms if x["name"] == arm_name), None)
         if arm is None or code not in {c for c, _, _ in DEFS}:
-            die(f"--show wants DEF:ARM with DEF one of the codes below and ARM in --arms, got {a.show!r}")
+            die(f"--show wants DEF:ARM, DEF one of {', '.join(c for c, _, _ in DEFS)} and ARM one of "
+                f"{', '.join(x['name'] for x in arms)}; got {a.show!r}")
         keep, _, _, texts = select(arm["name"], arm["repo"], arm["pathspec"])
         rep = Counter(); ty_of = {}
         for f in keep:

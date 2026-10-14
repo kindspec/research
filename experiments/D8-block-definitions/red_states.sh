@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Every refusal measure.py makes, shown to fire, each for the reason it names.
+# Every refusal measure.py makes -- each die() call site -- shown to fire, each
+# for the reason it names.
 #
 #   experiments/D8-block-definitions/red_states.sh \
 #     rust-book=PATH obsidian-help=PATH cmspec=PATH \
@@ -82,6 +83,23 @@ case_ "files read, no block found" 2 "found no block" \
 arms "$S/one.json" one "$P" '*.md'
 case_ "arms without D8's three, so no validation" 2 "the validation step needs D8's three arms" \
   python3 -I "$M" --arms "$S/one.json" --clone "scratch=$S/one"
+
+mkdir "$S/one/sub"
+case_ "clone path is a subdirectory of a work tree" 2 "is inside a work tree rooted at" \
+  python3 -I "$M" --arms "$S/one.json" --clone "scratch=$S/one/sub"
+G=$(mkrepo "$S/gen" a.md $'---\nauto_generated: true\n---\n\nOne paragraph of prose that is long enough to count.\n')
+arms "$S/gen.json" gen "$G" '*.md'
+case_ "every selected file is generated" 2 "every selected file is generated or unreadable" \
+  python3 -I "$M" --arms "$S/gen.json" --clone "scratch=$S/gen"
+arms "$S/badspec.json" one "$P" ':(nosuchmagic)*.md'
+case_ "git fails (ls-files on an invalid pathspec)" 2 "ls-files :(nosuchmagic)*.md: exit 128" \
+  python3 -I "$M" --arms "$S/badspec.json" --clone "scratch=$S/one"
+case_ "--clone without KEY=PATH" 2 "--clone wants KEY=PATH" \
+  python3 -I "$M" --clone "rust-book"
+case_ "--d8-dir without the D8 scripts" 2 "--d8-dir has no anchor_eval3.py" \
+  python3 -I "$M" "${ARGS[@]}" --d8-dir "$S/empty"
+case_ "--show names no definition" 2 "--show wants DEF:ARM, DEF one of a0, a1" \
+  python3 -I "$M" "${ARGS[@]}" --show zz:rust-book
 
 cp -r "$HERE/../D8-identity" "$S/d8"
 before=$(sha256sum < "$S/d8/results-e4.txt")

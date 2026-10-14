@@ -33,7 +33,7 @@ blockspec's design brief comes from the first two.
 for the first three, and blockspec `spike/PRE-REGISTRATION-2.md` §6.2's for the
 last three. The last three sizes are of the working tree alone, without `.git`.
 
-These three move. `design-findings/D8-identity.md` §3 pins the commit of each
+`rust-book`, `obsidian-help` and `cmspec` move. `design-findings/D8-identity.md` §3 pins the commit of each
 clone the anchor evaluations in `results-anchor*.txt` were run against, because
 one of those arms did change when it was re-run against a later clone. Every D8
 harness that reads a corpus refuses one whose `HEAD` is not that pin, or whose

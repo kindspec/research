@@ -110,9 +110,9 @@ d top-items                    blocks   dup in file distinct  dup in file    loc
 
 d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
   rust-book                        417      0   0.0%      416     0   0.0%      415     0   0.0%
-  obsidian-help                   2946    319  10.8%     2619   114   4.4%     2560    94   3.7%
+  obsidian-help                   2946    324  11.0%     2614   115   4.4%     2554    95   3.7%
   cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
-  k8s-en                         18742    395   2.1%    17093   162   0.9%    16453   151   0.9%
+  k8s-en                         18742    395   2.1%    17092   162   0.9%    16451   151   0.9%
   k8s-l10n                       50351   5702  11.3%    42086   807   1.9%    40479   598   1.5%
   cncf-toc                       24112    495   2.1%    20933   229   1.1%    19662   214   1.1%
   site-policy                      819     12   1.5%      803     6   0.7%      793     6   0.8%
@@ -211,9 +211,9 @@ d top-items                    blocks   dup in file distinct  dup in file    loc
 
 d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
   rust-book                        395      0   0.0%      394     0   0.0%      393     0   0.0%
-  obsidian-help                   2754    284  10.3%     2458    99   4.0%     2409    82   3.4%
+  obsidian-help                   2752    289  10.5%     2451   100   4.1%     2401    83   3.5%
   cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
-  k8s-en                         17961    327   1.8%    16422   139   0.8%    15832   128   0.8%
+  k8s-en                         17961    327   1.8%    16421   139   0.8%    15830   128   0.8%
   k8s-l10n                       46600   5164  11.1%    39377   712   1.8%    38067   545   1.4%
   cncf-toc                       22727    407   1.8%    19959   196   1.0%    18822   187   1.0%
   site-policy                      773      6   0.8%      760     3   0.4%      750     3   0.4%
@@ -312,9 +312,9 @@ d top-items                    blocks   dup in file distinct  dup in file    loc
 
 d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
   rust-book                        335      0   0.0%      335     0   0.0%      335     0   0.0%
-  obsidian-help                   2221    186   8.4%     2038    74   3.6%     2000    63   3.1%
+  obsidian-help                   2215    188   8.5%     2029    74   3.6%     1990    63   3.2%
   cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
-  k8s-en                         16446    276   1.7%    15067   116   0.8%    14557   105   0.7%
+  k8s-en                         16445    276   1.7%    15066   116   0.8%    14556   105   0.7%
   k8s-l10n                       40783   4857  11.9%    34311   611   1.8%    33271   459   1.4%
   cncf-toc                       19425    276   1.4%    17489   131   0.7%    16578   126   0.8%
   site-policy                      704      4   0.6%      694     2   0.3%      686     2   0.3%
@@ -698,13 +698,13 @@ d2 items-any / rust-book        blocks   dup in file distinct  dup in file    lo
   item                             335      0   0.0%      335     0   0.0%      335     0   0.0%
 
 d2 items-any / obsidian-help    blocks   dup in file distinct  dup in file    local  dup in file
-  item                            2221    186   8.4%     2038    74   3.6%     2000    63   3.1%
+  item                            2215    188   8.5%     2029    74   3.6%     1990    63   3.2%
 
 d2 items-any / cmspec           blocks   dup in file distinct  dup in file    local  dup in file
   item                              16      0   0.0%       16     0   0.0%       16     0   0.0%
 
 d2 items-any / k8s-en           blocks   dup in file distinct  dup in file    local  dup in file
-  item                           16446    276   1.7%    15067   116   0.8%    14557   105   0.7%
+  item                           16445    276   1.7%    15066   116   0.8%    14556   105   0.7%
 
 d2 items-any / k8s-l10n         blocks   dup in file distinct  dup in file    local  dup in file
   item                           40783   4857  11.9%    34311   611   1.8%    33271   459   1.4%

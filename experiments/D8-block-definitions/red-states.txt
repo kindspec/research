@@ -23,6 +23,24 @@
 == arms without D8's three, so no validation
    exit=2 (want 2), stderr has "the validation step needs D8's three arms" -> as-expected
    stderr| measure.py: the validation step needs D8's three arms, rust-book, obsidian-help, cmspec
+== clone path is a subdirectory of a work tree
+   exit=2 (want 2), stderr has "is inside a work tree rooted at" -> as-expected
+   stderr| measure.py: one: $SCRATCH/one/sub is inside a work tree rooted at $SCRATCH/one, not its root
+== every selected file is generated
+   exit=2 (want 2), stderr has "every selected file is generated or unreadable" -> as-expected
+   stderr| measure.py: gen: every selected file is generated or unreadable
+== git fails (ls-files on an invalid pathspec)
+   exit=2 (want 2), stderr has "ls-files :(nosuchmagic)*.md: exit 128" -> as-expected
+   stderr| measure.py: git -C $SCRATCH/one ls-files :(nosuchmagic)*.md: exit 128: fatal: Invalid pathspec magic 'nosuchmagic' in ':(nosuchmagic)*.md'
+== --clone without KEY=PATH
+   exit=2 (want 2), stderr has "--clone wants KEY=PATH" -> as-expected
+   stderr| measure.py: --clone wants KEY=PATH, got 'rust-book'
+== --d8-dir without the D8 scripts
+   exit=2 (want 2), stderr has "--d8-dir has no anchor_eval3.py" -> as-expected
+   stderr| measure.py: --d8-dir has no anchor_eval3.py: $SCRATCH/empty
+== --show names no definition
+   exit=2 (want 2), stderr has "--show wants DEF:ARM, DEF one of a0, a1" -> as-expected
+   stderr| measure.py: --show wants DEF:ARM, DEF one of a0, a1, a2, b, b2, d, d2, e, e2, f, f0 and ARM one of rust-book, obsidian-help, cmspec, k8s-en, k8s-l10n, cncf-toc, site-policy; got 'zz:rust-book'
 == validation against an altered results-e4.txt
    exit=1 (want 1), stderr has "validation failed" -> as-expected
    stderr| measure.py: validation failed: D8's procedure does not reproduce results-e4.txt here
