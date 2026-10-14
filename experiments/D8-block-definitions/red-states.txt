@@ -1,0 +1,35 @@
+== clone path is not a git work tree
+   exit=2 (want 2), stderr has "not a git work tree" -> as-expected
+   stderr| measure.py: rust-book: not a git work tree: $SCRATCH/empty: fatal: not a git repository (or any of the parent directories): .git
+== clone path does not exist
+   exit=2 (want 2), stderr has "clone does not exist" -> as-expected
+   stderr| measure.py: rust-book: clone does not exist: $SCRATCH/nonexistent
+== clone at the wrong commit
+   exit=2 (want 2), stderr has "rust-book: HEAD is" -> as-expected
+   stderr| measure.py: rust-book: HEAD is 327a782e90481268361b5ccccdb0c224b2b13fe6, pinned at 1500248d8f230566e4ec9f27fcbb8fe9e2898ab1
+== no --clone for an arm
+   exit=2 (want 2), stderr has "no --clone obsidian-help=PATH" -> as-expected
+   stderr| measure.py: obsidian-help: no --clone obsidian-help=PATH
+== tracked file modified in the clone
+   exit=2 (want 2), stderr has "cmspec: tracked files differ from HEAD" -> as-expected
+   stderr| measure.py: cmspec: tracked files differ from HEAD; this reads the work tree:
+   stderr| M README.md
+== pathspec selects no .md file
+   exit=2 (want 2), stderr has "selects no .md files" -> as-expected
+   stderr| measure.py: one: pathspec 'nomatch/*.md' selects no .md files in $SCRATCH/one
+== files read, no block found
+   exit=2 (want 2), stderr has "found no block" -> as-expected
+   stderr| measure.py: blank: read 1 files and found no block
+== arms without D8's three, so no validation
+   exit=2 (want 2), stderr has "the validation step needs D8's three arms" -> as-expected
+   stderr| measure.py: the validation step needs D8's three arms, rust-book, obsidian-help, cmspec
+== validation against an altered results-e4.txt
+   exit=1 (want 1), stderr has "validation failed" -> as-expected
+   stderr| measure.py: validation failed: D8's procedure does not reproduce results-e4.txt here
+== parser is not markdown-it-py 3.0.0
+   exit=2 (want 2), stderr has "this measurement is pinned to 3.0.0" -> as-expected
+   stderr| measure.py: markdown-it-py is 0.0.0; this measurement is pinned to 3.0.0
+== control: the unmodified run
+   exit=0 (want 0) -> as-expected
+
+unexpected: 0

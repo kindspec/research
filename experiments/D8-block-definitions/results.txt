@@ -1,0 +1,871 @@
+# D8-block-definitions: within-file uniqueness under candidate block definitions
+
+parser: markdown-it-py 3.0.0, preset commonmark + table
+generated-file rule: yaml-fence (blockspec PRE-REGISTRATION-2 §6.3)
+
+## Validation
+
+D8's procedure (D8-identity/anchor_eval.py blocks(), anchor_eval3.py btype(),
+e4_uniqueness.py's loop) re-run here on D8's three arms at 20, 40 and 120,
+against the committed D8-identity/results-e4.txt:
+  2a5adf9e803731284caa23b7d606f42ea87359abe195589afc5363e20266ba34  this run
+  2a5adf9e803731284caa23b7d606f42ea87359abe195589afc5363e20266ba34  results-e4.txt
+  BYTE-IDENTICAL
+
+## Arms
+
+arm            pin             files generated unreadable frontmatter uncovered  pathspec
+rust-book      1500248d8f23      112         0          0           0       244  src/*.md
+obsidian-help  327a782e9048      176         0          0         176         0  en/*.md
+cmspec         3da939428d80        2         0          0           0         2  *.md
+k8s-en         6b27baef1e44     2208       305          0        2058      1119  content/en/*.md
+k8s-l10n       6b27baef1e44     5727        19          0        5441       534  content/*.md :(exclude)content/en/
+cncf-toc       144c2e321588      587        11          0           3       326  *.md :(exclude).github/
+site-policy    b9578b546d25       61         0          0          57         2  *.md :(exclude).github/
+
+files: selected by the pathspec, .md, minus generated and unreadable.
+uncovered: non-blank lines after frontmatter that no top-level node spans
+(link reference definitions produce no node).
+
+## Definitions
+
+a0  d8-prose       D8's blank-line chunks typed prose by btype() -- the brief's figure
+a1  para-top       top-level paragraphs
+a2  para-any       every paragraph, at any depth (inside list items and quotes too)
+b   top-node       every top-level node; a list is one node, so this is also (c)
+b2  top-node-text  (b) without code and raw-HTML nodes
+d   top-items      (b), with each top-level list replaced by its items
+d2  items-any      every list item at any depth; a parent item contains its sub-items
+e   section        top-level heading to the next of same or higher rank; overlapping
+e2  section-flat   top-level heading to the next heading of any rank; a partition
+f   leaf           every leaf block at any depth: paragraph, heading, code, html, table, hr
+f0  d8-chunk       D8's blank-line chunks, every type
+
+## Columns
+
+blocks       instances whose content is >= minlen characters
+dup in file  instances whose exact content occurs again in the same file
+distinct     distinct contents, sha256 over the arm: a block replicated
+             across files, or within one, counts once
+  dup in file  distinct contents that occur twice or more in some file
+local        distinct contents found in exactly one file: anything
+             replicated across files (templates, boilerplate) removed
+  dup in file  local contents that occur twice or more in their file
+
+## Summary, minlen=1
+
+a0 d8-prose                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2996      4   0.1%     2991     1   0.0%     2989     1   0.0%
+  obsidian-help                   2981     78   2.6%     2873    21   0.7%     2855    13   0.5%
+  cmspec                            37      0   0.0%       37     0   0.0%       37     0   0.0%
+  k8s-en                         41558   1794   4.3%    38511   332   0.9%    37825   275   0.7%
+  k8s-l10n                       92483   7257   7.8%    81269  1469   1.8%    79448  1221   1.5%
+  cncf-toc                       13468    469   3.5%    11936    74   0.6%    11319    55   0.5%
+  site-policy                     1489     16   1.1%     1453     5   0.3%     1430     5   0.3%
+
+a1 para-top                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3137     58   1.8%     3075     5   0.2%     3070     2   0.1%
+  obsidian-help                   2639     74   2.8%     2541    21   0.8%     2526    13   0.5%
+  cmspec                            22      0   0.0%       22     0   0.0%       22     0   0.0%
+  k8s-en                         39160   1723   4.4%    36418   316   0.9%    35742   262   0.7%
+  k8s-l10n                       84548   5733   6.8%    75675   898   1.2%    74433   730   1.0%
+  cncf-toc                       12933    380   2.9%    11509    81   0.7%    10887    61   0.6%
+  site-policy                     1383     16   1.2%     1357     5   0.4%     1344     5   0.4%
+
+a2 para-any                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3630     58   1.6%     3567     5   0.1%     3561     2   0.1%
+  obsidian-help                   5903    418   7.1%     5444   143   2.6%     5356   115   2.1%
+  cmspec                            39      0   0.0%       39     0   0.0%       39     0   0.0%
+  k8s-en                         58939   2435   4.1%    54157   533   1.0%    52760   451   0.9%
+  k8s-l10n                      147947  18552  12.5%   123156  2610   2.1%   119508  2004   1.7%
+  cncf-toc                       37963   1029   2.7%    32260   354   1.1%    30172   310   1.0%
+  site-policy                     2258     28   1.2%     2205    11   0.5%     2171    11   0.5%
+
+b top-node                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5871    678  11.5%     5132    18   0.4%     5110     8   0.2%
+  obsidian-help                   5517    153   2.8%     5250    45   0.9%     5176    35   0.7%
+  cmspec                            37      0   0.0%       37     0   0.0%       37     0   0.0%
+  k8s-en                         64991   2935   4.5%    56390   569   1.0%    54878   467   0.9%
+  k8s-l10n                      194477  15086   7.8%   152872  1977   1.3%   145808  1411   1.0%
+  cncf-toc                       27051   1327   4.9%    19977   134   0.7%    18364    97   0.5%
+  site-policy                     2225     16   0.7%     2163     5   0.2%     2123     5   0.2%
+
+b2 top-node-text                blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3794     58   1.5%     3708     5   0.1%     3698     2   0.1%
+  obsidian-help                   5198    131   2.5%     4947    37   0.7%     4874    27   0.6%
+  cmspec                            32      0   0.0%       32     0   0.0%       32     0   0.0%
+  k8s-en                         55689   1905   3.4%    50087   372   0.7%    48826   302   0.6%
+  k8s-l10n                      129744   9124   7.0%   111510  1343   1.2%   108710  1056   1.0%
+  cncf-toc                       26501   1002   3.8%    19782   123   0.6%    18187    91   0.5%
+  site-policy                     2206     16   0.7%     2156     5   0.2%     2120     5   0.2%
+
+d top-items                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       6123    678  11.1%     5383    18   0.3%     5360     8   0.1%
+  obsidian-help                   7413    462   6.2%     6826   156   2.3%     6694   126   1.9%
+  cmspec                            49      0   0.0%       49     0   0.0%       49     0   0.0%
+  k8s-en                         76777   3250   4.2%    66789   696   1.0%    64808   585   0.9%
+  k8s-l10n                      222963  19201   8.6%   175349  2362   1.3%   167315  1692   1.0%
+  cncf-toc                       40181   1643   4.1%    31403   287   0.9%    29064   241   0.8%
+  site-policy                     2793     22   0.8%     2722     8   0.3%     2676     8   0.3%
+
+d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        417      0   0.0%      416     0   0.0%      415     0   0.0%
+  obsidian-help                   2946    319  10.8%     2619   114   4.4%     2560    94   3.7%
+  cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
+  k8s-en                         18742    395   2.1%    17093   162   0.9%    16453   151   0.9%
+  k8s-l10n                       50351   5702  11.3%    42086   807   1.9%    40479   598   1.5%
+  cncf-toc                       24112    495   2.1%    20933   229   1.1%    19662   214   1.1%
+  site-policy                      819     12   1.5%      803     6   0.7%      793     6   0.8%
+
+e section                      blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1627      0   0.0%     1625     0   0.0%     1624     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13636     13   0.1%    13280     4   0.0%    13209     1   0.0%
+  k8s-l10n                       34719    113   0.3%    33982    56   0.2%    33826    55   0.2%
+  cncf-toc                        8161     74   0.9%     7909     2   0.0%     7773     1   0.0%
+  site-policy                      703      0   0.0%      702     0   0.0%      701     0   0.0%
+
+e2 section-flat                 blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1627      4   0.2%     1617     1   0.1%     1613     1   0.1%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13636     13   0.1%    13217     4   0.0%    13120     1   0.0%
+  k8s-l10n                       34719    171   0.5%    33833    85   0.3%    33628    84   0.2%
+  cncf-toc                        8161     85   1.0%     7339     6   0.1%     7095     2   0.0%
+  site-policy                      703      0   0.0%      701     0   0.0%      699     0   0.0%
+
+f leaf                         blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       6274    680  10.8%     5531    18   0.3%     5507     8   0.1%
+  obsidian-help                   7808    497   6.4%     7183   167   2.3%     7039   137   1.9%
+  cmspec                            51      0   0.0%       51     0   0.0%       51     0   0.0%
+  k8s-en                         81266   3757   4.6%    70604   825   1.2%    68399   676   1.0%
+  k8s-l10n                      249794  27632  11.1%   190550  3605   1.9%   180557  2624   1.5%
+  cncf-toc                       47304   2094   4.4%    36540   405   1.1%    33722   344   1.0%
+  site-policy                     2938     28   1.0%     2852    11   0.4%     2794    11   0.4%
+
+f0 d8-chunk                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5955    665  11.2%     5229    18   0.3%     5206     8   0.2%
+  obsidian-help                   5562    154   2.8%     5294    47   0.9%     5220    37   0.7%
+  cmspec                            51      0   0.0%       51     0   0.0%       51     0   0.0%
+  k8s-en                         70170   3137   4.5%    61361   650   1.1%    59818   541   0.9%
+  k8s-l10n                      231986  37887  16.3%   165072  3701   2.2%   156090  2706   1.7%
+  cncf-toc                       28239   1163   4.1%    21235   124   0.6%    19635    91   0.5%
+  site-policy                     2421     16   0.7%     2353     5   0.2%     2303     5   0.2%
+
+## Summary, minlen=20
+
+a0 d8-prose                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2985      0   0.0%     2983     0   0.0%     2981     0   0.0%
+  obsidian-help                   2855     32   1.1%     2791    10   0.4%     2778     6   0.2%
+  cmspec                            31      0   0.0%       31     0   0.0%       31     0   0.0%
+  k8s-en                         39959    979   2.5%    37979   244   0.6%    37354   206   0.6%
+  k8s-l10n                       86164   3905   4.5%    79139  1089   1.4%    77537   951   1.2%
+  cncf-toc                       12827    173   1.3%    11669    46   0.4%    11093    38   0.3%
+  site-policy                     1470     12   0.8%     1437     4   0.3%     1414     4   0.3%
+
+a1 para-top                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3125     54   1.7%     3066     4   0.1%     3061     1   0.0%
+  obsidian-help                   2517     36   1.4%     2453     9   0.4%     2443     5   0.2%
+  cmspec                            20      0   0.0%       20     0   0.0%       20     0   0.0%
+  k8s-en                         37647    879   2.3%    35866   223   0.6%    35260   189   0.5%
+  k8s-l10n                       77395   2078   2.7%    72775   571   0.8%    71753   507   0.7%
+  cncf-toc                       12327    185   1.5%    11162    50   0.4%    10594    41   0.4%
+  site-policy                     1363     12   0.9%     1340     4   0.3%     1327     4   0.3%
+
+a2 para-any                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3596     54   1.5%     3536     4   0.1%     3530     1   0.0%
+  obsidian-help                   5505    336   6.1%     5121   113   2.2%     5052    92   1.8%
+  cmspec                            37      0   0.0%       37     0   0.0%       37     0   0.0%
+  k8s-en                         56419   1455   2.6%    52791   406   0.8%    51525   348   0.7%
+  k8s-l10n                      134534  13122   9.8%   116335  2011   1.7%   113313  1591   1.4%
+  cncf-toc                       35574    647   1.8%    30714   264   0.9%    28863   241   0.8%
+  site-policy                     2184     18   0.8%     2137     7   0.3%     2103     7   0.3%
+
+b top-node                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5341    239   4.5%     5063    14   0.3%     5045     7   0.1%
+  obsidian-help                   4522     58   1.3%     4421    17   0.4%     4396    13   0.3%
+  cmspec                            33      0   0.0%       33     0   0.0%       33     0   0.0%
+  k8s-en                         59095   1670   2.8%    54266   434   0.8%    53089   368   0.7%
+  k8s-l10n                      171030   8441   4.9%   143985  1531   1.1%   137868  1107   0.8%
+  cncf-toc                       23113    567   2.5%    18720    77   0.4%    17396    59   0.3%
+  site-policy                     2041     12   0.6%     1990     4   0.2%     1958     4   0.2%
+
+b2 top-node-text                blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3707     54   1.5%     3644     4   0.1%     3635     1   0.0%
+  obsidian-help                   4203     36   0.9%     4118     9   0.2%     4094     5   0.1%
+  cmspec                            28      0   0.0%       28     0   0.0%       28     0   0.0%
+  k8s-en                         51252    942   1.8%    48019   249   0.5%    47084   211   0.4%
+  k8s-l10n                      112779   3517   3.1%   102787   927   0.9%   100876   766   0.8%
+  cncf-toc                       22572    248   1.1%    18530    68   0.4%    17224    55   0.3%
+  site-policy                     2022     12   0.6%     1983     4   0.2%     1955     4   0.2%
+
+d top-items                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5571    239   4.3%     5292    14   0.3%     5273     7   0.1%
+  obsidian-help                   6240    334   5.4%     5850   114   1.9%     5778    93   1.6%
+  cmspec                            45      0   0.0%       45     0   0.0%       45     0   0.0%
+  k8s-en                         70265   1920   2.7%    64146   539   0.8%    62539   464   0.7%
+  k8s-l10n                      196589  12078   6.1%   164421  1848   1.1%   157565  1361   0.9%
+  cncf-toc                       35323    843   2.4%    29446   211   0.7%    27494   185   0.7%
+  site-policy                     2579     16   0.6%     2520     6   0.2%     2482     6   0.2%
+
+d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        395      0   0.0%      394     0   0.0%      393     0   0.0%
+  obsidian-help                   2754    284  10.3%     2458    99   4.0%     2409    82   3.4%
+  cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
+  k8s-en                         17961    327   1.8%    16422   139   0.8%    15832   128   0.8%
+  k8s-l10n                       46600   5164  11.1%    39377   712   1.8%    38067   545   1.4%
+  cncf-toc                       22727    407   1.8%    19959   196   1.0%    18822   187   1.0%
+  site-policy                      773      6   0.8%      760     3   0.4%      750     3   0.4%
+
+e section                      blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1627      0   0.0%     1625     0   0.0%     1624     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13622      8   0.1%    13274     3   0.0%    13206     1   0.0%
+  k8s-l10n                       34684    111   0.3%    33963    55   0.2%    33810    55   0.2%
+  cncf-toc                        8061      2   0.0%     7891     1   0.0%     7758     1   0.0%
+  site-policy                      703      0   0.0%      702     0   0.0%      701     0   0.0%
+
+e2 section-flat                 blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1585      0   0.0%     1583     0   0.0%     1582     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13518      8   0.1%    13138     3   0.0%    13058     1   0.0%
+  k8s-l10n                       34423    167   0.5%    33582    83   0.2%    33401    83   0.2%
+  cncf-toc                        7670      9   0.1%     7172     4   0.1%     6974     2   0.0%
+  site-policy                      688      0   0.0%      686     0   0.0%      684     0   0.0%
+
+f leaf                         blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5719    240   4.2%     5438    14   0.3%     5418     7   0.1%
+  obsidian-help                   6538    358   5.5%     6120   121   2.0%     6039   100   1.7%
+  cmspec                            45      0   0.0%       45     0   0.0%       45     0   0.0%
+  k8s-en                         74368   2352   3.2%    67673   654   1.0%    65865   546   0.8%
+  k8s-l10n                      220099  19193   8.7%   177766  2882   1.6%   169130  2129   1.3%
+  cncf-toc                       41606   1144   2.7%    34109   288   0.8%    31760   256   0.8%
+  site-policy                     2700     18   0.7%     2628     7   0.3%     2578     7   0.3%
+
+f0 d8-chunk                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5425    226   4.2%     5160    14   0.3%     5141     7   0.1%
+  obsidian-help                   4572     57   1.2%     4472    19   0.4%     4447    15   0.3%
+  cmspec                            45      0   0.0%       45     0   0.0%       45     0   0.0%
+  k8s-en                         64511   1899   2.9%    59309   516   0.9%    58078   441   0.8%
+  k8s-l10n                      197300  21049  10.7%   155842  3122   2.0%   148010  2314   1.6%
+  cncf-toc                       24683    462   1.9%    20122    76   0.4%    18782    61   0.3%
+  site-policy                     2235     12   0.5%     2178     4   0.2%     2136     4   0.2%
+
+## Summary, minlen=40
+
+a0 d8-prose                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2938      0   0.0%     2938     0   0.0%     2938     0   0.0%
+  obsidian-help                   2526     16   0.6%     2493     7   0.3%     2482     4   0.2%
+  cmspec                            28      0   0.0%       28     0   0.0%       28     0   0.0%
+  k8s-en                         37948    482   1.3%    36701   172   0.5%    36142   149   0.4%
+  k8s-l10n                       78714   2640   3.4%    73640   796   1.1%    72340   708   1.0%
+  cncf-toc                       12120    121   1.0%    11098    39   0.4%    10579    33   0.3%
+  site-policy                     1412      9   0.6%     1382     3   0.2%     1360     3   0.2%
+
+a1 para-top                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3054     54   1.8%     2997     4   0.1%     2994     1   0.0%
+  obsidian-help                   2190     22   1.0%     2156     7   0.3%     2148     4   0.2%
+  cmspec                            20      0   0.0%       20     0   0.0%       20     0   0.0%
+  k8s-en                         35812    459   1.3%    34555   161   0.5%    34014   141   0.4%
+  k8s-l10n                       69810   1478   2.1%    66227   411   0.6%    65383   365   0.6%
+  cncf-toc                       11485    125   1.1%    10477    40   0.4%     9981    34   0.3%
+  site-policy                     1299      9   0.7%     1279     3   0.2%     1267     3   0.2%
+
+a2 para-any                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3464     54   1.6%     3407     4   0.1%     3404     1   0.0%
+  obsidian-help                   4562    210   4.6%     4334    81   1.9%     4282    67   1.6%
+  cmspec                            36      0   0.0%       36     0   0.0%       36     0   0.0%
+  k8s-en                         52490    786   1.5%    49751   296   0.6%    48649   258   0.5%
+  k8s-l10n                      113608   8209   7.2%   101429  1354   1.3%    99275  1134   1.1%
+  cncf-toc                       30817    413   1.3%    27186   177   0.7%    25691   165   0.6%
+  site-policy                     2031     13   0.6%     1990     5   0.3%     1959     5   0.3%
+
+b top-node                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       4912    216   4.4%     4673    12   0.3%     4664     7   0.2%
+  obsidian-help                   3614     44   1.2%     3561    15   0.4%     3549    12   0.3%
+  cmspec                            30      0   0.0%       30     0   0.0%       30     0   0.0%
+  k8s-en                         51410   1104   2.1%    48380   321   0.7%    47501   284   0.6%
+  k8s-l10n                      145884   6063   4.2%   126558  1191   0.9%   121491   857   0.7%
+  cncf-toc                       18561    135   0.7%    16163    45   0.3%    15210    39   0.3%
+  site-policy                     1611      9   0.6%     1579     3   0.2%     1559     3   0.2%
+
+b2 top-node-text                blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3353     54   1.6%     3296     4   0.1%     3293     1   0.0%
+  obsidian-help                   3330     22   0.7%     3293     7   0.2%     3282     4   0.1%
+  cmspec                            26      0   0.0%       26     0   0.0%       26     0   0.0%
+  k8s-en                         44149    497   1.1%    42552   179   0.4%    41879   156   0.4%
+  k8s-l10n                       92763   2763   3.0%    87354   706   0.8%    86013   571   0.7%
+  cncf-toc                       18369    133   0.7%    16003    44   0.3%    15061    38   0.3%
+  site-policy                     1600      9   0.6%     1574     3   0.2%     1556     3   0.2%
+
+d top-items                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5100    216   4.2%     4861    12   0.2%     4852     7   0.1%
+  obsidian-help                   4871    223   4.6%     4641    86   1.9%     4593    72   1.6%
+  cmspec                            42      0   0.0%       42     0   0.0%       42     0   0.0%
+  k8s-en                         61410   1314   2.1%    57217   408   0.7%    55965   362   0.6%
+  k8s-l10n                      167097   9474   5.7%   143189  1441   1.0%   137580  1053   0.8%
+  cncf-toc                       28450    295   1.0%    25127   121   0.5%    23706   111   0.5%
+  site-policy                     2105     13   0.6%     2067     5   0.2%     2043     5   0.2%
+
+d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        335      0   0.0%      335     0   0.0%      335     0   0.0%
+  obsidian-help                   2221    186   8.4%     2038    74   3.6%     2000    63   3.1%
+  cmspec                            16      0   0.0%       16     0   0.0%       16     0   0.0%
+  k8s-en                         16446    276   1.7%    15067   116   0.8%    14557   105   0.7%
+  k8s-l10n                       40783   4857  11.9%    34311   611   1.8%    33271   459   1.4%
+  cncf-toc                       19425    276   1.4%    17489   131   0.7%    16578   126   0.8%
+  site-policy                      704      4   0.6%      694     2   0.3%      686     2   0.3%
+
+e section                      blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1621      0   0.0%     1619     0   0.0%     1618     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13611      8   0.1%    13263     3   0.0%    13195     1   0.0%
+  k8s-l10n                       34546    111   0.3%    33916    55   0.2%    33767    55   0.2%
+  cncf-toc                        7974      2   0.0%     7812     1   0.0%     7686     1   0.0%
+  site-policy                      703      0   0.0%      702     0   0.0%      701     0   0.0%
+
+e2 section-flat                 blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        547      0   0.0%      547     0   0.0%      547     0   0.0%
+  obsidian-help                   1558      0   0.0%     1556     0   0.0%     1555     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13343      8   0.1%    12989     3   0.0%    12918     1   0.0%
+  k8s-l10n                       33566    129   0.4%    32909    64   0.2%    32747    64   0.2%
+  cncf-toc                        7093      2   0.0%     6860     1   0.0%     6715     1   0.0%
+  site-policy                      659      0   0.0%      658     0   0.0%      657     0   0.0%
+
+f leaf                         blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       5221    216   4.1%     4981    12   0.2%     4971     7   0.1%
+  obsidian-help                   5023    232   4.6%     4779    89   1.9%     4726    75   1.6%
+  cmspec                            41      0   0.0%       41     0   0.0%       41     0   0.0%
+  k8s-en                         64471   1492   2.3%    59997   480   0.8%    58597   416   0.7%
+  k8s-l10n                      180848  12153   6.7%   151956  2020   1.3%   145141  1553   1.1%
+  cncf-toc                       33108    417   1.3%    28771   179   0.6%    27069   167   0.6%
+  site-policy                     2185     13   0.6%     2135     5   0.2%     2099     5   0.2%
+
+f0 d8-chunk                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       4994    203   4.1%     4768    12   0.3%     4758     7   0.1%
+  obsidian-help                   3662     38   1.0%     3613    15   0.4%     3601    12   0.3%
+  cmspec                            42      0   0.0%       42     0   0.0%       42     0   0.0%
+  k8s-en                         56643   1203   2.1%    53436   370   0.7%    52496   329   0.6%
+  k8s-l10n                      165329  14912   9.0%   135548  2258   1.7%   129231  1729   1.3%
+  cncf-toc                       20532    149   0.7%    17768    53   0.3%    16772    47   0.3%
+  site-policy                     1799      9   0.5%     1761     3   0.2%     1731     3   0.2%
+
+## Summary, minlen=120
+
+a0 d8-prose                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2535      0   0.0%     2535     0   0.0%     2535     0   0.0%
+  obsidian-help                   1414      4   0.3%     1397     1   0.1%     1393     0   0.0%
+  cmspec                            13      0   0.0%       13     0   0.0%       13     0   0.0%
+  k8s-en                         27601     85   0.3%    27152    33   0.1%    26863    33   0.1%
+  k8s-l10n                       46911    657   1.4%    45947   228   0.5%    45604   216   0.5%
+  cncf-toc                        9255     36   0.4%     8639    17   0.2%     8301    16   0.2%
+  site-policy                     1173      0   0.0%     1149     0   0.0%     1127     0   0.0%
+
+a1 para-top                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2470      0   0.0%     2470     0   0.0%     2470     0   0.0%
+  obsidian-help                   1112      4   0.4%     1097     1   0.1%     1095     0   0.0%
+  cmspec                            13      0   0.0%       13     0   0.0%       13     0   0.0%
+  k8s-en                         26021     80   0.3%    25565    31   0.1%    25281    31   0.1%
+  k8s-l10n                       38474    361   0.9%    38027   107   0.3%    37904   105   0.3%
+  cncf-toc                        8425     32   0.4%     7862    15   0.2%     7571    14   0.2%
+  site-policy                     1054      0   0.0%     1040     0   0.0%     1028     0   0.0%
+
+a2 para-any                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2599      0   0.0%     2599     0   0.0%     2599     0   0.0%
+  obsidian-help                   1608      9   0.6%     1584     3   0.2%     1576     1   0.1%
+  cmspec                            22      0   0.0%       22     0   0.0%       22     0   0.0%
+  k8s-en                         32607    143   0.4%    31906    57   0.2%    31523    54   0.2%
+  k8s-l10n                       50961    925   1.8%    49855   296   0.6%    49541   278   0.6%
+  cncf-toc                       17306    111   0.6%    15873    53   0.3%    15239    49   0.3%
+  site-policy                     1468      0   0.0%     1441     0   0.0%     1416     0   0.0%
+
+b top-node                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3127     18   0.6%     3112     4   0.1%     3111     3   0.1%
+  obsidian-help                   2072      9   0.4%     2052     3   0.1%     2048     2   0.1%
+  cmspec                            17      0   0.0%       17     0   0.0%       17     0   0.0%
+  k8s-en                         35131    443   1.3%    33374    76   0.2%    32897    71   0.2%
+  k8s-l10n                       88589   2566   2.9%    78832   466   0.6%    76545   336   0.4%
+  cncf-toc                       13174     36   0.3%    12099    17   0.1%    11585    16   0.1%
+  site-policy                     1214      0   0.0%     1198     0   0.0%     1184     0   0.0%
+
+b2 top-node-text                blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       2590      0   0.0%     2590     0   0.0%     2590     0   0.0%
+  obsidian-help                   1979      4   0.2%     1962     1   0.1%     1958     0   0.0%
+  cmspec                            15      0   0.0%       15     0   0.0%       15     0   0.0%
+  k8s-en                         30514     94   0.3%    29953    38   0.1%    29610    37   0.1%
+  k8s-l10n                       50574   1104   2.2%    49210   280   0.6%    48880   213   0.4%
+  cncf-toc                       13035     34   0.3%    11986    16   0.1%    11480    15   0.1%
+  site-policy                     1213      0   0.0%     1197     0   0.0%     1183     0   0.0%
+
+d top-items                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3146     18   0.6%     3131     4   0.1%     3130     3   0.1%
+  obsidian-help                   1826     14   0.8%     1798     5   0.3%     1789     3   0.2%
+  cmspec                            25      0   0.0%       25     0   0.0%       25     0   0.0%
+  k8s-en                         37663    482   1.3%    35771    93   0.3%    35251    87   0.2%
+  k8s-l10n                       92674   4134   4.5%    81375   468   0.6%    79107   323   0.4%
+  cncf-toc                       16894     87   0.5%    15638    42   0.3%    15018    38   0.3%
+  site-policy                     1444      0   0.0%     1429     0   0.0%     1416     0   0.0%
+
+d2 items-any                    blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                         78      0   0.0%       78     0   0.0%       78     0   0.0%
+  obsidian-help                    364      7   1.9%      355     3   0.8%      350     2   0.6%
+  cmspec                            10      0   0.0%       10     0   0.0%       10     0   0.0%
+  k8s-en                          7367     73   1.0%     7113    31   0.4%     7009    28   0.4%
+  k8s-l10n                       17538   2360  13.5%    15030   199   1.3%    14798   119   0.8%
+  cncf-toc                        9935     63   0.6%     9351    30   0.3%     9031    27   0.3%
+  site-policy                      397      0   0.0%      394     0   0.0%      391     0   0.0%
+
+e section                      blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        538      0   0.0%      538     0   0.0%      538     0   0.0%
+  obsidian-help                   1462      0   0.0%     1460     0   0.0%     1459     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         13161      2   0.0%    12859     1   0.0%    12804     1   0.0%
+  k8s-l10n                       33134    111   0.3%    32760    55   0.2%    32658    55   0.2%
+  cncf-toc                        7640      0   0.0%     7516     0   0.0%     7407     0   0.0%
+  site-policy                      683      0   0.0%      683     0   0.0%      683     0   0.0%
+
+e2 section-flat                 blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                        538      0   0.0%      538     0   0.0%      538     0   0.0%
+  obsidian-help                   1350      0   0.0%     1348     0   0.0%     1347     0   0.0%
+  cmspec                             7      0   0.0%        7     0   0.0%        7     0   0.0%
+  k8s-en                         12776      2   0.0%    12475     1   0.0%    12421     1   0.0%
+  k8s-l10n                       31468    111   0.4%    31092    55   0.2%    30988    55   0.2%
+  cncf-toc                        6580      0   0.0%     6426     0   0.0%     6311     0   0.0%
+  site-policy                      627      0   0.0%      627     0   0.0%      627     0   0.0%
+
+f leaf                         blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3153     18   0.6%     3138     4   0.1%     3137     3   0.1%
+  obsidian-help                   1781     14   0.8%     1754     5   0.3%     1746     3   0.2%
+  cmspec                            23      0   0.0%       23     0   0.0%       23     0   0.0%
+  k8s-en                         37923    504   1.3%    36014   101   0.3%    35491    93   0.3%
+  k8s-l10n                       92096   2501   2.7%    81796   525   0.6%    79217   433   0.5%
+  cncf-toc                       18085    113   0.6%    16476    54   0.3%    15777    50   0.3%
+  site-policy                     1477      0   0.0%     1450     0   0.0%     1425     0   0.0%
+
+f0 d8-chunk                     blocks   dup in file distinct  dup in file    local  dup in file
+  rust-book                       3195     18   0.6%     3180     4   0.1%     3179     3   0.1%
+  obsidian-help                   2137      9   0.4%     2117     3   0.1%     2113     2   0.1%
+  cmspec                            23      0   0.0%       23     0   0.0%       23     0   0.0%
+  k8s-en                         38142    459   1.2%    36348    83   0.2%    35868    78   0.2%
+  k8s-l10n                       92119   2328   2.5%    82103   532   0.6%    79560   462   0.6%
+  cncf-toc                       14930     44   0.3%    13617    21   0.2%    13042    20   0.2%
+  site-policy                     1399      0   0.0%     1372     0   0.0%     1347     0   0.0%
+
+## By type, minlen=40
+
+a0 d8-prose / rust-book         blocks   dup in file distinct  dup in file    local  dup in file
+  prose                           2938      0   0.0%     2938     0   0.0%     2938     0   0.0%
+
+a0 d8-prose / obsidian-help     blocks   dup in file distinct  dup in file    local  dup in file
+  prose                           2526     16   0.6%     2493     7   0.3%     2482     4   0.2%
+
+a0 d8-prose / cmspec            blocks   dup in file distinct  dup in file    local  dup in file
+  prose                             28      0   0.0%       28     0   0.0%       28     0   0.0%
+
+a0 d8-prose / k8s-en            blocks   dup in file distinct  dup in file    local  dup in file
+  prose                          37948    482   1.3%    36701   172   0.5%    36142   149   0.4%
+
+a0 d8-prose / k8s-l10n          blocks   dup in file distinct  dup in file    local  dup in file
+  prose                          78714   2640   3.4%    73640   796   1.1%    72340   708   1.0%
+
+a0 d8-prose / cncf-toc          blocks   dup in file distinct  dup in file    local  dup in file
+  prose                          12120    121   1.0%    11098    39   0.4%    10579    33   0.3%
+
+a0 d8-prose / site-policy       blocks   dup in file distinct  dup in file    local  dup in file
+  prose                           1412      9   0.6%     1382     3   0.2%     1360     3   0.2%
+
+a1 para-top / rust-book         blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       3054     54   1.8%     2997     4   0.1%     2994     1   0.0%
+
+a1 para-top / obsidian-help     blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       2190     22   1.0%     2156     7   0.3%     2148     4   0.2%
+
+a1 para-top / cmspec            blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                         20      0   0.0%       20     0   0.0%       20     0   0.0%
+
+a1 para-top / k8s-en            blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                      35812    459   1.3%    34555   161   0.5%    34014   141   0.4%
+
+a1 para-top / k8s-l10n          blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                      69810   1478   2.1%    66227   411   0.6%    65383   365   0.6%
+
+a1 para-top / cncf-toc          blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                      11485    125   1.1%    10477    40   0.4%     9981    34   0.3%
+
+a1 para-top / site-policy       blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       1299      9   0.7%     1279     3   0.2%     1267     3   0.2%
+
+a2 para-any / rust-book         blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       3464     54   1.6%     3407     4   0.1%     3404     1   0.0%
+
+a2 para-any / obsidian-help     blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       4562    210   4.6%     4334    81   1.9%     4282    67   1.6%
+
+a2 para-any / cmspec            blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                         36      0   0.0%       36     0   0.0%       36     0   0.0%
+
+a2 para-any / k8s-en            blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                      52490    786   1.5%    49751   296   0.6%    48649   258   0.5%
+
+a2 para-any / k8s-l10n          blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                     113608   8209   7.2%   101429  1354   1.3%    99275  1134   1.1%
+
+a2 para-any / cncf-toc          blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                      30817    413   1.3%    27186   177   0.7%    25691   165   0.6%
+
+a2 para-any / site-policy       blocks   dup in file distinct  dup in file    local  dup in file
+  paragraph                       2031     13   0.6%     1990     5   0.3%     1959     5   0.3%
+
+b top-node / rust-book          blocks   dup in file distinct  dup in file    local  dup in file
+  code                             909      6   0.7%      902     3   0.3%      898     3   0.3%
+  heading                          172      0   0.0%      172     0   0.0%      172     0   0.0%
+  html                             650    156  24.0%      475     5   1.1%      473     3   0.6%
+  list                              64      0   0.0%       64     0   0.0%       64     0   0.0%
+  paragraph                       3054     54   1.8%     2997     4   0.1%     2994     1   0.0%
+  quote                             50      0   0.0%       50     0   0.0%       50     0   0.0%
+  table                             13      0   0.0%       13     0   0.0%       13     0   0.0%
+
+b top-node / obsidian-help      blocks   dup in file distinct  dup in file    local  dup in file
+  code                             281     22   7.8%      265     8   3.0%      264     8   3.0%
+  heading                           65      0   0.0%       65     0   0.0%       65     0   0.0%
+  html                               3      0   0.0%        3     0   0.0%        3     0   0.0%
+  list                             733      0   0.0%      733     0   0.0%      733     0   0.0%
+  paragraph                       2190     22   1.0%     2156     7   0.3%     2148     4   0.2%
+  quote                            261      0   0.0%      258     0   0.0%      255     0   0.0%
+  table                             81      0   0.0%       81     0   0.0%       81     0   0.0%
+
+b top-node / cmspec             blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        4     0   0.0%        4     0   0.0%
+  heading                            2      0   0.0%        2     0   0.0%        2     0   0.0%
+  list                               4      0   0.0%        4     0   0.0%        4     0   0.0%
+  paragraph                         20      0   0.0%       20     0   0.0%       20     0   0.0%
+
+b top-node / k8s-en             blocks   dup in file distinct  dup in file    local  dup in file
+  code                            5717    320   5.6%     5405   135   2.5%     5288   126   2.4%
+  heading                         3491     16   0.5%     3273     7   0.2%     3211     5   0.2%
+  hr                                 1      0   0.0%        1     0   0.0%        1     0   0.0%
+  html                            1544    287  18.6%      423     7   1.7%      334     2   0.6%
+  list                            4529     20   0.4%     4409    10   0.2%     4340     9   0.2%
+  paragraph                      35812    459   1.3%    34555   161   0.5%    34014   141   0.4%
+  quote                             67      2   3.0%       66     1   1.5%       66     1   1.5%
+  table                            249      0   0.0%      248     0   0.0%      247     0   0.0%
+
+b top-node / k8s-l10n           blocks   dup in file distinct  dup in file    local  dup in file
+  code                           13983    962   6.9%     7145   170   2.4%     4399    60   1.4%
+  heading                         7882     48   0.6%     7604    24   0.3%     7427    24   0.3%
+  hr                                 3      0   0.0%        1     0   0.0%        0     0     --
+  html                           39138   2338   6.0%    32059   315   1.0%    31079   226   0.7%
+  list                           14220   1237   8.7%    12700   271   2.1%    12393   182   1.5%
+  paragraph                      69810   1478   2.1%    66227   411   0.6%    65383   365   0.6%
+  quote                             90      0   0.0%       90     0   0.0%       90     0   0.0%
+  table                            758      0   0.0%      732     0   0.0%      720     0   0.0%
+
+b top-node / cncf-toc           blocks   dup in file distinct  dup in file    local  dup in file
+  code                              56      2   3.6%       53     1   1.9%       51     1   2.0%
+  heading                         1716      2   0.1%     1052     1   0.1%      864     1   0.1%
+  html                             136      0   0.0%      107     0   0.0%       98     0   0.0%
+  list                            4693      6   0.1%     4039     3   0.1%     3800     3   0.1%
+  paragraph                      11485    125   1.1%    10477    40   0.4%     9981    34   0.3%
+  quote                            115      0   0.0%       81     0   0.0%       68     0   0.0%
+  table                            360      0   0.0%      354     0   0.0%      348     0   0.0%
+
+b top-node / site-policy        blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        3     0   0.0%        2     0   0.0%
+  heading                          137      0   0.0%      134     0   0.0%      131     0   0.0%
+  html                               7      0   0.0%        2     0   0.0%        1     0   0.0%
+  list                             151      0   0.0%      150     0   0.0%      149     0   0.0%
+  paragraph                       1299      9   0.7%     1279     3   0.2%     1267     3   0.2%
+  quote                              7      0   0.0%        5     0   0.0%        3     0   0.0%
+  table                              6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+b2 top-node-text / rust-book    blocks   dup in file distinct  dup in file    local  dup in file
+  heading                          172      0   0.0%      172     0   0.0%      172     0   0.0%
+  list                              64      0   0.0%       64     0   0.0%       64     0   0.0%
+  paragraph                       3054     54   1.8%     2997     4   0.1%     2994     1   0.0%
+  quote                             50      0   0.0%       50     0   0.0%       50     0   0.0%
+  table                             13      0   0.0%       13     0   0.0%       13     0   0.0%
+
+b2 top-node-text / obsidian-help  blocks   dup in file distinct  dup in file    local  dup in file
+  heading                           65      0   0.0%       65     0   0.0%       65     0   0.0%
+  list                             733      0   0.0%      733     0   0.0%      733     0   0.0%
+  paragraph                       2190     22   1.0%     2156     7   0.3%     2148     4   0.2%
+  quote                            261      0   0.0%      258     0   0.0%      255     0   0.0%
+  table                             81      0   0.0%       81     0   0.0%       81     0   0.0%
+
+b2 top-node-text / cmspec       blocks   dup in file distinct  dup in file    local  dup in file
+  heading                            2      0   0.0%        2     0   0.0%        2     0   0.0%
+  list                               4      0   0.0%        4     0   0.0%        4     0   0.0%
+  paragraph                         20      0   0.0%       20     0   0.0%       20     0   0.0%
+
+b2 top-node-text / k8s-en       blocks   dup in file distinct  dup in file    local  dup in file
+  heading                         3491     16   0.5%     3273     7   0.2%     3211     5   0.2%
+  hr                                 1      0   0.0%        1     0   0.0%        1     0   0.0%
+  list                            4529     20   0.4%     4409    10   0.2%     4340     9   0.2%
+  paragraph                      35812    459   1.3%    34555   161   0.5%    34014   141   0.4%
+  quote                             67      2   3.0%       66     1   1.5%       66     1   1.5%
+  table                            249      0   0.0%      248     0   0.0%      247     0   0.0%
+
+b2 top-node-text / k8s-l10n     blocks   dup in file distinct  dup in file    local  dup in file
+  heading                         7882     48   0.6%     7604    24   0.3%     7427    24   0.3%
+  hr                                 3      0   0.0%        1     0   0.0%        0     0     --
+  list                           14220   1237   8.7%    12700   271   2.1%    12393   182   1.5%
+  paragraph                      69810   1478   2.1%    66227   411   0.6%    65383   365   0.6%
+  quote                             90      0   0.0%       90     0   0.0%       90     0   0.0%
+  table                            758      0   0.0%      732     0   0.0%      720     0   0.0%
+
+b2 top-node-text / cncf-toc     blocks   dup in file distinct  dup in file    local  dup in file
+  heading                         1716      2   0.1%     1052     1   0.1%      864     1   0.1%
+  list                            4693      6   0.1%     4039     3   0.1%     3800     3   0.1%
+  paragraph                      11485    125   1.1%    10477    40   0.4%     9981    34   0.3%
+  quote                            115      0   0.0%       81     0   0.0%       68     0   0.0%
+  table                            360      0   0.0%      354     0   0.0%      348     0   0.0%
+
+b2 top-node-text / site-policy  blocks   dup in file distinct  dup in file    local  dup in file
+  heading                          137      0   0.0%      134     0   0.0%      131     0   0.0%
+  list                             151      0   0.0%      150     0   0.0%      149     0   0.0%
+  paragraph                       1299      9   0.7%     1279     3   0.2%     1267     3   0.2%
+  quote                              7      0   0.0%        5     0   0.0%        3     0   0.0%
+  table                              6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+d top-items / rust-book         blocks   dup in file distinct  dup in file    local  dup in file
+  code                             909      6   0.7%      902     3   0.3%      898     3   0.3%
+  heading                          172      0   0.0%      172     0   0.0%      172     0   0.0%
+  html                             650    156  24.0%      475     5   1.1%      473     3   0.6%
+  item                             252      0   0.0%      252     0   0.0%      252     0   0.0%
+  paragraph                       3054     54   1.8%     2997     4   0.1%     2994     1   0.0%
+  quote                             50      0   0.0%       50     0   0.0%       50     0   0.0%
+  table                             13      0   0.0%       13     0   0.0%       13     0   0.0%
+
+d top-items / obsidian-help     blocks   dup in file distinct  dup in file    local  dup in file
+  code                             281     22   7.8%      265     8   3.0%      264     8   3.0%
+  heading                           65      0   0.0%       65     0   0.0%       65     0   0.0%
+  html                               3      0   0.0%        3     0   0.0%        3     0   0.0%
+  item                            1990    179   9.0%     1813    71   3.9%     1777    60   3.4%
+  paragraph                       2190     22   1.0%     2156     7   0.3%     2148     4   0.2%
+  quote                            261      0   0.0%      258     0   0.0%      255     0   0.0%
+  table                             81      0   0.0%       81     0   0.0%       81     0   0.0%
+
+d top-items / cmspec            blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        4     0   0.0%        4     0   0.0%
+  heading                            2      0   0.0%        2     0   0.0%        2     0   0.0%
+  item                              16      0   0.0%       16     0   0.0%       16     0   0.0%
+  paragraph                         20      0   0.0%       20     0   0.0%       20     0   0.0%
+
+d top-items / k8s-en            blocks   dup in file distinct  dup in file    local  dup in file
+  code                            5717    320   5.6%     5405   135   2.5%     5288   126   2.4%
+  heading                         3491     16   0.5%     3273     7   0.2%     3211     5   0.2%
+  hr                                 1      0   0.0%        1     0   0.0%        1     0   0.0%
+  html                            1544    287  18.6%      423     7   1.7%      334     2   0.6%
+  item                           14529    229   1.6%    13249    96   0.7%    12811    86   0.7%
+  paragraph                      35812    460   1.3%    34552   162   0.5%    34007   142   0.4%
+  quote                             67      2   3.0%       66     1   1.5%       66     1   1.5%
+  table                            249      0   0.0%      248     0   0.0%      247     0   0.0%
+
+d top-items / k8s-l10n          blocks   dup in file distinct  dup in file    local  dup in file
+  code                           13983    962   6.9%     7145   170   2.4%     4399    60   1.4%
+  heading                         7882     48   0.6%     7604    24   0.3%     7427    24   0.3%
+  hr                                 3      0   0.0%        1     0   0.0%        0     0     --
+  html                           39138   2338   6.0%    32059   315   1.0%    31079   226   0.7%
+  item                           35433   4645  13.1%    29333   518   1.8%    28485   375   1.3%
+  paragraph                      69810   1481   2.1%    66225   414   0.6%    65380   368   0.6%
+  quote                             90      0   0.0%       90     0   0.0%       90     0   0.0%
+  table                            758      0   0.0%      732     0   0.0%      720     0   0.0%
+
+d top-items / cncf-toc          blocks   dup in file distinct  dup in file    local  dup in file
+  code                              56      2   3.6%       53     1   1.9%       51     1   2.0%
+  heading                         1716      2   0.1%     1052     1   0.1%      864     1   0.1%
+  html                             136      0   0.0%      107     0   0.0%       98     0   0.0%
+  item                           14582    163   1.1%    13012    79   0.6%    12306    75   0.6%
+  paragraph                      11485    128   1.1%    10468    40   0.4%     9971    34   0.3%
+  quote                            115      0   0.0%       81     0   0.0%       68     0   0.0%
+  table                            360      0   0.0%      354     0   0.0%      348     0   0.0%
+
+d top-items / site-policy       blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        3     0   0.0%        2     0   0.0%
+  heading                          137      0   0.0%      134     0   0.0%      131     0   0.0%
+  html                               7      0   0.0%        2     0   0.0%        1     0   0.0%
+  item                             645      4   0.6%      638     2   0.3%      633     2   0.3%
+  paragraph                       1299      9   0.7%     1279     3   0.2%     1267     3   0.2%
+  quote                              7      0   0.0%        5     0   0.0%        3     0   0.0%
+  table                              6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+d2 items-any / rust-book        blocks   dup in file distinct  dup in file    local  dup in file
+  item                             335      0   0.0%      335     0   0.0%      335     0   0.0%
+
+d2 items-any / obsidian-help    blocks   dup in file distinct  dup in file    local  dup in file
+  item                            2221    186   8.4%     2038    74   3.6%     2000    63   3.1%
+
+d2 items-any / cmspec           blocks   dup in file distinct  dup in file    local  dup in file
+  item                              16      0   0.0%       16     0   0.0%       16     0   0.0%
+
+d2 items-any / k8s-en           blocks   dup in file distinct  dup in file    local  dup in file
+  item                           16446    276   1.7%    15067   116   0.8%    14557   105   0.7%
+
+d2 items-any / k8s-l10n         blocks   dup in file distinct  dup in file    local  dup in file
+  item                           40783   4857  11.9%    34311   611   1.8%    33271   459   1.4%
+
+d2 items-any / cncf-toc         blocks   dup in file distinct  dup in file    local  dup in file
+  item                           19425    276   1.4%    17489   131   0.7%    16578   126   0.8%
+
+d2 items-any / site-policy      blocks   dup in file distinct  dup in file    local  dup in file
+  item                             704      4   0.6%      694     2   0.3%      686     2   0.3%
+
+e section / rust-book           blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          18      0   0.0%       18     0   0.0%       18     0   0.0%
+  section                          529      0   0.0%      529     0   0.0%      529     0   0.0%
+
+e section / obsidian-help       blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                         169      0   0.0%      169     0   0.0%      169     0   0.0%
+  section                         1452      0   0.0%     1450     0   0.0%     1449     0   0.0%
+
+e section / cmspec              blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                           1      0   0.0%        1     0   0.0%        1     0   0.0%
+  section                            6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+e section / k8s-en              blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                        2082      0   0.0%     1982     0   0.0%     1980     0   0.0%
+  section                        11529      8   0.1%    11281     3   0.0%    11215     1   0.0%
+
+e section / k8s-l10n            blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                        5016      0   0.0%     5010     0   0.0%     5005     0   0.0%
+  section                        29530    111   0.4%    28906    55   0.2%    28762    55   0.2%
+
+e section / cncf-toc            blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          35      0   0.0%       35     0   0.0%       35     0   0.0%
+  section                         7939      2   0.0%     7777     1   0.0%     7651     1   0.0%
+
+e section / site-policy         blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          49      0   0.0%       48     0   0.0%       47     0   0.0%
+  section                          654      0   0.0%      654     0   0.0%      654     0   0.0%
+
+e2 section-flat / rust-book     blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          18      0   0.0%       18     0   0.0%       18     0   0.0%
+  section                          529      0   0.0%      529     0   0.0%      529     0   0.0%
+
+e2 section-flat / obsidian-help  blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                         169      0   0.0%      169     0   0.0%      169     0   0.0%
+  section                         1389      0   0.0%     1387     0   0.0%     1386     0   0.0%
+
+e2 section-flat / cmspec        blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                           1      0   0.0%        1     0   0.0%        1     0   0.0%
+  section                            6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+e2 section-flat / k8s-en        blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                        2082      0   0.0%     1982     0   0.0%     1980     0   0.0%
+  section                        11261      8   0.1%    11007     3   0.0%    10938     1   0.0%
+
+e2 section-flat / k8s-l10n      blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                        5016      0   0.0%     5010     0   0.0%     5005     0   0.0%
+  section                        28550    129   0.5%    27899    64   0.2%    27742    64   0.2%
+
+e2 section-flat / cncf-toc      blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          35      0   0.0%       35     0   0.0%       35     0   0.0%
+  section                         7058      2   0.0%     6825     1   0.0%     6680     1   0.0%
+
+e2 section-flat / site-policy   blocks   dup in file distinct  dup in file    local  dup in file
+  preamble                          49      0   0.0%       48     0   0.0%       47     0   0.0%
+  section                          610      0   0.0%      610     0   0.0%      610     0   0.0%
+
+f leaf / rust-book              blocks   dup in file distinct  dup in file    local  dup in file
+  code                             915      6   0.7%      908     3   0.3%      904     3   0.3%
+  heading                          176      0   0.0%      176     0   0.0%      176     0   0.0%
+  html                             653    156  23.9%      477     5   1.0%      474     3   0.6%
+  paragraph                       3464     54   1.6%     3407     4   0.1%     3404     1   0.0%
+  table                             13      0   0.0%       13     0   0.0%       13     0   0.0%
+
+f leaf / obsidian-help          blocks   dup in file distinct  dup in file    local  dup in file
+  code                             311     22   7.1%      295     8   2.7%      294     8   2.7%
+  heading                           65      0   0.0%       65     0   0.0%       65     0   0.0%
+  html                               3      0   0.0%        3     0   0.0%        3     0   0.0%
+  paragraph                       4562    210   4.6%     4334    81   1.9%     4282    67   1.6%
+  table                             82      0   0.0%       82     0   0.0%       82     0   0.0%
+
+f leaf / cmspec                 blocks   dup in file distinct  dup in file    local  dup in file
+  code                               5      0   0.0%        5     0   0.0%        5     0   0.0%
+  paragraph                         36      0   0.0%       36     0   0.0%       36     0   0.0%
+
+f leaf / k8s-en                 blocks   dup in file distinct  dup in file    local  dup in file
+  code                            6591    395   6.0%     6199   166   2.7%     6052   147   2.4%
+  heading                         3588     24   0.7%     3367    11   0.3%     3306     9   0.3%
+  html                            1553    287  18.5%      432     7   1.6%      343     2   0.6%
+  paragraph                      52490    786   1.5%    49751   296   0.6%    48649   258   0.5%
+  table                            249      0   0.0%      248     0   0.0%      247     0   0.0%
+
+f leaf / k8s-l10n               blocks   dup in file distinct  dup in file    local  dup in file
+  code                           17499   1262   7.2%     8500   218   2.6%     5101    73   1.4%
+  heading                         7898     48   0.6%     7620    24   0.3%     7443    24   0.3%
+  html                           41078   2634   6.4%    33668   424   1.3%    32595   322   1.0%
+  paragraph                     113608   8209   7.2%   101429  1354   1.3%    99275  1134   1.1%
+  table                            765      0   0.0%      739     0   0.0%      727     0   0.0%
+
+f leaf / cncf-toc               blocks   dup in file distinct  dup in file    local  dup in file
+  code                              65      2   3.1%       62     1   1.6%       60     1   1.7%
+  heading                         1715      2   0.1%     1051     1   0.1%      863     1   0.1%
+  html                             142      0   0.0%      110     0   0.0%      100     0   0.0%
+  paragraph                      30817    413   1.3%    27186   177   0.7%    25691   165   0.6%
+  table                            369      0   0.0%      362     0   0.0%      355     0   0.0%
+
+f leaf / site-policy            blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        3     0   0.0%        2     0   0.0%
+  heading                          137      0   0.0%      134     0   0.0%      131     0   0.0%
+  html                               7      0   0.0%        2     0   0.0%        1     0   0.0%
+  paragraph                       2031     13   0.6%     1990     5   0.3%     1959     5   0.3%
+  table                              6      0   0.0%        6     0   0.0%        6     0   0.0%
+
+f0 d8-chunk / rust-book         blocks   dup in file distinct  dup in file    local  dup in file
+  code                             909      6   0.7%      902     3   0.3%      898     3   0.3%
+  heading                          172      0   0.0%      172     0   0.0%      172     0   0.0%
+  html                             873    197  22.6%      654     9   1.4%      648     4   0.6%
+  list                              89      0   0.0%       89     0   0.0%       89     0   0.0%
+  prose                           2938      0   0.0%     2938     0   0.0%     2938     0   0.0%
+  table                             13      0   0.0%       13     0   0.0%       13     0   0.0%
+
+f0 d8-chunk / obsidian-help     blocks   dup in file distinct  dup in file    local  dup in file
+  code                             284     22   7.7%      268     8   3.0%      267     8   3.0%
+  heading                           67      0   0.0%       67     0   0.0%       67     0   0.0%
+  html                               2      0   0.0%        2     0   0.0%        2     0   0.0%
+  list                             703      0   0.0%      703     0   0.0%      703     0   0.0%
+  prose                           2526     16   0.6%     2493     7   0.3%     2482     4   0.2%
+  table                             80      0   0.0%       80     0   0.0%       80     0   0.0%
+
+f0 d8-chunk / cmspec            blocks   dup in file distinct  dup in file    local  dup in file
+  code                               2      0   0.0%        2     0   0.0%        2     0   0.0%
+  list                              12      0   0.0%       12     0   0.0%       12     0   0.0%
+  prose                             28      0   0.0%       28     0   0.0%       28     0   0.0%
+
+f0 d8-chunk / k8s-en            blocks   dup in file distinct  dup in file    local  dup in file
+  code                            6637    363   5.5%     6293   156   2.5%     6168   146   2.4%
+  heading                         4268     13   0.3%     4054     6   0.1%     3992     5   0.1%
+  html                            1751    278  15.9%      631     4   0.6%      541     2   0.4%
+  list                            5837     67   1.1%     5556    32   0.6%     5453    27   0.5%
+  prose                          37948    482   1.3%    36701   172   0.5%    36142   149   0.4%
+  table                            202      0   0.0%      201     0   0.0%      200     0   0.0%
+
+f0 d8-chunk / k8s-l10n          blocks   dup in file distinct  dup in file    local  dup in file
+  code                           18385   1219   6.6%     9966   245   2.5%     6623   102   1.5%
+  heading                        12514    407   3.3%    11819   191   1.6%    11570   173   1.5%
+  html                           37056   7775  21.0%    24759   505   2.0%    23794   327   1.4%
+  list                           18233   2871  15.7%    14963   521   3.5%    14515   419   2.9%
+  prose                          78714   2640   3.4%    73640   796   1.1%    72340   708   1.0%
+  table                            427      0   0.0%      401     0   0.0%      389     0   0.0%
+
+f0 d8-chunk / cncf-toc          blocks   dup in file distinct  dup in file    local  dup in file
+  code                              57      0   0.0%       55     0   0.0%       53     0   0.0%
+  heading                         2202      2   0.1%     1641     1   0.1%     1468     1   0.1%
+  html                             352      8   2.3%      321     4   1.2%      314     4   1.3%
+  list                            5462     18   0.3%     4322     9   0.2%     4035     9   0.2%
+  prose                          12120    121   1.0%    11098    39   0.4%    10579    33   0.3%
+  table                            339      0   0.0%      331     0   0.0%      323     0   0.0%
+
+f0 d8-chunk / site-policy       blocks   dup in file distinct  dup in file    local  dup in file
+  code                               4      0   0.0%        3     0   0.0%        2     0   0.0%
+  heading                          139      0   0.0%      136     0   0.0%      133     0   0.0%
+  html                               1      0   0.0%        1     0   0.0%        1     0   0.0%
+  list                             238      0   0.0%      234     0   0.0%      230     0   0.0%
+  prose                           1412      9   0.6%     1382     3   0.2%     1360     3   0.2%
+  table                              5      0   0.0%        5     0   0.0%        5     0   0.0%
