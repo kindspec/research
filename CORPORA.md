@@ -22,11 +22,18 @@ Sizes are the on-disk size of the working copy at the time of the run.
 | `rust-book` | `github.com/rust-lang/book` | 38 MB | `D8-identity` — prose block uniqueness |
 | `obsidian-help` | `github.com/obsidianmd/obsidian-help` | 677 MB | `D8-identity` — prose block uniqueness |
 | `cmspec` | `github.com/commonmark/commonmark-spec` | 1.7 MB | `D8-identity` — control |
+| `kubernetes-website` | `github.com/kubernetes/website` | 535 MB | `D8-block-definitions` — arms `k8s-en`, `k8s-l10n` |
+| `cncf-toc` | `github.com/cncf/toc` | 31 MB | `D8-block-definitions` |
+| `site-policy` | `github.com/github/site-policy` | 820 KB | `D8-block-definitions` |
 
 Cloned with `--filter=blob:none`. The 40-character uniqueness measurement in
 blockspec's design brief comes from the first two.
 
-These three move. `design-findings/D8-identity.md` §3 pins the commit of each
+`D8-block-definitions` reads all six, at the pins in its `arms.json`: D8 §3's
+for the first three, and blockspec `spike/PRE-REGISTRATION-2.md` §6.2's for the
+last three. The last three sizes are of the working tree alone, without `.git`.
+
+`rust-book`, `obsidian-help` and `cmspec` move. `design-findings/D8-identity.md` §3 pins the commit of each
 clone the anchor evaluations in `results-anchor*.txt` were run against, because
 one of those arms did change when it was re-run against a later clone. Every D8
 harness that reads a corpus refuses one whose `HEAD` is not that pin, or whose

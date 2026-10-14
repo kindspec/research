@@ -1,0 +1,12 @@
+{
+  "_note": "blockspec spike/PRE-REGISTRATION-2.md §6.2, verbatim: the first three arms at D8-identity.md §3's pins, the rest at the first registration's §5.1 pins. `clone` names the --clone key; k8s-en and k8s-l10n read the same clone and are never pooled. PATHSPEC is split on whitespace and passed to `git ls-files`.",
+  "arms": [
+    {"name": "rust-book",     "clone": "rust-book",          "pin": "1500248d8f230566e4ec9f27fcbb8fe9e2898ab1", "pathspec": "src/*.md"},
+    {"name": "obsidian-help", "clone": "obsidian-help",      "pin": "327a782e90481268361b5ccccdb0c224b2b13fe6", "pathspec": "en/*.md"},
+    {"name": "cmspec",        "clone": "cmspec",             "pin": "3da939428d80f146f270cd1765e4ba462e96bb1b", "pathspec": "*.md"},
+    {"name": "k8s-en",        "clone": "kubernetes-website", "pin": "6b27baef1e44275fd4368e14375296e1dfe5af11", "pathspec": "content/en/*.md"},
+    {"name": "k8s-l10n",      "clone": "kubernetes-website", "pin": "6b27baef1e44275fd4368e14375296e1dfe5af11", "pathspec": "content/*.md :(exclude)content/en/"},
+    {"name": "cncf-toc",      "clone": "cncf-toc",           "pin": "144c2e3215884e498e744cc51e6b7cef82d654f1", "pathspec": "*.md :(exclude).github/"},
+    {"name": "site-policy",   "clone": "site-policy",        "pin": "b9578b546d2506febda1da2cd7431644d58e512c", "pathspec": "*.md :(exclude).github/"}
+  ]
+}
