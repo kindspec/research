@@ -31,6 +31,7 @@ CASES = [
     ("bullet character change", "- one\n- two\n* three\n"),
     ("table after a blank line", "Intro.\n\n| a | b |\n|---|---|\n| 1 | 2 |\n"),
     ("table right after a paragraph line", "Intro.\n| a | b |\n|---|---|\n| 1 | 2 |\n"),
+    ("text on the line after a table", "| a | b |\n|---|---|\n| 1 | 2 |\nAfter.\n"),
     ("table without outer pipes", "a | b\n--|--\n1 | 2\n"),
     ("table in a list item", "- item\n\n  | a | b |\n  |---|---|\n  | 1 | 2 |\n"),
     ("marker, then table", "<!-- #t -->\n| a | b |\n|---|---|\n| 1 | 2 |\n"),

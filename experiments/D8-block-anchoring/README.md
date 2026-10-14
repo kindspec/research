@@ -59,7 +59,7 @@ leaf was deleted. Anything else is unknown and is not counted. An anchor is
 **loud** when it refuses a leaf that survived; **WRONG** otherwise.
 
 **Pairs** are D8's: up to 60 `.md` files per arm, shuffled with seed 7; for
-each, up to three start commits along the file's own `git log`, each paired
+each, up to five start commits along the file's own `git log`, each paired
 with the version `gap` file-commits later; up to 30 anchors per pair. Files
 holding PRE-REGISTRATION-2 §6.3's generated-file markers are skipped.
 

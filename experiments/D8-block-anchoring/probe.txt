@@ -51,6 +51,11 @@ table right after a paragraph line: 'Intro.\n| a | b |\n|---|---|\n| 1 | 2 |\n'
   commonmark+table  paragraph_open@0 table_open@0
   pandoc gfm        Para
 
+text on the line after a table: '| a | b |\n|---|---|\n| 1 | 2 |\nAfter.\n'
+  commonmark        paragraph_open@0
+  commonmark+table  table_open@0
+  pandoc gfm        Table Plain Plain Plain Plain Para
+
 table without outer pipes: 'a | b\n--|--\n1 | 2\n'
   commonmark        paragraph_open@0
   commonmark+table  table_open@0
