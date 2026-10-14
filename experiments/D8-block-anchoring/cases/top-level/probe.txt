@@ -1,0 +1,8 @@
+marker between items, col 0        top-level=3  bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3
+marker between items, indented 2   top-level=1  bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3 html_block@2 list_item_open@1 paragraph_open@2 inline@3
+marker first in item               top-level=1  bullet_list_open@0 list_item_open@1 html_block@2 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3
+bullet char change                 top-level=2  bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3 bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3
+tight list                         top-level=1  bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3
+   html: <ul><li>a</li><li>b</li><li>c</li></ul>
+loose list (one blank)             top-level=1  bullet_list_open@0 list_item_open@1 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3 list_item_open@1 paragraph_open@2 inline@3
+   html: <ul><li><p>a</p></li><li><p>b</p></li><li><p>c</p></li></ul>

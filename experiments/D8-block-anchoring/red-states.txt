@@ -1,0 +1,4 @@
+RED       missing clone: exit 2, matched /clone does not exist/
+RED       resolve() drifts from reanchor2: exit 1, matched /disagrees with D8's reanchor2/
+RED       oracle target off by one: exit 0, matched /F    correct +0\.0% .*WRONG 100\.0%/
+RED       B stage 2 searches the whole file: exit 0, matched /obsidian-help +3020 +46 +1\.5%/

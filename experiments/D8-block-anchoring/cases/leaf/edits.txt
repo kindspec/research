@@ -1,0 +1,31 @@
+repo=obsidian-help/obsidian-help pathspec='en/*.md' gap=1 files=176 pairs=1493 anchors=20690
+  (b) list exact  (f) leaf exact   count
+               0               0    1004    4.9%
+               0               1    2443   11.8%
+               0              >1       6    0.0%
+               1               1   17226   83.3%
+               1              >1      10    0.0%
+              >1              >1       1    0.0%
+  exact unique hit: (b) 17236 83.3%   (f) 19669 95.1%
+  exact >1 (loud):  (b) 1 0.0%   (f) 17 0.1%
+  list/paragraph length ratio: median 3.9  p90 13.2
+repo=obsidian-help/obsidian-help pathspec='en/*.md' gap=5 files=176 pairs=994 anchors=14331
+  (b) list exact  (f) leaf exact   count
+               0               0    2602   18.2%
+               0               1    3954   27.6%
+               0              >1      30    0.2%
+               1               1    7731   53.9%
+               1              >1      13    0.1%
+              >1              >1       1    0.0%
+  exact unique hit: (b) 7744 54.0%   (f) 11685 81.5%
+  exact >1 (loud):  (b) 1 0.0%   (f) 44 0.3%
+  list/paragraph length ratio: median 4.0  p90 14.9
+repo=obsidian-help/obsidian-help pathspec='en/*.md' gap=25 files=176 pairs=136 anchors=1737
+  (b) list exact  (f) leaf exact   count
+               0               0    1117   64.3%
+               0               1     502   28.9%
+               0              >1       6    0.3%
+               1               1     112    6.4%
+  exact unique hit: (b) 112 6.4%   (f) 614 35.3%
+  exact >1 (loud):  (b) 0 0.0%   (f) 6 0.3%
+  list/paragraph length ratio: median 7.0  p90 17.7
