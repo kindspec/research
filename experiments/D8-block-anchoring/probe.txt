@@ -1,0 +1,72 @@
+# pandoc 3.1.11.1
+# markdown-it-py 3.0.0
+
+marker, then list: '<!-- #x -->\n- one\n- two\n'
+  commonmark        html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 paragraph_open@2
+  commonmark+table  html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 paragraph_open@2
+  pandoc gfm        RawBlock BulletList Plain Plain
+
+marker between items, column 0: '- one\n<!-- #x -->\n- two\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList Plain RawBlock BulletList Plain
+
+marker between items, indented: '- one\n  <!-- #x -->\n- two\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@2 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@2 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList Plain RawBlock Plain
+
+marker first in an item: '- <!-- #x -->\n  one\n- two\n'
+  commonmark        bullet_list_open@0 list_item_open@1 html_block@2 paragraph_open@2 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 html_block@2 paragraph_open@2 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList RawBlock Plain Plain
+
+marker before a nested list: '- one\n\n  <!-- #x -->\n  - a\n  - b\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@2 bullet_list_open@2 list_item_open@3 paragraph_open@4 list_item_open@3 paragraph_open@4
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@2 bullet_list_open@2 list_item_open@3 paragraph_open@4 list_item_open@3 paragraph_open@4
+  pandoc gfm        BulletList Para RawBlock BulletList Plain Plain
+
+region inside one item: '- one\n- <!-- #x:begin -->\n  two\n  <!-- #x:end -->\n- three\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 html_block@2 paragraph_open@2 html_block@2 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 html_block@2 paragraph_open@2 html_block@2 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList Plain RawBlock Plain RawBlock Plain
+
+region around one item, column 0: '- one\n<!-- #x:begin -->\n- two\n<!-- #x:end -->\n- three\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2 html_block@0 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList Plain RawBlock BulletList Plain RawBlock BulletList Plain
+
+bullet character change: '- one\n- two\n* three\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 paragraph_open@2 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 list_item_open@1 paragraph_open@2 bullet_list_open@0 list_item_open@1 paragraph_open@2
+  pandoc gfm        BulletList Plain Plain BulletList Plain
+
+table after a blank line: 'Intro.\n\n| a | b |\n|---|---|\n| 1 | 2 |\n'
+  commonmark        paragraph_open@0 paragraph_open@0
+  commonmark+table  paragraph_open@0 table_open@0
+  pandoc gfm        Para Table Plain Plain Plain Plain
+
+table right after a paragraph line: 'Intro.\n| a | b |\n|---|---|\n| 1 | 2 |\n'
+  commonmark        paragraph_open@0
+  commonmark+table  paragraph_open@0 table_open@0
+  pandoc gfm        Para
+
+text on the line after a table: '| a | b |\n|---|---|\n| 1 | 2 |\nAfter.\n'
+  commonmark        paragraph_open@0
+  commonmark+table  table_open@0
+  pandoc gfm        Table Plain Plain Plain Plain Para
+
+table without outer pipes: 'a | b\n--|--\n1 | 2\n'
+  commonmark        paragraph_open@0
+  commonmark+table  table_open@0
+  pandoc gfm        Table Plain Plain Plain Plain
+
+table in a list item: '- item\n\n  | a | b |\n  |---|---|\n  | 1 | 2 |\n'
+  commonmark        bullet_list_open@0 list_item_open@1 paragraph_open@2 paragraph_open@2
+  commonmark+table  bullet_list_open@0 list_item_open@1 paragraph_open@2 table_open@2
+  pandoc gfm        BulletList Para Table Plain Plain Plain Plain
+
+marker, then table: '<!-- #t -->\n| a | b |\n|---|---|\n| 1 | 2 |\n'
+  commonmark        html_block@0 paragraph_open@0
+  commonmark+table  html_block@0 table_open@0
+  pandoc gfm        RawBlock Table Plain Plain Plain Plain

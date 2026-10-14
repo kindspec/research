@@ -1,0 +1,3 @@
+obsidian-help: lists=743 chars median=208 p90=540 max=2162; items/list median=3 p90=6; item chars median=61
+rust-book: lists=65 chars median=289 p90=790 max=7200; items/list median=3 p90=5; item chars median=63
+k8s-en: lists=5062 chars median=330 p90=1092 max=22352; items/list median=3 p90=6; item chars median=100

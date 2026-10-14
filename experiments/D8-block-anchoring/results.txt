@@ -1,0 +1,115 @@
+# scope.py: markdown-it-py 3.0.0, commonmark + table; MINLEN=20, files=60, anchors/pair=30, seed=7
+# anchored text: a leaf inside a top-level list or block quote
+
+## At rest: each anchor resolved against its own unchanged file
+
+arm              anchors        B loud    B WRONG        D loud    D WRONG        F loud    F WRONG      F+B loud  F+B WRONG     F+Bc loud F+Bc WRONG
+rust-book            493       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0
+obsidian-help       3020       0   0.0%          0      47   1.6%          0      46   1.5%          0       0   0.0%          0       0   0.0%          0
+cmspec                18       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0
+k8s-en             19912      36   0.2%          0      98   0.5%          0     157   0.8%          0      36   0.2%          0      36   0.2%          0
+cncf-toc           23392       4   0.0%          0      84   0.4%          0      81   0.3%          0       4   0.0%          0       4   0.0%          0
+site-policy          821       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0       0   0.0%          0
+
+## Stored stage-1 quote, characters, at rest (median / p90 / max)
+
+rust-book        B:   841 /   7200 /   7200  D:    77 /    732 /   3966  F:    69 /    281 /    843   B/F median ratio 7.1
+obsidian-help    B:   289 /    716 /   2162  D:    68 /    171 /    684  F:    64 /    147 /    499   B/F median ratio 4.3
+cmspec           B:  2438 /   2438 /   2438  D:   148 /    342 /    544  F:   117 /    342 /    544   B/F median ratio 7.1
+k8s-en           B:   636 /   2782 /  22352  D:   111 /    421 /   7325  F:    93 /    244 /   3534   B/F median ratio 5.8
+cncf-toc         B:   836 /   4171 /  20880  D:   107 /    405 /  16329  F:    91 /    256 /   3906   B/F median ratio 8.5
+site-policy      B:   969 /   4606 /  21812  D:   135 /    574 /   4049  F:   122 /    434 /   1460   B/F median ratio 6.9
+
+## Under real edits, gap = file versions apart
+
+### rust-book gap=5 pairs=194 anchors=491 survived=476 deleted=15 unknown=269
+  B    correct  93.5%  loud   6.5%  WRONG   0.0% (n=0)  exact  53.8%
+  D    correct  98.6%  loud   1.4%  WRONG   0.0% (n=0)  exact  75.2%
+  F    correct  99.8%  loud   0.2%  WRONG   0.0% (n=0)  exact  86.8%
+  F+B  correct  99.8%  loud   0.2%  WRONG   0.0% (n=0)  exact  86.8%
+  F+Bc correct  99.8%  loud   0.2%  WRONG   0.0% (n=0)  exact  86.8%
+  B/F correct/correct=459 loud/correct=31 loud/loud=1
+  D/F correct/correct=484 loud/correct=6 loud/loud=1
+### rust-book gap=25 pairs=102 anchors=175 survived=150 deleted=25 unknown=227
+  B    correct  82.9%  loud  17.1%  WRONG   0.0% (n=0)  exact  21.1%
+  D    correct  92.0%  loud   8.0%  WRONG   0.0% (n=0)  exact  53.7%
+  F    correct  99.4%  loud   0.6%  WRONG   0.0% (n=0)  exact  67.4%
+  F+B  correct  99.4%  loud   0.6%  WRONG   0.0% (n=0)  exact  67.4%
+  F+Bc correct  99.4%  loud   0.6%  WRONG   0.0% (n=0)  exact  67.4%
+  B/F correct/correct=145 loud/correct=29 loud/loud=1
+  D/F correct/correct=161 loud/correct=13 loud/loud=1
+### obsidian-help gap=5 pairs=128 anchors=1229 survived=1214 deleted=15 unknown=523
+  B    correct  96.2%  loud   3.8%  WRONG   0.0% (n=0)  exact  57.9%
+  D    correct  98.5%  loud   1.5%  WRONG   0.0% (n=0)  exact  85.5%
+  F    correct  98.8%  loud   1.2%  WRONG   0.0% (n=0)  exact  86.7%
+  F+B  correct  99.3%  loud   0.7%  WRONG   0.0% (n=0)  exact  86.9%
+  F+Bc correct  99.3%  loud   0.7%  WRONG   0.0% (n=0)  exact  86.8%
+  B/F correct/correct=1176 correct/loud=6 loud/correct=38 loud/loud=9
+  D/F correct/correct=1210 loud/correct=4 loud/loud=15
+### obsidian-help gap=25 pairs=14 anchors=79 survived=79 deleted=0 unknown=139
+  B    correct  92.4%  loud   7.6%  WRONG   0.0% (n=0)  exact  26.6%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  96.2%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.5%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.5%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.5%
+  B/F correct/correct=73 loud/correct=6
+  D/F correct/correct=79
+### cmspec gap=5 pairs=7 anchors=43 survived=43 deleted=0 unknown=0
+  B    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  39.5%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  76.7%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  79.1%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  79.1%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  79.1%
+  B/F correct/correct=43
+  D/F correct/correct=43
+### cmspec gap=25 pairs=4 anchors=32 survived=32 deleted=0 unknown=7
+  B    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact   0.0%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  50.0%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  53.1%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  53.1%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  53.1%
+  B/F correct/correct=32
+  D/F correct/correct=32
+### k8s-en gap=5 pairs=30 anchors=190 survived=187 deleted=3 unknown=65
+  B    correct  98.4%  loud   1.6%  WRONG   0.0% (n=0)  exact  57.9%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  92.6%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.9%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.9%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  97.9%
+  B/F correct/correct=187 loud/correct=3
+  D/F correct/correct=190
+### k8s-en gap=25 pairs=7 anchors=40 survived=29 deleted=11 unknown=134
+  B    correct  97.5%  loud   2.5%  WRONG   0.0% (n=0)  exact   5.0%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  72.5%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  72.5%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  72.5%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  72.5%
+  B/F correct/correct=39 loud/correct=1
+  D/F correct/correct=40
+### cncf-toc gap=5 pairs=13 anchors=231 survived=231 deleted=0 unknown=95
+  B    correct  96.1%  loud   3.5%  WRONG   0.4% (n=1)  exact  60.2%
+  D    correct  97.0%  loud   3.0%  WRONG   0.0% (n=0)  exact  92.6%
+  F    correct  97.8%  loud   2.2%  WRONG   0.0% (n=0)  exact  90.9%
+  F+B  correct  99.6%  loud   0.0%  WRONG   0.4% (n=1)  exact  92.6%
+  F+Bc correct  99.6%  loud   0.0%  WRONG   0.4% (n=1)  exact  92.2%
+  B/F WRONG/loud=1 correct/correct=218 correct/loud=4 loud/correct=8
+  D/F correct/correct=224 loud/correct=2 loud/loud=5
+### cncf-toc gap=25 pairs=3 anchors=71 survived=71 deleted=0 unknown=19
+  B    correct  94.4%  loud   5.6%  WRONG   0.0% (n=0)  exact  71.8%
+  D    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact 100.0%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact 100.0%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact 100.0%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact 100.0%
+  B/F correct/correct=67 loud/correct=4
+  D/F correct/correct=71
+### site-policy gap=5 pairs=128 anchors=587 survived=587 deleted=0 unknown=1151
+  B    correct  95.6%  loud   4.4%  WRONG   0.0% (n=0)  exact  50.8%
+  D    correct  97.1%  loud   2.9%  WRONG   0.0% (n=0)  exact  88.9%
+  F    correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  95.2%
+  F+B  correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  95.2%
+  F+Bc correct 100.0%  loud   0.0%  WRONG   0.0% (n=0)  exact  95.2%
+  B/F correct/correct=561 loud/correct=26
+  D/F correct/correct=570 loud/correct=17
+### site-policy gap=25 pairs=2 anchors=0 survived=0 deleted=0 unknown=22
+
+# resolve() checked against reanchor2 on 50824 stage-1 B lookups; differ: 0

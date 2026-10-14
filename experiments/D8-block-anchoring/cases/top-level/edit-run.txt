@@ -1,0 +1,56 @@
+### obsidian-help gap=5 pairs=128 item-anchors=1018 survived=990 unknown=420 parent-list-unchanged=545
+  b: correct  95.2%  loud   4.8%  SILENT-WRONG  0.00% (n=0)
+  d: correct  97.9%  loud   2.1%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=71 stage2 refused=6
+  b/d: correct/correct=958 correct/loud=11 loud/correct=39 loud/loud=10
+### obsidian-help gap=25 pairs=14 item-anchors=75 survived=69 unknown=118 parent-list-unchanged=14
+  b: correct  92.0%  loud   8.0%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=12 stage2 refused=0
+  b/d: correct/correct=69 loud/correct=6
+### cmspec gap=5 pairs=7 item-anchors=40 survived=40 unknown=0 parent-list-unchanged=16
+  b: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=0 stage2 refused=0
+  b/d: correct/correct=40
+### cmspec gap=25 pairs=4 item-anchors=29 survived=29 unknown=7 parent-list-unchanged=0
+  b: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=0 stage2 refused=0
+  b/d: correct/correct=29
+### rust-book gap=5 pairs=194 item-anchors=324 survived=307 unknown=155 parent-list-unchanged=197
+  b: correct  92.3%  loud   7.7%  SILENT-WRONG  0.00% (n=0)
+  d: correct  99.7%  loud   0.3%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=40 stage2 refused=2
+  b/d: correct/correct=299 loud/correct=24 loud/loud=1
+### rust-book gap=25 pairs=102 item-anchors=125 survived=85 unknown=109 parent-list-unchanged=30
+  b: correct  92.8%  loud   7.2%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=47 stage2 refused=2
+  b/d: correct/correct=116 loud/correct=9
+### cncf-toc gap=5 pairs=13 item-anchors=214 survived=214 unknown=112 parent-list-unchanged=151
+  b: correct  97.7%  loud   2.3%  SILENT-WRONG  0.00% (n=0)
+  d: correct  98.1%  loud   1.9%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=5 stage2 refused=0
+  b/d: correct/correct=207 correct/loud=2 loud/correct=3 loud/loud=2
+### cncf-toc gap=25 pairs=3 item-anchors=72 survived=72 unknown=18 parent-list-unchanged=48
+  b: correct  91.7%  loud   8.3%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=6 stage2 refused=0
+  b/d: correct/correct=66 loud/correct=6
+### site-policy gap=5 pairs=128 item-anchors=594 survived=560 unknown=1055 parent-list-unchanged=309
+  b: correct  96.0%  loud   4.0%  SILENT-WRONG  0.00% (n=0)
+  d: correct  97.5%  loud   2.5%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=54 stage2 refused=4
+  b/d: correct/correct=570 loud/correct=9 loud/loud=15
+### site-policy gap=25 pairs=2 item-anchors=0 survived=0 unknown=22 parent-list-unchanged=0
+### k8s-en gap=5 pairs=35 item-anchors=176 survived=168 unknown=40 parent-list-unchanged=125
+  b: correct  98.3%  loud   1.7%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=10 stage2 refused=1
+  b/d: correct/correct=173 loud/correct=3
+### k8s-en gap=25 pairs=7 item-anchors=57 survived=29 unknown=41 parent-list-unchanged=2
+  b: correct  98.2%  loud   1.8%  SILENT-WRONG  0.00% (n=0)
+  d: correct 100.0%  loud   0.0%  SILENT-WRONG  0.00% (n=0)
+  b stage1 refused=29 stage2 refused=0
+  b/d: correct/correct=56 loud/correct=1
