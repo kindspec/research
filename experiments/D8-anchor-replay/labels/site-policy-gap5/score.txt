@@ -1,0 +1,27 @@
+# score.py: gap 5, blockspec d38a6bcec4e0, 129 packets
+  the two labellers agree on 129 of 129; they disagree on 0, of which 0 are adjudicated
+
+  stratum                comments  sampled  labelled surviving  oracle wrong
+  placed/loud                 182       60         60              0
+  placed/resolves            2627       30         30              0
+  gone/loud                   166       25          0              0
+  gone/resolves                 0        0          0              -
+  unplaced/loud                14       14          4              -
+  unplaced/resolves             0        0          0              -
+
+  share of each stratum, 95% interval (exact where every comment was labelled)
+    unplaced/loud          survives     4 of  14:  28.6% to  28.6%
+    placed/loud            survives    60 of  60:  94.0% to 100.0%
+    placed/loud            oracle_err   0 of  60:   0.0% to   6.0%
+    placed/resolves        survives    30 of  30:  88.4% to 100.0%
+    placed/resolves        oracle_err   0 of  30:   0.0% to  11.6%
+    gone/loud              survives     0 of  25:   0.0% to  13.7%
+    gone/loud              oracle_err   0 of  25:   0.0% to  13.7%
+
+  oracle wrong, where it places a comment: 0.0% (each stratum at its interval's ends: 0.0% to 11.3%)
+
+  refusal rate, labels for truth: 6.6% (each stratum at its interval's least and most favourable end: 6.3% to 8.2%)
+
+## resolving comments the labels put elsewhere
+
+## the two labellers disagree

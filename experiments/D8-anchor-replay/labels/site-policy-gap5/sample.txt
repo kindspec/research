@@ -1,0 +1,7 @@
+# sample.py: gap 5, seed 11, 129 packets
+  placed/loud: 182 comments, 60 sampled
+  placed/resolves: 2627 comments, 30 sampled
+  gone/loud: 166 comments, 25 sampled
+  gone/resolves: 0 comments, 0 sampled
+  unplaced/loud: 14 comments, 14 sampled
+  unplaced/resolves: 0 comments, 0 sampled

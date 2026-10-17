@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check red_states.py itself: break replay.py's grader and oracle six ways,
+"""Check red_states.py itself: break replay.py's grader, oracle and rates twelve ways,
 each in a copy, and show red_states.py fails on every one. A break that does
 not apply prints BROKEN, never a pass.
 
@@ -19,20 +19,19 @@ src = Path(__file__).resolve().parent
 BLOCKSPEC = sys.argv[1]
 MUT = [
     ("grader ignores the span offset", " and target.text[s:e] == span:", ":"),
-    ("span gone counts as correct", '''    if n == 0:
-        return ("WRONG" if resolved else "correct"), False''', '''    if n == 0:
+    ("a rewrapped span is gone", "if not any(span in flat(p.text) for p in new_ps)", "if not any(span in p.text for p in new_ps)"),
+    ("gone counts as correct", '''    if truth[0] == "GONE":
+        return ("WRONG" if resolved else "correct"), False''', '''    if truth[0] == "GONE":
         return "correct", False'''),
-    ("deleted counts as correct", '''    if truth[0] == "DELETED":
-        return ("WRONG" if resolved else "correct"), False''', '''    if truth[0] == "DELETED":
-        return "correct", False'''),
-    ("oracle never says DELETED", 'out.append(("DELETED", None) if best < 0.3 else ("UNKNOWN", None))', 'out.append(("UNKNOWN", None))'),
-    ("oracle new-side lines off by one", "jj = {ln - 1: n", "jj = {ln: n"),
+    ("oracle never says GONE", '            return ("GONE", None)', '            return ("UNKNOWN", None)'),
+    ("oracle reads the span from the paragraph's first word", "g = first[i] + start", "g = first[i]"),
+    ("oracle ignores whether the span's words are adjacent", "None not in got and got == list(range(got[0], got[0] + SPAN))", "None not in got"),
+    ("oracle accepts a span split across paragraphs", "            if len(js) == 1:", "            if js:"),
+    ("the gone test searches the earlier version", "span in flat(p.text) for p in new_ps", "span in flat(p.text) for p in old_ps"),
     ("loud counted as correct", '        return "loud", True', '        return "correct", True'),
-    ("a span repeated in its target counted", "    if n > 1:", "    if n > 9:"),
+    ("a span repeated in its target counted", "flat(target.text).count(span) > 1:", "flat(target.text).count(span) > 9:"),
     ("nth always 0", "        nth = sum(x.key == leaf.key for x in snap.leaves[: leaf.index])", "        nth = 0"),
     ("the unplaced rate counts resolving comments", "k[12:] not in RESOLVES", "k[12:] in RESOLVES"),
-    ("lines split as str.splitlines", '    return re.split(r"\\r\\n|\\r|\\n", text)', "    return text.splitlines()"),
-    ("the deleted threshold raised to 0.9", "best < 0.3", "best < 0.9"),
 ]
 survived = []
 for name, old, new in MUT:

@@ -1,0 +1,21 @@
+{
+ "blockspec": "d38a6bcec4e052164de763bd860447a807769035",
+ "gap": 5,
+ "seed": 11,
+ "sizes": {
+  "placed/loud": 182,
+  "placed/resolves": 2627,
+  "gone/loud": 166,
+  "gone/resolves": 0,
+  "unplaced/loud": 14,
+  "unplaced/resolves": 0
+ },
+ "caps": {
+  "placed/loud": 60,
+  "placed/resolves": 30,
+  "gone/loud": 25,
+  "gone/resolves": 25,
+  "unplaced/loud": 60,
+  "unplaced/resolves": 30
+ }
+}

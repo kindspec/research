@@ -1,0 +1,9 @@
+# kinds.py: gap 5, blockspec reference at d38a6bcec4e0, 182 loud comments
+    79  DETACHED, edited, context changed   e.g. Policies/acceptable-use-policies/github-hate-speech-and-discrimination.md 87906da4..0745036c P2
+    33  REFUSED(crowded-gap), edited, context changed   e.g. README.md 372b6ee7..48fff54f P14
+    32  REFUSED(crowded-gap), edited, context kept   e.g. Policies/acceptable-use-policies/github-misinformation-and-disinformation.md 87906da4..2a1665b0 P5
+    18  REFUSED(near-copy), unchanged, context kept   e.g. Policies/acceptable-use-policies/github-impersonation.md 87906da4..0745036c P2
+    11  DETACHED, whitespace only, context changed   e.g. Policies/github-terms/github-registered-developer-agreement.md 494824d0..65318a5f P56
+     7  ORPHANED, edited, context changed   e.g. Policies/github-terms/github-terms-for-additional-products-and-features.md a5addfd6..f9f46383 P4
+     1  ORPHANED, edited, context kept   e.g. Policies/github-terms/github-pre-release-license-terms.md 3f2567c7..166eb97e P17
+     1  REFUSED(near-copy), edited, context kept   e.g. Policies/github-terms/github-pre-release-license-terms.md 3f2567c7..166eb97e P30
