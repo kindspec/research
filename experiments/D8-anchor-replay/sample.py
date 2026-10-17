@@ -82,11 +82,15 @@ def main():
         if tuple(h.split("/")) not in caps:
             sys.exit(f"--cap {c}: no stratum {h}; they are " + ", ".join("/".join(h) for h in CAPS))
         caps[tuple(h.split("/"))] = int(n)
+        if int(n) < 1:
+            sys.exit(f"--cap {c}: a cap below 1 leaves its stratum unsampled")
     A, R, head = replay.load_blockspec(args.blockspec)
     clone_of = {a["name"]: a["clone"] for a in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]}
     clones = dict(c.split("=", 1) for c in args.clone)
     rows = [json.loads(line) for line in open(args.dump, encoding="utf-8")]
     rows = [r for r in rows if r["gap"] == args.gap]
+    if not rows:
+        sys.exit(f"{args.dump} has no comments at gap {args.gap}")
     # a comment on a version the profile refuses has no later paragraphs to label
     profile = Counter(r["arm"] for r in rows if r["verdict"] == "profile")
     rows = [r for r in rows if r["verdict"] != "profile"]
@@ -103,8 +107,11 @@ def main():
             used["/".join((arm, *h))] = cap
             picked += [((arm, *h), r) for r in rnd.sample(pool, min(cap, len(pool)))]
     rnd.shuffle(picked)
-    os.makedirs(args.packets, exist_ok=False)
-    os.makedirs(args.keydir, exist_ok=False)
+    for d in (args.packets, args.keydir):
+        if os.path.exists(d):
+            sys.exit(f"{d} exists; sample.py writes only to new directories")
+    os.makedirs(args.packets)
+    os.makedirs(args.keydir)
     ids = set()
     with open(os.path.join(args.keydir, "key.jsonl"), "w", encoding="utf-8") as key:
         for h, r in picked:
@@ -126,7 +133,8 @@ def main():
             )
             with open(os.path.join(args.packets, f"{i}.md"), "w", encoding="utf-8") as f:
                 f.write(body)
-            key.write(json.dumps({"id": i, "stratum": "/".join(h), **r}, ensure_ascii=False) + "\n")
+            row = {"id": i, "stratum": "/".join(h), **r, "later paragraphs": len(new_ps)}
+            key.write(json.dumps(row, ensure_ascii=False) + "\n")
     with open(os.path.join(args.keydir, "strata.json"), "w", encoding="utf-8") as f:
         json.dump({"blockspec": head, "gap": args.gap, "seed": SEED, "sizes": sizes, "caps": used,
                    "profile refused": dict(profile)},

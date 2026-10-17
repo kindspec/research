@@ -59,14 +59,16 @@ def interval(k, n, alpha=0.05):
 def read(path, key=None):
     """One JSON object per line, by id. With `key`, each must be a label of
     a packet in it, given once: `survives` a boolean, and `paragraph` a
-    paragraph number when it survives, null when not."""
+    paragraph of the later version when it survives, null when not."""
     out = {}
     for n, line in enumerate(open(path, encoding="utf-8"), 1):
         if not line.strip():
             continue
         row = json.loads(line)
+        where = f"{path}:{n}"
+        if not isinstance(row, dict):
+            raise SystemExit(f"{where}: not a JSON object")
         if key is not None:
-            where = f"{path}:{n}"
             if row.get("id") not in key:
                 raise SystemExit(f"{where}: no packet {row.get('id')!r}")
             if row["id"] in out:
@@ -75,8 +77,11 @@ def read(path, key=None):
                 raise SystemExit(f"{where}: survives must be true or false")
             para = row.get("paragraph")
             ok = (isinstance(para, int) and not isinstance(para, bool) and para >= 0) if row["survives"] else para is None
+            if ok and row["survives"] and para >= key[row["id"]]["later paragraphs"]:
+                ok = False
             if not ok:
-                raise SystemExit(f"{where}: paragraph must be a number when it survives, null when not")
+                raise SystemExit(f"{where}: paragraph must be one of the later version's when it survives,"
+                                 " null when not")
         out[row["id"]] = row
     return out
 
@@ -122,8 +127,8 @@ def main():
     key = read(os.path.join(args.keydir, "key.jsonl"))
     meta = json.load(open(os.path.join(args.keydir, "strata.json"), encoding="utf-8"))
     sizes = meta["sizes"]
-    if len(args.labels) != 2:
-        raise SystemExit("--labels takes the two passes")
+    if len(args.labels) != 2 or os.path.samefile(*args.labels):
+        raise SystemExit("--labels takes the two passes, two different files")
     a, b = (read(p, key) for p in args.labels)
     c = read(args.adjudicated, key) if args.adjudicated else {}
     missing = [i for i in key if i not in a or i not in b]
@@ -142,6 +147,9 @@ def main():
     by = defaultdict(list)
     for i, k in key.items():
         by[k["stratum"]].append(facts(k, final[i]))
+    unsampled = [h for h, n in sizes.items() if n and h not in by]
+    if unsampled:
+        raise SystemExit("strata with comments but no sample: " + ", ".join(unsampled))
 
     print(f"\n  {'stratum':32s} comments  sampled  labelled surviving  oracle wrong")
     for h in meta["caps"]:
@@ -162,27 +170,32 @@ def main():
             bounds[h, prop] = (lo, hi)
             print(f"    {h:32s} {prop:10s} {k:3d} of {len(pool):3d}: {100 * lo:5.1f}% to {100 * hi:5.1f}%")
 
-    def rate(loud_end, resolves_end, extra=0):
-        top = sum(sizes[h] * bounds[h, "survives"][loud_end] for h in by if h.endswith("/loud"))
-        rest = sum(sizes[h] * bounds[h, "survives"][resolves_end] for h in by if h.endswith("/resolves"))
-        return (top + extra) / (top + rest + extra)
-
     counted = [h for h in by if (h, "oracle_err") in bounds]
     err = [sum(sizes[h] * bounds[h, "oracle_err"][e] for h in counted) / sum(sizes[h] for h in counted)
            for e in (0, 1)]
     print(f"\n  oracle wrong, where it places a comment: {100 * estimate(by, sizes, 'oracle_err', 'counted'):.1f}%"
-          f" (each stratum at its interval's ends: {100 * err[0]:.1f}% to {100 * err[1]:.1f}%)")
-    print(f"\n  refusal rate, labels for truth: {100 * estimate(by, sizes, 'loud_survives', 'survives'):.1f}%"
-          f" (each stratum at its interval's least and most favourable end: "
-          f"{100 * rate(0, 1):.1f}% to {100 * rate(1, 0):.1f}%), "
-          f"among comments on versions the profile accepts")
-    profile = sum(meta.get("profile refused", {}).values())
-    point = estimate(by, sizes, "loud_survives", "survives")
-    top = point * sum(sizes[h] * sum(f["survives"] for f in by[h]) / len(by[h]) for h in by)
-    whole = sum(sizes[h] * sum(f["survives"] for f in by[h]) / len(by[h]) for h in by)
-    print(f"  outside it: {profile} comments on versions the profile refuses, each REFUSED(not-in-profile);"
-          f" as if each were a refusal of surviving text: {100 * (top + profile) / (whole + profile):.1f}%"
-          f" ({100 * rate(0, 1, profile):.1f}% to {100 * rate(1, 0, profile):.1f}%)")
+          f" (each stratum at its interval's lower and upper end: {100 * err[0]:.1f}% to {100 * err[1]:.1f}%)")
+
+    profile = meta.get("profile refused", {})
+    arms = list(dict.fromkeys(h.split("/")[0] for h in sizes))
+    for name, keep in [("pooled over " + ", ".join(arms), arms)] + ([(a, [a]) for a in arms] if len(arms) > 1 else []):
+        sub = {h: fs for h, fs in by.items() if h.split("/")[0] in keep}
+        extra = sum(n for a, n in profile.items() if a in keep)
+
+        def rate(loud_end, resolves_end, extra=0):
+            top = sum(sizes[h] * bounds[h, "survives"][loud_end] for h in sub if h.endswith("/loud"))
+            rest = sum(sizes[h] * bounds[h, "survives"][resolves_end] for h in sub if h.endswith("/resolves"))
+            return (top + extra) / (top + rest + extra)
+
+        whole = sum(sizes[h] * sum(f["survives"] for f in fs) / len(fs) for h, fs in sub.items())
+        top = estimate(sub, sizes, "loud_survives", "survives") * whole
+        print(f"\n  refusal rate, labels for truth, {name}: {100 * top / whole:.1f}%"
+              f" (each stratum at the end of its interval that lowers, then raises it: "
+              f"{100 * rate(0, 1):.1f}% to {100 * rate(1, 0):.1f}%), "
+              f"among comments on versions the profile accepts")
+        print(f"  outside it: {extra} comments on versions the profile refuses, each REFUSED(not-in-profile);"
+              f" as if each were a refusal of surviving text: {100 * (top + extra) / (whole + extra):.1f}%"
+              f" ({100 * rate(0, 1, extra):.1f}% to {100 * rate(1, 0, extra):.1f}%)")
 
     print("\n## resolving comments the labels put elsewhere")
     for i, k in sorted(key.items()):

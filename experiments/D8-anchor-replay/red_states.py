@@ -20,10 +20,10 @@ one fixed pair of versions instead, which holds:
 - X, the span repeated in the target, rewrapped across a line: it occurs
   twice, whitespace aside, so it is not counted;
 - H, one line, reworded around the span: the span's words still map, so it
-  survives, and the resolver refuses it;
+  survives, and the resolver does not resolve it;
 - S, split into two paragraphs between the span's words: gone;
 - W, one line rewrapped into two, between the span's words: the span
-  survives, whitespace aside, and the resolver refuses it;
+  survives, whitespace aside, and the resolver does not resolve it;
 - N, long, moved below Q, which is short: the word matching keeps N, whose
   span survives and resolves `MOVED`, and drops Q, which is not counted;
 - M, moved from near the top to the end, and rewrapped inside the span:

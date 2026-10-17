@@ -96,7 +96,10 @@ each stratum's labelled shares to the stratum's size, and gives each share
 an exact two-sided 95% interval (Clopper-Pearson; none where every comment
 in the stratum was labelled). Each estimate is then given with every
 stratum at the ends of its interval. That range is not a confidence
-interval, but it stays finite where a stratum shows no errors.
+interval, but it stays finite where a stratum shows no errors. Every arm in
+the key is pooled into one rate, and each arm's own rate is printed beside
+it, so which arms to pool is the caller's: `arms.json` says which never
+are.
 
 The rehearsal's labels were made by automated labellers, not people: each
 pass by separate instances given the same brief and nothing else, with the
@@ -116,8 +119,8 @@ pairs whose later version the profile refuses, every one for `raw-html`.
 
 The two passes of labels agree on all 125 packets. No label contradicts
 the oracle where it places a comment, but 30 labelled comments stand for
-the 2,627 that resolve, so its error is known only to be at most 11.4%
-with every stratum at the upper end of its interval. Of the 10 comments the
+the 2,627 that resolve: with every stratum at the upper end of its
+interval, the oracle's error is 11.4%. Of the 10 comments the
 oracle does not place, 4 have surviving text. With labels for truth, the
 refusal rate at gap 5 is **6.6%**, from 6.3% to 8.3% with every stratum at
 the ends of its interval, among comments on versions the profile accepts;
