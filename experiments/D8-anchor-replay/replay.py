@@ -53,6 +53,7 @@ import importlib
 import json
 import os
 import random
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -71,9 +72,15 @@ RESOLVES = ("RESOLVED", "EDITED", "MOVED")
 
 
 def git(repo, *args):
-    return subprocess.run(
-        ["git", "-C", repo, *args], capture_output=True, text=True, check=True
-    ).stdout
+    """git's stdout as UTF-8, bytes for bytes: no newline translation."""
+    out = subprocess.run(["git", "-C", repo, *args], capture_output=True, check=True).stdout
+    return out.decode("utf-8")
+
+
+def lines_of(text):
+    """The reader's line split (blockspec document.py: `\\r\\n|\\r|\\n`), so a
+    line index means the same line to the oracle and to the reader."""
+    return re.split(r"\r\n|\r|\n", text)
 
 
 def blob_id(text):
@@ -86,7 +93,10 @@ def blob_id(text):
 def load_blockspec(path):
     sys.path.insert(0, os.path.join(path, "reference"))
     a = importlib.import_module("blockspec.anchor")
+    a.Refusal = importlib.import_module("blockspec.document").Refusal
     head = git(path, "rev-parse", "HEAD").strip()
+    if git(path, "status", "--porcelain", "--untracked-files=no"):
+        sys.exit(f"{path} has changes; the reference must be a commit")
     return a, a._default_reader(), head
 
 
@@ -95,7 +105,7 @@ def paragraphs(A, R, text):
     reader refuses the document."""
     try:
         snap = A.Snapshot(R, text)
-    except Exception:
+    except A.Refusal:
         return None, None
     return snap, [lf for lf in snap.leaves if lf.type == "p" and lf.node.lines]
 
@@ -104,7 +114,7 @@ def line_oracle(old, new, old_ps, new_ps):
     """D8's line oracle (anchor_eval2.line_oracle's rule), on paragraphs:
     for each old paragraph, ('SURVIVED', new index), ('DELETED', None) or
     ('UNKNOWN', None)."""
-    li, lj = old.splitlines(), new.splitlines()
+    li, lj = lines_of(old), lines_of(new)
     sm = difflib.SequenceMatcher(None, li, lj, autojunk=False)
     m = {}
     for a, b, n in sm.get_matching_blocks():
@@ -195,39 +205,99 @@ def run_arm(A, R, name, repo, pathspec, gap, wrongs):
     t = Counter()
     for f in files[:FILES]:
         for a, b in pairs_for(repo, f, gap, rnd):
-            old, new = git(repo, "show", f"{a}:{f}"), git(repo, "show", f"{b}:{f}")
+            try:
+                old, new = git(repo, "show", f"{a}:{f}"), git(repo, "show", f"{b}:{f}")
+            except UnicodeDecodeError:
+                t["pairs not UTF-8"] += 1
+                continue
             t["pairs"] += 1
             snap, old_ps = paragraphs(A, R, old)
             _, new_ps = paragraphs(A, R, new)
-            if old_ps is None or new_ps is None:
-                t["pairs refused by the profile"] += 1
+            if old_ps is None:
+                t["pairs whose earlier version the profile refuses"] += 1
                 continue
-            truths = line_oracle(old, new, old_ps, new_ps)
-            for leaf, truth in zip(old_ps, truths):
-                if len(leaf.text) < MINLEN:
-                    continue
-                made = make_comment(A, snap, leaf, old)
-                if made is None:
-                    t["no comment made"] += 1
-                    continue
-                span, record = made
-                path = "d.md.notes/01J00000000000000000000001.md"
-                repo_in = {"tree": {"d.md": new, path: record}, "blobs": {blob_id(old): old}}
-                repo_in["object_format"] = "sha1"
-                got = A.resolve(repo_in, {"records": [path]}, R)["records"][path]
-                t["comments"] += 1
-                verdict, survives = grade(got, truth, span, new_ps)
-                if verdict is None:
-                    t["not counted"] += 1
-                    continue
-                t[verdict] += 1
-                if survives:
-                    t["span survives"] += 1
-                    if verdict == "loud":
-                        t["loud " + got["status"]] += 1
-                if verdict == "WRONG" and len(wrongs) < 20:
+            if new_ps is None:
+                # every comment on it is REFUSED(not-in-profile), surviving text or not
+                t["pairs whose later version the profile refuses"] += 1
+                t["comments on them"] += sum(
+                    1 for lf in old_ps if len(lf.text) >= MINLEN and make_comment(A, snap, lf, old)
+                )
+                continue
+            for got, span in replay_pair(A, R, old, new, snap, old_ps, new_ps, t):
+                if len(wrongs) < 20:
                     wrongs.append((name, gap, f, a[:8], b[:8], got["status"], span))
     return t
+
+
+def replay_pair(A, R, old, new, snap, old_ps, new_ps, t):
+    """Comment, resolve and grade every paragraph of one pair into `t`; the
+    WRONG ones, as (resolution, span)."""
+    wrong = []
+    truths = line_oracle(old, new, old_ps, new_ps)
+    for leaf, truth in zip(old_ps, truths):
+        if len(leaf.text) < MINLEN:
+            continue
+        made = make_comment(A, snap, leaf, old)
+        if made is None:
+            t["no comment made"] += 1
+            continue
+        span, record = made
+        path = "d.md.notes/01J00000000000000000000001.md"
+        repo_in = {"tree": {"d.md": new, path: record}, "blobs": {blob_id(old): old}}
+        repo_in["object_format"] = "sha1"
+        got = A.resolve(repo_in, {"records": [path]}, R)["records"][path]
+        t["comments"] += 1
+        verdict, survives = grade(got, truth, span, new_ps)
+        if verdict is None:
+            t["not counted"] += 1
+            t["not counted " + got["status"]] += 1
+            continue
+        t[verdict] += 1
+        t["truth " + ("span survives" if survives else truth[0].lower())] += 1
+        if survives:
+            t["span survives"] += 1
+            if verdict == "loud":
+                t["loud " + got["status"]] += 1
+        if verdict == "WRONG":
+            wrong.append((got, span))
+    return wrong
+
+
+def report(name, gap, t):
+    survives = t["span survives"]
+    uncounted_loud = sum(
+        v for k, v in t.items() if k.startswith("not counted ") and k[12:] not in RESOLVES
+    )
+    low = f"{100 * t['loud'] / survives:.1f}%" if survives else "-"
+    high = (
+        f"{100 * (t['loud'] + uncounted_loud) / (survives + uncounted_loud):.1f}%"
+        if survives + uncounted_loud
+        else "-"
+    )
+    print(f"\n## {name} gap={gap}")
+    for k in (
+        "pairs",
+        "pairs not UTF-8",
+        "pairs whose earlier version the profile refuses",
+        "pairs whose later version the profile refuses",
+        "comments on them",
+        "comments",
+        "no comment made",
+        "not counted",
+    ):
+        print(f"  {k}: {t[k]}")
+    print(
+        f"  counted: correct {t['correct']}, loud {t['loud']}, WRONG {t['WRONG']}; "
+        f"span survives {survives}, loud among them {low}"
+    )
+    for k, v in sorted((k, v) for k, v in t.items() if k.startswith("loud ")):
+        print(f"    {k}: {v}")
+    print(
+        f"  if every loud comment not counted had text that survived: {high} "
+        f"({uncounted_loud} more)"
+    )
+    for k, v in sorted((k, v) for k, v in t.items() if k.startswith("not counted ")):
+        print(f"    {k}: {v}")
 
 
 def main():
@@ -255,18 +325,7 @@ def main():
         if pin != arm["pin"] or git(repo, "status", "--porcelain", "--untracked-files=no"):
             sys.exit(f"{arm['name']}: {repo} is not at its pin {arm['pin'][:12]} or has changes")
         for gap in args.gap or GAPS:
-            t = run_arm(A, R, arm["name"], repo, arm["pathspec"], gap, wrongs)
-            survives = t["span survives"]
-            rate = f"{100 * t['loud'] / survives:.1f}%" if survives else "-"
-            print(f"\n## {arm['name']} gap={gap}")
-            for k in ("pairs", "pairs refused by the profile", "comments", "not counted"):
-                print(f"  {k}: {t[k]}")
-            print(
-                f"  counted: correct {t['correct']}, loud {t['loud']}, WRONG {t['WRONG']}; "
-                f"span survives {survives}, loud among them {rate}"
-            )
-            for k, v in sorted((k, v) for k, v in t.items() if k.startswith("loud ")):
-                print(f"    {k}: {v}")
+            report(arm["name"], gap, run_arm(A, R, arm["name"], repo, arm["pathspec"], gap, wrongs))
     print("\n## WRONG, first 20")
     for w in wrongs:
         print("  " + " ".join(str(x) for x in w))

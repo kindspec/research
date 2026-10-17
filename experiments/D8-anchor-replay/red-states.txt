@@ -1,5 +1,5 @@
-# red_states.py: blockspec reference at d38a6bcec4e0; site-policy gap=1, files=5
-as is                                    correct    82  loud     0  WRONG     0  span survives    82
-resolver picks the first paragraph       correct    14  loud     0  WRONG    68  span survives    82
-resolver refuses everything              correct     0  loud    82  WRONG     0  span survives    82
-oracle says deleted                      correct     1  loud     0  WRONG    95  span survives     0
+# red_states.py: blockspec reference at d38a6bcec4e0; the fixture in this file
+PASS  as is                                            correct 4  loud 0  WRONG 0   (want 4, 0, 0)
+PASS  every comment resolves, on the first paragraph   correct 1  loud 0  WRONG 3   (want 1, 0, 3)
+PASS  every resolution one character off               correct 2  loud 0  WRONG 2   (want 2, 0, 2)
+PASS  every comment refused                            correct 2  loud 2  WRONG 0   (want 2, 2, 0)

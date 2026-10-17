@@ -2,19 +2,40 @@
 
 ## site-policy gap=1
   pairs: 167
-  pairs refused by the profile: 15
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 13
+  pairs whose later version the profile refuses: 2
+  comments on them: 62
   comments: 4306
+  no comment made: 44
   not counted: 421
   counted: correct 3876, loud 9, WRONG 0; span survives 3882, loud among them 0.2%
     loud DETACHED: 1
     loud REFUSED(repeat): 8
+  if every loud comment not counted had text that survived: 2.0% (70 more)
+    not counted DETACHED: 35
+    not counted EDITED: 74
+    not counted ORPHANED: 10
+    not counted REFUSED(crowded-gap): 25
+    not counted RESOLVED: 277
 
 ## site-policy gap=5
   pairs: 101
-  pairs refused by the profile: 16
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 5
+  pairs whose later version the profile refuses: 11
+  comments on them: 800
   comments: 2989
+  no comment made: 29
   not counted: 1275
   counted: correct 1698, loud 16, WRONG 0; span survives 1701, loud among them 0.9%
     loud REFUSED(near-copy): 16
+  if every loud comment not counted had text that survived: 17.2% (333 more)
+    not counted DETACHED: 121
+    not counted EDITED: 275
+    not counted ORPHANED: 104
+    not counted REFUSED(crowded-gap): 103
+    not counted REFUSED(near-copy): 5
+    not counted RESOLVED: 667
 
 ## WRONG, first 20

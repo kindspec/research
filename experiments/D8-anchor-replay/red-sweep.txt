@@ -1,0 +1,6 @@
+grader ignores the span offset: exit 1; failing states: ['every resolution one character off']
+span gone counts as correct: exit 1; failing states: ['every comment resolves, on the first paragraph']
+deleted counts as correct: exit 1; failing states: ['every comment resolves, on the first paragraph']
+oracle never says DELETED: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
+oracle new-side lines off by one: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
+loud counted as correct: exit 1; failing states: ['every comment refused']
