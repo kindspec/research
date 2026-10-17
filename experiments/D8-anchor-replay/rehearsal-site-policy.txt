@@ -1,0 +1,20 @@
+# replay.py: blockspec reference at d38a6bcec4e0; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## site-policy gap=1
+  pairs: 167
+  pairs refused by the profile: 15
+  comments: 4306
+  not counted: 421
+  counted: correct 3876, loud 9, WRONG 0; span survives 3882, loud among them 0.2%
+    loud DETACHED: 1
+    loud REFUSED(repeat): 8
+
+## site-policy gap=5
+  pairs: 101
+  pairs refused by the profile: 16
+  comments: 2989
+  not counted: 1275
+  counted: correct 1698, loud 16, WRONG 0; span survives 1701, loud among them 0.9%
+    loud REFUSED(near-copy): 16
+
+## WRONG, first 20

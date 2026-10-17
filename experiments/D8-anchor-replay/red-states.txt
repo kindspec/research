@@ -1,0 +1,5 @@
+# red_states.py: blockspec reference at d38a6bcec4e0; site-policy gap=1, files=5
+as is                                    correct    82  loud     0  WRONG     0  span survives    82
+resolver picks the first paragraph       correct    14  loud     0  WRONG    68  span survives    82
+resolver refuses everything              correct     0  loud    82  WRONG     0  span survives    82
+oracle says deleted                      correct     1  loud     0  WRONG    95  span survives     0
