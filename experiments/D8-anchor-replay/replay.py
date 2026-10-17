@@ -7,10 +7,10 @@ as the first thing that would reverse its design: the resolver adds refusals
 (near-copy, refilled-gap, crowded-gap, twin and context rules, and the
 alignment) whose rate on real edits is unknown. This replays real file
 histories against the blockspec reference resolver, and grades each
-resolution with D8's independent line oracle.
+resolution with D8's line oracle (see the README for how independent it is).
 
-For each arm, each sampled file, and each pair of versions GAP commits apart
-in that file's history:
+For each arm, each sampled file, and up to three sampled pairs of versions GAP
+commits apart in that file's history:
 
 - every paragraph of the earlier version with at least MINLEN characters
   gets a comment on a span of SPAN words from its middle, written as
@@ -263,17 +263,32 @@ def replay_pair(A, R, old, new, snap, old_ps, new_ps, t):
     return wrong
 
 
-def report(name, gap, t):
+def pct(num, den):
+    return f"{100 * num / den:.1f}%" if den else "-"
+
+
+def rates(t):
+    """Three rates of refusing text that survived, none of them a bound:
+    among the comments the oracle places; as if every loud comment it does
+    not place had surviving text; and as if, besides, every comment on a
+    pair whose later version the profile refuses had surviving text (each
+    of those resolves `REFUSED(not-in-profile)`)."""
     survives = t["span survives"]
-    uncounted_loud = sum(
+    unplaced = sum(
         v for k, v in t.items() if k.startswith("not counted ") and k[12:] not in RESOLVES
     )
-    low = f"{100 * t['loud'] / survives:.1f}%" if survives else "-"
-    high = (
-        f"{100 * (t['loud'] + uncounted_loud) / (survives + uncounted_loud):.1f}%"
-        if survives + uncounted_loud
-        else "-"
+    profile = t["comments on them"]
+    return (
+        pct(t["loud"], survives),
+        pct(t["loud"] + unplaced, survives + unplaced),
+        pct(t["loud"] + unplaced + profile, survives + unplaced + profile),
+        unplaced,
     )
+
+
+def report(name, gap, t):
+    survives = t["span survives"]
+    placed, unplaced_rate, profile_rate, unplaced = rates(t)
     print(f"\n## {name} gap={gap}")
     for k in (
         "pairs",
@@ -288,13 +303,14 @@ def report(name, gap, t):
         print(f"  {k}: {t[k]}")
     print(
         f"  counted: correct {t['correct']}, loud {t['loud']}, WRONG {t['WRONG']}; "
-        f"span survives {survives}, loud among them {low}"
+        f"span survives {survives}, loud among them {placed}"
     )
     for k, v in sorted((k, v) for k, v in t.items() if k.startswith("loud ")):
         print(f"    {k}: {v}")
+    print(f"  as if every loud comment not counted had surviving text: {unplaced_rate} ({unplaced} more)")
     print(
-        f"  if every loud comment not counted had text that survived: {high} "
-        f"({uncounted_loud} more)"
+        f"  and every comment on a pair whose later version the profile refuses: {profile_rate} "
+        f"({t['comments on them']} more)"
     )
     for k, v in sorted((k, v) for k, v in t.items() if k.startswith("not counted ")):
         print(f"    {k}: {v}")

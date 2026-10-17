@@ -9,16 +9,16 @@ the blockspec reference resolver and grades each resolution with D8's line
 oracle.
 
     replay.py                  the measurement
-    red_states.py              its grading broken four ways, on a fixture, each checked
+    red_states.py              a control and three broken resolvers on a fixture, and the rates, each checked
     red-states.txt             red_states.py's stdout
-    red_sweep.py               replay.py's grader and oracle broken six ways; red_states.py must fail each
+    red_sweep.py               replay.py broken eleven ways; red_states.py must fail each, or it exits 1
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
 
 **Nothing here is a verdict.** The arms that would decide anything have not
 been run. **The oracle cannot yet price the refusals 0003 names** (below),
-so it cannot decide a bar on the refusal rate either: it gives a lower and
-an upper bound. Only the rehearsal arm, `site-policy`, has been run.
+so it cannot decide a bar on the refusal rate either: it gives three rates,
+none of them a bound. Only the rehearsal arm, `site-policy`, has been run.
 
 ## What replay.py measures
 
@@ -51,11 +51,18 @@ A span that occurs more than once in the target is not counted. Each `loud`
 is reported with its status and refusal reason.
 
 Every comment that is not counted is reported too, by the resolver's
-status, and the report gives two rates of refusing text that survived: the
-lower counts only comments the oracle places; the upper also counts every
-loud comment it does not place, as if its text had survived. Comments on a
-version whose later version the profile refuses (`SPEC.md` §4) are counted
-separately: each of them resolves `REFUSED(not-in-profile)`.
+status. The report gives three rates of refusing text that survived, and
+none of them is a bound:
+
+- among the comments the oracle places;
+- as if every loud comment it does not place had surviving text;
+- and as if, besides, every comment on a pair whose later version the
+  profile refuses (`SPEC.md` §4) had surviving text. Each of those resolves
+  `REFUSED(not-in-profile)`.
+
+The true rate can be below the first: a comment the oracle does not place
+that resolves may have surviving text too. It can be above the last only
+through comments the oracle places wrongly.
 
 ## What the oracle cannot see
 
@@ -76,7 +83,8 @@ separately: each of them resolves `REFUSED(not-in-profile)`.
 - How it differs from D8's: lines come from the reader's paragraph lines,
   not from searching the file for a block's content; every paragraph is
   anchored, not a sample of 30; pairs with identical versions are not
-  skipped; the deleted test compares paragraphs only.
+  skipped, nor are files with fewer than four blocks; the deleted test
+  compares paragraphs only.
 
 Before a replay can decide a bar, the oracle has to place an edited or a
 moved paragraph by something other than the resolver's own rules.
@@ -92,7 +100,7 @@ moved paragraph by something other than the resolver's own rules.
 - Where on the paragraph a comment sits. Every span is three words from the
   middle, away from the paragraph's edges, where the stored context is
   shorter. Requiring the span itself to be unique leaves out the repeated
-  spans where §11.12's R3 and the `repeat` refusals live.
+  spans where §11.12's R3 lives.
 - History. Pairs are positions in `git log --reverse -- FILE`, so the two
   versions of a pair can sit on parallel branches; a file's history before
   a rename is not followed.

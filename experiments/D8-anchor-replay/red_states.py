@@ -4,26 +4,34 @@ known, and fail unless each break moves the counts exactly as it must.
 
 Real arms rarely exercise every branch of the grader: on site-policy, a span
 that is gone from its surviving paragraph is never counted. So the states
-run on one fixed pair of versions instead, which holds one paragraph of each
-kind:
+run on one fixed pair of versions instead, which holds:
 
-- A and D, unchanged: the span survives;
-- B, two lines, its second line rewritten, and the span with it: the
-  paragraph survives (one of its two lines does), the span is gone;
-- C, deleted, with nothing like it left: deleted.
+- F, A, two copies of E, and D, unchanged: the span survives. F holds a
+  line separator (U+2028) inside a line, which the reader does not split
+  on; the second E is anchored with nth 1;
+- B, two lines, its second rewritten, and the span with it: the paragraph
+  survives (one of its two lines does), the span is gone;
+- C, deleted, with nothing like it left: deleted;
+- G, two lines, its second rewritten to repeat the span: the span occurs
+  twice in the target, so it is not counted;
+- H, one line, reworded: no line survives and the new line is 61% like it,
+  above the deleted test's 30% and below 90%, so the oracle cannot place it
+  and it is not counted.
 
-Each state replaces the resolver, and must give exactly these counts:
+A control and three broken resolvers must give exactly these counts:
 
 | state | correct | loud | WRONG |
 | --- | --: | --: | --: |
-| as is | 4 | 0 | 0 |
-| every comment resolves, on the first paragraph | 1 | 0 | 3 |
-| every resolution one character off | 2 | 0 | 2 |
-| every comment refused | 2 | 2 | 0 |
+| as is | 7 | 0 | 0 |
+| every comment resolves, on the first paragraph | 1 | 0 | 6 |
+| every resolution one character off | 2 | 0 | 5 |
+| every comment refused | 2 | 5 | 0 |
 
-`as is` also checks the oracle: the span survives in 2, is gone in 1, and 1
-paragraph is deleted. A break in the oracle or the grader moves one of
-these, and the script exits 1.
+`as is` also checks the oracle's truths: the span survives in 5, is gone in
+1, 1 paragraph is deleted, and 2 comments are not counted. A last state
+checks `replay.rates`, the three refusal rates the report prints, on fixed
+counts. A break in the oracle, the grader or the rates moves one of these,
+and the script exits 1.
 
 Usage:
     python3 -I red_states.py --blockspec PATH
@@ -40,16 +48,24 @@ sys.path.insert(0, HERE)
 
 import replay  # noqa: E402
 
+F_ = "Foxtrot holds a line separator\u2028inside one of its lines, which the reader keeps."
 A_ = "Alpha is the first paragraph, and nothing in it changes between the versions."
 B1 = "Bravo opens with a short line."
 B2 = "then the scram limit and the shift log close it out here."
 B2_NEW = "and nothing else follows from the second line at all now."
 C_ = "0987 6543 2109 8765 4321 0000 1111 2222 3333 4444 5555 6666 7777."  # like nothing kept
+E_ = "Echo is written twice, word for word, so the second copy has nth one."
+G1 = "Golf carries its span on the first of two lines, well inside the middle there."
+G2 = "Its second line changes."
+G2_NEW = "Now its second line repeats it: of two lines, well inside."
+H_ = "Hotel is one line that the later version rewords a little, kept nearby."
+H_NEW = "Hotel is one line, and the later version says something else entirely."  # 0.61 like H_
 D_ = "Delta closes the document and stays exactly as it was written before."
-OLD = f"{A_}\n\n{B1}\n{B2}\n\n{C_}\n\n{D_}\n"
-NEW = f"{A_}\n\n{B1}\n{B2_NEW}\n\n{D_}\n"
+OLD = f"{F_}\n\n{A_}\n\n{B1}\n{B2}\n\n{C_}\n\n{E_}\n\n{E_}\n\n{G1}\n{G2}\n\n{H_}\n\n{D_}\n"
+NEW = f"{F_}\n\n{A_}\n\n{B1}\n{B2_NEW}\n\n{E_}\n\n{E_}\n\n{G1}\n{G2_NEW}\n\n{H_NEW}\n\n{D_}\n"
 
-TRUTH = {"truth span survives": 2, "truth survived": 1, "truth deleted": 1}
+TRUTH = {"truth span survives": 5, "truth survived": 1, "truth deleted": 1}
+RATES = ("5.0%", "13.6%", "32.1%", 10)  # rates() on the counts in main()
 
 
 def main():
@@ -82,10 +98,10 @@ def main():
         return out
 
     states = [
-        ("as is", real, (4, 0, 0)),
-        ("every comment resolves, on the first paragraph", first_paragraph, (1, 0, 3)),
-        ("every resolution one character off", one_off, (2, 0, 2)),
-        ("every comment refused", refuse, (2, 2, 0)),
+        ("as is", real, (7, 0, 0)),
+        ("every comment resolves, on the first paragraph", first_paragraph, (1, 0, 6)),
+        ("every resolution one character off", one_off, (2, 0, 5)),
+        ("every comment refused", refuse, (2, 5, 0)),
     ]
     print(f"# red_states.py: blockspec reference at {head[:12]}; the fixture in this file")
     failed = False
@@ -99,13 +115,20 @@ def main():
         ok = got == want
         if name == "as is":
             truth = {k: t[k] for k in TRUTH}
-            ok = ok and truth == TRUTH and t["comments"] == 4
+            ok = ok and truth == TRUTH and t["comments"] == 9 and t["not counted"] == 2
         failed |= not ok
         print(
             f"{'PASS' if ok else 'FAIL'}  {name:48s} correct {got[0]}  loud {got[1]}  "
             f"WRONG {got[2]}   (want {want[0]}, {want[1]}, {want[2]})"
         )
     A.resolve = real
+    counts = Counter({"span survives": 100, "loud": 5, "not counted DETACHED": 6,
+                      "not counted REFUSED(crowded-gap)": 4, "not counted RESOLVED": 20,
+                      "not counted EDITED": 3, "comments on them": 30})
+    got = replay.rates(counts)
+    ok = got == RATES
+    failed |= not ok
+    print(f"{'PASS' if ok else 'FAIL'}  {'the three rates on fixed counts':48s} {got}   (want {RATES})")
     sys.exit(1 if failed else 0)
 
 

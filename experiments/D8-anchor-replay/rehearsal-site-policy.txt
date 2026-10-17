@@ -12,7 +12,8 @@
   counted: correct 3876, loud 9, WRONG 0; span survives 3882, loud among them 0.2%
     loud DETACHED: 1
     loud REFUSED(repeat): 8
-  if every loud comment not counted had text that survived: 2.0% (70 more)
+  as if every loud comment not counted had surviving text: 2.0% (70 more)
+  and every comment on a pair whose later version the profile refuses: 3.5% (62 more)
     not counted DETACHED: 35
     not counted EDITED: 74
     not counted ORPHANED: 10
@@ -30,7 +31,8 @@
   not counted: 1275
   counted: correct 1698, loud 16, WRONG 0; span survives 1701, loud among them 0.9%
     loud REFUSED(near-copy): 16
-  if every loud comment not counted had text that survived: 17.2% (333 more)
+  as if every loud comment not counted had surviving text: 17.2% (333 more)
+  and every comment on a pair whose later version the profile refuses: 40.5% (800 more)
     not counted DETACHED: 121
     not counted EDITED: 275
     not counted ORPHANED: 104
