@@ -1,6 +1,6 @@
 # red_states.py: blockspec reference at d38a6bcec4e0; the fixture in this file
-PASS  as is                                            correct 8  loud 2  WRONG 0   (want 8, 2, 0)
-PASS  every comment resolves, on the first paragraph   correct 1  loud 0  WRONG 9   (want 1, 0, 9)
-PASS  every resolution one character off               correct 3  loud 2  WRONG 5   (want 3, 2, 5)
-PASS  every comment refused                            correct 3  loud 7  WRONG 0   (want 3, 7, 0)
+PASS  as is                                            correct 11  loud 2  WRONG 0   (want 11, 2, 0)
+PASS  every comment resolves, on the first paragraph   correct 1  loud 0  WRONG 12   (want 1, 0, 12)
+PASS  every resolution one character off               correct 4  loud 2  WRONG 7   (want 4, 2, 7)
+PASS  every comment refused                            correct 4  loud 9  WRONG 0   (want 4, 9, 0)
 PASS  the three rates on fixed counts                  ('5.0%', '13.6%', '32.1%', 10)   (want ('5.0%', '13.6%', '32.1%', 10))

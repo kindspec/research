@@ -18,11 +18,16 @@ scaled to the stratum's size (sample.py's `strata.json`). That gives:
   surviving, over all comments labelled as surviving;
 - each resolving comment the labels put elsewhere, listed.
 
-Each stratum's shares get an exact 95% interval (Clopper-Pearson; none
-where every comment in it was labelled), and each estimate is given with
-every stratum at the ends of its interval: wider than a joint 95% interval,
-and still finite when a stratum shows no errors, where a bootstrap would
-give none.
+Each stratum's shares get an exact two-sided 95% interval (Clopper-Pearson;
+none where every comment in it was labelled), and each estimate is given
+with every stratum at the ends of its interval. That range is not itself a
+confidence interval; it stays finite where a stratum shows no errors, where
+a bootstrap would show none.
+
+The rate is among comments on pairs whose later version the profile
+accepts. Comments on the others (sample.py's `profile refused`) cannot be
+labelled; they are printed beside it, with the rate as if each were a
+refusal of surviving text.
 
 Usage:
     python3 -I score.py --keydir DIR --labels A.jsonl --labels B.jsonl [--adjudicated C.jsonl]
@@ -30,11 +35,9 @@ Usage:
 
 import argparse
 import json
-import os
 import math
+import os
 from collections import defaultdict
-
-
 
 def binom_cdf(k, n, p):
     return sum(math.comb(n, i) * p**i * (1 - p) ** (n - i) for i in range(k + 1))
@@ -53,12 +56,28 @@ def interval(k, n, alpha=0.05):
     return low, high
 
 
-def read(path):
+def read(path, key=None):
+    """One JSON object per line, by id. With `key`, each must be a label of
+    a packet in it, given once: `survives` a boolean, and `paragraph` a
+    paragraph number when it survives, null when not."""
     out = {}
-    for line in open(path, encoding="utf-8"):
-        if line.strip():
-            row = json.loads(line)
-            out[row["id"]] = row
+    for n, line in enumerate(open(path, encoding="utf-8"), 1):
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        if key is not None:
+            where = f"{path}:{n}"
+            if row.get("id") not in key:
+                raise SystemExit(f"{where}: no packet {row.get('id')!r}")
+            if row["id"] in out:
+                raise SystemExit(f"{where}: {row['id']} labelled twice")
+            if not isinstance(row.get("survives"), bool):
+                raise SystemExit(f"{where}: survives must be true or false")
+            para = row.get("paragraph")
+            ok = (isinstance(para, int) and not isinstance(para, bool) and para >= 0) if row["survives"] else para is None
+            if not ok:
+                raise SystemExit(f"{where}: paragraph must be a number when it survives, null when not")
+        out[row["id"]] = row
     return out
 
 
@@ -67,8 +86,8 @@ def same(x, y):
 
 
 def facts(k, lab):
-    s = bool(lab["survives"])
-    oracle, resolver = k["stratum"].split("/")
+    s = lab["survives"]
+    _, oracle, resolver = k["stratum"].rsplit("/", 2)
     err = None
     if oracle == "placed":
         err = not s or lab["paragraph"] != k["target"]
@@ -103,8 +122,10 @@ def main():
     key = read(os.path.join(args.keydir, "key.jsonl"))
     meta = json.load(open(os.path.join(args.keydir, "strata.json"), encoding="utf-8"))
     sizes = meta["sizes"]
-    a, b = (read(p) for p in args.labels)
-    c = read(args.adjudicated) if args.adjudicated else {}
+    if len(args.labels) != 2:
+        raise SystemExit("--labels takes the two passes")
+    a, b = (read(p, key) for p in args.labels)
+    c = read(args.adjudicated, key) if args.adjudicated else {}
     missing = [i for i in key if i not in a or i not in b]
     if missing:
         raise SystemExit(f"{len(missing)} packets lack two labels, e.g. {missing[:3]}")
@@ -122,11 +143,11 @@ def main():
     for i, k in key.items():
         by[k["stratum"]].append(facts(k, final[i]))
 
-    print("\n  stratum                comments  sampled  labelled surviving  oracle wrong")
+    print(f"\n  {'stratum':32s} comments  sampled  labelled surviving  oracle wrong")
     for h in meta["caps"]:
         fs = by.get(h, [])
         errs = [f["oracle_err"] for f in fs if f["oracle_err"] is not None]
-        print(f"  {h:22s} {sizes[h]:8d} {len(fs):8d} {sum(f['survives'] for f in fs):10d}"
+        print(f"  {h:32s} {sizes[h]:8d} {len(fs):8d} {sum(f['survives'] for f in fs):10d}"
               f"          {sum(errs) if errs else '-':>5}")
 
     print("\n  share of each stratum, 95% interval (exact where every comment was labelled)")
@@ -139,12 +160,12 @@ def main():
             k = sum(1 for f in pool if f[prop])
             lo, hi = (k / len(pool),) * 2 if len(fs) == sizes[h] else interval(k, len(pool))
             bounds[h, prop] = (lo, hi)
-            print(f"    {h:22s} {prop:10s} {k:3d} of {len(pool):3d}: {100 * lo:5.1f}% to {100 * hi:5.1f}%")
+            print(f"    {h:32s} {prop:10s} {k:3d} of {len(pool):3d}: {100 * lo:5.1f}% to {100 * hi:5.1f}%")
 
-    def rate(loud_end, resolves_end):
+    def rate(loud_end, resolves_end, extra=0):
         top = sum(sizes[h] * bounds[h, "survives"][loud_end] for h in by if h.endswith("/loud"))
         rest = sum(sizes[h] * bounds[h, "survives"][resolves_end] for h in by if h.endswith("/resolves"))
-        return top / (top + rest)
+        return (top + extra) / (top + rest + extra)
 
     counted = [h for h in by if (h, "oracle_err") in bounds]
     err = [sum(sizes[h] * bounds[h, "oracle_err"][e] for h in counted) / sum(sizes[h] for h in counted)
@@ -153,7 +174,15 @@ def main():
           f" (each stratum at its interval's ends: {100 * err[0]:.1f}% to {100 * err[1]:.1f}%)")
     print(f"\n  refusal rate, labels for truth: {100 * estimate(by, sizes, 'loud_survives', 'survives'):.1f}%"
           f" (each stratum at its interval's least and most favourable end: "
-          f"{100 * rate(0, 1):.1f}% to {100 * rate(1, 0):.1f}%)")
+          f"{100 * rate(0, 1):.1f}% to {100 * rate(1, 0):.1f}%), "
+          f"among comments on versions the profile accepts")
+    profile = sum(meta.get("profile refused", {}).values())
+    point = estimate(by, sizes, "loud_survives", "survives")
+    top = point * sum(sizes[h] * sum(f["survives"] for f in by[h]) / len(by[h]) for h in by)
+    whole = sum(sizes[h] * sum(f["survives"] for f in by[h]) / len(by[h]) for h in by)
+    print(f"  outside it: {profile} comments on versions the profile refuses, each REFUSED(not-in-profile);"
+          f" as if each were a refusal of surviving text: {100 * (top + profile) / (whole + profile):.1f}%"
+          f" ({100 * rate(0, 1, profile):.1f}% to {100 * rate(1, 0, profile):.1f}%)")
 
     print("\n## resolving comments the labels put elsewhere")
     for i, k in sorted(key.items()):

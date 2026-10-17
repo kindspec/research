@@ -27,16 +27,15 @@
   comments on them: 800
   comments: 2989
   no comment made: 29
-  not counted: 14
-  counted: correct 2793, loud 182, WRONG 0; span survives 2809, loud among them 6.5%
+  not counted: 10
+  counted: correct 2797, loud 182, WRONG 0; span survives 2809, loud among them 6.5%
     loud DETACHED: 90
     loud ORPHANED: 8
     loud REFUSED(crowded-gap): 65
     loud REFUSED(near-copy): 19
-  as if every loud comment not counted had surviving text: 6.9% (14 more)
-  and every comment on a pair whose later version the profile refuses: 27.5% (800 more)
+  as if every loud comment not counted had surviving text: 6.8% (10 more)
+  and every comment on a pair whose later version the profile refuses: 27.4% (800 more)
     not counted DETACHED: 1
-    not counted ORPHANED: 11
-    not counted REFUSED(crowded-gap): 2
+    not counted ORPHANED: 9
 
 ## WRONG, first 20

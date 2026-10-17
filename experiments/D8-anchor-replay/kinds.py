@@ -6,7 +6,10 @@ the span's stored context (CONTEXT code points each side) is still beside
 it in the target. Each kind is printed with one example pair.
 
 Usage:
-    python3 -I kinds.py --blockspec PATH --clone NAME=PATH --dump JSONL --gap N
+    python3 -I kinds.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N
+
+with the clone names of ../D8-block-definitions/arms.json. The loud
+comments of every arm in the dump are counted together.
 """
 
 import argparse
@@ -29,6 +32,7 @@ def main():
     ap.add_argument("--gap", type=int, required=True)
     args = ap.parse_args()
     A, R, head = replay.load_blockspec(args.blockspec)
+    clone_of = {a["name"]: a["clone"] for a in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]}
     clones = dict(c.split("=", 1) for c in args.clone)
     rows = [json.loads(line) for line in open(args.dump, encoding="utf-8")]
     loud = [r for r in rows if r["gap"] == args.gap and r["verdict"] == "loud"]
@@ -36,7 +40,7 @@ def main():
     for r in loud:
         k = (r["arm"], r["file"], r["a"], r["b"])
         if k not in versions:
-            show = lambda c: replay.git(clones[r["arm"]], "show", f"{c}:{r['file']}")
+            show = lambda c: replay.git(clones[clone_of[r["arm"]]], "show", f"{c}:{r['file']}")
             versions[k] = (replay.paragraphs(A, R, show(r["a"]))[1], replay.paragraphs(A, R, show(r["b"]))[1])
         old_ps, new_ps = versions[k]
         old, new = old_ps[r["para"]].text, new_ps[r["target"]].text

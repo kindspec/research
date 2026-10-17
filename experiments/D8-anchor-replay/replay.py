@@ -20,9 +20,9 @@ commits apart in that file's history:
   resolver (`blockspec.anchor.resolve`), with the earlier version as `base`;
 - truth is `word_oracle`: difflib matches the earlier version's paragraph
   words onto the later's. The span survives in the later paragraph its
-  words all map to, in order and adjacent; it is gone when its text, with
-  whitespace runs as one space, is in no later paragraph; anything else (a
-  move, a copy) is unknown and is not counted.
+  words all map to, in order and adjacent; it is gone when its words occur
+  in order and adjacent in no later paragraph; anything else (a move, a
+  copy) is unknown and is not counted.
 
 A comment is graded against the target:
 
@@ -67,6 +67,7 @@ SEED = 7
 GAPS = (1, 5, 25)
 LOUD = ("DETACHED", "ORPHANED")
 RESOLVES = ("RESOLVED", "EDITED", "MOVED")
+ARMS = os.path.join(HERE, "..", "D8-block-definitions", "arms.json")
 
 
 def git(repo, *args):
@@ -105,12 +106,12 @@ def paragraphs(A, R, text):
 def word_oracle(old_ps, new_ps):
     """Truth for a comment's span, from difflib's matching of the earlier
     version's paragraph words onto the later's (both in document order).
-    `truth(i, start)` for the span of SPAN words at word `start` of old
-    paragraph `i` is ('SURVIVED', new index) when every word maps, in order
-    and adjacent, into one later paragraph; ('GONE', None) when the span's
-    text occurs in no later paragraph, whitespace aside (`flat`); and ('UNKNOWN', None) otherwise: the
-    text is somewhere later, but not where the matching put it (a move, or a
-    copy)."""
+    `truth(i, start, span)` for the span of SPAN words at word `start` of
+    old paragraph `i` is ('SURVIVED', new index) when every word maps, in
+    order and adjacent, into one later paragraph; ('GONE', None) when the
+    span's words occur in order and adjacent in no later paragraph
+    (`occurs`); and ('UNKNOWN', None) otherwise: the text is somewhere
+    later, but not where the matching put it (a move, or a copy)."""
     ow = [(i, w) for i, p in enumerate(old_ps) for w in p.text.split()]
     nw = [(j, w) for j, p in enumerate(new_ps) for w in p.text.split()]
     sm = difflib.SequenceMatcher(None, [w for _, w in ow], [w for _, w in nw], autojunk=False)
@@ -129,7 +130,7 @@ def word_oracle(old_ps, new_ps):
             js = {nw[x][0] for x in got}
             if len(js) == 1:
                 return ("SURVIVED", js.pop())
-        if not any(span in flat(p.text) for p in new_ps):
+        if not any(occurs(span, p.text) for p in new_ps):
             return ("GONE", None)
         return ("UNKNOWN", None)
 
@@ -165,6 +166,13 @@ def flat(text):
     return " ".join(text.split())
 
 
+def occurs(span, text):
+    """How often `span`'s words occur in `text`, in order and adjacent:
+    whitespace aside, and never inside a longer word."""
+    words, want = text.split(), span.split()
+    return sum(words[k : k + len(want)] == want for k in range(len(words) - len(want) + 1))
+
+
 def grade(got, truth, span, new_ps):
     """`correct`, `loud`, `WRONG`, or None when the comment is not counted;
     and whether the span survives."""
@@ -175,7 +183,7 @@ def grade(got, truth, span, new_ps):
     if truth[0] != "SURVIVED":
         return None, False
     target = new_ps[truth[1]]
-    if flat(target.text).count(span) > 1:
+    if occurs(span, target.text) > 1:
         return None, False
     if not resolved:
         return "loud", True
@@ -215,9 +223,14 @@ def run_arm(A, R, name, repo, pathspec, gap, wrongs, dump):
             if new_ps is None:
                 # every comment on it is REFUSED(not-in-profile), surviving text or not
                 t["pairs whose later version the profile refuses"] += 1
-                t["comments on them"] += sum(
-                    1 for lf in old_ps if len(lf.text) >= MINLEN and make_comment(A, snap, lf, old)
-                )
+                for i, lf in enumerate(old_ps):
+                    made = len(lf.text) >= MINLEN and make_comment(A, snap, lf, old)
+                    if made:
+                        t["comments on them"] += 1
+                        dump.append({"arm": name, "gap": gap, "file": f, "a": a, "b": b, "para": i,
+                                     "start": made[2], "span": made[0], "truth": None, "target": None,
+                                     "status": "REFUSED(not-in-profile)", "resolved_to": None,
+                                     "verdict": "profile"})
                 continue
             log = []
             for got, span in replay_pair(A, R, old, new, snap, old_ps, new_ps, t, log):
@@ -332,7 +345,7 @@ def main():
     args = ap.parse_args()
     A, R, head = load_blockspec(args.blockspec)
     clones = dict(c.split("=", 1) for c in args.clone)
-    arms = json.load(open(os.path.join(HERE, "..", "D8-block-definitions", "arms.json")))["arms"]
+    arms = json.load(open(ARMS, encoding="utf-8"))["arms"]
     print(
         f"# replay.py: blockspec reference at {head[:12]}; MINLEN={MINLEN}, SPAN={SPAN}, "
         f"files={FILES}, pairs/file={PAIRS_PER_FILE}, seed={SEED}"

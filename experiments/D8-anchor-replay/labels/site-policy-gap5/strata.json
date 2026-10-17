@@ -3,19 +3,22 @@
  "gap": 5,
  "seed": 11,
  "sizes": {
-  "placed/loud": 182,
-  "placed/resolves": 2627,
-  "gone/loud": 166,
-  "gone/resolves": 0,
-  "unplaced/loud": 14,
-  "unplaced/resolves": 0
+  "site-policy/placed/loud": 182,
+  "site-policy/placed/resolves": 2627,
+  "site-policy/gone/loud": 170,
+  "site-policy/gone/resolves": 0,
+  "site-policy/unplaced/loud": 10,
+  "site-policy/unplaced/resolves": 0
  },
  "caps": {
-  "placed/loud": 60,
-  "placed/resolves": 30,
-  "gone/loud": 25,
-  "gone/resolves": 25,
-  "unplaced/loud": 60,
-  "unplaced/resolves": 30
+  "site-policy/placed/loud": 60,
+  "site-policy/placed/resolves": 30,
+  "site-policy/gone/loud": 25,
+  "site-policy/gone/resolves": 25,
+  "site-policy/unplaced/loud": 60,
+  "site-policy/unplaced/resolves": 30
+ },
+ "profile refused": {
+  "site-policy": 800
  }
 }

@@ -10,4 +10,8 @@ loud counted as correct: exit 1; failing states: ['as is', 'every resolution one
 a span repeated in its target counted: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
 nth always 0: exit 1; failing states: ['as is']
 the unplaced rate counts resolving comments: exit 1; failing states: ['the three rates on fixed counts']
-12 of 12 breaks caught
+a repeat in the target counted without whitespace aside: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
+the gone test matches inside a longer word: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
+MOVED is not a resolution: exit 1; failing states: ['as is', 'every resolution one character off']
+MINLEN off by one: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
+16 of 16 breaks caught

@@ -15,7 +15,7 @@ and checks the oracle against a labelled sample.
     labelling-brief.md         what each labeller is given, besides the packets
     red_states.py              a control and three broken resolvers on a fixture, and the rates, each checked
     red-states.txt             red_states.py's stdout
-    red_sweep.py               replay.py broken twelve ways; red_states.py must fail each, or it exits 1
+    red_sweep.py               replay.py broken sixteen ways; red_states.py must fail each, or it exits 1
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
@@ -41,10 +41,10 @@ versions GAP commits apart in that file's history (gaps 1, 5 and 25):
 - **truth** is the word oracle (`word_oracle`). difflib matches the earlier
   version's paragraph words, in document order, onto the later version's.
   The span **survives** in the later paragraph its three words all map to,
-  in order and adjacent. It is **gone** when its text, with each run of
-  whitespace as one space, is in no later paragraph. Anything else is
-  **unknown** and is not counted: the text is somewhere later, but not
-  where the matching put it, as when a paragraph moves.
+  in order and adjacent. It is **gone** when its words occur, in order and
+  adjacent, in no later paragraph. Anything else is **unknown** and is not
+  counted: the text is somewhere later, but not where the matching put it,
+  as when a paragraph moves.
 
 A comment is graded against the oracle's target:
 
@@ -53,10 +53,11 @@ A comment is graded against the oracle's target:
 | the span occurs once in the target, whitespace aside | resolves there, on that span | refused, `DETACHED` or `ORPHANED` | resolves anywhere else |
 | the span is gone | loud | — | resolves |
 
-A span that occurs more than once in the target is not counted. Each `loud`
-is reported with its status and refusal reason. A soft line break renders
-as a space, so a span rewrapped across lines is the same text; one with a
-word inserted between its words, or a word changed, is gone.
+A span whose words occur more than once in the target is not counted. Each
+`loud` is reported with its status and refusal reason. Words are split on
+whitespace, and a soft line break renders as a space, so a span rewrapped
+across lines is the same text; one with a word inserted between its words,
+or a word changed or lengthened, is gone.
 
 Every comment that is not counted is reported too, by the resolver's
 status. The report gives three rates of refusing text that survived, and
@@ -69,44 +70,65 @@ none of them is a bound:
   `REFUSED(not-in-profile)`.
 
 `--dump` writes every comment, with its truth and its resolution, one JSON
-line each, for `sample.py`.
+line each, for `sample.py`; a comment on a pair whose later version the
+profile refuses is written with verdict `profile`.
 
 ## The labelled sample
 
 The oracle's placements are difflib's, not a reader's, and it does not
 place a moved paragraph. A labelled sample measures both.
 
-`sample.py` puts each comment of one gap in a stratum: the oracle's class
-(`placed`, the span survives where the oracle puts it; `gone`; `unplaced`,
-not counted) crossed with the resolver's (`loud` or `resolves`). It draws
-each stratum at random up to a cap, and writes one packet per comment: the
-file's two versions as numbered paragraphs, with the span marked. A packet
-says nothing of the resolver's status or the oracle's truth; those are in
-the key, which the labellers are not given.
+`sample.py` puts each comment of one gap in a stratum: its arm, the
+oracle's class (`placed`, the span survives where the oracle puts it;
+`gone`; `unplaced`, not counted) and the resolver's (`loud` or
+`resolves`). It draws each stratum at random up to a cap (`--cap` changes
+one), and writes one packet per comment: the file's two versions as
+numbered paragraphs, with the span marked. A packet says nothing of the
+resolver's status or the oracle's truth; those are in the key, which the
+labellers are not given. A comment on a version the profile refuses has no
+later paragraphs to label, so it is counted, not sampled.
 
-Each packet is labelled twice, independently, by labellers given only the
-packet and `labelling-brief.md`: does the marked text survive in the later
-version as the same passage, whitespace aside, and in which paragraph?
-Where the two disagree, a third label settles it. `score.py` scales each
-stratum's labelled shares to the stratum's size, and gives each share an
-exact 95% interval (Clopper-Pearson; none where every comment in the
-stratum was labelled). Each estimate is then given with every stratum at
-the ends of its interval, which is wider than a joint interval and stays
-finite when a stratum shows no errors.
+Each packet is labelled twice, independently, given only the packet and
+`labelling-brief.md`: does the marked text survive in the later version as
+the same passage, whitespace aside, and in which paragraph? Where the two
+disagree, a third label settles it. `score.py` validates the labels, scales
+each stratum's labelled shares to the stratum's size, and gives each share
+an exact two-sided 95% interval (Clopper-Pearson; none where every comment
+in the stratum was labelled). Each estimate is then given with every
+stratum at the ends of its interval. That range is not a confidence
+interval, but it stays finite where a stratum shows no errors.
+
+The rehearsal's labels were made by automated labellers, not people: each
+pass by separate instances given the same brief and nothing else, with the
+key kept out of their packets but on the same machine. The brief states
+the rule a span survives by, which is the oracle's own rule for words; what
+the labels add is which passage is the same one, through moves, merges,
+splits and coincidental repeats, and agreement between the passes shows
+the rule applied consistently, not a reader's independent judgement of it.
 
 ## The rehearsal
 
 `rehearsal-site-policy.txt`, at gaps 1 and 5, and its gap-5 sample in
-`labels/site-policy-gap5/`. At gap 5 the oracle does not count 14 of 2,989
+`labels/site-policy-gap5/`. At gap 5 the oracle does not count 10 of 2,989
 comments, and among those it places, 182 of 2,809 surviving spans are
-refused (6.5%), with no `WRONG`.
+refused (6.5%), with no `WRONG`. Besides those, 800 comments sit on 11
+pairs whose later version the profile refuses, every one for `raw-html`.
 
-The two passes of labels agree on all 129 packets. No label contradicts
+The two passes of labels agree on all 125 packets. No label contradicts
 the oracle where it places a comment, but 30 labelled comments stand for
-the 2,627 that resolve, so the oracle's error is only bounded: at most
-11.3%. Of the 14 comments the oracle does not place, 4 have surviving text.
-With labels for truth, the refusal rate at gap 5 is 6.6%, from 6.3% to 8.2%
-with every stratum at the ends of its interval (`score.txt`).
+the 2,627 that resolve, so its error is known only to be at most 11.4%
+with every stratum at the upper end of its interval. Of the 10 comments the
+oracle does not place, 4 have surviving text. With labels for truth, the
+refusal rate at gap 5 is **6.6%**, from 6.3% to 8.3% with every stratum at
+the ends of its interval, among comments on versions the profile accepts;
+counting each of the 800 as a refusal of surviving text, it is 27.3%
+(`score.txt`).
+
+117 of the 125 packets were labelled on an earlier draw of the same
+comments, before the gone test matched whole words (the sample's key at
+commit `361a6b3`). Their labels are carried over by comment (arm, file,
+both versions, paragraph and span); the other 8 were labelled for this
+draw, by two more passes given the same brief.
 
 Some of the refusals of surviving text come where little changed
 (`kinds-site-policy-gap5.txt`): of the 182 at gap 5, 18 are
@@ -148,7 +170,8 @@ at least half like it.
 ## Running it
 
     python3 -I replay.py --blockspec PATH --clone NAME=PATH ... [--arm NAME] [--gap N] [--dump JSONL]
-    python3 -I sample.py --blockspec PATH --clone NAME=PATH --dump JSONL --gap N --packets DIR --keydir DIR
+    python3 -I sample.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N --packets DIR --keydir DIR [--cap CLASS/RESOLVER=N]
+    python3 -I kinds.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N
     python3 -I score.py --keydir DIR --labels A.jsonl --labels B.jsonl [--adjudicated C.jsonl]
     python3 -I red_states.py --blockspec PATH
     python3 -I red_sweep.py BLOCKSPEC_PATH
