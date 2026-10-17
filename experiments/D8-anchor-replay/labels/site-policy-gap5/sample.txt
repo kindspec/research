@@ -1,0 +1,8 @@
+# sample.py: gap 5, seed 11, 125 packets
+  site-policy/placed/loud: 182 comments, 60 sampled
+  site-policy/placed/resolves: 2627 comments, 30 sampled
+  site-policy/gone/loud: 170 comments, 25 sampled
+  site-policy/gone/resolves: 0 comments, 0 sampled
+  site-policy/unplaced/loud: 10 comments, 10 sampled
+  site-policy/unplaced/resolves: 0 comments, 0 sampled
+  site-policy: 800 comments on versions the profile refuses, not sampled

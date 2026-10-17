@@ -7,7 +7,7 @@ as the first thing that would reverse its design: the resolver adds refusals
 (near-copy, refilled-gap, crowded-gap, twin and context rules, and the
 alignment) whose rate on real edits is unknown. This replays real file
 histories against the blockspec reference resolver, and grades each
-resolution with D8's line oracle (see the README for how independent it is).
+resolution with a word oracle (see the README for how independent it is).
 
 For each arm, each sampled file, and up to three sampled pairs of versions GAP
 commits apart in that file's history:
@@ -18,20 +18,18 @@ commits apart in that file's history:
   occur once in the paragraph, or no comment is made);
 - the comment is resolved against the later version by the reference
   resolver (`blockspec.anchor.resolve`), with the earlier version as `base`;
-- truth is D8's line oracle (`../D8-identity/anchor_eval2.py`, `line_oracle`),
-  applied to paragraphs: difflib maps the earlier file's lines onto the
-  later's. If at least half of the paragraph's non-blank lines survive, its
-  target is the later paragraph holding most of them. If none survive and no
-  later paragraph is 30% similar, it was deleted. Anything else is unknown
-  and is not counted.
+- truth is `word_oracle`: difflib matches the earlier version's paragraph
+  words onto the later's. The span survives in the later paragraph its
+  words all map to, in order and adjacent; it is gone when its words occur
+  in order and adjacent in no later paragraph; anything else (a move, a
+  copy) is unknown and is not counted.
 
 A comment is graded against the target:
 
-- the span survives (it occurs exactly once in the target): `correct` if it
-  resolves there, on that span; `loud` if it is refused, `DETACHED` or
-  `ORPHANED`; `WRONG` if it resolves anywhere else;
-- the span is gone from the target, or the paragraph was deleted: `correct`
-  if loud, `WRONG` if it resolves;
+- the span survives (it occurs once in the target, whitespace aside):
+  `correct` if it resolves there, on that span; `loud` if it is refused,
+  `DETACHED` or `ORPHANED`; `WRONG` if it resolves anywhere else;
+- the span is gone: `correct` if loud, `WRONG` if it resolves;
 - the span occurs more than once in the target, or the oracle is unknown:
   not counted.
 
@@ -41,6 +39,7 @@ with its reason.
 
 Usage:
     python3 -I replay.py --blockspec PATH --clone NAME=PATH ... [--arm NAME] [--gap N]
+        [--dump JSONL]
 
 with the clone names of ../D8-block-definitions/arms.json. Each clone must be
 at its pin with no tracked changes. PATH for --blockspec is a blockspec
@@ -53,7 +52,6 @@ import importlib
 import json
 import os
 import random
-import re
 import subprocess
 import sys
 from collections import Counter
@@ -69,18 +67,13 @@ SEED = 7
 GAPS = (1, 5, 25)
 LOUD = ("DETACHED", "ORPHANED")
 RESOLVES = ("RESOLVED", "EDITED", "MOVED")
+ARMS = os.path.join(HERE, "..", "D8-block-definitions", "arms.json")
 
 
 def git(repo, *args):
     """git's stdout as UTF-8, bytes for bytes: no newline translation."""
     out = subprocess.run(["git", "-C", repo, *args], capture_output=True, check=True).stdout
     return out.decode("utf-8")
-
-
-def lines_of(text):
-    """The reader's line split (blockspec document.py: `\\r\\n|\\r|\\n`), so a
-    line index means the same line to the oracle and to the reader."""
-    return re.split(r"\r\n|\r|\n", text)
 
 
 def blob_id(text):
@@ -110,37 +103,38 @@ def paragraphs(A, R, text):
     return snap, [lf for lf in snap.leaves if lf.type == "p" and lf.node.lines]
 
 
-def line_oracle(old, new, old_ps, new_ps):
-    """D8's line oracle (anchor_eval2.line_oracle's rule), on paragraphs:
-    for each old paragraph, ('SURVIVED', new index), ('DELETED', None) or
-    ('UNKNOWN', None)."""
-    li, lj = lines_of(old), lines_of(new)
-    sm = difflib.SequenceMatcher(None, li, lj, autojunk=False)
+def word_oracle(old_ps, new_ps):
+    """Truth for a comment's span, from difflib's matching of the earlier
+    version's paragraph words onto the later's (both in document order).
+    `truth(i, start, span)` for the span of SPAN words at word `start` of
+    old paragraph `i` is ('SURVIVED', new index) when every word maps, in
+    order and adjacent, into one later paragraph; ('GONE', None) when the
+    span's words occur in order and adjacent in no later paragraph
+    (`occurs`); and ('UNKNOWN', None) otherwise: the text is somewhere
+    later, but not where the matching put it (a move, or a copy)."""
+    ow = [(i, w) for i, p in enumerate(old_ps) for w in p.text.split()]
+    nw = [(j, w) for j, p in enumerate(new_ps) for w in p.text.split()]
+    sm = difflib.SequenceMatcher(None, [w for _, w in ow], [w for _, w in nw], autojunk=False)
     m = {}
     for a, b, n in sm.get_matching_blocks():
         for k in range(n):
             m[a + k] = b + k
-    jj = {ln - 1: n for n, p in enumerate(new_ps) for ln, _ in p.node.lines}
-    out = []
-    for p in old_ps:
-        mine = [ln - 1 for ln, _ in p.node.lines]
-        nonblank = [L for L in mine if L < len(li) and li[L].strip()]
-        if not nonblank:
-            out.append(("UNKNOWN", None))
-            continue
-        mapped = [m[L] for L in nonblank if L in m]
-        frac = len(mapped) / len(nonblank)
-        if frac >= 0.5:
-            tgt = Counter(jj[L] for L in mapped if L in jj)
-            out.append(("SURVIVED", tgt.most_common(1)[0][0]) if tgt else ("UNKNOWN", None))
-        elif frac == 0.0:
-            best = max(
-                (difflib.SequenceMatcher(None, p.text, x.text).ratio() for x in new_ps), default=0
-            )
-            out.append(("DELETED", None) if best < 0.3 else ("UNKNOWN", None))
-        else:
-            out.append(("UNKNOWN", None))
-    return out
+    first = {}
+    for g, (i, _) in enumerate(ow):
+        first.setdefault(i, g)
+
+    def truth(i, start, span):
+        g = first[i] + start
+        got = [m.get(g + k) for k in range(SPAN)]
+        if None not in got and got == list(range(got[0], got[0] + SPAN)):
+            js = {nw[x][0] for x in got}
+            if len(js) == 1:
+                return ("SURVIVED", js.pop())
+        if not any(occurs(span, p.text) for p in new_ps):
+            return ("GONE", None)
+        return ("UNKNOWN", None)
+
+    return truth
 
 
 def make_comment(A, snap, leaf, text):
@@ -162,8 +156,21 @@ def make_comment(A, snap, leaf, text):
         nth = sum(x.key == leaf.key for x in snap.leaves[: leaf.index])
         an = A.Anchor(blob_id(text), leaf.type, nth, leaf.text, span, pre, suf, None)
         record = f"---\nanchor: {A.write_anchor(an)}\nkind: comment\nstatus: open\n---\n\nc.\n"
-        return span, record
+        return span, record, start
     return None
+
+
+def flat(text):
+    """Text with each run of whitespace one space: a soft line break inside
+    a paragraph renders as a space, so a rewrapped span is the same text."""
+    return " ".join(text.split())
+
+
+def occurs(span, text):
+    """How often `span`'s words occur in `text`, in order and adjacent:
+    whitespace aside, and never inside a longer word."""
+    words, want = text.split(), span.split()
+    return sum(words[k : k + len(want)] == want for k in range(len(words) - len(want) + 1))
 
 
 def grade(got, truth, span, new_ps):
@@ -171,16 +178,13 @@ def grade(got, truth, span, new_ps):
     and whether the span survives."""
     status = got["status"]
     resolved = status in RESOLVES
-    if truth[0] == "DELETED":
+    if truth[0] == "GONE":
         return ("WRONG" if resolved else "correct"), False
     if truth[0] != "SURVIVED":
         return None, False
     target = new_ps[truth[1]]
-    n = target.text.count(span)
-    if n > 1:
+    if occurs(span, target.text) > 1:
         return None, False
-    if n == 0:
-        return ("WRONG" if resolved else "correct"), False
     if not resolved:
         return "loud", True
     s, e = got["span"]
@@ -198,7 +202,7 @@ def pairs_for(repo, f, gap, rnd):
     return [(cs[i], cs[i + gap]) for i in sorted(starts[:PAIRS_PER_FILE])]
 
 
-def run_arm(A, R, name, repo, pathspec, gap, wrongs):
+def run_arm(A, R, name, repo, pathspec, gap, wrongs, dump):
     rnd = random.Random(SEED)
     files = [f for f in git(repo, "ls-files", "--", *pathspec.split()).split("\n") if f]
     rnd.shuffle(files)
@@ -219,35 +223,50 @@ def run_arm(A, R, name, repo, pathspec, gap, wrongs):
             if new_ps is None:
                 # every comment on it is REFUSED(not-in-profile), surviving text or not
                 t["pairs whose later version the profile refuses"] += 1
-                t["comments on them"] += sum(
-                    1 for lf in old_ps if len(lf.text) >= MINLEN and make_comment(A, snap, lf, old)
-                )
+                for i, lf in enumerate(old_ps):
+                    made = len(lf.text) >= MINLEN and make_comment(A, snap, lf, old)
+                    if made:
+                        t["comments on them"] += 1
+                        dump.append({"arm": name, "gap": gap, "file": f, "a": a, "b": b, "para": i,
+                                     "start": made[2], "span": made[0], "truth": None, "target": None,
+                                     "status": "REFUSED(not-in-profile)", "resolved_to": None,
+                                     "verdict": "profile"})
                 continue
-            for got, span in replay_pair(A, R, old, new, snap, old_ps, new_ps, t):
+            log = []
+            for got, span in replay_pair(A, R, old, new, snap, old_ps, new_ps, t, log):
                 if len(wrongs) < 20:
                     wrongs.append((name, gap, f, a[:8], b[:8], got["status"], span))
+            for row in log:
+                dump.append({"arm": name, "gap": gap, "file": f, "a": a, "b": b, **row})
     return t
 
 
-def replay_pair(A, R, old, new, snap, old_ps, new_ps, t):
+def replay_pair(A, R, old, new, snap, old_ps, new_ps, t, log=None):
     """Comment, resolve and grade every paragraph of one pair into `t`; the
-    WRONG ones, as (resolution, span)."""
+    WRONG ones, as (resolution, span). Each comment is appended to `log`."""
     wrong = []
-    truths = line_oracle(old, new, old_ps, new_ps)
-    for leaf, truth in zip(old_ps, truths):
+    truth_of = word_oracle(old_ps, new_ps)
+    for i, leaf in enumerate(old_ps):
         if len(leaf.text) < MINLEN:
             continue
         made = make_comment(A, snap, leaf, old)
         if made is None:
             t["no comment made"] += 1
             continue
-        span, record = made
+        span, record, start = made
+        truth = truth_of(i, start, span)
         path = "d.md.notes/01J00000000000000000000001.md"
         repo_in = {"tree": {"d.md": new, path: record}, "blobs": {blob_id(old): old}}
         repo_in["object_format"] = "sha1"
         got = A.resolve(repo_in, {"records": [path]}, R)["records"][path]
         t["comments"] += 1
         verdict, survives = grade(got, truth, span, new_ps)
+        if log is not None:
+            to = next((j for j, x in enumerate(new_ps) if got["leaf"]
+                       and list(x.node.path) == got["leaf"]["node"]), None)
+            log.append({"para": i, "start": start, "span": span, "truth": truth[0],
+                        "target": truth[1], "status": got["status"], "resolved_to": to,
+                        "verdict": verdict})
         if verdict is None:
             t["not counted"] += 1
             t["not counted " + got["status"]] += 1
@@ -322,15 +341,16 @@ def main():
     ap.add_argument("--clone", action="append", default=[], metavar="NAME=PATH")
     ap.add_argument("--arm", action="append", default=[])
     ap.add_argument("--gap", action="append", type=int, default=[])
+    ap.add_argument("--dump", metavar="JSONL", help="write every comment, one JSON line each")
     args = ap.parse_args()
     A, R, head = load_blockspec(args.blockspec)
     clones = dict(c.split("=", 1) for c in args.clone)
-    arms = json.load(open(os.path.join(HERE, "..", "D8-block-definitions", "arms.json")))["arms"]
+    arms = json.load(open(ARMS, encoding="utf-8"))["arms"]
     print(
         f"# replay.py: blockspec reference at {head[:12]}; MINLEN={MINLEN}, SPAN={SPAN}, "
         f"files={FILES}, pairs/file={PAIRS_PER_FILE}, seed={SEED}"
     )
-    wrongs = []
+    wrongs, dump = [], []
     for arm in arms:
         if args.arm and arm["name"] not in args.arm:
             continue
@@ -341,7 +361,11 @@ def main():
         if pin != arm["pin"] or git(repo, "status", "--porcelain", "--untracked-files=no"):
             sys.exit(f"{arm['name']}: {repo} is not at its pin {arm['pin'][:12]} or has changes")
         for gap in args.gap or GAPS:
-            report(arm["name"], gap, run_arm(A, R, arm["name"], repo, arm["pathspec"], gap, wrongs))
+            report(arm["name"], gap, run_arm(A, R, arm["name"], repo, arm["pathspec"], gap, wrongs, dump))
+    if args.dump:
+        with open(args.dump, "w", encoding="utf-8") as out:
+            for row in dump:
+                out.write(json.dumps(row, ensure_ascii=False) + "\n")
     print("\n## WRONG, first 20")
     for w in wrongs:
         print("  " + " ".join(str(x) for x in w))

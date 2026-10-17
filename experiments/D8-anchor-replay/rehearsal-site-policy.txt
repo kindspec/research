@@ -8,17 +8,16 @@
   comments on them: 62
   comments: 4306
   no comment made: 44
-  not counted: 421
-  counted: correct 3876, loud 9, WRONG 0; span survives 3882, loud among them 0.2%
-    loud DETACHED: 1
+  not counted: 3
+  counted: correct 4249, loud 54, WRONG 0; span survives 4278, loud among them 1.3%
+    loud DETACHED: 25
+    loud ORPHANED: 3
+    loud REFUSED(crowded-gap): 18
     loud REFUSED(repeat): 8
-  as if every loud comment not counted had surviving text: 2.0% (70 more)
-  and every comment on a pair whose later version the profile refuses: 3.5% (62 more)
-    not counted DETACHED: 35
-    not counted EDITED: 74
-    not counted ORPHANED: 10
-    not counted REFUSED(crowded-gap): 25
-    not counted RESOLVED: 277
+  as if every loud comment not counted had surviving text: 1.3% (3 more)
+  and every comment on a pair whose later version the profile refuses: 2.7% (62 more)
+    not counted ORPHANED: 2
+    not counted REFUSED(crowded-gap): 1
 
 ## site-policy gap=5
   pairs: 101
@@ -28,16 +27,15 @@
   comments on them: 800
   comments: 2989
   no comment made: 29
-  not counted: 1275
-  counted: correct 1698, loud 16, WRONG 0; span survives 1701, loud among them 0.9%
-    loud REFUSED(near-copy): 16
-  as if every loud comment not counted had surviving text: 17.2% (333 more)
-  and every comment on a pair whose later version the profile refuses: 40.5% (800 more)
-    not counted DETACHED: 121
-    not counted EDITED: 275
-    not counted ORPHANED: 104
-    not counted REFUSED(crowded-gap): 103
-    not counted REFUSED(near-copy): 5
-    not counted RESOLVED: 667
+  not counted: 10
+  counted: correct 2797, loud 182, WRONG 0; span survives 2809, loud among them 6.5%
+    loud DETACHED: 90
+    loud ORPHANED: 8
+    loud REFUSED(crowded-gap): 65
+    loud REFUSED(near-copy): 19
+  as if every loud comment not counted had surviving text: 6.8% (10 more)
+  and every comment on a pair whose later version the profile refuses: 27.4% (800 more)
+    not counted DETACHED: 1
+    not counted ORPHANED: 9
 
 ## WRONG, first 20

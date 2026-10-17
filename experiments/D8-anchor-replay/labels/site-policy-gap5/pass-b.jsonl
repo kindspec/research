@@ -1,0 +1,125 @@
+{"id": "a3b00043", "survives": true, "paragraph": 46, "note": "paragraph unchanged, moved"}
+{"id": "fe4a5ce0", "survives": true, "paragraph": 32, "note": "same ToS-violation paragraph; only link target changed"}
+{"id": "41d812cd", "survives": false, "paragraph": null, "note": "recruitment-communication item removed in rewrite"}
+{"id": "e13a0996", "survives": true, "paragraph": 83, "note": "fees paragraph; only the support link changed"}
+{"id": "6a8f1dd4", "survives": false, "paragraph": null, "note": "link URL changed, so third word (Statement](...)) differs; now P8 with docs.github.com URL"}
+{"id": "ba6bc77c", "survives": true, "paragraph": 15, "note": "indemnity paragraph reworded elsewhere; 'legal fees, from' intact"}
+{"id": "5484b3db", "survives": true, "paragraph": 8, "note": "only 'event' capitalised outside the phrase"}
+{"id": "6370903f", "survives": true, "paragraph": 9, "note": "same link line; only URL after the marked words changed"}
+{"id": "ef2b1ae5", "survives": true, "paragraph": 5, "note": "alcohol clause reworded but 'are at least' kept"}
+{"id": "bc2b75cd", "survives": true, "paragraph": 10, "note": "Enterprise Server ECCN paragraph unchanged; P12 is a new Copilot paragraph reusing the phrase"}
+{"id": "b1b43d07", "survives": true, "paragraph": 15, "note": "indemnity paragraph moved to P15; 'legal fees, from' intact"}
+{"id": "94b953ed", "survives": true, "paragraph": 9, "note": "same 'Communicate expectations' paragraph, words intact"}
+{"id": "70c61508", "survives": true, "paragraph": 38, "note": "paragraph unchanged"}
+{"id": "766e6900", "survives": false, "paragraph": null, "note": "item split; P11 now ends 'imagery' without comma, 'or inappropriate' gone"}
+{"id": "d69f6b16", "survives": false, "paragraph": null, "note": "rights paragraph removed; later deletion rights reworded, words absent"}
+{"id": "8a8f7aef", "survives": true, "paragraph": 21, "note": "same link text, URL changed and paragraph moved"}
+{"id": "1572c073", "survives": true, "paragraph": 5, "note": "paragraph unchanged apart from appended lint comment"}
+{"id": "84c955f1", "survives": true, "paragraph": 11, "note": "paragraph unchanged"}
+{"id": "c00dc63d", "survives": true, "paragraph": 3, "note": "Tell the Truth paragraph intact; only emphasis markup elsewhere changed"}
+{"id": "83b852d7", "survives": true, "paragraph": 13, "note": "Copilot paragraph rewritten but keeps 'following regions of'; P11 is the separate Enterprise Server paragraph"}
+{"id": "07a04e64", "survives": true, "paragraph": 10, "note": "same stand-alone service clause, renumbered to P10"}
+{"id": "4f6b8f60", "survives": true, "paragraph": 13, "note": "not-responsible sentence merged into P13 with risk/responsibility text; scope reworded after the words"}
+{"id": "16759ecb", "survives": false, "paragraph": null, "note": "'(*depending' became '(_depending' in later P28; word changed"}
+{"id": "7b1ffc6a", "survives": false, "paragraph": null, "note": "document rewritten; the application-process improvement item and '(such as making' are gone"}
+{"id": "05b4d756", "survives": true, "paragraph": 31, "note": "unchanged list item"}
+{"id": "3aefce2e", "survives": true, "paragraph": 21, "note": "same heading unchanged"}
+{"id": "f517e382", "survives": true, "paragraph": 7, "note": "same list item; only the link URL changed after the marked words"}
+{"id": "b2c60fdd", "survives": true, "paragraph": 5, "note": "alcohol item reworded; 'are at least' intact"}
+{"id": "1ce606fd", "survives": true, "paragraph": 21, "note": "same 'Contributing to Open Source on GitHub' resource link; URL changed, link text intact"}
+{"id": "7f4bd052", "survives": false, "paragraph": null, "note": "sensitive information paragraph removed; no 'medical or health' in later version"}
+{"id": "c7aa8cf3", "survives": true, "paragraph": 42, "note": "same list item; only capitalisation of first word changed"}
+{"id": "9d5015e5", "survives": false, "paragraph": null, "note": "'reach out to us to' replaced by 'contact'"}
+{"id": "eba38bf6", "survives": true, "paragraph": 17, "note": "privacy item unchanged; P44 'such as by' is an unrelated advertising passage"}
+{"id": "7c7dfaf5", "survives": false, "paragraph": null, "note": "update sentence reworded to 'When we do, we will revise'; 'make' dropped"}
+{"id": "417e16c9", "survives": false, "paragraph": null, "note": "GitHub AE paragraph deleted; words remain only in parallel Cloud/Server paragraphs"}
+{"id": "e57bae11", "survives": true, "paragraph": 3, "note": "only emphasis markup changed; words intact"}
+{"id": "02e50777", "survives": true, "paragraph": 2, "note": "'power' changed to 'capacity' before the words; 'and authority to' intact"}
+{"id": "5e320f4a", "survives": true, "paragraph": 83, "note": "publicity clause rewritten into P83 but 'other public communication related to ... participation in the Program' kept"}
+{"id": "4d1079ab", "survives": false, "paragraph": null, "note": "'For the purposes of this policy:' removed; P59 'the purposes of' is unrelated"}
+{"id": "24aa1734", "survives": true, "paragraph": 12, "note": "Appeal paragraph split; first sentence with the phrase is now P12"}
+{"id": "ad9a6296", "survives": true, "paragraph": 2, "note": "same list item; only the following words became a link"}
+{"id": "9c9c2d91", "survives": true, "paragraph": 7, "note": "Appeal definition reworded; P0 use is a different intro passage"}
+{"id": "33dbeaab", "survives": true, "paragraph": 10, "note": "GHES ECCN paragraph unchanged; P12 is a new Copilot paragraph reusing the phrase"}
+{"id": "84b58297", "survives": true, "paragraph": 17, "note": "earlier P15 split/reworded; 'we will make them on the official live version' sentence kept in later P17"}
+{"id": "2b6b5fce", "survives": true, "paragraph": 41, "note": "paragraph unchanged"}
+{"id": "c0f727ad", "survives": true, "paragraph": 0, "note": "'When they do, GitHub staff' intact; later part of paragraph extended"}
+{"id": "e7dd5eed", "survives": true, "paragraph": 53, "note": "unchanged list item"}
+{"id": "57afaba6", "survives": true, "paragraph": 6, "note": "reworded, but link text 'of Conduct](...) or' intact with same URL"}
+{"id": "a8f51ac5", "survives": true, "paragraph": 8, "note": "same report-abuse sentence; link before the words reworded"}
+{"id": "71227cb2", "survives": true, "paragraph": 42, "note": "same list item; only initial capitalisation changed"}
+{"id": "7f914fe8", "survives": false, "paragraph": null, "note": "third-party rights clause removed; 'will be deemed' in later P84 is an unrelated notices clause"}
+{"id": "e448373c", "survives": true, "paragraph": 94, "note": "same Exclusions paragraph, words intact"}
+{"id": "3dd1e044", "survives": true, "paragraph": 7, "note": "paragraph unchanged"}
+{"id": "53b3b0ff", "survives": true, "paragraph": 7, "note": "same rights-reservation sentence intact in later P7"}
+{"id": "679e2a61", "survives": true, "paragraph": 3, "note": "same Tell the Truth paragraph; emphasis markup changed elsewhere, words intact"}
+{"id": "aa785c61", "survives": true, "paragraph": 79, "note": "paragraph unchanged"}
+{"id": "402746a4", "survives": false, "paragraph": null, "note": "verify-information/references item removed in rewrite; no 'by you or' anywhere"}
+{"id": "32d1464e", "survives": true, "paragraph": 31, "note": "paragraph unchanged"}
+{"id": "a2592b9d", "survives": true, "paragraph": 6, "note": "paragraph reworded but '[Event Code of Conduct](...) or' intact"}
+{"id": "6e4f2724", "survives": true, "paragraph": 42, "note": "Copilot Business 'your use of GitHub Copilot is governed by Product Specific Terms' sentence, moved and reworded at start"}
+{"id": "cdc02ecd", "survives": true, "paragraph": 51, "note": "same list item; only initial capitalisation changed; other hits are different passages"}
+{"id": "ce554174", "survives": true, "paragraph": 35, "note": "same pre-release warranty disclaimer sentence, moved from P27"}
+{"id": "c12f694d", "survives": true, "paragraph": 13, "note": "earlier P9-P11 merged and reworded into P13; its last sentence keeps 'GitHub is not responsible for any injuries or accidents that you might sustain'"}
+{"id": "33465430", "survives": false, "paragraph": null, "note": "document rewritten; effective date line removed"}
+{"id": "e1594dc4", "survives": false, "paragraph": null, "note": "Candidate Personal Information definition deleted"}
+{"id": "36d51bff", "survives": true, "paragraph": 6, "note": "same UK Modern Slavery Act paragraph; only a URL changed elsewhere"}
+{"id": "62694354", "survives": true, "paragraph": 4, "note": "Enterprise Cloud product list; 'and Features: Actions,' intact; P5 is the separate Server list"}
+{"id": "38363a3c", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "95468325", "survives": true, "paragraph": 11, "note": "same export-restriction paragraph, words intact; P13 is a separate passage"}
+{"id": "ebb9c596", "survives": true, "paragraph": 2, "note": "unchanged list item"}
+{"id": "51054839", "survives": true, "paragraph": 83, "note": "press release clause heavily reworded but 'other public communication' kept"}
+{"id": "22dc73ab", "survives": false, "paragraph": null, "note": "third-party rights clause deleted; 'will be deemed' in P84 is an unrelated notices clause"}
+{"id": "22720c54", "survives": true, "paragraph": 18, "note": "paragraph unchanged"}
+{"id": "7f1876d3", "survives": true, "paragraph": 8, "note": "paragraph reworded at start, phrase intact"}
+{"id": "59ca6ef0", "survives": true, "paragraph": 18, "note": "paragraph unchanged"}
+{"id": "d64be5f0", "survives": true, "paragraph": 3, "note": "unchanged sentence about GitHub Staff investigating reports"}
+{"id": "e5498256", "survives": true, "paragraph": 54, "note": "board-approval sentence reworded after the marked words"}
+{"id": "d945bbf3", "survives": true, "paragraph": 19, "note": "same comply-with-local-laws item unchanged"}
+{"id": "0a62f486", "survives": true, "paragraph": 40, "note": "same sentence; only link URL after the three words changed"}
+{"id": "b6125e0c", "survives": true, "paragraph": 11, "note": "Enterprise Server paragraph unchanged; P13 is the new Copilot paragraph"}
+{"id": "106b6a04", "survives": true, "paragraph": 5, "note": "*do* became _do_ outside the phrase"}
+{"id": "f33335b6", "survives": true, "paragraph": 3, "note": "same configure-the-Developer-Products sentence in P3; P15 hit is an unrelated resell sentence"}
+{"id": "faf8dfcd", "survives": true, "paragraph": 25, "note": "organization-sanctions paragraph moved to P25; P24 is the user paragraph with the same phrase"}
+{"id": "46dc1a26", "survives": false, "paragraph": null, "note": "later P64 has 'exercise or defend' without the comma; 'exercise,' changed"}
+{"id": "d26542ee", "survives": false, "paragraph": null, "note": "privacy policy rewritten; 'reports as required' appears nowhere in later version"}
+{"id": "2b4c0859", "survives": true, "paragraph": 107, "note": "paragraph unchanged"}
+{"id": "1ce262d6", "survives": true, "paragraph": 17, "note": "capitalisation change outside phrase, moved"}
+{"id": "735dc327", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "78aa8105", "survives": false, "paragraph": null, "note": "'Section 8,' changed to 'Section 9,'"}
+{"id": "4671120d", "survives": false, "paragraph": null, "note": "middle word (termination link) changed URL in later P49, so the word differs"}
+{"id": "ecfcc396", "survives": true, "paragraph": 9, "note": "link added elsewhere in paragraph; marked words intact"}
+{"id": "36cdf8a1", "survives": true, "paragraph": 19, "note": "same final list item, 'Other' dropped; list expanded so it moved"}
+{"id": "69fae866", "survives": false, "paragraph": null, "note": "P42 rewritten as 'For first payments ... 60 days after the first sponsorship'; 'creation of your Sponsored' gone; other hits are unrelated passages"}
+{"id": "61eeac37", "survives": true, "paragraph": 13, "note": "same limitation-of-liability paragraph; P10 match is unrelated auto-update text"}
+{"id": "a0301309", "survives": true, "paragraph": 23, "note": "same counter-notice sentence; only emphasis on next word changed"}
+{"id": "851d1a33", "survives": true, "paragraph": 21, "note": "Contact Us paragraph; words kept, contact link text reworded after them"}
+{"id": "7e6e9dbe", "survives": true, "paragraph": 29, "note": "contact link changed after the marked words"}
+{"id": "ac11d871", "survives": true, "paragraph": 14, "note": "release paragraph reworded elsewhere; 'and all claims,' intact"}
+{"id": "50bc3228", "survives": true, "paragraph": 23, "note": "same sentence, reworded elsewhere (GitHub employees, Event)"}
+{"id": "b75de6f2", "survives": true, "paragraph": 16, "note": "consent to data collection paragraph, words intact; additions elsewhere"}
+{"id": "d6d076d0", "survives": true, "paragraph": 1, "note": "same intro line; only quotes around link removed"}
+{"id": "d786e466", "survives": true, "paragraph": 30, "note": "same definition; only 'cancelled' spelling changed elsewhere"}
+{"id": "fb66be9e", "survives": false, "paragraph": null, "note": "document rewritten; 'maintain (or “process”)' gone, replaced by 'store (collectively “process”)' in P25"}
+{"id": "9ff157b9", "survives": true, "paragraph": 11, "note": "same Trademark disputes paragraph; P10 is the copyright paragraph"}
+{"id": "73d58e1c", "survives": true, "paragraph": 11, "note": "paragraph unchanged, moved"}
+{"id": "520235bc", "survives": true, "paragraph": 89, "note": "same amendment paragraph, moved; only the Site Policy link was unlinked"}
+{"id": "131e2d48", "survives": true, "paragraph": 0, "note": "paragraph edited elsewhere, phrase intact"}
+{"id": "d42779f5", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "080f73bb", "survives": false, "paragraph": null, "note": "'For the purposes of this policy' paragraph deleted; P59 hit is an unrelated sentence"}
+{"id": "47331d97", "survives": true, "paragraph": 44, "note": "fees item kept; P43 is the neighbouring misleading-practices item"}
+{"id": "df71b994", "survives": true, "paragraph": 3, "note": "same paragraph; only a lint comment added"}
+{"id": "9b88b1e5", "survives": true, "paragraph": 7, "note": "Appeal definition reworded but 'provide additional information to show' intact in P7; P0 is a different passage"}
+{"id": "0a9efbc1", "survives": true, "paragraph": 16, "note": "list item split; 'following, or harassing' kept in intimidation/stalking item"}
+{"id": "ada219c6", "survives": true, "paragraph": 21, "note": "paragraph identical, moved from P19 to P21"}
+{"id": "b568d623", "survives": true, "paragraph": 8, "note": "Sponsorship definition unchanged; P4 is the Sponsor definition, a coincidental repeat"}
+{"id": "47f439f3", "survives": true, "paragraph": 0, "note": "link edited elsewhere in paragraph, words intact"}
+{"id": "9211a8d8", "survives": true, "paragraph": 12, "note": "Appeal paragraph split; first sentence with the phrase is now P12"}
+{"id": "1d96ac56", "survives": false, "paragraph": null, "note": "later P0 reads 'Effective Date: April'; September changed"}
+{"id": "752f7bd9", "survives": false, "paragraph": null, "note": "later P1 rewritten to 'under [CC0-1.0](LICENSE.md)'; marked words gone"}
+{"id": "99edd4d1", "survives": false, "paragraph": null, "note": "termination para rewritten (later P16); Code of Conduct links now followed by ';' or 'or', not ', the'"}
+{"id": "a8fe622a", "survives": false, "paragraph": null, "note": "contact para rewritten (later P22); 'the organizer by' no longer present"}
+{"id": "ee283c1e", "survives": false, "paragraph": null, "note": "later P10 'Unacceptable behavior includes, but is not limited to:'; 'includes:' became 'includes,'"}
+{"id": "ea0a668a", "survives": false, "paragraph": null, "note": "later P1 'Accordingly, all Event Participants'; 'attendees' replaced"}
+{"id": "35bb8498", "survives": false, "paragraph": null, "note": "contribute para rewritten (later P10); 'use either option,' removed"}
+{"id": "d4b59c05", "survives": false, "paragraph": null, "note": "later P4 link followed by '; and' not ', which'; harassment-free clause removed"}

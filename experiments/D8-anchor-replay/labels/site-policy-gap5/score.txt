@@ -1,0 +1,28 @@
+# score.py: gap 5, blockspec d38a6bcec4e0, 125 packets
+  the two labellers agree on 125 of 125; they disagree on 0, of which 0 are adjudicated
+
+  stratum                          comments  sampled  labelled surviving  oracle wrong
+  site-policy/placed/loud               182       60         60              0
+  site-policy/placed/resolves          2627       30         30              0
+  site-policy/gone/loud                 170       25          0              0
+  site-policy/gone/resolves               0        0          0              -
+  site-policy/unplaced/loud              10       10          4              -
+  site-policy/unplaced/resolves           0        0          0              -
+
+  share of each stratum, 95% interval (exact where every comment was labelled)
+    site-policy/placed/resolves      survives    30 of  30:  88.4% to 100.0%
+    site-policy/placed/resolves      oracle_err   0 of  30:   0.0% to  11.6%
+    site-policy/gone/loud            survives     0 of  25:   0.0% to  13.7%
+    site-policy/gone/loud            oracle_err   0 of  25:   0.0% to  13.7%
+    site-policy/placed/loud          survives    60 of  60:  94.0% to 100.0%
+    site-policy/placed/loud          oracle_err   0 of  60:   0.0% to   6.0%
+    site-policy/unplaced/loud        survives     4 of  10:  40.0% to  40.0%
+
+  oracle wrong, where it places a comment: 0.0% (each stratum at its interval's lower and upper end: 0.0% to 11.4%)
+
+  refusal rate, labels for truth, pooled over site-policy: 6.6% (each stratum at the end of its interval that lowers, then raises it: 6.3% to 8.3%), among comments on versions the profile accepts
+  outside it: 800 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 27.3% (27.1% to 30.3%)
+
+## resolving comments the labels put elsewhere
+
+## the two labellers disagree
