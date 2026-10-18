@@ -1,0 +1,27 @@
+# sample.py: gap 5, seed 11, 629 packets
+  rust-book/placed/loud: 110 comments, 60 sampled
+  rust-book/placed/resolves: 387 comments, 100 sampled
+  rust-book/gone/loud: 17 comments, 17 sampled
+  rust-book/gone/resolves: 0 comments, 0 sampled
+  rust-book/unplaced/loud: 0 comments, 0 sampled
+  rust-book/unplaced/resolves: 0 comments, 0 sampled
+  obsidian-help/placed/loud: 401 comments, 60 sampled
+  obsidian-help/placed/resolves: 1996 comments, 100 sampled
+  obsidian-help/gone/loud: 331 comments, 25 sampled
+  obsidian-help/gone/resolves: 0 comments, 0 sampled
+  obsidian-help/unplaced/loud: 34 comments, 34 sampled
+  obsidian-help/unplaced/resolves: 8 comments, 8 sampled
+  k8s-en/placed/loud: 3 comments, 3 sampled
+  k8s-en/placed/resolves: 34 comments, 34 sampled
+  k8s-en/gone/loud: 5 comments, 5 sampled
+  k8s-en/gone/resolves: 0 comments, 0 sampled
+  k8s-en/unplaced/loud: 0 comments, 0 sampled
+  k8s-en/unplaced/resolves: 0 comments, 0 sampled
+  cncf-toc/placed/loud: 56 comments, 56 sampled
+  cncf-toc/placed/resolves: 483 comments, 100 sampled
+  cncf-toc/gone/loud: 33 comments, 25 sampled
+  cncf-toc/gone/resolves: 0 comments, 0 sampled
+  cncf-toc/unplaced/loud: 1 comments, 1 sampled
+  cncf-toc/unplaced/resolves: 1 comments, 1 sampled
+  rust-book: 509 comments on versions the profile refuses, not sampled
+  k8s-en: 86 comments on versions the profile refuses, not sampled
