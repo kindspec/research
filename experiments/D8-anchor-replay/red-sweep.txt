@@ -14,4 +14,5 @@ a repeat in the target counted without whitespace aside: exit 1; failing states:
 the gone test matches inside a longer word: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
 MOVED is not a resolution: exit 1; failing states: ['as is', 'every resolution one character off']
 MINLEN off by one: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
-16 of 16 breaks caught
+versions keep a commit that deletes the file: exit 1; failing states: ['versions skip the deleting commit']
+17 of 17 breaks caught

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check red_states.py itself: break replay.py's grader, oracle and rates sixteen ways,
+"""Check red_states.py itself: break replay.py's grader, oracle and rates seventeen ways,
 each in a copy, and show red_states.py fails on every one. A break that does
 not apply prints BROKEN, never a pass.
 
@@ -36,6 +36,7 @@ MUT = [
     ("the gone test matches inside a longer word", "if not any(occurs(span, p.text) for p in new_ps):", "if not any(span in flat(p.text) for p in new_ps):"),
     ("MOVED is not a resolution", 'RESOLVES = ("RESOLVED", "EDITED", "MOVED")', 'RESOLVES = ("RESOLVED", "EDITED")'),
     ("MINLEN off by one", "MINLEN = 20", "MINLEN = 21"),
+    ("versions keep a commit that deletes the file", 'if not o.endswith(" missing")]', "]"),
 ]
 survived = []
 for name, old, new in MUT:

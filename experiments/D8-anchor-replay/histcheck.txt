@@ -1,0 +1,6 @@
+# histcheck.py: sampled files whose versions differ from their git log
+  rust-book: 36 of 60
+  obsidian-help: 2 of 60
+  k8s-en: 2 of 60
+  cncf-toc: 1 of 60
+  site-policy: 0 of 60

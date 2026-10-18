@@ -10,12 +10,14 @@ and checks the oracle against a labelled sample.
 
     replay.py                  the measurement
     kinds.py                   the loud comments of a dump, by how much their paragraph changed
+    histcheck.py               how many sampled files have a commit that does not hold them
+    histcheck.txt              histcheck.py's stdout on the rehearsal and verdict arms
     sample.py                  a stratified sample of replay.py's comments, as blind packets to label
     score.py                   the labels against the oracle and the resolver
     labelling-brief.md         what each labeller is given, besides the packets
     red_states.py              a control and three broken resolvers on a fixture, and the rates, each checked
     red-states.txt             red_states.py's stdout
-    red_sweep.py               replay.py broken sixteen ways; red_states.py must fail each, or it exits 1
+    red_sweep.py               replay.py broken seventeen ways; red_states.py must fail each, or it exits 1
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
@@ -166,9 +168,10 @@ at least half like it.
   middle, away from the paragraph's edges, where the stored context is
   shorter. Requiring the span itself to be unique leaves out the repeated
   spans where §11.12's R3 lives.
-- History. Pairs are positions in `git log --reverse -- FILE`, so the two
-  versions of a pair can sit on parallel branches; a file's history before
-  a rename is not followed.
+- History. Pairs are positions in `git log --reverse -- FILE`, less the
+  commits that do not hold the file (one that deletes it, or moves it
+  away), so the two versions of a pair can sit on parallel branches; a
+  file's history before a rename is not followed.
 
 ## Running it
 

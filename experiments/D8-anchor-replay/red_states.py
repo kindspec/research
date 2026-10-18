@@ -41,8 +41,11 @@ A control and three broken resolvers must give exactly these counts:
 | every comment refused | 4 | 9 | 0 |
 
 `as is` also checks the oracle's truths: of 17 comments, the span survives
-in 9, is gone in 4, and 4 are not counted. A last state checks
-`replay.rates`, the three refusal rates the report prints, on fixed counts.
+in 9, is gone in 4, and 4 are not counted. A state checks
+`replay.rates`, the three refusal rates the report prints, on fixed counts,
+and a last one `replay.versions` on a throwaway repository where a file is
+added, edited, deleted and added again: the deleting commit is not a
+version.
 A break in the oracle, the grader or the rates that changes one of these
 makes the script exit 1; `red_sweep.py` lists the breaks checked.
 
@@ -52,7 +55,9 @@ Usage:
 
 import argparse
 import os
+import subprocess
 import sys
+import tempfile
 from collections import Counter
 
 sys.dont_write_bytecode = True
@@ -157,6 +162,28 @@ def main():
     ok = got == RATES
     failed |= not ok
     print(f"{'PASS' if ok else 'FAIL'}  {'the three rates on fixed counts':48s} {got}   (want {RATES})")
+    with tempfile.TemporaryDirectory() as repo:
+        def git(*args):
+            return subprocess.run(["git", "-C", repo, "-c", "user.name=r", "-c", "user.email=r@r",
+                                   *args], capture_output=True, text=True, check=True).stdout.strip()
+        git("init", "-q")
+        made = []
+        for step in ("add", "edit", "delete", "add again"):
+            path = os.path.join(repo, "d.md")
+            if step == "delete":
+                os.remove(path)
+            else:
+                with open(path, "w", encoding="utf-8") as f:
+                    f.write(f"{step}\n")
+            git("add", "-A")
+            git("commit", "-q", "-m", step)
+            made.append(git("rev-parse", "HEAD"))
+        got = replay.versions(repo, "d.md")
+        want = [made[0], made[1], made[3]]
+        ok = got == want
+        failed |= not ok
+        print(f"{'PASS' if ok else 'FAIL'}  {'versions skip the deleting commit':48s} "
+              f"{len(got)} versions   (want 3: add, edit, add again)")
     sys.exit(1 if failed else 0)
 
 
