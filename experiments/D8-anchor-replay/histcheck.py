@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """For each arm's sampled files (replay.py's own sample of FILES), count the
 files whose `replay.versions` differs from `git log --reverse -- FILE`: those
-with a commit that deletes the file or moves it away. An arm where none
+with a commit that deletes the file, moves it away, or puts a
+directory in its place. An arm where none
 does gets the pairs the plain history would give it; where any does, every
 file sampled after it can get different pairs too, because one generator
 draws every file's pairs in turn. No resolver is run.
@@ -30,8 +31,9 @@ def main():
     ap.add_argument("--arm", action="append", default=[])
     args = ap.parse_args()
     clones = dict(c.split("=", 1) for c in args.clone)
-    print("# histcheck.py: sampled files whose versions differ from their git log; arms "
-          + ", ".join(args.arm or ["all with a clone"]))
+    here = os.path.dirname(os.path.abspath(__file__))
+    head = replay.git(here, "rev-parse", "--short=12", "HEAD").strip()
+    print(f"# histcheck.py at research {head}: sampled files whose versions differ from their git log")
     for arm in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]:
         repo = clones.get(arm["clone"])
         if repo is None or (args.arm and arm["name"] not in args.arm):
@@ -46,7 +48,7 @@ def main():
         differ = [f for f in sampled
                   if replay.versions(repo, f) != [c for c in replay.git(
                       repo, "log", "--format=%H", "--reverse", "--", f).split("\n") if c]]
-        print(f"  {arm['name']}: {len(differ)} of {len(sampled)}")
+        print(f"  {arm['name']} ({arm['clone']} at {arm['pin'][:12]}): {len(differ)} of {len(sampled)}")
 
 
 if __name__ == "__main__":

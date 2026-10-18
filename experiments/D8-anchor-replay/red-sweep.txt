@@ -16,5 +16,7 @@ MOVED is not a resolution: exit 1; failing states: ['as is', 'every resolution o
 MINLEN off by one: exit 1; failing states: ['as is', 'every comment resolves, on the first paragraph', 'every resolution one character off', 'every comment refused']
 versions keep the history before a deletion: exit 1; failing states: ['history starts after the deleting commit']
 versions keep a commit that deletes the file: exit 1; failing states: ['history starts after the deleting commit']
+versions cut at the first gap, not the last: exit 1; failing states: ['history starts after the deleting commit']
+a tree at the path counts as held: exit 1; failing states: ['history starts after the deleting commit']
 pairs_for ignores versions: exit 1; failing states: ['history starts after the deleting commit']
-19 of 19 breaks caught
+21 of 21 breaks caught

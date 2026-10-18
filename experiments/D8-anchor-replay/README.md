@@ -17,7 +17,7 @@ and checks the oracle against a labelled sample.
     labelling-brief.md         what each labeller is given, besides the packets
     red_states.py              a control and three broken resolvers on a fixture, and the rates, each checked
     red-states.txt             red_states.py's stdout
-    red_sweep.py               replay.py broken nineteen ways; red_states.py must fail each, or it exits 1
+    red_sweep.py               replay.py broken twenty-one ways; red_states.py must fail each, or it exits 1
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
@@ -171,8 +171,10 @@ at least half like it.
 - History. Pairs are positions in `git log --reverse -- FILE`, from the
   commit after the last one that does not hold the file (one that deletes
   it, or moves it away), so the two versions of a pair can sit on parallel
-  branches; a file's history before a rename, or before it last came back,
-  is not followed. Names that `git ls-files` quotes (non-ASCII, `"`, tab)
+  branches; a file's history before a rename is not followed, nor, on one
+  line of history, before it last came back. "Last" is in `git log`'s
+  order, so a deletion and a return on parallel branches can still join
+  across it. Names that `git ls-files` quotes (non-ASCII, `"`, tab)
   give no pairs; no arm has one.
 
 ## Running it
