@@ -4,3 +4,4 @@ PASS  every comment resolves, on the first paragraph   correct 1  loud 0  WRONG 
 PASS  every resolution one character off               correct 4  loud 2  WRONG 7   (want 4, 2, 7)
 PASS  every comment refused                            correct 4  loud 9  WRONG 0   (want 4, 9, 0)
 PASS  the three rates on fixed counts                  ('5.0%', '13.6%', '32.1%', 10)   (want ('5.0%', '13.6%', '32.1%', 10))
+PASS  history starts after the deleting commit         2 versions, 1 pair   (want 2 versions, 1 pair: add as a file, edit again)

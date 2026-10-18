@@ -193,8 +193,23 @@ def grade(got, truth, span, new_ps):
     return "WRONG", True
 
 
-def pairs_for(repo, f, gap, rnd):
+def versions(repo, f):
+    """The commits of `git log --reverse -- f` since `f` last came to be: a
+    commit that deletes it or moves it away has no version to compare, and
+    the history before it is a file's history before a rename, which is not
+    followed."""
     cs = [c for c in git(repo, "log", "--format=%H", "--reverse", "--", f).split("\n") if c]
+    out = subprocess.run(["git", "-C", repo, "cat-file", "--batch-check"], capture_output=True, check=True,
+                         input="".join(f"{c}:{f}\n" for c in cs).encode("utf-8")).stdout.decode("utf-8")
+    held = [len(o.split()) == 3 and o.split()[1] == "blob" for o in out.splitlines()]
+    if len(held) != len(cs):
+        sys.exit(f"git cat-file gave {len(held)} answers for {len(cs)} commits of {f}")
+    gone = [i for i, h in enumerate(held) if not h]
+    return cs[gone[-1] + 1 :] if gone else cs
+
+
+def pairs_for(repo, f, gap, rnd):
+    cs = versions(repo, f)
     if len(cs) < gap + 1:
         return []
     starts = list(range(0, len(cs) - gap))
