@@ -21,12 +21,14 @@ and checks the oracle against a labelled sample.
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
+    prereg4/                   pre-registration 4's run on the verdict arms, and its verdict
     labels/site-policy-gap5/   the rehearsal arm's labelled sample: sample.py's key and stdout, both
                                passes of labels, and score.py's stdout
 
-**Nothing here is a verdict.** The arms that would decide anything have not
-been run. Only the rehearsal arm, `site-policy`, has been run, and labelled
-at gap 5.
+**The verdict is in `prereg4/`.** blockspec's pre-registration 4 fixed the
+run before it ran; `prereg4/README.md` gives its outputs and its verdict.
+Everything else here is the harness and its rehearsal arm, `site-policy`,
+labelled at gap 5.
 
 ## What replay.py measures
 

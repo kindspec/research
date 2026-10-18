@@ -45,7 +45,17 @@ From `score.txt`, gap 5, among comments on versions the profile accepts:
 
 Besides those, 595 comments sit on versions the profile refuses (509 on
 rust-book, 86 on k8s-en); counting each as a refusal of surviving text,
-the pooled rate is 29.1%. The oracle's error where it places a comment is
+the pooled rate is 29.1%. A pair whose earlier version the profile refuses
+gets no comments at all: 131 of the 289 pairs at gap 5 (103 on rust-book,
+22 on k8s-en, 6 on cncf-toc; `replay-ARM.txt`).
+
+The per-arm rates rest on few pairs: the comments counted at gap 5 come
+from 23 pairs on rust-book, 101 on obsidian-help, 3 on k8s-en and 6 on
+cncf-toc, and 37 of cncf-toc's 56 loud comments are on one pair. The
+ranges treat comments as independent, which comments in one pair are not,
+and a stratum labelled in full gets no interval at all, so k8s-en's
+"8.1% to 8.1%" is not precision. The pooled verdict does not turn on this:
+its whole range is above the bar by more than eleven points. The oracle's error where it places a comment is
 0 of the 585 labelled, and 4.8% with every stratum at the upper end of its
 interval.
 
@@ -60,17 +70,23 @@ adjudication's.
 ## Labelling
 
 629 packets, each labelled twice: pass A by 37 labellers, pass B by 37
-more, each a fresh instance of Claude Opus 5.5 (`claude-opus-5-5`) with no
-other context, given `../labelling-brief.md` at `735091e` with its packet
-directory, its output file and its packet ids filled in (`batches.json`).
-The two passes agree on all 629, so no third label was needed.
+more. Each was a separate agent of Claude Opus 5.5 (`claude-opus-5-5`)
+with file tools, started with none of the context of the session that ran
+the replay (it carries its harness's own system context), and told to read
+`../labelling-brief.md` at `735091e` with its packet directory, its output
+file and its packet ids filled in (`batches.json`), and to open nothing
+else. Several wrote small helper scripts elsewhere on the machine to search
+them; the key was in a sibling directory on the same machine, and no
+script or note refers to it. The two passes agree on all 629, so no third
+label was needed.
 
 Choice 6 deals pass B "from the key's middle onward, wrapping round, so a
 labeller's batch differs between the passes". With 629 packets and 37
-labellers of 17, the rotation by 314 is 18 places modulo 37, so each pass-B
-batch holds the same packets as one pass-A batch, in a different order;
-the procedure was followed as written. Every label in the two passes still
-comes from a different instance.
+labellers of 17, 37 divides 629, so dealing round-robin from any starting
+point gives the same batches: each pass-B batch holds the same packets as
+one pass-A batch, in a different order. The procedure was followed as
+written; its stated purpose could not be met. Every label in the two
+passes still comes from a different agent.
 
 ## Running it
 
