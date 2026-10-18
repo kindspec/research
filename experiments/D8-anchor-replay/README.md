@@ -17,7 +17,7 @@ and checks the oracle against a labelled sample.
     labelling-brief.md         what each labeller is given, besides the packets
     red_states.py              a control and three broken resolvers on a fixture, and the rates, each checked
     red-states.txt             red_states.py's stdout
-    red_sweep.py               replay.py broken seventeen ways; red_states.py must fail each, or it exits 1
+    red_sweep.py               replay.py broken nineteen ways; red_states.py must fail each, or it exits 1
     red-sweep.txt              red_sweep.py's stdout
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
@@ -168,16 +168,19 @@ at least half like it.
   middle, away from the paragraph's edges, where the stored context is
   shorter. Requiring the span itself to be unique leaves out the repeated
   spans where §11.12's R3 lives.
-- History. Pairs are positions in `git log --reverse -- FILE`, less the
-  commits that do not hold the file (one that deletes it, or moves it
-  away), so the two versions of a pair can sit on parallel branches; a
-  file's history before a rename is not followed.
+- History. Pairs are positions in `git log --reverse -- FILE`, from the
+  commit after the last one that does not hold the file (one that deletes
+  it, or moves it away), so the two versions of a pair can sit on parallel
+  branches; a file's history before a rename, or before it last came back,
+  is not followed. Names that `git ls-files` quotes (non-ASCII, `"`, tab)
+  give no pairs; no arm has one.
 
 ## Running it
 
     python3 -I replay.py --blockspec PATH --clone NAME=PATH ... [--arm NAME] [--gap N] [--dump JSONL]
     python3 -I sample.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N --packets DIR --keydir DIR [--cap CLASS/RESOLVER=N]
     python3 -I kinds.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N
+    python3 -I histcheck.py --clone NAME=PATH ... [--arm NAME ...]
     python3 -I score.py --keydir DIR --labels A.jsonl --labels B.jsonl [--adjudicated C.jsonl]
     python3 -I red_states.py --blockspec PATH
     python3 -I red_sweep.py BLOCKSPEC_PATH

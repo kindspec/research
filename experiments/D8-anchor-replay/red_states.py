@@ -43,9 +43,9 @@ A control and three broken resolvers must give exactly these counts:
 `as is` also checks the oracle's truths: of 17 comments, the span survives
 in 9, is gone in 4, and 4 are not counted. A state checks
 `replay.rates`, the three refusal rates the report prints, on fixed counts,
-and a last one `replay.versions` on a throwaway repository where a file is
-added, edited, deleted and added again: the deleting commit is not a
-version.
+and a last one `replay.versions` and `replay.pairs_for` on a throwaway
+repository where a file is added, edited, deleted, added again and edited
+again: its history starts after the deleting commit.
 A break in the oracle, the grader or the rates that changes one of these
 makes the script exit 1; `red_sweep.py` lists the breaks checked.
 
@@ -55,6 +55,7 @@ Usage:
 
 import argparse
 import os
+import random
 import subprocess
 import sys
 import tempfile
@@ -163,12 +164,15 @@ def main():
     failed |= not ok
     print(f"{'PASS' if ok else 'FAIL'}  {'the three rates on fixed counts':48s} {got}   (want {RATES})")
     with tempfile.TemporaryDirectory() as repo:
+        env = dict(os.environ, GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+
         def git(*args):
-            return subprocess.run(["git", "-C", repo, "-c", "user.name=r", "-c", "user.email=r@r",
-                                   *args], capture_output=True, text=True, check=True).stdout.strip()
+            return subprocess.run(["git", "-C", repo, "-c", "user.name=r", "-c", "user.email=r@r", *args],
+                                  capture_output=True, text=True, check=True, env=env).stdout.strip()
+
         git("init", "-q")
         made = []
-        for step in ("add", "edit", "delete", "add again"):
+        for step in ("add", "edit", "delete", "add again", "edit again"):
             path = os.path.join(repo, "d.md")
             if step == "delete":
                 os.remove(path)
@@ -178,12 +182,13 @@ def main():
             git("add", "-A")
             git("commit", "-q", "-m", step)
             made.append(git("rev-parse", "HEAD"))
-        got = replay.versions(repo, "d.md")
-        want = [made[0], made[1], made[3]]
+        os.environ.update(GIT_CONFIG_GLOBAL=os.devnull, GIT_CONFIG_NOSYSTEM="1")
+        got = (replay.versions(repo, "d.md"), replay.pairs_for(repo, "d.md", 1, random.Random(0)))
+        want = ([made[3], made[4]], [(made[3], made[4])])
         ok = got == want
         failed |= not ok
-        print(f"{'PASS' if ok else 'FAIL'}  {'versions skip the deleting commit':48s} "
-              f"{len(got)} versions   (want 3: add, edit, add again)")
+        print(f"{'PASS' if ok else 'FAIL'}  {'history starts after the deleting commit':48s} "
+              f"{len(got[0])} versions, {len(got[1])} pair   (want 2 versions, 1 pair: add again, edit again)")
     sys.exit(1 if failed else 0)
 
 

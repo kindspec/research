@@ -1,4 +1,4 @@
-# histcheck.py: sampled files whose versions differ from their git log
+# histcheck.py: sampled files whose versions differ from their git log; arms site-policy, rust-book, obsidian-help, k8s-en, cncf-toc
   rust-book: 36 of 60
   obsidian-help: 2 of 60
   k8s-en: 2 of 60
