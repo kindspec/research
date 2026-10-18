@@ -1,0 +1,12 @@
+# kinds.py: gap 5, blockspec reference at d38a6bcec4e0, 570 loud comments
+   268  REFUSED(near-copy), unchanged, context kept   e.g. src/SUMMARY.md f0dda7ba..9e97ca7b P5
+   150  DETACHED, edited, context changed   e.g. src/SUMMARY.md f0dda7ba..9e97ca7b P22
+    60  REFUSED(crowded-gap), edited, context changed   e.g. src/SUMMARY.md 2a736003..7c408491 P76
+    33  REFUSED(crowded-gap), edited, context kept   e.g. src/ch15-03-drop.md 73616cef..83788ff2 P2
+    24  ORPHANED, edited, context changed   e.g. src/ch05-00-structs.md dacde220..8a613045 P0
+    14  DETACHED, edited, context kept   e.g. src/ch14-00-more-about-cargo.md 1fedfc4b..43b9ad33 P1
+     7  REFUSED(near-copy), edited, context changed   e.g. en/User interface/Pop-out windows.md 981268ec..d4b2ab61 P8
+     7  ORPHANED, edited, context kept   e.g. en/User interface/Pop-out windows.md 981268ec..d4b2ab61 P15
+     4  DETACHED, whitespace only, context changed   e.g. en/User interface/Pop-out windows.md 981268ec..d4b2ab61 P6
+     2  REFUSED(repeat), unchanged, context kept   e.g. en/Obsidian Sync/Version history.md c26bca2f..ed9ed5e6 P17
+     1  REFUSED(crowded-gap), whitespace only, context changed   e.g. en/Plugins/File recovery.md 48d96637..f9e1d0b6 P16

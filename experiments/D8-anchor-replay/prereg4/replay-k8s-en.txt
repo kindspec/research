@@ -1,0 +1,46 @@
+# replay.py: blockspec reference at d38a6bcec4e0; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## k8s-en gap=1
+  pairs: 71
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 47
+  pairs whose later version the profile refuses: 3
+  comments on them: 49
+  comments: 438
+  no comment made: 2
+  not counted: 0
+  counted: correct 413, loud 25, WRONG 0; span survives 417, loud among them 6.0%
+    loud DETACHED: 7
+    loud REFUSED(crowded-gap): 18
+  as if every loud comment not counted had surviving text: 6.0% (0 more)
+  and every comment on a pair whose later version the profile refuses: 15.9% (49 more)
+
+## k8s-en gap=5
+  pairs: 30
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 22
+  pairs whose later version the profile refuses: 4
+  comments on them: 86
+  comments: 42
+  no comment made: 0
+  not counted: 0
+  counted: correct 39, loud 3, WRONG 0; span survives 37, loud among them 8.1%
+    loud DETACHED: 2
+    loud REFUSED(near-copy): 1
+  as if every loud comment not counted had surviving text: 8.1% (0 more)
+  and every comment on a pair whose later version the profile refuses: 72.4% (86 more)
+
+## k8s-en gap=25
+  pairs: 3
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 3
+  comments on them: 55
+  comments: 0
+  no comment made: 0
+  not counted: 0
+  counted: correct 0, loud 0, WRONG 0; span survives 0, loud among them -
+  as if every loud comment not counted had surviving text: - (0 more)
+  and every comment on a pair whose later version the profile refuses: 100.0% (55 more)
+
+## WRONG, first 20

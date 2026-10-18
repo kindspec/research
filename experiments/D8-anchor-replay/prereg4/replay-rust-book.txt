@@ -1,0 +1,54 @@
+# replay.py: blockspec reference at d38a6bcec4e0; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## rust-book gap=1
+  pairs: 172
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 125
+  pairs whose later version the profile refuses: 6
+  comments on them: 232
+  comments: 604
+  no comment made: 73
+  not counted: 2
+  counted: correct 578, loud 24, WRONG 0; span survives 584, loud among them 4.1%
+    loud DETACHED: 20
+    loud ORPHANED: 1
+    loud REFUSED(crowded-gap): 1
+    loud REFUSED(near-copy): 2
+  as if every loud comment not counted had surviving text: 4.1% (0 more)
+  and every comment on a pair whose later version the profile refuses: 31.4% (232 more)
+    not counted MOVED: 2
+
+## rust-book gap=5
+  pairs: 146
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 103
+  pairs whose later version the profile refuses: 20
+  comments on them: 509
+  comments: 514
+  no comment made: 75
+  not counted: 0
+  counted: correct 404, loud 110, WRONG 0; span survives 497, loud among them 22.1%
+    loud DETACHED: 38
+    loud ORPHANED: 2
+    loud REFUSED(crowded-gap): 13
+    loud REFUSED(near-copy): 57
+  as if every loud comment not counted had surviving text: 22.1% (0 more)
+  and every comment on a pair whose later version the profile refuses: 61.5% (509 more)
+
+## rust-book gap=25
+  pairs: 69
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 51
+  pairs whose later version the profile refuses: 15
+  comments on them: 541
+  comments: 235
+  no comment made: 72
+  not counted: 0
+  counted: correct 102, loud 133, WRONG 0; span survives 201, loud among them 66.2%
+    loud DETACHED: 2
+    loud REFUSED(crowded-gap): 20
+    loud REFUSED(near-copy): 111
+  as if every loud comment not counted had surviving text: 66.2% (0 more)
+  and every comment on a pair whose later version the profile refuses: 90.8% (541 more)
+
+## WRONG, first 20

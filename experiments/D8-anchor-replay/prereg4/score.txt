@@ -1,0 +1,79 @@
+# score.py: gap 5, blockspec d38a6bcec4e0, 629 packets
+  the two labellers agree on 629 of 629; they disagree on 0, of which 0 are adjudicated
+
+  stratum                          comments  sampled  labelled surviving  oracle wrong
+  rust-book/placed/loud                 110       60         60              0
+  rust-book/placed/resolves             387      100        100              0
+  rust-book/gone/loud                    17       17          0              0
+  rust-book/gone/resolves                 0        0          0              -
+  rust-book/unplaced/loud                 0        0          0              -
+  rust-book/unplaced/resolves             0        0          0              -
+  obsidian-help/placed/loud             401       60         60              0
+  obsidian-help/placed/resolves        1996      100        100              0
+  obsidian-help/gone/loud               331       25          0              0
+  obsidian-help/gone/resolves             0        0          0              -
+  obsidian-help/unplaced/loud            34       34         27              -
+  obsidian-help/unplaced/resolves         8        8          8              -
+  k8s-en/placed/loud                      3        3          3              0
+  k8s-en/placed/resolves                 34       34         34              0
+  k8s-en/gone/loud                        5        5          0              0
+  k8s-en/gone/resolves                    0        0          0              -
+  k8s-en/unplaced/loud                    0        0          0              -
+  k8s-en/unplaced/resolves                0        0          0              -
+  cncf-toc/placed/loud                   56       56         56              0
+  cncf-toc/placed/resolves              483      100        100              0
+  cncf-toc/gone/loud                     33       25          0              0
+  cncf-toc/gone/resolves                  0        0          0              -
+  cncf-toc/unplaced/loud                  1        1          0              -
+  cncf-toc/unplaced/resolves              1        1          1              -
+
+  share of each stratum, 95% interval (exact where every comment was labelled)
+    obsidian-help/placed/loud        survives    60 of  60:  94.0% to 100.0%
+    obsidian-help/placed/loud        oracle_err   0 of  60:   0.0% to   6.0%
+    cncf-toc/placed/loud             survives    56 of  56: 100.0% to 100.0%
+    cncf-toc/placed/loud             oracle_err   0 of  56:   0.0% to   0.0%
+    rust-book/placed/resolves        survives   100 of 100:  96.4% to 100.0%
+    rust-book/placed/resolves        oracle_err   0 of 100:   0.0% to   3.6%
+    obsidian-help/unplaced/loud      survives    27 of  34:  79.4% to  79.4%
+    rust-book/placed/loud            survives    60 of  60:  94.0% to 100.0%
+    rust-book/placed/loud            oracle_err   0 of  60:   0.0% to   6.0%
+    obsidian-help/placed/resolves    survives   100 of 100:  96.4% to 100.0%
+    obsidian-help/placed/resolves    oracle_err   0 of 100:   0.0% to   3.6%
+    cncf-toc/placed/resolves         survives   100 of 100:  96.4% to 100.0%
+    cncf-toc/placed/resolves         oracle_err   0 of 100:   0.0% to   3.6%
+    cncf-toc/gone/loud               survives     0 of  25:   0.0% to  13.7%
+    cncf-toc/gone/loud               oracle_err   0 of  25:   0.0% to  13.7%
+    k8s-en/placed/resolves           survives    34 of  34: 100.0% to 100.0%
+    k8s-en/placed/resolves           oracle_err   0 of  34:   0.0% to   0.0%
+    obsidian-help/gone/loud          survives     0 of  25:   0.0% to  13.7%
+    obsidian-help/gone/loud          oracle_err   0 of  25:   0.0% to  13.7%
+    obsidian-help/unplaced/resolves  survives     8 of   8: 100.0% to 100.0%
+    k8s-en/placed/loud               survives     3 of   3: 100.0% to 100.0%
+    k8s-en/placed/loud               oracle_err   0 of   3:   0.0% to   0.0%
+    cncf-toc/unplaced/loud           survives     0 of   1:   0.0% to   0.0%
+    k8s-en/gone/loud                 survives     0 of   5:   0.0% to   0.0%
+    k8s-en/gone/loud                 oracle_err   0 of   5:   0.0% to   0.0%
+    rust-book/gone/loud              survives     0 of  17:   0.0% to   0.0%
+    rust-book/gone/loud              oracle_err   0 of  17:   0.0% to   0.0%
+    cncf-toc/unplaced/resolves       survives     1 of   1: 100.0% to 100.0%
+
+  oracle wrong, where it places a comment: 0.0% (each stratum at its interval's lower and upper end: 0.0% to 4.8%)
+
+  refusal rate, labels for truth, pooled over rust-book, obsidian-help, k8s-en, cncf-toc: 17.0% (each stratum at the end of its interval that lowers, then raises it: 16.3% to 18.7%), among comments on versions the profile accepts
+  outside it: 595 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 29.1% (28.5% to 30.7%)
+
+  refusal rate, labels for truth, rust-book: 22.1% (each stratum at the end of its interval that lowers, then raises it: 21.1% to 22.8%), among comments on versions the profile accepts
+  outside it: 509 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 61.5% (61.3% to 62.4%)
+
+  refusal rate, labels for truth, obsidian-help: 17.6% (each stratum at the end of its interval that lowers, then raises it: 16.8% to 19.7%), among comments on versions the profile accepts
+  outside it: 0 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 17.6% (16.8% to 19.7%)
+
+  refusal rate, labels for truth, k8s-en: 8.1% (each stratum at the end of its interval that lowers, then raises it: 8.1% to 8.1%), among comments on versions the profile accepts
+  outside it: 86 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 72.4% (72.4% to 72.4%)
+
+  refusal rate, labels for truth, cncf-toc: 10.4% (each stratum at the end of its interval that lowers, then raises it: 10.4% to 11.5%), among comments on versions the profile accepts
+  outside it: 0 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 10.4% (10.4% to 11.5%)
+
+## resolving comments the labels put elsewhere
+
+## the two labellers disagree

@@ -1,0 +1,70 @@
+# replay.py: blockspec reference at d38a6bcec4e0; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## obsidian-help gap=1
+  pairs: 152
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 4035
+  no comment made: 180
+  not counted: 8
+  counted: correct 3890, loud 137, WRONG 0; span survives 3886, loud among them 3.5%
+    loud DETACHED: 60
+    loud ORPHANED: 4
+    loud REFUSED(crowded-gap): 11
+    loud REFUSED(near-copy): 62
+  as if every loud comment not counted had surviving text: 3.7% (6 more)
+  and every comment on a pair whose later version the profile refuses: 3.7% (0 more)
+    not counted DETACHED: 3
+    not counted MOVED: 2
+    not counted ORPHANED: 3
+
+## obsidian-help gap=5
+  pairs: 101
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 2770
+  no comment made: 97
+  not counted: 42
+  counted: correct 2327, loud 401, WRONG 0; span survives 2397, loud among them 16.7%
+    loud DETACHED: 119
+    loud ORPHANED: 26
+    loud REFUSED(crowded-gap): 80
+    loud REFUSED(near-copy): 174
+    loud REFUSED(repeat): 2
+  as if every loud comment not counted had surviving text: 17.9% (34 more)
+  and every comment on a pair whose later version the profile refuses: 17.9% (0 more)
+    not counted DETACHED: 4
+    not counted MOVED: 8
+    not counted ORPHANED: 16
+    not counted REFUSED(crowded-gap): 2
+    not counted REFUSED(near-copy): 8
+    not counted REFUSED(refilled-gap): 1
+    not counted REFUSED(unaccounted-copy): 3
+
+## obsidian-help gap=25
+  pairs: 12
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 453
+  no comment made: 14
+  not counted: 44
+  counted: correct 287, loud 122, WRONG 0; span survives 209, loud among them 58.4%
+    loud DETACHED: 16
+    loud ORPHANED: 5
+    loud REFUSED(crowded-gap): 53
+    loud REFUSED(near-copy): 46
+    loud REFUSED(refilled-gap): 2
+  as if every loud comment not counted had surviving text: 64.2% (34 more)
+  and every comment on a pair whose later version the profile refuses: 64.2% (0 more)
+    not counted ORPHANED: 30
+    not counted REFUSED(near-copy): 2
+    not counted REFUSED(refilled-gap): 2
+    not counted RESOLVED: 10
+
+## WRONG, first 20
