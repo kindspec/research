@@ -1,0 +1,59 @@
+# replay.py: blockspec reference at ae1d2740a90f; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## site-policy gap=1
+  pairs: 167
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 13
+  pairs whose later version the profile refuses: 2
+  comments on them: 62
+  comments: 4306
+  no comment made: 44
+  not counted: 3
+  counted: correct 4270, loud 33, WRONG 0; span survives 4278, loud among them 0.8%
+    loud DETACHED: 4
+    loud ORPHANED: 3
+    loud REFUSED(crowded-gap): 18
+    loud REFUSED(repeat): 8
+  as if every loud comment not counted had surviving text: 0.8% (3 more)
+  and every comment on a pair whose later version the profile refuses: 2.3% (62 more)
+    not counted ORPHANED: 2
+    not counted REFUSED(crowded-gap): 1
+
+## site-policy gap=5
+  pairs: 101
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 5
+  pairs whose later version the profile refuses: 11
+  comments on them: 800
+  comments: 2989
+  no comment made: 29
+  not counted: 10
+  counted: correct 2891, loud 88, WRONG 0; span survives 2809, loud among them 3.1%
+    loud DETACHED: 10
+    loud ORPHANED: 8
+    loud REFUSED(crowded-gap): 65
+    loud REFUSED(near-copy): 5
+  as if every loud comment not counted had surviving text: 3.5% (10 more)
+  and every comment on a pair whose later version the profile refuses: 24.8% (800 more)
+    not counted DETACHED: 1
+    not counted ORPHANED: 9
+
+## site-policy gap=25
+  pairs: 2
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 114
+  no comment made: 2
+  not counted: 3
+  counted: correct 96, loud 15, WRONG 0; span survives 89, loud among them 16.9%
+    loud DETACHED: 6
+    loud ORPHANED: 2
+    loud REFUSED(crowded-gap): 6
+    loud REFUSED(near-copy): 1
+  as if every loud comment not counted had surviving text: 19.6% (3 more)
+  and every comment on a pair whose later version the profile refuses: 19.6% (0 more)
+    not counted ORPHANED: 3
+
+## WRONG, first 20

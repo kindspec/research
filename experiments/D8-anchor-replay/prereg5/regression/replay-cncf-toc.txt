@@ -1,0 +1,57 @@
+# replay.py: blockspec reference at ae1d2740a90f; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## cncf-toc gap=1
+  pairs: 39
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 8
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 2497
+  no comment made: 126
+  not counted: 1
+  counted: correct 2491, loud 5, WRONG 0; span survives 2452, loud among them 0.2%
+    loud DETACHED: 3
+    loud REFUSED(crowded-gap): 1
+    loud REFUSED(near-copy): 1
+  as if every loud comment not counted had surviving text: 0.2% (0 more)
+  and every comment on a pair whose later version the profile refuses: 0.2% (0 more)
+    not counted MOVED: 1
+
+## cncf-toc gap=5
+  pairs: 12
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 6
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 574
+  no comment made: 10
+  not counted: 2
+  counted: correct 565, loud 7, WRONG 0; span survives 539, loud among them 1.3%
+    loud ORPHANED: 3
+    loud REFUSED(crowded-gap): 1
+    loud REFUSED(near-copy): 3
+  as if every loud comment not counted had surviving text: 1.5% (1 more)
+  and every comment on a pair whose later version the profile refuses: 1.5% (0 more)
+    not counted ORPHANED: 1
+    not counted RESOLVED: 1
+
+## cncf-toc gap=25
+  pairs: 3
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 1
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 271
+  no comment made: 4
+  not counted: 4
+  counted: correct 247, loud 20, WRONG 0; span survives 243, loud among them 8.2%
+    loud DETACHED: 2
+    loud ORPHANED: 7
+    loud REFUSED(crowded-gap): 2
+    loud REFUSED(near-copy): 9
+  as if every loud comment not counted had surviving text: 9.7% (4 more)
+  and every comment on a pair whose later version the profile refuses: 9.7% (0 more)
+    not counted ORPHANED: 2
+    not counted REFUSED(crowded-gap): 2
+
+## WRONG, first 20

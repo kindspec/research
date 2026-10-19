@@ -1,0 +1,59 @@
+# replay.py: blockspec reference at ae1d2740a90f; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## docker-docs gap=1
+  pairs: 90
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 10
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 4198
+  no comment made: 144
+  not counted: 12
+  counted: correct 4163, loud 23, WRONG 0; span survives 4132, loud among them 0.6%
+    loud DETACHED: 3
+    loud ORPHANED: 7
+    loud REFUSED(crowded-gap): 5
+    loud REFUSED(near-copy): 8
+  as if every loud comment not counted had surviving text: 0.7% (6 more)
+  and every comment on a pair whose later version the profile refuses: 0.7% (0 more)
+    not counted MOVED: 6
+    not counted ORPHANED: 5
+    not counted REFUSED(crowded-gap): 1
+
+## docker-docs gap=5
+  pairs: 31
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 4
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 1619
+  no comment made: 119
+  not counted: 12
+  counted: correct 1584, loud 23, WRONG 0; span survives 1545, loud among them 1.5%
+    loud DETACHED: 1
+    loud ORPHANED: 7
+    loud REFUSED(crowded-gap): 9
+    loud REFUSED(near-copy): 6
+  as if every loud comment not counted had surviving text: 2.0% (8 more)
+  and every comment on a pair whose later version the profile refuses: 2.0% (0 more)
+    not counted DETACHED: 2
+    not counted MOVED: 4
+    not counted ORPHANED: 5
+    not counted REFUSED(crowded-gap): 1
+
+## docker-docs gap=25
+  pairs: 3
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 0
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 63
+  no comment made: 0
+  not counted: 0
+  counted: correct 55, loud 8, WRONG 0; span survives 60, loud among them 13.3%
+    loud REFUSED(crowded-gap): 5
+    loud REFUSED(near-copy): 3
+  as if every loud comment not counted had surviving text: 13.3% (0 more)
+  and every comment on a pair whose later version the profile refuses: 13.3% (0 more)
+
+## WRONG, first 20

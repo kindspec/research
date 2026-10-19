@@ -169,3 +169,32 @@ obsidian-help
               text from obsidian-help is committed: no line of 20 or more
               characters from en/*.md at the pin, or from any version of the
               14 files the harnesses sample, appears in any other tracked file.
+
+Pre-registration 5's held-out arms
+  Files:      in experiments/D8-anchor-replay/prereg5/: dump.jsonl.gz and
+              key.jsonl, which quote, for each comment, the three
+              whitespace-separated words it was placed on (a word may be a
+              link or a template tag, up to 380 characters) and the path of
+              the file; pass-a.jsonl, pass-b.jsonl and adjudicated.jsonl,
+              whose labellers' notes quote short phrases (at most 223
+              characters a note); and kinds-gap5.txt, which names example
+              file paths. No paragraph or file is committed whole.
+  Quoted from, each at the pin in experiments/D8-anchor-replay/
+  heldout-arms.json:
+    github/docs (https://github.com/github/docs), content/*.md
+      Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+      Attribution: GitHub, Inc. and the github/docs contributors
+    microsoft/vscode-docs (https://github.com/microsoft/vscode-docs),
+    docs/*.md
+      Licence:    CC-BY-3.0 US,
+                  https://creativecommons.org/licenses/by/3.0/us/legalcode
+      Attribution: Copyright (c) Microsoft Corporation
+    docker/docs (https://github.com/docker/docs), content/*.md
+      Licence:    Apache-2.0 (LICENSES/Apache-2.0.txt)
+      Attribution: Docker, Inc. and the docker/docs contributors
+    mdn/content (https://github.com/mdn/content), files/en-us/*.md
+      Licence:    CC-BY-SA-2.5 for prose,
+                  https://creativecommons.org/licenses/by-sa/2.5/
+      Attribution: MDN contributors (https://developer.mozilla.org)
+  Changes:    none to the quoted words; they are listed as data, not
+              adapted.

@@ -1,0 +1,64 @@
+# replay.py: blockspec reference at ae1d2740a90f; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## github-docs gap=1
+  pairs: 161
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 23
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 2278
+  no comment made: 124
+  not counted: 3
+  counted: correct 2266, loud 9, WRONG 0; span survives 2255, loud among them 0.4%
+    loud DETACHED: 2
+    loud ORPHANED: 2
+    loud REFUSED(crowded-gap): 3
+    loud REFUSED(near-copy): 1
+    loud REFUSED(refilled-gap): 1
+  as if every loud comment not counted had surviving text: 0.4% (1 more)
+  and every comment on a pair whose later version the profile refuses: 0.4% (0 more)
+    not counted DETACHED: 1
+    not counted EDITED: 1
+    not counted RESOLVED: 1
+
+## github-docs gap=5
+  pairs: 101
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 5
+  pairs whose later version the profile refuses: 1
+  comments on them: 3
+  comments: 1768
+  no comment made: 105
+  not counted: 9
+  counted: correct 1704, loud 55, WRONG 0; span survives 1660, loud among them 3.3%
+    loud DETACHED: 7
+    loud ORPHANED: 8
+    loud REFUSED(crowded-gap): 22
+    loud REFUSED(near-copy): 18
+  as if every loud comment not counted had surviving text: 3.6% (5 more)
+  and every comment on a pair whose later version the profile refuses: 3.8% (3 more)
+    not counted MOVED: 2
+    not counted ORPHANED: 3
+    not counted REFUSED(crowded-gap): 2
+    not counted RESOLVED: 2
+
+## github-docs gap=25
+  pairs: 27
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 3
+  pairs whose later version the profile refuses: 0
+  comments on them: 0
+  comments: 282
+  no comment made: 17
+  not counted: 17
+  counted: correct 204, loud 61, WRONG 0; span survives 195, loud among them 31.3%
+    loud ORPHANED: 5
+    loud REFUSED(crowded-gap): 40
+    loud REFUSED(near-copy): 16
+  as if every loud comment not counted had surviving text: 36.8% (17 more)
+  and every comment on a pair whose later version the profile refuses: 36.8% (0 more)
+    not counted ORPHANED: 9
+    not counted REFUSED(near-copy): 5
+    not counted REFUSED(refilled-gap): 3
+
+## WRONG, first 20

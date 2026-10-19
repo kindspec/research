@@ -1,0 +1,27 @@
+# sample.py: gap 5, seed 11, 743 packets
+  github-docs/placed/loud: 55 comments, 55 sampled
+  github-docs/placed/resolves: 1605 comments, 100 sampled
+  github-docs/gone/loud: 99 comments, 25 sampled
+  github-docs/gone/resolves: 0 comments, 0 sampled
+  github-docs/unplaced/loud: 5 comments, 5 sampled
+  github-docs/unplaced/resolves: 4 comments, 4 sampled
+  vscode-docs/placed/loud: 113 comments, 60 sampled
+  vscode-docs/placed/resolves: 4126 comments, 100 sampled
+  vscode-docs/gone/loud: 424 comments, 25 sampled
+  vscode-docs/gone/resolves: 0 comments, 0 sampled
+  vscode-docs/unplaced/loud: 41 comments, 41 sampled
+  vscode-docs/unplaced/resolves: 18 comments, 18 sampled
+  docker-docs/placed/loud: 23 comments, 23 sampled
+  docker-docs/placed/resolves: 1522 comments, 100 sampled
+  docker-docs/gone/loud: 62 comments, 25 sampled
+  docker-docs/gone/resolves: 0 comments, 0 sampled
+  docker-docs/unplaced/loud: 8 comments, 8 sampled
+  docker-docs/unplaced/resolves: 4 comments, 4 sampled
+  mdn-en/placed/loud: 22 comments, 22 sampled
+  mdn-en/placed/resolves: 811 comments, 100 sampled
+  mdn-en/gone/loud: 86 comments, 25 sampled
+  mdn-en/gone/resolves: 0 comments, 0 sampled
+  mdn-en/unplaced/loud: 2 comments, 2 sampled
+  mdn-en/unplaced/resolves: 1 comments, 1 sampled
+  github-docs: 3 comments on versions the profile refuses, not sampled
+  vscode-docs: 30 comments on versions the profile refuses, not sampled

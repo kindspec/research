@@ -1,0 +1,12 @@
+# kinds.py: gap 5, blockspec reference at ae1d2740a90f, 213 loud comments
+    60  REFUSED(crowded-gap), edited, context changed   e.g. content/copilot/reference/copilot-cli-reference/cli-plugin-reference.md 593c0f54..2b461a06 P2
+    35  REFUSED(crowded-gap), edited, context kept   e.g. content/codespaces/troubleshooting/troubleshooting-prebuilds.md caace169..bb1e800a P18
+    35  ORPHANED, edited, context changed   e.g. content/billing/how-tos/manage-server-licenses/sync-license-usage.md d0a86a57..7c06b1d8 P2
+    23  DETACHED, edited, context changed   e.g. content/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes.md e3a169c1..cbeb66ea P18
+    22  REFUSED(near-copy), unchanged, context kept   e.g. content/organizations/managing-membership-in-your-organization/exporting-member-information-for-your-organization.md 1384bec2..6acca22e P13
+    18  REFUSED(near-copy), edited, context changed   e.g. content/repositories/creating-and-managing-repositories/creating-a-new-repository.md 45af184d..558e2aeb P16
+    12  REFUSED(near-copy), edited, context kept   e.g. content/codespaces/troubleshooting/troubleshooting-prebuilds.md 7ea42fcb..238d02f8 P6
+     5  ORPHANED, edited, context kept   e.g. docs/agent-customization/migrate-customizations.md b9dbee47..f7ee5a5c P9
+     1  REFUSED(unaccounted-copy), unchanged, context kept   e.g. docs/agents/agent-troubleshooting/chat-debug-view.md 9deb39cd..4316a2c4 P26
+     1  REFUSED(crowded-gap), whitespace only, context changed   e.g. content/manuals/desktop/use-desktop/volumes.md ae3eec2c..f22c0e65 P19
+     1  REFUSED(repeat), unchanged, context kept   e.g. files/en-us/web/api/videoencoder/encode/index.md 3789de65..0abb7060 P19
