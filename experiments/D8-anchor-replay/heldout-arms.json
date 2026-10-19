@@ -1,0 +1,9 @@
+{
+  "_note": "blockspec spike/PRE-REGISTRATION-5.md's held-out arms, chosen by its §0 choice 4: from a list fixed before any was cloned, the first four meeting its criteria, each at the default branch's first-parent commit at or before 2026-10-18T00:00:00Z. Same fields as ../D8-block-definitions/arms.json, which replay.py reads first.",
+  "arms": [
+    {"name": "github-docs",   "clone": "github-docs",   "pin": "dae83f7d28f3b8e10015bd6b6d8b72267cedceca", "pathspec": "content/*.md"},
+    {"name": "vscode-docs",   "clone": "vscode-docs",   "pin": "ef0ca127806a0e7eb9cd9e39e1d71c05e0a5769b", "pathspec": "docs/*.md"},
+    {"name": "docker-docs",   "clone": "docker-docs",   "pin": "31d174d090fd7111ca2199ed54a3978e0d4ac74d", "pathspec": "content/*.md"},
+    {"name": "mdn-en",        "clone": "mdn-content",   "pin": "32eceacf42b6bff41d9605298eba143cb7e199a1", "pathspec": "files/en-us/*.md"}
+  ]
+}

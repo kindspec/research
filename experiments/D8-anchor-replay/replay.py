@@ -41,7 +41,7 @@ Usage:
     python3 -I replay.py --blockspec PATH --clone NAME=PATH ... [--arm NAME] [--gap N]
         [--dump JSONL]
 
-with the clone names of ../D8-block-definitions/arms.json. Each clone must be
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json. Each clone must be
 at its pin with no tracked changes. PATH for --blockspec is a blockspec
 checkout; its commit is printed.
 """
@@ -68,6 +68,16 @@ GAPS = (1, 5, 25)
 LOUD = ("DETACHED", "ORPHANED")
 RESOLVES = ("RESOLVED", "EDITED", "MOVED")
 ARMS = os.path.join(HERE, "..", "D8-block-definitions", "arms.json")
+HELDOUT = os.path.join(HERE, "heldout-arms.json")
+
+
+def load_arms():
+    """D8's arms (`arms.json`), then the held-out arms (`heldout-arms.json`)."""
+    arms = []
+    for path in (ARMS, HELDOUT):
+        with open(path, encoding="utf-8") as f:
+            arms += json.load(f)["arms"]
+    return arms
 
 
 def git(repo, *args):
@@ -360,7 +370,7 @@ def main():
     args = ap.parse_args()
     A, R, head = load_blockspec(args.blockspec)
     clones = dict(c.split("=", 1) for c in args.clone)
-    arms = json.load(open(ARMS, encoding="utf-8"))["arms"]
+    arms = load_arms()
     print(
         f"# replay.py: blockspec reference at {head[:12]}; MINLEN={MINLEN}, SPAN={SPAN}, "
         f"files={FILES}, pairs/file={PAIRS_PER_FILE}, seed={SEED}"

@@ -10,11 +10,10 @@ draws every file's pairs in turn. No resolver is run.
 Usage:
     python3 -I histcheck.py --clone NAME=PATH ... [--arm NAME ...]
 
-with the clone names of ../D8-block-definitions/arms.json.
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json.
 """
 
 import argparse
-import json
 import os
 import random
 import sys
@@ -34,7 +33,7 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     head = replay.git(here, "rev-parse", "--short=12", "HEAD").strip()
     print(f"# histcheck.py at research {head}: sampled files whose versions differ from their git log")
-    for arm in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]:
+    for arm in replay.load_arms():
         repo = clones.get(arm["clone"])
         if repo is None or (args.arm and arm["name"] not in args.arm):
             continue
