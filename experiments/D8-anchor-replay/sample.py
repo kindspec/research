@@ -21,7 +21,7 @@ Usage:
     python3 -I sample.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N
         --packets DIR --keydir DIR [--cap CLASS/RESOLVER=N ...]
 
-with the clone names of ../D8-block-definitions/arms.json, as replay.py
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json, as replay.py
 takes them. PACKETS and KEYDIR must not exist yet.
 """
 

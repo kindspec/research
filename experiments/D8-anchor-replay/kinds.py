@@ -8,7 +8,7 @@ it in the target. Each kind is printed with one example pair.
 Usage:
     python3 -I kinds.py --blockspec PATH --clone NAME=PATH ... --dump JSONL --gap N
 
-with the clone names of ../D8-block-definitions/arms.json. The loud
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json. The loud
 comments of every arm in the dump are counted together.
 """
 

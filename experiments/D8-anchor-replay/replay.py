@@ -41,7 +41,7 @@ Usage:
     python3 -I replay.py --blockspec PATH --clone NAME=PATH ... [--arm NAME] [--gap N]
         [--dump JSONL]
 
-with the clone names of ../D8-block-definitions/arms.json. Each clone must be
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json. Each clone must be
 at its pin with no tracked changes. PATH for --blockspec is a blockspec
 checkout; its commit is printed.
 """

@@ -10,7 +10,7 @@ draws every file's pairs in turn. No resolver is run.
 Usage:
     python3 -I histcheck.py --clone NAME=PATH ... [--arm NAME ...]
 
-with the clone names of ../D8-block-definitions/arms.json.
+with the clone names of ../D8-block-definitions/arms.json and heldout-arms.json.
 """
 
 import argparse
