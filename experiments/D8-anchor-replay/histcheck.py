@@ -14,7 +14,6 @@ with the clone names of ../D8-block-definitions/arms.json.
 """
 
 import argparse
-import json
 import os
 import random
 import sys
@@ -34,7 +33,7 @@ def main():
     here = os.path.dirname(os.path.abspath(__file__))
     head = replay.git(here, "rev-parse", "--short=12", "HEAD").strip()
     print(f"# histcheck.py at research {head}: sampled files whose versions differ from their git log")
-    for arm in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]:
+    for arm in replay.load_arms():
         repo = clones.get(arm["clone"])
         if repo is None or (args.arm and arm["name"] not in args.arm):
             continue

@@ -11,6 +11,7 @@ and checks the oracle against a labelled sample.
     replay.py                  the measurement
     kinds.py                   the loud comments of a dump, by how much their paragraph changed
     histcheck.py               how many sampled files have a commit that does not hold them
+    heldout-arms.json          the held-out arms of blockspec's pre-registration 5, read after arms.json
     histcheck.txt              histcheck.py's stdout on the rehearsal and verdict arms
     sample.py                  a stratified sample of replay.py's comments, as blind packets to label
     score.py                   the labels against the oracle and the resolver
@@ -189,7 +190,8 @@ at least half like it.
     python3 -I red_states.py --blockspec PATH
     python3 -I red_sweep.py BLOCKSPEC_PATH
 
-with the clone names of `../D8-block-definitions/arms.json`. Each clone must
+with the clone names of `../D8-block-definitions/arms.json` and
+`heldout-arms.json`. Each clone must
 be at its pin with no tracked changes, and `--blockspec` a blockspec checkout
 with none either; `replay.py` exits otherwise, and prints the blockspec
 commit. File contents are read as bytes and decoded as UTF-8, so line

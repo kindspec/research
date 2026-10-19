@@ -85,7 +85,7 @@ def main():
         if int(n) < 1:
             sys.exit(f"--cap {c}: a cap below 1 leaves its stratum unsampled")
     A, R, head = replay.load_blockspec(args.blockspec)
-    clone_of = {a["name"]: a["clone"] for a in json.load(open(replay.ARMS, encoding="utf-8"))["arms"]}
+    clone_of = {a["name"]: a["clone"] for a in replay.load_arms()}
     clones = dict(c.split("=", 1) for c in args.clone)
     rows = [json.loads(line) for line in open(args.dump, encoding="utf-8")]
     rows = [r for r in rows if r["gap"] == args.gap]
