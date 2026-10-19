@@ -1,0 +1,743 @@
+{"id": "9703b6b0", "survives": true, "paragraph": 2, "note": "P2 reworded around the words but 'time immediately before' kept intact in the same return-value sentence"}
+{"id": "8412dba8", "survives": true, "paragraph": 47, "note": "Wiz paragraph unchanged, moved to P47; other 'can scan a' hits are in Trivy paragraphs"}
+{"id": "3a9f6b2c", "survives": true, "paragraph": 23, "note": "reusable include line unchanged, shifted to P23"}
+{"id": "fa257a76", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "4d0a03a5", "survives": true, "paragraph": 188, "note": "WSL race-condition fix entry unchanged; other hits are different changelog entries"}
+{"id": "e53e5520", "survives": true, "paragraph": 9, "note": "image line unchanged after the log filter selector instruction"}
+{"id": "ed3f6af5", "survives": true, "paragraph": 50, "note": "lspServers setting paragraph; 'launched ... by the Agent Host' reworded but 'to language servers' intact"}
+{"id": "2e396c05", "survives": false, "paragraph": null, "note": "screenshot alt text rewritten to 'Screenshot showing the settings for a note field...'; 'field' no longer follows 'showing'"}
+{"id": "aac2b4d4", "survives": true, "paragraph": 8, "note": "MCP registry paragraph extended but 'Use the **Online**' intact"}
+{"id": "39d7f891", "survives": true, "paragraph": 30, "note": "paragraph unchanged"}
+{"id": "46dea5b3", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "21ee6845", "survives": false, "paragraph": null, "note": "{{SecureContext_Header}} attached directly to the third word, so 'API\")}}{{SeeCompatTable}}' is now a different token"}
+{"id": "a3d27710", "survives": true, "paragraph": 135, "note": "paragraph unchanged, shifted to P135"}
+{"id": "aaf4fd5c", "survives": true, "paragraph": 43, "note": "skill-invocation paragraph unchanged; P131 hit is an unrelated agent sentence"}
+{"id": "170929ac", "survives": true, "paragraph": 1, "note": "screenshot dropped from P1 but the sentence with 'field you want' is intact"}
+{"id": "7674ef3b", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "fba7b8d3", "survives": true, "paragraph": 35, "note": "moved to P35, still follows the Compose Rails sample paragraph"}
+{"id": "13856f73", "survives": true, "paragraph": 55, "note": "same related-links item; only link target changed"}
+{"id": "70ba5a14", "survives": true, "paragraph": 5, "note": "same migration step moved earlier, words intact"}
+{"id": "eacb3c2e", "survives": false, "paragraph": null, "note": "experimental shortcode block removed"}
+{"id": "873e8987", "survives": true, "paragraph": 7, "note": "same sentence; only null link changed"}
+{"id": "12e558b2", "survives": false, "paragraph": null, "note": "API sentence reworded to 'see the [GraphQL API]'; 'our' removed"}
+{"id": "87e35323", "survives": true, "paragraph": 233, "note": "paragraph unchanged"}
+{"id": "e84b12bd", "survives": true, "paragraph": 343, "note": "same changelog line unchanged; P338 is a different entry"}
+{"id": "0b9b83d1", "survives": true, "paragraph": 233, "note": "paragraph unchanged"}
+{"id": "01c94c87", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "9985eaf0", "survives": false, "paragraph": null, "note": "plugin-location paragraph removed; later hits are other passages (MCP, prompt files)"}
+{"id": "9628e80d", "survives": true, "paragraph": 4, "note": "same install step; only URL formatting changed"}
+{"id": "48d797ca", "survives": true, "paragraph": 2, "note": "advantage sentence moved and merged into C# Dev Kit intro paragraph"}
+{"id": "8989857f", "survives": true, "paragraph": 100, "note": "paragraph unchanged"}
+{"id": "403b322a", "survives": false, "paragraph": null, "note": "{{SVGAttr(\"title\")}} replaced by markdown link"}
+{"id": "6c6710ed", "survives": true, "paragraph": 74, "note": "same step reworded around the words; 'Chat Debug View**' intact"}
+{"id": "cd9fe64e", "survives": false, "paragraph": null, "note": "screenshot alt text rewritten"}
+{"id": "918d53f3", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "1650774b", "survives": true, "paragraph": 35, "note": "paragraph unchanged"}
+{"id": "2a1d87b1", "survives": true, "paragraph": 24, "note": "same sentence moved to P24; subject reworded, marked words intact"}
+{"id": "48ffd561", "survives": true, "paragraph": 17, "note": "paragraph unchanged"}
+{"id": "fd04410a", "survives": true, "paragraph": 9, "note": "reusable line moved to P9 after new intro; identical"}
+{"id": "c1745543", "survives": true, "paragraph": 11, "note": "paragraph unchanged"}
+{"id": "30847668", "survives": true, "paragraph": 11, "note": "VP9 quantizer description unchanged; P15/P19/P23 are the other codecs' copies"}
+{"id": "3ef33577", "survives": true, "paragraph": 24, "note": "paragraph unchanged"}
+{"id": "2de8859a", "survives": true, "paragraph": 2, "note": "paragraph unchanged"}
+{"id": "47733aef", "survives": true, "paragraph": 0, "note": "product name templated elsewhere in sentence; marked words intact"}
+{"id": "bbf3b2dd", "survives": true, "paragraph": 19, "note": "paragraph unchanged"}
+{"id": "8c50976c", "survives": true, "paragraph": 193, "note": "paragraph unchanged"}
+{"id": "0761411c", "survives": true, "paragraph": 79, "note": "paragraph unchanged"}
+{"id": "2fb54864", "survives": true, "paragraph": 0, "note": "grammar fix elsewhere in sentence; marked words intact"}
+{"id": "ca55658a", "survives": true, "paragraph": 7, "note": "paragraph unchanged"}
+{"id": "e5a3da14", "survives": true, "paragraph": 21, "note": "paragraph unchanged"}
+{"id": "26990b15", "survives": true, "paragraph": 11, "note": "paragraph unchanged"}
+{"id": "fcdc52ab", "survives": true, "paragraph": 25, "note": "list item 'Enable or disable Gordon for the organization' merged into admin-controls sentence P25; P34 is the separate earlier P31 passage"}
+{"id": "e5dc4c89", "survives": true, "paragraph": 4, "note": "same sign-into-github-classroom reusable step, before 'Navigate to your classroom'"}
+{"id": "089ac110", "survives": true, "paragraph": 10, "note": "prerequisites sentence reworded; 'the operating system' still adjacent in same passage"}
+{"id": "9f35ac0e", "survives": true, "paragraph": 20, "note": "codespaces badge link line with endif; quotes removed only"}
+{"id": "762d88df", "survives": true, "paragraph": 21, "note": "httpPort line unchanged; P20 sslPort is a separate repeat"}
+{"id": "ea99d74a", "survives": true, "paragraph": 6, "note": "delete-reminder steps paragraph; image removed; P3/P5 are the create/edit step lists"}
+{"id": "c026c36b", "survives": true, "paragraph": 155, "note": "volumes_from bug fix entry unchanged"}
+{"id": "95bbb9d6", "survives": true, "paragraph": 1, "note": "about-code-scanning reusable sentence; only link URL changed"}
+{"id": "627c60de", "survives": true, "paragraph": 13, "note": "isConfigSupported description unchanged"}
+{"id": "00ae3de8", "survives": true, "paragraph": 45, "note": "Summary view sentence reworded and moved; '**Agent Flow Chart**,' intact"}
+{"id": "ede43a56", "survives": true, "paragraph": 342, "note": "disk size release note unchanged"}
+{"id": "e43d2bc2", "survives": false, "paragraph": null, "note": "rewritten to 'range of representable instants'; 'a representable instant,' gone"}
+{"id": "7ff977fd", "survives": false, "paragraph": null, "note": "{{experimental_inline}} removed from position term line"}
+{"id": "0f6a6991", "survives": true, "paragraph": 32, "note": "'Avoid or keep them minimal when:' unchanged"}
+{"id": "2e0d9a7f", "survives": true, "paragraph": 62, "note": "Commit glossary entry; P1 and P26 are coincidental repeats in other passages"}
+{"id": "1064120d", "survives": true, "paragraph": 133, "note": "stepping-over-properties paragraph moved, unchanged"}
+{"id": "8e565d77", "survives": true, "paragraph": 17, "note": "WSL docker CLI fix entry unchanged"}
+{"id": "c6da3d4b", "survives": true, "paragraph": 19, "note": "Is ServiceWorker ready link unchanged"}
+{"id": "a51c822a", "survives": true, "paragraph": 4, "note": "sequence paragraph unchanged; P3 hit is the other (segments) passage"}
+{"id": "e8e14b6e", "survives": true, "paragraph": 64, "note": "schedule-export step list shifted by one; P46 is the quick-export copy"}
+{"id": "5c103cb6", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "52201acd", "survives": true, "paragraph": 21, "note": "httpPort line moved earlier in document, unchanged; P20 is sslPort"}
+{"id": "a883ed6c", "survives": true, "paragraph": 0, "note": "paragraph unchanged"}
+{"id": "7bc63c97", "survives": false, "paragraph": null, "note": "'Visual Studio Code' replaced by a data variable; 'Code' gone"}
+{"id": "c8726351", "survives": true, "paragraph": 38, "note": "same sandbox policy paragraph, renumbered"}
+{"id": "082e184a", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "8448c03e", "survives": true, "paragraph": 123, "note": "release note unchanged"}
+{"id": "4a9c443f", "survives": true, "paragraph": 84, "note": "paragraph unchanged"}
+{"id": "8170ed7b", "survives": true, "paragraph": 18, "note": "sentence edited at end only; marked words intact"}
+{"id": "d3bac10e", "survives": true, "paragraph": 40, "note": "same reusable line, renumbered; only occurrence"}
+{"id": "d86bf4d4", "survives": true, "paragraph": 3, "note": "paragraph split; step text now its own paragraph with words intact"}
+{"id": "a27e041d", "survives": true, "paragraph": 29, "note": "typo fixed elsewhere in paragraph; marked words intact"}
+{"id": "af2bb03e", "survives": true, "paragraph": 2, "note": "paragraph unchanged; P15 'access audio' differs"}
+{"id": "fbc08221", "survives": true, "paragraph": 70, "note": "same Repositories and Remotes list item; sibling items also use the phrase"}
+{"id": "8540e607", "survives": true, "paragraph": 10, "note": "same 'Intro to' webcast item; other hits are neighbouring items"}
+{"id": "be8ea956", "survives": true, "paragraph": 19, "note": "same sentence unchanged, moved from P14 to P19"}
+{"id": "f3977c1b", "survives": true, "paragraph": 14, "note": "Quick Setup sentence kept; variable name and image split off edited elsewhere"}
+{"id": "881c3ae5", "survives": true, "paragraph": 19, "note": "AVC quantizer entry (0 to 51) unchanged at P19; P23 is the new HEVC entry, a repeat"}
+{"id": "2c862f08", "survives": true, "paragraph": 38, "note": "install-packages paragraph unchanged; P24 'code to a particular branch' is a different passage"}
+{"id": "98080ef7", "survives": true, "paragraph": 1, "note": "sentence unchanged"}
+{"id": "c7976afb", "survives": false, "paragraph": null, "note": "set-up-remote-URL step removed; steps rewritten to add a new remote"}
+{"id": "c56f912e", "survives": true, "paragraph": 58, "note": "sentence kept, second sentence reworded; earlier P59 is a different passage"}
+{"id": "2a48ea62", "survives": true, "paragraph": 5, "note": "sentence unchanged"}
+{"id": "1cb34c79", "survives": true, "paragraph": 3, "note": "Docker Scout sentence kept with a new leading clause"}
+{"id": "9bab11bb", "survives": true, "paragraph": 46, "note": "release note unchanged"}
+{"id": "6f81716d", "survives": false, "paragraph": null, "note": "child-processes bullet removed from the file-system section"}
+{"id": "3c3f860e", "survives": false, "paragraph": null, "note": "new sentence inserted between 'repository.' and 'For more' in later P5"}
+{"id": "ab1ed25e", "survives": true, "paragraph": 4, "note": "reusable include line unchanged, moved P6 to P4"}
+{"id": "70c03c24", "survives": true, "paragraph": 16, "note": "include sequence unchanged, moved P17 to P16"}
+{"id": "8c3e18e2", "survives": false, "paragraph": null, "note": "Enable AI features prerequisite removed; replaced by Set up Copilot"}
+{"id": "c5e53da8", "survives": false, "paragraph": null, "note": "reworded to \"The user's SAML `NameID`\"; NameID, changed"}
+{"id": "4194006a", "survives": true, "paragraph": 103, "note": "release note unchanged"}
+{"id": "c95c4a14", "survives": true, "paragraph": 4, "note": "same sentence moved earlier; only 'session target' wording changed elsewhere"}
+{"id": "b7531a86", "survives": true, "paragraph": 23, "note": "paragraph unchanged; P22 'to work on' is a different sentence"}
+{"id": "ca879db8", "survives": true, "paragraph": 41, "note": "paragraph unchanged"}
+{"id": "b8b8f699", "survives": true, "paragraph": 19, "note": "applicationUrl line moved, text unchanged"}
+{"id": "3c667632", "survives": true, "paragraph": 11, "note": "paragraph unchanged"}
+{"id": "427a5d0f", "survives": true, "paragraph": 50, "note": "paragraph unchanged"}
+{"id": "7d36d211", "survives": true, "paragraph": 2, "note": "reusable include line unchanged"}
+{"id": "8b4e007a", "survives": true, "paragraph": 15, "note": "paragraph unchanged"}
+{"id": "38a2e74c", "survives": true, "paragraph": 30, "note": "same sentence after the push-protection paragraph; only link target changed"}
+{"id": "da463bc6", "survives": false, "paragraph": null, "note": "third word now has {{AvailableInWorkers(...)}} attached, so the token changed"}
+{"id": "9480d130", "survives": false, "paragraph": null, "note": "link URL in the second word changed to ../../subscription/details.md"}
+{"id": "9a71e5c8", "survives": true, "paragraph": 13, "note": "paragraph unchanged, renumbered"}
+{"id": "7fbbfa8d", "survives": true, "paragraph": 60, "note": "Compose-on-Kubernetes sentence unchanged; P219 is the Docker Machine sentence, coincidental"}
+{"id": "42e6f857", "survives": true, "paragraph": 16, "note": "VideoEncoder.configure() description unchanged, renumbered"}
+{"id": "090b9b33", "survives": true, "paragraph": 3, "note": "include line unchanged"}
+{"id": "33d78607", "survives": true, "paragraph": 270, "note": "paragraph unchanged"}
+{"id": "98c9bc15", "survives": true, "paragraph": 11, "note": "same paragraph renumbered; P43 tip is a different passage"}
+{"id": "f87b6a30", "survives": true, "paragraph": 5, "note": "same sentence, shifted from P6 to P5; only the link text later in the paragraph changed"}
+{"id": "b6f7dc8e", "survives": true, "paragraph": 214, "note": "paragraph unchanged"}
+{"id": "0d71b34e", "survives": true, "paragraph": 74, "note": "paragraph unchanged"}
+{"id": "92988e58", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "72c9021e", "survives": true, "paragraph": 273, "note": "paragraph unchanged"}
+{"id": "df750dd4", "survives": false, "paragraph": null, "note": "intro paragraph rewritten; the words appear only in an unrelated update step (P2)"}
+{"id": "e17228bf", "survives": false, "paragraph": null, "note": "the include path changed to reusables.copilot.copilot-cli.cli-example-marketplace-file, so the third word differs"}
+{"id": "2e16ea74", "survives": true, "paragraph": 59, "note": "same item about the extension version, with a sentence appended; many other paragraphs mention C# Dev Kit but they are unrelated"}
+{"id": "5336ca08", "survives": true, "paragraph": 14, "note": "same sentence, shifted from P13 to P14"}
+{"id": "26dd101e", "survives": true, "paragraph": 33, "note": "same paragraph, moved from P15 to P33"}
+{"id": "9bb999f8", "survives": true, "paragraph": 32, "note": "same link line, shifted from P34 to P32"}
+{"id": "048dcc83", "survives": true, "paragraph": 42, "note": "default file-system bullets rewritten as one sentence ('grants read and write access to the current working directory'); same topic in the same section, words intact"}
+{"id": "9bca26c9", "survives": true, "paragraph": 188, "note": "paragraph unchanged; the other 'caused Docker Desktop' hits are different fixes"}
+{"id": "7f00b43d", "survives": true, "paragraph": 26, "note": "same Add/reinstate paragraph; P25 is the separate Invite variant"}
+{"id": "ce616a89", "survives": false, "paragraph": null, "note": "the manual-review intro paragraph was removed; no later paragraph contains the phrase"}
+{"id": "6f445449", "survives": true, "paragraph": 13, "note": "'VS Code' changed to a variable earlier in the paragraph; the marked words are intact"}
+{"id": "80f361f7", "survives": true, "paragraph": 13, "note": "paragraph unchanged"}
+{"id": "71117def", "survives": true, "paragraph": 13, "note": "identical sentence about bringing launchSettings.json from Visual Studio, moved"}
+{"id": "b91f99e2", "survives": true, "paragraph": 2, "note": "AbstractRange note unchanged"}
+{"id": "435065c3", "survives": true, "paragraph": 2, "note": "Docker Scout bullet unchanged; Wiz/Mend/flag paragraphs are coincidental repeats"}
+{"id": "db4eddb7", "survives": true, "paragraph": 19, "note": "applicationUrl description unchanged, moved"}
+{"id": "cc6bc3d9", "survives": true, "paragraph": 17, "note": "Smart Send paragraph reworded around the words; 'Send in favor' intact"}
+{"id": "07eb28b9", "survives": true, "paragraph": 22, "note": "same reusable tag line unchanged"}
+{"id": "1291b5b9", "survives": true, "paragraph": 97, "note": "same link line after Select Import, renumbered"}
+{"id": "1d420712", "survives": true, "paragraph": 1, "note": "install instruction unchanged; P3 is a coincidental repeat"}
+{"id": "e8453792", "survives": true, "paragraph": 24, "note": "branch-deletion sentence unchanged, renumbered"}
+{"id": "2d9f8716", "survives": true, "paragraph": 30, "note": "same release-notes link line unchanged"}
+{"id": "91a33f64", "survives": true, "paragraph": 9, "note": "paragraph merged with preceding sentence; words intact"}
+{"id": "a3ce2932", "survives": true, "paragraph": 11, "note": "sinkId sentence unchanged"}
+{"id": "8b11a72a", "survives": true, "paragraph": 5, "note": "Firefox 3 for developers link, renumbered after neighbour change"}
+{"id": "945975b4", "survives": true, "paragraph": 11, "note": "size description unchanged; P5 indexFormat text is a different passage"}
+{"id": "caa6cccd", "survives": true, "paragraph": 53, "note": "WSL startup-script paragraph unchanged; P72 is coincidental"}
+{"id": "b8e28f6c", "survives": true, "paragraph": 199, "note": "2.2.0.0 Kubernetes upgrade note under 2020-01-21; other versions are repeats"}
+{"id": "3cebf6d8", "survives": true, "paragraph": 18, "note": "XRRigidTransform sentence unchanged"}
+{"id": "9f8b806d", "survives": true, "paragraph": 5, "note": "step list split into separate paragraphs; sentence intact in P5"}
+{"id": "256f6a70", "survives": true, "paragraph": 4, "note": "note paragraph unchanged"}
+{"id": "0dd1924c", "survives": true, "paragraph": 52, "note": "paragraph unchanged"}
+{"id": "4f9e51a1", "survives": true, "paragraph": 258, "note": "release note unchanged"}
+{"id": "6ce46177", "survives": true, "paragraph": 4, "note": "property heading unchanged"}
+{"id": "0ad564c8", "survives": true, "paragraph": 4, "note": "alt text edited before the words (product variable removed); words intact"}
+{"id": "b215eab1", "survives": false, "paragraph": null, "note": "'Sandboxing is off by default. To turn it on' sentence rewritten into setting-based instructions; phrase gone"}
+{"id": "5079925d", "survives": true, "paragraph": 177, "note": "release note unchanged"}
+{"id": "d1d48d61", "survives": true, "paragraph": 69, "note": "regex explanation item moved from P48 to P69 with same neighbours"}
+{"id": "9f06d374", "survives": true, "paragraph": 71, "note": "paragraph unchanged"}
+{"id": "bd0c1aa7", "survives": true, "paragraph": 34, "note": "Agent Debug Logs step reworded after the words; P73 is a different Chat Debug View step"}
+{"id": "86845353", "survives": true, "paragraph": 161, "note": "release note unchanged; P225 is a different older note"}
+{"id": "c7dc7500", "survives": true, "paragraph": 7, "note": "see-also link unchanged"}
+{"id": "43c4eaff", "survives": true, "paragraph": 28, "note": "paragraph unchanged"}
+{"id": "c3ea68e8", "survives": true, "paragraph": 13, "note": "description unchanged; heading above it edited"}
+{"id": "96b4b32e", "survives": true, "paragraph": 77, "note": "paragraph shifted from P76 to P77, text unchanged"}
+{"id": "7f938929", "survives": true, "paragraph": 53, "note": "paragraph unchanged"}
+{"id": "16a66d06", "survives": true, "paragraph": 47, "note": "Wiz paragraph unchanged; L49 is a coincidental repeat in the Mend.io paragraph"}
+{"id": "a66ad438", "survives": true, "paragraph": 15, "note": "launchSettings commandLineArgs list moved earlier in the document, text unchanged"}
+{"id": "d2107331", "survives": true, "paragraph": 0, "note": "same paragraph, only links edited and renumbered"}
+{"id": "82b3da88", "survives": true, "paragraph": 4, "note": "same reusable line, shifted by a new note block"}
+{"id": "2bedf85a", "survives": false, "paragraph": null, "note": "prebuilds-beta-note reusable line deleted"}
+{"id": "60fd1791", "survives": true, "paragraph": 47, "note": "same note paragraph unchanged"}
+{"id": "413cdff5", "survives": true, "paragraph": 9, "note": "state description unchanged, renumbered"}
+{"id": "3f861827", "survives": true, "paragraph": 3, "note": "same paragraph unchanged"}
+{"id": "28e95630", "survives": false, "paragraph": null, "note": "quote mark removed: \"[Exporting became [Exporting"}
+{"id": "7f32eceb", "survives": true, "paragraph": 23, "note": "same paragraph unchanged"}
+{"id": "b0cf8c9d", "survives": true, "paragraph": 0, "note": "same paragraph, only link quoting changed elsewhere"}
+{"id": "a8b4b1a8", "survives": true, "paragraph": 159, "note": "same sentence, renumbered"}
+{"id": "d4b78655", "survives": true, "paragraph": 71, "note": "same paragraph unchanged"}
+{"id": "988bedac", "survives": true, "paragraph": 53, "note": "same paragraph unchanged"}
+{"id": "c9657c6e", "survives": false, "paragraph": null, "note": "encode() description reworded to 'Asynchronously encodes a VideoFrame'"}
+{"id": "745c6b53", "survives": true, "paragraph": 139, "note": "same sentence, renumbered"}
+{"id": "0fa701f3", "survives": false, "paragraph": null, "note": "sentence reworded to 'the sandbox continues to restrict processes'"}
+{"id": "50d809e6", "survives": true, "paragraph": 5, "note": "description paragraph reworded and moved; 'Strings are parsed as if they are source text' kept"}
+{"id": "691f08cf", "survives": false, "paragraph": null, "note": "SVG 1.1 exception note removed from all properties in later version"}
+{"id": "778326b7", "survives": true, "paragraph": 231, "note": "paragraph unchanged; P232 is a different sentence using same words"}
+{"id": "5d4aae39", "survives": false, "paragraph": null, "note": "sentence rewritten to 'can enable or disable Gordon'; 'control Gordon access' gone"}
+{"id": "b2dae553", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "37626da9", "survives": true, "paragraph": 13, "note": "same sentence moved to P13"}
+{"id": "b429eb2a", "survives": true, "paragraph": 89, "note": "paragraph unchanged"}
+{"id": "f8750e74", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "f50b97e2", "survives": true, "paragraph": 49, "note": "paragraph unchanged; P52 is a separate similar sentence in another section"}
+{"id": "0ac82c22", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "20dff701", "survives": true, "paragraph": 56, "note": "allowNetwork paragraph reworded; 'Set it to `false` to block outbound access' keeps the words"}
+{"id": "7d525f5d", "survives": false, "paragraph": null, "note": "step became 'Select an exported Agent Debug Log JSON file'; P67 'a previously exported session' is the import heading, not this step"}
+{"id": "c16244a5", "survives": true, "paragraph": 25, "note": "list item 'Enable or disable Gordon for the organization' merged into rewritten admin paragraph P25"}
+{"id": "c2e23d9c", "survives": true, "paragraph": 14, "note": "paragraph unchanged"}
+{"id": "99cab1d1", "survives": true, "paragraph": 25, "note": "inspect-policy step reworded; link text 'Inspect the effective sandbox policy' keeps the words"}
+{"id": "fc76b479", "survives": true, "paragraph": 23, "note": "same sentence moved to P23"}
+{"id": "22714377", "survives": false, "paragraph": null, "note": "sentence 'It also moves the current node to this one.' deleted"}
+{"id": "2503044d", "survives": true, "paragraph": 15, "note": "commandLineArgs paragraph unchanged"}
+{"id": "be9e5a85", "survives": true, "paragraph": 34, "note": "Agent Debug panel step reworded; 'menu in the' kept intact"}
+{"id": "748fdda2", "survives": true, "paragraph": 6, "note": "identical sentence also at P10; P6 matches by neighbours (actions dropdown step)"}
+{"id": "858d35c3", "survives": true, "paragraph": 34, "note": "VEX attestation pointer unchanged, moved"}
+{"id": "beb476a9", "survives": true, "paragraph": 27, "note": "sentence start reworded; cheat sheet link text intact"}
+{"id": "fc52ea94", "survives": true, "paragraph": 134, "note": "release note line unchanged"}
+{"id": "0a0a82e3", "survives": true, "paragraph": 267, "note": "Qemu 4.0.0 line unchanged"}
+{"id": "00db3cad", "survives": true, "paragraph": 113, "note": "subagent sentence unchanged, shifted"}
+{"id": "3d993cdb", "survives": true, "paragraph": 39, "note": "span paragraph unchanged, shifted"}
+{"id": "68ec56fe", "survives": true, "paragraph": 18, "note": "same view-consumed-licenses reusable, moved after upload step"}
+{"id": "e3dcb22d", "survives": true, "paragraph": 23, "note": "IdP paragraph unchanged, shifted"}
+{"id": "868c8bb7", "survives": true, "paragraph": 204, "note": "Dashboard paragraph unchanged"}
+{"id": "243c7836", "survives": true, "paragraph": 2, "note": "image alt text unchanged"}
+{"id": "17679f76", "survives": true, "paragraph": 8, "note": "see-also link at P8; P1 occurrence is the intro sentence, a different passage"}
+{"id": "64966f84", "survives": true, "paragraph": 130, "note": "locked groups sentence unchanged, shifted"}
+{"id": "8e5bf71a", "survives": true, "paragraph": 10, "note": "marketplace list edited earlier in sentence; 'Disable this behavior' intact"}
+{"id": "4c4e278e", "survives": true, "paragraph": 63, "note": "skill bullet unchanged"}
+{"id": "78cdf838", "survives": true, "paragraph": 193, "note": "DockerNAT workaround paragraph unchanged"}
+{"id": "6ca8086e", "survives": false, "paragraph": null, "note": "'--plugin is the default kind' sentence removed; cross-kind flags dropped"}
+{"id": "ef8142c5", "survives": true, "paragraph": 44, "note": "same breadcrumb step, moved within new debug-logs procedure"}
+{"id": "1394abd7", "survives": true, "paragraph": 30, "note": "same -f paragraph moved; yml->yaml elsewhere, 'file. You must' intact"}
+{"id": "f8bd7754", "survives": true, "paragraph": 11, "note": "position description unchanged"}
+{"id": "08c5c787", "survives": true, "paragraph": 112, "note": "pin editor tab paragraph shifted by one"}
+{"id": "ae0ae965", "survives": false, "paragraph": null, "note": "reworded to 'run `/sandbox policy` to verify'; 'Run it to' gone"}
+{"id": "ff01e1e6", "survives": true, "paragraph": 4, "note": "include-all-branches step; only trailing reusables changed"}
+{"id": "b78e99c9", "survives": true, "paragraph": 33, "note": "review step reworded around phrase, phrase intact"}
+{"id": "c3663acd", "survives": true, "paragraph": 39, "note": "report description reworded at start, 'policy. You can' intact"}
+{"id": "f9dfd036", "survives": true, "paragraph": 216, "note": "release note line unchanged"}
+{"id": "bbeb7f2e", "survives": true, "paragraph": 5, "note": "phrase repeats in sibling P6/P7; P5 is the same controller line"}
+{"id": "9cc9b62a", "survives": true, "paragraph": 2, "note": "'Download and install' -> 'Install', phrase intact in same requirement line"}
+{"id": "3ad90ac3", "survives": true, "paragraph": 10, "note": "step unchanged"}
+{"id": "4bb315c6", "survives": true, "paragraph": 24, "note": "deprecated-API paragraph edited (v1.40, link) but phrase intact"}
+{"id": "40d24dfb", "survives": true, "paragraph": 44, "note": "sentence unchanged"}
+{"id": "1e6c9c86", "survives": true, "paragraph": 21, "note": "same migration-benefits lead-in, moved after restructured intro"}
+{"id": "8d48737a", "survives": false, "paragraph": null, "note": "'Add the cloud builder endpoint.' rewritten to 'Connect Buildx to your cloud builder.' (P10); P12 'for the cloud builder' is a different sentence"}
+{"id": "daf8f37f", "survives": true, "paragraph": 34, "note": "Agent Debug step reworded but 'menu in the' intact; P73 is the separate Chat Debug View step"}
+{"id": "3ddee3d7", "survives": true, "paragraph": 7, "note": "'Sandboxing does not replace the isolation provided by cloud sessions' keeps the words; P6 is a different sentence about endpoint security"}
+{"id": "6b185789", "survives": true, "paragraph": 4, "note": "same alt text, product variable removed before 'repository.' but marked words intact"}
+{"id": "7628ac50", "survives": false, "paragraph": null, "note": "same passage at P124 now reads 'prodname_copilot_short %} should use'; 'to' replaced"}
+{"id": "16053070", "survives": true, "paragraph": 13, "note": "identical polyfill link"}
+{"id": "eeb53e3e", "survives": true, "paragraph": 1, "note": "paragraph split; step text unchanged"}
+{"id": "3a2c3b1e", "survives": false, "paragraph": null, "note": "archived-docs link list removed; replaced by a single sentence with link at P24"}
+{"id": "5d2f0ae7", "survives": true, "paragraph": 52, "note": "identical sentence"}
+{"id": "4f0d8ee6", "survives": false, "paragraph": null, "note": "troubleshooting sentence removed; later P15 'verify that the server is running' lacks 'MCP' after 'the'"}
+{"id": "5648a407", "survives": true, "paragraph": 139, "note": "identical example sentence"}
+{"id": "f2481fb2", "survives": false, "paragraph": null, "note": "P25 now 'administrators can enable or disable Gordon'; 'control Gordon access' gone"}
+{"id": "fb3328ba", "survives": true, "paragraph": 15, "note": "launchSettings section moved from end to start, text identical"}
+{"id": "ec54669a", "survives": false, "paragraph": null, "note": "same passage at P10 rewritten to 'For remote sessions'; P20/P34 'For a remote session' are different passages"}
+{"id": "9c63871a", "survives": true, "paragraph": 102, "note": "same sentence, only path wrapped in backticks after the marked words"}
+{"id": "37e41dc2", "survives": true, "paragraph": 11, "note": "identical step"}
+{"id": "0a2818e1", "survives": true, "paragraph": 25, "note": "identical sentence, moved"}
+{"id": "2910a96a", "survives": true, "paragraph": 24, "note": "paragraph unchanged, renumbered"}
+{"id": "672e4fd9", "survives": true, "paragraph": 10, "note": "same paragraph unchanged; P12 repeat is a different sentence"}
+{"id": "95d18bd8", "survives": true, "paragraph": 62, "note": "image alt text unchanged"}
+{"id": "a658bec4", "survives": true, "paragraph": 44, "note": "same 'First, download the VEX attestation' step moved later; P32/P43 are other passages"}
+{"id": "fea72b99", "survives": false, "paragraph": null, "note": "'be' inserted: 'package will be visible'"}
+{"id": "0efb11d5", "survives": true, "paragraph": 38, "note": "paragraph unchanged, renumbered"}
+{"id": "bcc8516e", "survives": true, "paragraph": 92, "note": "the csharp.debug.console availability row; other hits are rows for other settings"}
+{"id": "57dc16f8", "survives": true, "paragraph": 40, "note": "paragraph unchanged, renumbered"}
+{"id": "91415c6c", "survives": true, "paragraph": 52, "note": "quick-export tab item; P74 is a new duplicate in the schedule-export section"}
+{"id": "b1d6c49f", "survives": true, "paragraph": 2, "note": "sentence 'The advantage of launchSettings.json is that...' moved verbatim into rewritten C# Dev Kit paragraph"}
+{"id": "e978ab45", "survives": true, "paragraph": 7, "note": "paragraph unchanged"}
+{"id": "dd4ae1bd", "survives": true, "paragraph": 8, "note": "decoder->encoder edited after the marked words; marked words intact"}
+{"id": "e2694fa2", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "97356999", "survives": true, "paragraph": 94, "note": "paragraph unchanged"}
+{"id": "ec855fd5", "survives": true, "paragraph": 25, "note": "sentence reworded to 'Review your organization's data handling requirements' and merged; words intact"}
+{"id": "e2e95a63", "survives": false, "paragraph": null, "note": "Gordon's Supplemental Terms link item replaced by Docker Subscription Service Agreement"}
+{"id": "2d62300d", "survives": true, "paragraph": 19, "note": "paragraph unchanged"}
+{"id": "766ca963", "survives": true, "paragraph": 11, "note": "sentence reworded ('Thrown in one of the following cases') but 'one of the' intact and adjacent in same passage"}
+{"id": "dc2647a3", "survives": true, "paragraph": 116, "note": "paragraph unchanged, shifted by one"}
+{"id": "6497288c", "survives": true, "paragraph": 0, "note": "phrase unchanged; only link quoting edited elsewhere"}
+{"id": "ef78da44", "survives": true, "paragraph": 23, "note": "paragraph unchanged"}
+{"id": "d7d1fa25", "survives": true, "paragraph": 258, "note": "paragraph unchanged"}
+{"id": "369c2823", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "6191d15b", "survives": true, "paragraph": 14, "note": "link line unchanged"}
+{"id": "60f45290", "survives": false, "paragraph": null, "note": "SVG 1.1 note paragraphs removed; phrase absent from later version"}
+{"id": "c8063cf0", "survives": true, "paragraph": 18, "note": "paragraph unchanged"}
+{"id": "0c9ba315", "survives": false, "paragraph": null, "note": "{{readonlyInline}} became {{ReadOnlyInline}} and {{experimental_inline}} removed"}
+{"id": "3723f272", "survives": true, "paragraph": 60, "note": "paragraph unchanged"}
+{"id": "6b204def", "survives": true, "paragraph": 27, "note": "link text unchanged; only URL changed"}
+{"id": "58efff6b", "survives": false, "paragraph": null, "note": "HTML <a href> converted to Markdown link; '<a' and href token gone"}
+{"id": "3f19f012", "survives": true, "paragraph": 1, "note": "reusable include unchanged"}
+{"id": "2f01071e", "survives": true, "paragraph": 0, "note": "macro line unchanged"}
+{"id": "cb144114", "survives": true, "paragraph": 17, "note": "'VS Code' replaced by variable elsewhere; marked words intact"}
+{"id": "8caf5394", "survives": true, "paragraph": 12, "note": "paragraph unchanged"}
+{"id": "cddcecfc", "survives": false, "paragraph": null, "note": "later P42 reads 'the Copilot harness sandbox': 'harness' inserted between Copilot and sandbox"}
+{"id": "29f34d17", "survives": true, "paragraph": 23, "note": "same sentence, only the link target changed"}
+{"id": "7aed9c15", "survives": true, "paragraph": 6, "note": "paragraph unchanged; P4 repeat lacks the comma"}
+{"id": "34220a16", "survives": true, "paragraph": 0, "note": "macro line unchanged"}
+{"id": "6674ed0b", "survives": true, "paragraph": 167, "note": "same release note unchanged; P279 is an unrelated installer note"}
+{"id": "36e67027", "survives": true, "paragraph": 2, "note": "image alt text; only 'Overview' (outside the marked words) lowercased"}
+{"id": "9808fdd0", "survives": true, "paragraph": 6, "note": "same description; 'decoding' changed to 'encoding' outside the marked words"}
+{"id": "77bbed32", "survives": true, "paragraph": 92, "note": "same sentence moved; 'Agent Host' changed to 'agent' elsewhere"}
+{"id": "c27517c1", "survives": false, "paragraph": null, "note": "sandboxing setup steps rewritten; 'These settings apply' appears nowhere in later version"}
+{"id": "4efc89d1", "survives": true, "paragraph": 2, "note": "paragraph unchanged"}
+{"id": "78fa27cc", "survives": true, "paragraph": 2, "note": "the 'advantage of launchSettings.json' sentence moved verbatim into new intro paragraph P2; original intro paragraph removed"}
+{"id": "7275ce17", "survives": true, "paragraph": 21, "note": "httpPort list item moved with the launchSettings field list to P15-P21"}
+{"id": "7d7ebfac", "survives": true, "paragraph": 19, "note": "same line, quotes dropped around the link; '{%- endif %}' intact"}
+{"id": "fe4a1150", "survives": true, "paragraph": 11, "note": "same paragraph, renumbered"}
+{"id": "a06c50b0", "survives": true, "paragraph": 17, "note": "same instruction, image removed"}
+{"id": "addfc7ac", "survives": true, "paragraph": 11, "note": "same sentence, extended with personal-account and builder-name text"}
+{"id": "2e7d5006", "survives": true, "paragraph": 2, "note": "same paragraph, opening reworded"}
+{"id": "dcdb8433", "survives": true, "paragraph": 1, "note": "P1 edited (window->panel, Debug Console) but 'for the language' intact in same sentence"}
+{"id": "7cb2d605", "survives": false, "paragraph": null, "note": "link text replaced by AUTOTITLE; words gone"}
+{"id": "345f997c", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "8a52bddc", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "6209b621", "survives": true, "paragraph": 16, "note": "launchSettings executablePath line moved to P16, unchanged"}
+{"id": "6b4f43c5", "survives": false, "paragraph": null, "note": "experimental shortcode paragraphs deleted"}
+{"id": "12a1eb56", "survives": false, "paragraph": null, "note": "ifversion/endif removed; '%}{% endif' no longer present"}
+{"id": "0c12d8f5", "survives": true, "paragraph": 21, "note": "paragraph unchanged"}
+{"id": "b0fca62a", "survives": true, "paragraph": 31, "note": "paragraph unchanged"}
+{"id": "46c8625c", "survives": true, "paragraph": 156, "note": "plugin example list item shifted to P156, unchanged"}
+{"id": "5ce1981a", "survives": false, "paragraph": null, "note": "Agent Debug Log panel description removed in rewrite"}
+{"id": "f2dfa3f5", "survives": true, "paragraph": 20, "note": "paragraph unchanged"}
+{"id": "4646e382", "survives": true, "paragraph": 13, "note": "manual-sync sign-in step (before Export license usage) is P13; P10 is the auto-sync copy"}
+{"id": "9ef7d69a", "survives": false, "paragraph": null, "note": "Test with Copilot link absent from later version"}
+{"id": "04c0b5e9", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "84d6d1d4", "survives": false, "paragraph": null, "note": "image alt text changed to new screenshot description"}
+{"id": "2e9abe22", "survives": true, "paragraph": 2, "note": "paragraph unchanged"}
+{"id": "bdda9a61", "survives": true, "paragraph": 72, "note": "identical paragraph, moved later in file"}
+{"id": "43287a00", "survives": true, "paragraph": 4, "note": "\"answer\" definition rewritten into definition-list form; words intact"}
+{"id": "831af572", "survives": true, "paragraph": 277, "note": "identical paragraph"}
+{"id": "6498f6ab", "survives": true, "paragraph": 6, "note": "identical paragraph"}
+{"id": "913f5fa7", "survives": true, "paragraph": 25, "note": "identical paragraph, moved"}
+{"id": "ec6e9c6b", "survives": true, "paragraph": 96, "note": "same Focus Second Side entry; P95 is the First Side sibling"}
+{"id": "a642e49d", "survives": true, "paragraph": 162, "note": "identical paragraph"}
+{"id": "b716dabf", "survives": true, "paragraph": 17, "note": "launchSettings property list moved near top; same workingDirectory entry"}
+{"id": "37b0b33c", "survives": true, "paragraph": 23, "note": "Grype --vex paragraph (after Grype example output); P27 is the Trivy one"}
+{"id": "44c46a4d", "survives": true, "paragraph": 3, "note": "identical paragraph"}
+{"id": "1a790535", "survives": true, "paragraph": 15, "note": "identical paragraph"}
+{"id": "5c70e55d", "survives": true, "paragraph": 0, "note": "identical paragraph"}
+{"id": "0ea7b2c4", "survives": true, "paragraph": 106, "note": "only link path changed"}
+{"id": "274d02ad", "survives": true, "paragraph": 33, "note": "feature-request paragraph moved and reworded; words intact"}
+{"id": "ba6313d1", "survives": true, "paragraph": 33, "note": "sessions/agents-window sentence rewritten in same spot (after permission-level para); link phrase intact"}
+{"id": "efc71236", "survives": true, "paragraph": 8, "note": "only surrounding quote/bold changed"}
+{"id": "c6e0a34b", "survives": true, "paragraph": 15, "note": "identical paragraph, renumbered"}
+{"id": "5c17c690", "survives": true, "paragraph": 24, "note": "close() description unchanged"}
+{"id": "23185644", "survives": true, "paragraph": 9, "note": "ALREADY_SIGNALED entry unchanged; P11 is a different entry"}
+{"id": "c4041892", "survives": true, "paragraph": 102, "note": "launchSettingsProfile sentence moved; only backticks added elsewhere"}
+{"id": "3daa2699", "survives": true, "paragraph": 34, "note": "CLI->Copilot sessions reworded; 'in your trace' viewer intact"}
+{"id": "b934455f", "survives": false, "paragraph": null, "note": "archived API 1.17 documentation link removed"}
+{"id": "d6de581b", "survives": false, "paragraph": null, "note": "{{readonlyinline}} changed to {{ReadOnlyInline}}"}
+{"id": "e835cc8d", "survives": true, "paragraph": 13, "note": "paragraph unchanged"}
+{"id": "1e86c88d", "survives": false, "paragraph": null, "note": "'VS Code' replaced by data variable"}
+{"id": "0538c20f", "survives": false, "paragraph": null, "note": "custom agents sentence reworded: '... %} should use', 'to' removed (now P125); other matches unrelated"}
+{"id": "ff7c1592", "survives": true, "paragraph": 31, "note": "tip marker dropped, link path changed; marked words intact"}
+{"id": "52740a80", "survives": true, "paragraph": 14, "note": "paragraph unchanged"}
+{"id": "d6bcedab", "survives": true, "paragraph": 13, "note": "'last' changed to 'first' before the span; marked words intact"}
+{"id": "6268bcbb", "survives": false, "paragraph": null, "note": "TOC screenshot paragraph removed"}
+{"id": "732eed72", "survives": true, "paragraph": 28, "note": "image link wrapper removed; alt text intact"}
+{"id": "154a7ddd", "survives": true, "paragraph": 13, "note": "serverCertificateHashes entry renumbered, text unchanged"}
+{"id": "dac3bb65", "survives": true, "paragraph": 38, "note": "link target changed, link text intact"}
+{"id": "e1e41582", "survives": true, "paragraph": 36, "note": "paragraph unchanged"}
+{"id": "61a19ef3", "survives": false, "paragraph": null, "note": "release_tag_name image line removed; later P2 rewritten without it"}
+{"id": "53439117", "survives": true, "paragraph": 15, "note": "same sentence about not sharing data with third parties"}
+{"id": "419b3d53", "survives": true, "paragraph": 90, "note": "same WSL 2 default shell fix entry, unchanged"}
+{"id": "c54d7d96", "survives": true, "paragraph": 1, "note": "same WSL extension sentence, unchanged"}
+{"id": "e0f1067e", "survives": true, "paragraph": 69, "note": "same sandbox-prompt screenshot alt text, renumbered"}
+{"id": "84f0dfbb", "survives": true, "paragraph": 12, "note": "same Julia marketplace image alt text, renumbered"}
+{"id": "ab52097f", "survives": true, "paragraph": 32, "note": "same stdin paths sentence, renumbered"}
+{"id": "0e0e5bfa", "survives": true, "paragraph": 4, "note": "same 'add up to 100 teams. If' step, surrounding list reworded"}
+{"id": "4d5f783d", "survives": true, "paragraph": 1, "note": "same trials-of-GHES sentence; only link quoting changed"}
+{"id": "64db6110", "survives": true, "paragraph": 52, "note": "same crash fix entry, unchanged"}
+{"id": "9ba07092", "survives": false, "paragraph": null, "note": "options intro reworded to 'An object that may have the following properties'"}
+{"id": "3d013e85", "survives": false, "paragraph": null, "note": "passage rewritten; now 'earlier links also open the latest generated report'"}
+{"id": "7d0981bf", "survives": true, "paragraph": 9, "note": "same Time-Zone header sentence, unchanged"}
+{"id": "0a7369c7", "survives": true, "paragraph": 2, "note": "same Native REPL paragraph, moved; TODO note removed elsewhere"}
+{"id": "300eeac5", "survives": true, "paragraph": 155, "note": "same plugin example line, renumbered"}
+{"id": "269f5c37", "survives": true, "paragraph": 46, "note": "same 'The result looks like this:' line; only occurrence"}
+{"id": "838ed499", "survives": false, "paragraph": null, "note": "'(i.e.' changed to '(i.e.,' in later P11"}
+{"id": "986b9a41", "survives": true, "paragraph": 162, "note": "paragraph unchanged"}
+{"id": "20acfbf1", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "08225c8c", "survives": true, "paragraph": 210, "note": "paragraph unchanged"}
+{"id": "3561d35b", "survives": true, "paragraph": 39, "note": "image alt text unchanged"}
+{"id": "4ff19555", "survives": true, "paragraph": 49, "note": "same mcpServers setting sentence; tail reworded, marked words intact"}
+{"id": "69228d2f", "survives": false, "paragraph": null, "note": "sentence reworded; 'skip its workspace migrations' replaced by Migrate with Agent text"}
+{"id": "6c8ec653", "survives": true, "paragraph": 34, "note": "same Gordon admin sentence moved; only link path changed"}
+{"id": "7a870892", "survives": true, "paragraph": 2, "note": "first sentence intact; second sentence reworded; other hits are unrelated paragraphs"}
+{"id": "8b42ba37", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "b1aafa0a", "survives": false, "paragraph": null, "note": "'time value equal to the' removed in rewrite"}
+{"id": "22d15a29", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "84578881", "survives": true, "paragraph": 29, "note": "paragraph unchanged"}
+{"id": "b4e42b0c", "survives": false, "paragraph": null, "note": "experimental shortcode block deleted"}
+{"id": "8c534a24", "survives": true, "paragraph": 2, "note": "paragraph split into list; 'Automatically, using {% data' item keeps the words"}
+{"id": "42a90167", "survives": true, "paragraph": 0, "note": "shortcode unchanged"}
+{"id": "5059398d", "survives": true, "paragraph": 27, "note": "same SyntaxError description, moved"}
+{"id": "b9b91493", "survives": true, "paragraph": 72, "note": "duplicate in two tab blocks; second block (P72 earlier/P71 tabs later) maps to P72"}
+{"id": "73a22084", "survives": true, "paragraph": 4, "note": "same sentence, only trailing reusables changed"}
+{"id": "aa8a67c5", "survives": true, "paragraph": 302, "note": "identical paragraph"}
+{"id": "6082a4c0", "survives": true, "paragraph": 58, "note": "identical paragraph, moved from P53 to P58"}
+{"id": "25ae526b", "survives": true, "paragraph": 18, "note": "only link URLs changed; marked words intact"}
+{"id": "e14f6d1e", "survives": true, "paragraph": 3, "note": "identical paragraph"}
+{"id": "346e2778", "survives": true, "paragraph": 81, "note": "identical image alt text"}
+{"id": "d5a843ee", "survives": true, "paragraph": 16, "note": "same executablePath line, moved from P190 to P16; unique match"}
+{"id": "47c499d2", "survives": true, "paragraph": 3, "note": "identical paragraph"}
+{"id": "88f4043d", "survives": true, "paragraph": 17, "note": "same AVC codec line (link path updated); P9/P13/P21 are other codecs"}
+{"id": "b677e8fe", "survives": true, "paragraph": 81, "note": "earlier P82 is in the schedule-export section; later P81 is its counterpart, P59 is the one-off export copy"}
+{"id": "730a01c3", "survives": false, "paragraph": null, "note": "WebTransportHash properties sentence rewritten to 'Each object in the array has the following properties:'"}
+{"id": "67c26059", "survives": true, "paragraph": 1, "note": "identical paragraph"}
+{"id": "22fde807", "survives": true, "paragraph": 1, "note": "identical paragraph"}
+{"id": "62f21e79", "survives": true, "paragraph": 27, "note": "identical paragraph"}
+{"id": "844edf72", "survives": true, "paragraph": 8, "note": "identical paragraph"}
+{"id": "ddb04f03", "survives": true, "paragraph": 7, "note": "identical paragraph"}
+{"id": "5b099107", "survives": false, "paragraph": null, "note": "rollback description rewritten to 'roll back to the previous stable state'; 'offer/answer state' gone"}
+{"id": "39de06d2", "survives": true, "paragraph": 15, "note": "paragraph unchanged"}
+{"id": "1a468fa4", "survives": true, "paragraph": 1, "note": "phrase intact; product name replaced elsewhere in paragraph"}
+{"id": "4ac55ecf", "survives": true, "paragraph": 6, "note": "offer definition reworded into a definition-list item; 'the initial proposal in an offer/answer exchange' kept"}
+{"id": "5ed6b1f7", "survives": true, "paragraph": 20, "note": "paragraph unchanged"}
+{"id": "584f1361", "survives": true, "paragraph": 9, "note": "paragraph unchanged"}
+{"id": "9c7eb0fd", "survives": true, "paragraph": 5, "note": "phrase intact; only quoting of values changed"}
+{"id": "373bbd48", "survives": true, "paragraph": 94, "note": "paragraph unchanged"}
+{"id": "23eaf786", "survives": false, "paragraph": null, "note": "sentence 'allowed values are those of an enum' removed; replaced by 'The possible values are:'"}
+{"id": "0a6ab130", "survives": true, "paragraph": 1, "note": "'to the Output' kept; rest of sentence reworded (window -> panel)"}
+{"id": "d9243f6f", "survives": true, "paragraph": 13, "note": "paragraph moved; 'Grab' -> 'Find' but 'for your Jupyter' intact"}
+{"id": "06474e46", "survives": true, "paragraph": 15, "note": "paragraph unchanged"}
+{"id": "bf422b84", "survives": true, "paragraph": 4, "note": "step list split into separate paragraph; phrase intact"}
+{"id": "a1617fc9", "survives": true, "paragraph": 154, "note": "same example line, shifted by two paragraphs"}
+{"id": "7b9a2ee2", "survives": true, "paragraph": 51, "note": "same line, shifted"}
+{"id": "90e159a0", "survives": true, "paragraph": 17, "note": "ifversion ghec opener before email-visibility section; P12 is the earlier enterprise-owners block"}
+{"id": "02e8b1cc", "survives": true, "paragraph": 282, "note": "release note unchanged"}
+{"id": "cf0b65c7", "survives": true, "paragraph": 303, "note": "release note unchanged"}
+{"id": "c2fa9bf0", "survives": false, "paragraph": null, "note": "summary-bar shortcode removed from later version"}
+{"id": "f9c10133", "survives": true, "paragraph": 7, "note": "DOMString changed to string; marked words intact"}
+{"id": "be389957", "survives": false, "paragraph": null, "note": "paragraph deleted; later P39 is the separate TIP passage (earlier P43) with the same words"}
+{"id": "4c4fd814", "survives": true, "paragraph": 22, "note": "unchanged"}
+{"id": "a911453e", "survives": true, "paragraph": 49, "note": "paragraph reworded; 'prompt files to' kept in the convert-prompt-files sentence; P53 is the unrelated 'Select the prompt files to convert' step"}
+{"id": "aba5479c", "survives": true, "paragraph": 84, "note": "unchanged link line, moved"}
+{"id": "1120c562", "survives": false, "paragraph": null, "note": "earlier P43 rewritten as later P48 without the words; P53 is a rewrite of earlier P48, a different passage"}
+{"id": "eb484ea4", "survives": true, "paragraph": 25, "note": "unchanged, renumbered"}
+{"id": "da5aed7b", "survives": true, "paragraph": 35, "note": "unchanged Trivy paragraph, moved"}
+{"id": "37593d32", "survives": true, "paragraph": 12, "note": "ifversion before enterprise-export paragraph; P17 is the second ifversion block (earlier P18)"}
+{"id": "8ee0fc2b", "survives": true, "paragraph": 15, "note": "sentences appended to paragraph"}
+{"id": "b0702209", "survives": true, "paragraph": 11, "note": "unchanged"}
+{"id": "5a76add9", "survives": true, "paragraph": 18, "note": "'Note that' dropped; marked words intact"}
+{"id": "aaa5e49f", "survives": true, "paragraph": 6, "note": "unchanged"}
+{"id": "1f421646", "survives": true, "paragraph": 92, "note": "repeated table cell; P92 is the csharp.debug.console one"}
+{"id": "f48440df", "survives": true, "paragraph": 33, "note": "link URL changed only"}
+{"id": "c654afe7", "survives": true, "paragraph": 38, "note": "unchanged"}
+{"id": "de4dd238", "survives": false, "paragraph": null, "note": "the ifversion/image block was removed; '> 3.3 %}' gone from later version"}
+{"id": "5fcafd2c", "survives": true, "paragraph": 9, "note": "same endOffset paragraph; 'beginning of the range' reworded to 'last character of the range', words intact"}
+{"id": "3c0ec57b", "survives": true, "paragraph": 62, "note": "'To export a session:' kept after reworded export intro, moved to P62"}
+{"id": "c886e5c3", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "a1ecca3a", "survives": true, "paragraph": 15, "note": "paragraph extended with a new sentence; marked words intact"}
+{"id": "42740830", "survives": true, "paragraph": 38, "note": "paragraph unchanged"}
+{"id": "17032089", "survives": true, "paragraph": 2, "note": "paragraph unchanged"}
+{"id": "ccaf68bc", "survives": false, "paragraph": null, "note": "{{SecureContext_Header}} appended directly to {{SeeCompatTable}}, changing the third word"}
+{"id": "6d7e05f6", "survives": true, "paragraph": 274, "note": "paragraph unchanged"}
+{"id": "1eabdd26", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "6476e4d0", "survives": false, "paragraph": null, "note": "unique-user-licensing-model reusable removed; later P0 is new prose"}
+{"id": "7e2fcc50", "survives": true, "paragraph": 38, "note": "'and Trivy' dropped elsewhere in sentence; 'use the `--vex`' intact, moved to P38"}
+{"id": "0f63209c", "survives": true, "paragraph": 45, "note": "paragraph unchanged"}
+{"id": "7d6adc20", "survives": true, "paragraph": 33, "note": "'Copilot CLI SDK' renamed to 'Copilot SDK'; marked words intact, moved to P33"}
+{"id": "62239f96", "survives": false, "paragraph": null, "note": "only remaining occurrence is 'verify the hash,' in rewritten P21; punctuation on 'hash.' changed"}
+{"id": "ee40b693", "survives": true, "paragraph": 53, "note": "paragraph unchanged"}
+{"id": "5403d523", "survives": true, "paragraph": 68, "note": "Weekly bullet unchanged, renumbered to P68; P69 (Monthly) is a coincidental repeat"}
+{"id": "48d93f3b", "survives": false, "paragraph": null, "note": "Beta callout containing 'export volume feature' was removed; phrase absent from later version"}
+{"id": "7f42dc14", "survives": true, "paragraph": 65, "note": "paragraph unchanged"}
+{"id": "b40ddaf1", "survives": true, "paragraph": 11, "note": "same paragraph; only settings link changed"}
+{"id": "47a1dd44", "survives": true, "paragraph": 0, "note": "paragraph unchanged"}
+{"id": "38bc82e6", "survives": true, "paragraph": 333, "note": "'Removed support of AUFS' unchanged"}
+{"id": "2899a68e", "survives": true, "paragraph": 14, "note": "TypeMismatchError description unchanged"}
+{"id": "ececef87", "survives": true, "paragraph": 20, "note": "same paragraph shifted by one after an inserted paragraph"}
+{"id": "6706f320", "survives": true, "paragraph": 31, "note": "stdin '-f -' paragraph moved later in the document, text unchanged"}
+{"id": "33b0e0c7", "survives": true, "paragraph": 141, "note": "Toggle Editor Group Lock entry unchanged"}
+{"id": "79a8290f", "survives": true, "paragraph": 17, "note": "upload JSON step shifted by one, text unchanged"}
+{"id": "c4aeecda", "survives": true, "paragraph": 2, "note": "intro split into a list; 2FA removal clause now its own item with 'outside collaborators to enable 2FA' intact"}
+{"id": "2aae08cf", "survives": true, "paragraph": 95, "note": "heading line unchanged"}
+{"id": "59c8ae31", "survives": true, "paragraph": 15, "note": "query-parameter permissions paragraph shifted to P15; other matches (P3, P14) are unrelated passages"}
+{"id": "aa4ad76d", "survives": true, "paragraph": 76, "note": "paragraph unchanged"}
+{"id": "b659ed8f", "survives": false, "paragraph": null, "note": "link URL changed to /Guide/Typed_arrays, so the third word differs"}
+{"id": "3d6418ca", "survives": true, "paragraph": 19, "note": "same paragraph shifted by one; only link titles changed to AUTOTITLE"}
+{"id": "853bd11f", "survives": false, "paragraph": null, "note": "filenames changed from .yml to .yaml"}
+{"id": "17d1f761", "survives": false, "paragraph": null, "note": "filenames changed .yml to .yaml in later P45"}
+{"id": "be268b64", "survives": true, "paragraph": 38, "note": "same instruction sentence; command renamed and text appended, marked words intact"}
+{"id": "57827a23", "survives": true, "paragraph": 97, "note": "Focus Other Side line unchanged; P95/P96 are sibling entries"}
+{"id": "e852c892", "survives": true, "paragraph": 16, "note": "'1.0' removed before the words and a sentence added; marked words intact"}
+{"id": "6c1c29dc", "survives": true, "paragraph": 89, "note": "identical sentence; P16 is an unrelated repeat"}
+{"id": "cddfa8da", "survives": false, "paragraph": null, "note": "later P55 bolds the label: '**C# Dev Kit' changes the first word"}
+{"id": "269a61bc", "survives": true, "paragraph": 36, "note": "same paragraph, only link quoting changed"}
+{"id": "7a724bfd", "survives": true, "paragraph": 102, "note": "identical release note"}
+{"id": "9527bdb4", "survives": true, "paragraph": 289, "note": "identical system tray sentence; other hits are unrelated"}
+{"id": "41cb0d9c", "survives": true, "paragraph": 93, "note": "identical Registry line, renumbered"}
+{"id": "b38d37f2", "survives": false, "paragraph": null, "note": "Agent Host / shared runtime paragraph deleted; later hits are unrelated passages"}
+{"id": "da59df3d", "survives": true, "paragraph": 15, "note": "same sentence, only link path changed"}
+{"id": "8d9dd406", "survives": true, "paragraph": 15, "note": "identical paragraph"}
+{"id": "4efb4d79", "survives": false, "paragraph": null, "note": "install sentence rewritten in later P54; prodname_cli phrase gone"}
+{"id": "b33f4153", "survives": true, "paragraph": 9, "note": "identical tip, renumbered"}
+{"id": "ea20a998", "survives": false, "paragraph": null, "note": "experimental-feature paragraph removed"}
+{"id": "05e6482d", "survives": true, "paragraph": 1, "note": "identical paragraph"}
+{"id": "e70c4e05", "survives": true, "paragraph": 42, "note": "bullet 'Can write to the current working directory' rewritten into later P42 'grants read and write access to the current working directory' in the same default file-system section; words adjacent"}
+{"id": "6430ec76", "survives": true, "paragraph": 6, "note": "delete-reminder step list (ends with reminders.delete) is later P6; image removed but marked words intact"}
+{"id": "1ecea1d5", "survives": true, "paragraph": 9, "note": "congestion control paragraph unchanged, renumbered to P9"}
+{"id": "5d4258f2", "survives": true, "paragraph": 13, "note": "AV1 encode-options entry is later P13; only link path changed; other codec entries are repeats"}
+{"id": "e8e154db", "survives": true, "paragraph": 11, "note": "startContainer description unchanged at P11; P7 is the end-of-range sibling"}
+{"id": "101cb93d", "survives": true, "paragraph": 4, "note": "unchanged"}
+{"id": "e9945e49", "survives": true, "paragraph": 56, "note": "unchanged"}
+{"id": "67844060", "survives": true, "paragraph": 34, "note": "remote session toggle paragraph reworded elsewhere; 'state. Defaults for' intact"}
+{"id": "45a1fc13", "survives": false, "paragraph": null, "note": "'[volumes](...)' became '[Docker volumes](...)' and sentence rewritten"}
+{"id": "0dfb87a7", "survives": true, "paragraph": 0, "note": "unchanged"}
+{"id": "608e9549", "survives": true, "paragraph": 10, "note": "unchanged"}
+{"id": "7edcca65", "survives": true, "paragraph": 4, "note": "'needs to be' changed to 'must be' after the marked words; 'to. The scheme' intact"}
+{"id": "d8c79b35", "survives": false, "paragraph": null, "note": "'VS Code' replaced by a variable reference"}
+{"id": "95fc6875", "survives": true, "paragraph": 66, "note": "same paragraph with a sentence inserted before 'Approve only if you'"}
+{"id": "4ccc3e3b", "survives": true, "paragraph": 24, "note": "bullet 'Enable or disable Gordon for the organization' merged into P24 'enable or disable Gordon for their organization'; P33 is the separate business-org passage"}
+{"id": "780c66f2", "survives": true, "paragraph": 26, "note": "unchanged"}
+{"id": "b81d1113", "survives": true, "paragraph": 2, "note": "unchanged"}
+{"id": "535607fa", "survives": true, "paragraph": 27, "note": "same sentence, paragraph extended with managed-settings text"}
+{"id": "e2d64c17", "survives": true, "paragraph": 47, "note": "same release-note line unchanged; P197 is an unrelated repeat"}
+{"id": "40dd39c3", "survives": true, "paragraph": 66, "note": "same paragraph unchanged; P60 is an unrelated repeat"}
+{"id": "1280619e", "survives": true, "paragraph": 13, "note": "same sentence, moved"}
+{"id": "0605d0df", "survives": true, "paragraph": 17, "note": "same workingDirectory line, moved"}
+{"id": "090cdb10", "survives": true, "paragraph": 135, "note": "same 'Use a custom agent when you want:' line; P141 is unrelated"}
+{"id": "58daac7c", "survives": true, "paragraph": 1, "note": "merged step split out; same sentence kept"}
+{"id": "52d3b8dd", "survives": false, "paragraph": null, "note": "'distro' changed to 'distribution'"}
+{"id": "e44a832d", "survives": false, "paragraph": null, "note": "sentence rewritten to 'Right-click a file or folder to save it'"}
+{"id": "5f8eb49e", "survives": true, "paragraph": 19, "note": "same sentence unchanged"}
+{"id": "90d2c74d", "survives": true, "paragraph": 27, "note": "same exception description, moved"}
+{"id": "4c1c9bd9", "survives": false, "paragraph": null, "note": "Agent Debug Log panel instructions removed; other chat_view mentions are unrelated"}
+{"id": "430bc541", "survives": true, "paragraph": 10, "note": "same license paragraph; other 'For more information,' hits are unrelated"}
+{"id": "d0ae7038", "survives": false, "paragraph": null, "note": "warning rewritten; now 'Review the server's enabled state'"}
+{"id": "ab05d3f2", "survives": true, "paragraph": 92, "note": "same csharp.debug.console availability line; other hits are different settings"}
+{"id": "e316391e", "survives": true, "paragraph": 0, "note": "same sentence in same paragraph"}
+{"id": "2f9df833", "survives": true, "paragraph": 41, "note": "same see-also domxref line, moved"}
+{"id": "a46f0613", "survives": true, "paragraph": 17, "note": "paragraph unchanged"}
+{"id": "782087cd", "survives": true, "paragraph": 9, "note": "paragraph unchanged"}
+{"id": "6268d9cf", "survives": true, "paragraph": 32, "note": "paragraph unchanged"}
+{"id": "9d819680", "survives": true, "paragraph": 19, "note": "paragraph unchanged"}
+{"id": "57688ee7", "survives": true, "paragraph": 123, "note": "paragraph unchanged, shifted by one"}
+{"id": "f4647116", "survives": false, "paragraph": null, "note": "P2 rewritten; sdk_short reference removed"}
+{"id": "e5cf7dc0", "survives": false, "paragraph": null, "note": "Agent Host/shared runtime paragraph deleted; later hits are unrelated passages"}
+{"id": "5cd50966", "survives": true, "paragraph": 290, "note": "paragraph unchanged"}
+{"id": "07f17f7c", "survives": true, "paragraph": 14, "note": "paragraph unchanged, shifted by one"}
+{"id": "937ff029", "survives": true, "paragraph": 174, "note": "paragraph unchanged"}
+{"id": "b510c539", "survives": true, "paragraph": 140, "note": "paragraph unchanged"}
+{"id": "f13fed93", "survives": true, "paragraph": 9, "note": "paragraph reworded elsewhere and extended; marked words intact"}
+{"id": "376ff541", "survives": false, "paragraph": null, "note": "onstatechange description replaced by event link entry"}
+{"id": "c57f3f6d", "survives": false, "paragraph": null, "note": "note about global service secrets removed"}
+{"id": "13562b21", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "a0995c4b", "survives": false, "paragraph": null, "note": "reworded to 'An object that may have the following properties'"}
+{"id": "0c34915a", "survives": true, "paragraph": 10, "note": "license paragraph moved to P10, only trailing liquid tag changed"}
+{"id": "9eeda7b5", "survives": true, "paragraph": 232, "note": "paragraph unchanged"}
+{"id": "8af8dbda", "survives": true, "paragraph": 16, "note": "paragraph unchanged"}
+{"id": "693466df", "survives": true, "paragraph": 21, "note": "same step, renumbered after list split"}
+{"id": "9ce15b4a", "survives": true, "paragraph": 121, "note": "Just My Code paragraph moved; P1 hit is unrelated"}
+{"id": "6a62cae1", "survives": true, "paragraph": 0, "note": "comma removed elsewhere; 'a bitwise OR,' intact"}
+{"id": "1049ed29", "survives": true, "paragraph": 70, "note": "paragraph unchanged"}
+{"id": "46b34a8b", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "117ec22d", "survives": false, "paragraph": null, "note": "step reworded to 'Connect Buildx to your cloud builder.'; P12 hit is a different sentence"}
+{"id": "d460fdc2", "survives": true, "paragraph": 46, "note": "paragraph unchanged"}
+{"id": "76c67b77", "survives": true, "paragraph": 17, "note": "launchSettings property list moved earlier"}
+{"id": "e135ad8a", "survives": false, "paragraph": null, "note": "public-accessibility sentence removed; Registry item now one sentence"}
+{"id": "7316d27c", "survives": true, "paragraph": 62, "note": "same sentence; P74 is a different sentence with 'check the'"}
+{"id": "61c2aba7", "survives": false, "paragraph": null, "note": "reusable path changed to copilot.copilot-cli.cli-path-to-plugins"}
+{"id": "f7617a48", "survives": true, "paragraph": 115, "note": "same sentence, renumbered"}
+{"id": "e8dc611d", "survives": false, "paragraph": null, "note": "experimental shortcode block deleted"}
+{"id": "628d9ee1", "survives": true, "paragraph": 9, "note": "VP9 entry; other hits are other codecs"}
+{"id": "09c34315", "survives": true, "paragraph": 4, "note": "preceding variable removed, marked words intact"}
+{"id": "cdc7b8ac", "survives": true, "paragraph": 2, "note": "NOTE paragraph unchanged"}
+{"id": "22c70030", "survives": true, "paragraph": 62, "note": "closing tab/tabs of quick-export block; P84 is the schedule-export block"}
+{"id": "aef4fc22", "survives": true, "paragraph": 23, "note": "paragraph unchanged"}
+{"id": "81cfcbfc", "survives": true, "paragraph": 7, "note": "SCIM userName/nameID paragraph reworded around the words, words intact"}
+{"id": "45da0c2c", "survives": false, "paragraph": null, "note": "list item for verified-domain emails removed; P20 hit is an unrelated passage that also existed earlier"}
+{"id": "4f00e539", "survives": true, "paragraph": 28, "note": "see-also link unchanged, shifted by one"}
+{"id": "7eba93f6", "survives": true, "paragraph": 307, "note": "release note line unchanged"}
+{"id": "5c431972", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "79193cbc", "survives": true, "paragraph": 2, "note": "USVString changed to string earlier in sentence; marked words intact"}
+{"id": "fa1b3fec", "survives": true, "paragraph": 20, "note": "remote host platform paragraph reworded, words intact"}
+{"id": "0566dd78", "survives": true, "paragraph": 25, "note": "select session step; ending reworded but marked words intact"}
+{"id": "265cfb50", "survives": true, "paragraph": 23, "note": "Open the agents_window step in /troubleshoot procedure; other hits are different steps"}
+{"id": "9afc6b89", "survives": true, "paragraph": 9, "note": "line unchanged"}
+{"id": "3144a925", "survives": true, "paragraph": 1, "note": "sentence reworded after the words, words intact"}
+{"id": "4510d3f7", "survives": true, "paragraph": 56, "note": "allowNetwork sentence reworded, 'false` to block' intact"}
+{"id": "3a7eb74c", "survives": false, "paragraph": null, "note": "sentence rewritten as 'Remember that the original and migrated copies do not synchronize' (P16); 'If you keep' gone"}
+{"id": "421643f4", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "ae1feb9e", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "38558ef5", "survives": true, "paragraph": 139, "note": "paragraph unchanged"}
+{"id": "3c0b828c", "survives": false, "paragraph": null, "note": "P1 reworded, 'outside of VS Code' dropped; later P5 is the old P2 passage, a different repeat"}
+{"id": "8545a5fe", "survives": true, "paragraph": 81, "note": "same tool-sets paragraph; only 'Copilot' -> 'The Copilot harness' changed elsewhere"}
+{"id": "003ce895", "survives": true, "paragraph": 78, "note": "paragraph unchanged"}
+{"id": "ed2d94d9", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "8b374934", "survives": true, "paragraph": 4, "note": "same sentence moved from P2 to P4"}
+{"id": "fad3a609", "survives": true, "paragraph": 83, "note": "same list item unchanged"}
+{"id": "64d6f0d3", "survives": true, "paragraph": 15, "note": "same paragraph with a sentence appended"}
+{"id": "00e53062", "survives": true, "paragraph": 2, "note": "paragraph unchanged"}
+{"id": "3d450d52", "survives": true, "paragraph": 34, "note": "same Rails example moved to P34; link path and file names edited elsewhere"}
+{"id": "8c091074", "survives": true, "paragraph": 1, "note": "same paragraph; compose.yml -> compose.yaml elsewhere"}
+{"id": "7e5d5571", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "d95666a9", "survives": true, "paragraph": 5, "note": "paragraph unchanged"}
+{"id": "a6716975", "survives": true, "paragraph": 27, "note": "same cheat-sheet paragraph moved to P27, lead-in reworded"}
+{"id": "c3e9d010", "survives": true, "paragraph": 37, "note": "same paragraph unchanged; P64 is a coincidental repeat"}
+{"id": "8c5265f4", "survives": false, "paragraph": null, "note": "'VS Code' replaced by a product-name variable"}
+{"id": "143c1eb4", "survives": true, "paragraph": 75, "note": "same deprecated-setting paragraph reworded around the words; phrase intact"}
+{"id": "9fd7d024", "survives": true, "paragraph": 7, "note": "'In that student or group's row' step unchanged apart from markup; other hits are different paragraphs"}
+{"id": "d2ced6d3", "survives": true, "paragraph": 34, "note": "paragraph unchanged"}
+{"id": "8f8e3c8a", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "e257b77b", "survives": true, "paragraph": 13, "note": "paragraph unchanged"}
+{"id": "d4c2e33c", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "b0ec5a0b", "survives": true, "paragraph": 16, "note": "paragraph unchanged"}
+{"id": "f804e355", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "cbed0683", "survives": true, "paragraph": 194, "note": "paragraph unchanged"}
+{"id": "556194eb", "survives": true, "paragraph": 2, "note": "reusable include line unchanged"}
+{"id": "4399dfb8", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "58bf5f4d", "survives": true, "paragraph": 107, "note": "same launch.json precedence paragraph, moved"}
+{"id": "1a98c993", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "e2e6b240", "survives": true, "paragraph": 52, "note": "Quick export Local file step (scheduled-export duplicate is P74); shifted by two"}
+{"id": "04f527a6", "survives": false, "paragraph": null, "note": "'right-click on the file or folder' became 'right-click it'; later 'a file or folder' comes from the reworded 'a file or a folder' earlier in the sentence"}
+{"id": "503830c4", "survives": false, "paragraph": null, "note": "Docker Compose version paragraph deleted; no Compose mention in later version"}
+{"id": "ce3c213b", "survives": true, "paragraph": 30, "note": "same paragraph; yml->yaml edits elsewhere, 'file. You must' intact"}
+{"id": "b74826b4", "survives": true, "paragraph": 17, "note": "paragraph unchanged; P19 repeat is a different passage"}
+{"id": "353d48fb", "survives": false, "paragraph": null, "note": "'Available controls' list item deleted; controls folded into one sentence without usage limits"}
+{"id": "b204d4e9", "survives": true, "paragraph": 7, "note": "same step shifted by added note; P5 is the earlier 'location' step"}
+{"id": "656f6f84", "survives": true, "paragraph": 22, "note": "image alt text unchanged; P21/P55 are prose repeats"}
+{"id": "afc1f41b", "survives": true, "paragraph": 205, "note": "only link path changed"}
+{"id": "280acf21", "survives": true, "paragraph": 129, "note": "heading unchanged, shifted by two"}
+{"id": "f6c2efef", "survives": true, "paragraph": 15, "note": "AV1 quantizer description unchanged; other hits are vp9/avc/hevc entries"}
+{"id": "3133dd55", "survives": false, "paragraph": null, "note": "P20 rewritten into Copilot harness text; words remain only in unrelated P24/P78"}
+{"id": "d30b2bda", "survives": true, "paragraph": 24, "note": "sentence reworded and merged into admin paragraph; three words intact"}
+{"id": "29394dfe", "survives": true, "paragraph": 18, "note": "same reusable include moved to end of file"}
+{"id": "28d2fe33", "survives": false, "paragraph": null, "note": "link target changed from create.md to create/"}
+{"id": "5543aa8b", "survives": true, "paragraph": 10, "note": "unchanged"}
+{"id": "9f22051a", "survives": true, "paragraph": 43, "note": "unchanged"}
+{"id": "b073563a", "survives": true, "paragraph": 2, "note": "return value sentence reworded around the words; P1 is the intro repeat"}
+{"id": "7d9b86d9", "survives": false, "paragraph": null, "note": "prodname_dotcom_the_website changed to prodname_dotcom"}
+{"id": "ce13e754", "survives": true, "paragraph": 20, "note": "sslPort item kept in heavily trimmed file; P21 is the httpPort item"}
+{"id": "905636e3", "survives": true, "paragraph": 25, "note": "unchanged"}
+{"id": "4b2e7a76", "survives": false, "paragraph": null, "note": "rewritten to 'if the {{domxref('PermissionStatus.state')}} for the handle is'; words changed"}
+{"id": "5e99041b", "survives": true, "paragraph": 41, "note": "same sentence about copilot-chat service agent types, unchanged"}
+{"id": "6a304a7b", "survives": true, "paragraph": 1, "note": "same Bake intro sentence; only a typo fixed elsewhere"}
+{"id": "49242e5a", "survives": true, "paragraph": 24, "note": "Exports tab sentence expanded but 'tab lets you' intact"}
+{"id": "5de9e15e", "survives": true, "paragraph": 2, "note": "same NOTE; 'For Claude or Codex sessions' became 'For the Claude or Codex harness', words still adjacent"}
+{"id": "bfbc40fc", "survives": true, "paragraph": 17, "note": "same tab separator line before the Docker Desktop tab"}
+{"id": "ab03a1de", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "88b34de0", "survives": true, "paragraph": 27, "note": "example sentence unchanged"}
+{"id": "7f950965", "survives": true, "paragraph": 2, "note": "same machine-types image alt text"}
+{"id": "3cadf9ba", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "a570e3b3", "survives": false, "paragraph": null, "note": "Agent Host toggle sentence rewritten as 'Open **Permissions** and select ...'; 'in the permissions' gone"}
+{"id": "3fd2495f", "survives": true, "paragraph": 179, "note": "symbolOptions availability line, same position after moduleFilter list; P142 is the logging one"}
+{"id": "5cba8835", "survives": false, "paragraph": null, "note": "'To open the Agent Debug Logs panel:' became 'Open the panel in either of these ways:' (P33); other hits are unrelated sentences"}
+{"id": "53324dfe", "survives": false, "paragraph": null, "note": "Tools button step replaced by 'Select Open Customizations > Tools'; 'the chat input' gone"}
+{"id": "b4c80ff5", "survives": true, "paragraph": 42, "note": "paragraph unchanged"}
+{"id": "2d8359ca", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "eadd0d84", "survives": true, "paragraph": 29, "note": "session-toggle statement reworded and merged into P29; 'does not update User or Workspace settings' intact"}
+{"id": "8384b922", "survives": true, "paragraph": 1, "note": "same sentence unchanged"}
+{"id": "bcce00b0", "survives": true, "paragraph": 83, "note": "same paragraph, later sentence trimmed; marked words intact"}
+{"id": "2041832e", "survives": false, "paragraph": null, "note": "'the service.' rewritten to 'quality of service and fight abuse.'"}
+{"id": "e0a272f1", "survives": false, "paragraph": null, "note": "quotation marks removed: 'accessible](...)\"' became 'accessible](...)', word changed"}
+{"id": "10304730", "survives": true, "paragraph": 42, "note": "same sentence; only octicon attributes changed"}
+{"id": "fd3a233d", "survives": true, "paragraph": 16, "note": "same paragraph unchanged"}
+{"id": "1194ccac", "survives": true, "paragraph": 64, "note": "same paragraph unchanged"}
+{"id": "d15d9306", "survives": true, "paragraph": 45, "note": "same Trivy local VEX step, shifted by inserted paragraphs"}
+{"id": "1a2b9de0", "survives": true, "paragraph": 54, "note": "ambiguous: convert-prompt-files step reworded to 'Open a prompt if you want to inspect it.'; words intact in rewritten counterpart"}
+{"id": "e2b7a437", "survives": true, "paragraph": 14, "note": "same link line unchanged"}
+{"id": "b46c48e0", "survives": true, "paragraph": 1, "note": "same step, screenshot dropped"}
+{"id": "4f67874a", "survives": true, "paragraph": 16, "note": "same sentence unchanged"}
+{"id": "1cde984f", "survives": true, "paragraph": 10, "note": "the sign-in step before 'Sync now' (L13 is the duplicate manual-sync step)"}
+{"id": "d9552145", "survives": true, "paragraph": 5, "note": "same Wiz list item; other hits are other scanners"}
+{"id": "739ac8ee", "survives": true, "paragraph": 14, "note": "same list item unchanged"}
+{"id": "8329b268", "survives": true, "paragraph": 17, "note": "same image alt text unchanged"}
+{"id": "c5a8e39d", "survives": true, "paragraph": 2, "note": "numbered list split into paragraphs; same sentence"}
+{"id": "ade3a8c8", "survives": true, "paragraph": 10, "note": "paragraph unchanged"}
+{"id": "7b0f0fbe", "survives": true, "paragraph": 35, "note": "same WebTransport hashes paragraph, renumbered"}
+{"id": "0a55e0b3", "survives": true, "paragraph": 2, "note": "sentence split into list item 'Automatically, using {% data ...'; marked words intact"}
+{"id": "299e28e8", "survives": true, "paragraph": 35, "note": "same link text; only link target changed"}
+{"id": "9f1fc94c", "survives": true, "paragraph": 88, "note": "phrase repeats in several sign-in steps; P88 is the import-a-volume one"}
+{"id": "ddc53861", "survives": true, "paragraph": 60, "note": "paragraph unchanged"}
+{"id": "69a71e46", "survives": true, "paragraph": 18, "note": "same sentence, renumbered"}
+{"id": "dead133a", "survives": true, "paragraph": 40, "note": "'agent' removed before the phrase; 'tools work, try' still adjacent"}
+{"id": "7b62781e", "survives": true, "paragraph": 4, "note": "paragraph unchanged"}
+{"id": "0dae5910", "survives": false, "paragraph": null, "note": "{{readonlyinline}} changed to {{ReadOnlyInline}}"}
+{"id": "583a72c8", "survives": true, "paragraph": 95, "note": "same internalConsole paragraph; 'the Debug Console.' intact, edit elsewhere"}
+{"id": "40ff4fed", "survives": true, "paragraph": 0, "note": "sentence reworded at start; 'a bitwise OR,' intact"}
+{"id": "65bb103c", "survives": false, "paragraph": null, "note": "experimental block removed entirely"}
+{"id": "81e83b85", "survives": true, "paragraph": 24, "note": "close() description unchanged, renumbered"}
+{"id": "bd4dae50", "survives": true, "paragraph": 42, "note": "paragraph unchanged"}
+{"id": "cbe46783", "survives": true, "paragraph": 156, "note": "same paragraph, renumbered"}
+{"id": "b19df09b", "survives": false, "paragraph": null, "note": "Logs view paragraph rewritten (later P37: 'Expand an event to inspect details'); 'You can expand' no longer present"}
+{"id": "646c289c", "survives": true, "paragraph": 6, "note": "paragraph unchanged"}
+{"id": "40c0ea5d", "survives": true, "paragraph": 10, "note": "filter-by-status paragraph unchanged; P12 is a coincidental repeat in the customize-columns item"}
+{"id": "b74875c0", "survives": true, "paragraph": 31, "note": "image alt text unchanged"}
+{"id": "a280c6e9", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "40770538", "survives": true, "paragraph": 0, "note": "intro paragraph unchanged"}
+{"id": "5e229623", "survives": true, "paragraph": 80, "note": "clock_gettime64 known-issue paragraph unchanged"}
+{"id": "b739d06f", "survives": true, "paragraph": 7, "note": "sentence reworded to 'Sandboxing does not replace the isolation provided by cloud sessions...' and moved; words intact. P6 'does not replace endpoint security' is a different passage"}
+{"id": "aece88c0", "survives": true, "paragraph": 1, "note": "paragraph unchanged"}
+{"id": "53ad385a", "survives": true, "paragraph": 0, "note": "intro paragraph unchanged"}
+{"id": "2eff15ab", "survives": true, "paragraph": 70, "note": "MCP 'Connect ... to external systems' bullet unchanged, after the MCP servers help list; other hits are the common variable used elsewhere"}
+{"id": "557682aa", "survives": true, "paragraph": 138, "note": "release-note line unchanged"}
+{"id": "db24b697", "survives": true, "paragraph": 9, "note": "paragraph unchanged, renumbered after an earlier deletion"}
+{"id": "c25edc49", "survives": true, "paragraph": 16, "note": "launchSettings.json property list moved earlier in the document; executablePath line unchanged"}
+{"id": "34709ea4", "survives": true, "paragraph": 20, "note": "flush() description: 'messages in the queue' changed to 'encodes', but the marked three words are intact and adjacent"}
+{"id": "d7bbefa7", "survives": true, "paragraph": 2, "note": "note reformatted to [!NOTE] and sentence extended; marked words intact"}
+{"id": "9050a1d7", "survives": true, "paragraph": 0, "note": "kernel picker intro kept; only product name changed elsewhere in paragraph"}
+{"id": "d41b350d", "survives": true, "paragraph": 18, "note": "paragraph unchanged"}
+{"id": "211e53c5", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "9145a172", "survives": true, "paragraph": 14, "note": "same sentence moved from P20 to P14"}
+{"id": "fbc02fd0", "survives": true, "paragraph": 25, "note": "paragraph unchanged"}
+{"id": "6bac00f7", "survives": true, "paragraph": 9, "note": "list item unchanged"}
+{"id": "a428e483", "survives": true, "paragraph": 11, "note": "Replace ORG sentence expanded; marked words intact"}
+{"id": "b4f90ad6", "survives": false, "paragraph": null, "note": "sentence rewritten; 'select' no longer adjacent to **Agent Flow"}
+{"id": "20252a7b", "survives": true, "paragraph": 110, "note": "same Subagents line, renumbered"}
+{"id": "9f7c60ba", "survives": false, "paragraph": null, "note": "alt text reworded; 'dropdown menu, labeled' gone"}
+{"id": "bd80f059", "survives": true, "paragraph": 33, "note": "paragraph unchanged"}
+{"id": "d4bc8d81", "survives": false, "paragraph": null, "note": "sandbox inheritance sentence rewritten (P30); 'local Agent Host,' removed"}
+{"id": "44d93586", "survives": true, "paragraph": 8, "note": "quote/bold changed around octicon tag; marked words intact"}
+{"id": "cd1df6d0", "survives": true, "paragraph": 95, "note": "sentence reworded but '**Move Editor Group' intact"}
+{"id": "292b2ae6", "survives": true, "paragraph": 19, "note": "same sentence renumbered"}
+{"id": "200e6993", "survives": true, "paragraph": 17, "note": "paragraph unchanged"}
+{"id": "336b7b3a", "survives": true, "paragraph": 15, "note": "identical sentence, only later occurrence"}
+{"id": "607fd982", "survives": true, "paragraph": 22, "note": "paragraph unchanged"}
+{"id": "9f060196", "survives": false, "paragraph": null, "note": "{{readonlyinline}} changed to {{ReadOnlyInline}}"}
+{"id": "ab5b2e07", "survives": true, "paragraph": 7, "note": "note paragraph unchanged"}
+{"id": "4abda9b6", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "3b2580e4", "survives": true, "paragraph": 62, "note": "paragraph unchanged"}
+{"id": "a6e97e87", "survives": true, "paragraph": 3, "note": "paragraph unchanged, shifted up one"}
+{"id": "2f44f98e", "survives": true, "paragraph": 8, "note": "paragraph unchanged"}
+{"id": "f94bd3c6", "survives": true, "paragraph": 29, "note": "paragraph unchanged"}
+{"id": "0382da63", "survives": true, "paragraph": 0, "note": "paragraph unchanged, moved to top after experimental block removed"}
+{"id": "78ca2b0b", "survives": true, "paragraph": 16, "note": "sentence repeated in P12 and P16; marked one is the revert-section copy, which is later P16 (image split off)"}
+{"id": "95e512e0", "survives": true, "paragraph": 27, "note": "paragraph unchanged"}
+{"id": "b19ef1ed", "survives": true, "paragraph": 159, "note": "paragraph unchanged, moved"}
+{"id": "f0e5ae54", "survives": true, "paragraph": 89, "note": "paragraph unchanged"}
+{"id": "ca6f5609", "survives": true, "paragraph": 25, "note": "sentence reworded and merged into P25; marked words intact"}
+{"id": "f86e4057", "survives": false, "paragraph": null, "note": "local-session 'permissions picker' sentence deleted; later P29 uses the words in the rewritten Agent Host session-toggle passage (earlier P21-P23), a different passage"}
+{"id": "ed71d111", "survives": true, "paragraph": 63, "note": "Branch glossary entry unchanged at P63; P20 is a different passage on branches"}
+{"id": "223d5126", "survives": true, "paragraph": 86, "note": "paragraph unchanged"}
+{"id": "449d14e2", "survives": true, "paragraph": 1, "note": "P0 split; VideoEncoder sentence now P1, words intact"}
+{"id": "b005c3e3", "survives": true, "paragraph": 36, "note": "words intact; only link text/URLs edited"}
+{"id": "4567226c", "survives": true, "paragraph": 20, "note": "launchSettings.json section moved near top; sslPort line now P20"}
+{"id": "6b577b8c", "survives": true, "paragraph": 81, "note": "paragraph unchanged"}
+{"id": "4081a5d1", "survives": true, "paragraph": 18, "note": "words intact; variable name for copilot chat and link edited elsewhere in paragraph"}
+{"id": "a1a7a343", "survives": true, "paragraph": 20, "note": "launchSettings.json section moved near top; sslPort line now P20"}
+{"id": "aa702c65", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "658f4794", "survives": true, "paragraph": 19, "note": "launchSettings.json section moved near top; applicationUrl line now P19"}
+{"id": "62fc54a8", "survives": false, "paragraph": null, "note": "third word changed: reusables.copilot.cli-claude-plugin-dir became reusables.copilot.copilot-cli.cli-claude-plugin-dir"}
+{"id": "eef1d7a0", "survives": true, "paragraph": 3, "note": "paragraph unchanged"}
+{"id": "ade6b275", "survives": true, "paragraph": 0, "note": "paragraph unchanged"}
+{"id": "fd2276c6", "survives": true, "paragraph": 4, "note": "words intact; 'needs to be' after them changed to 'must be'"}
+{"id": "2385e825", "survives": true, "paragraph": 29, "note": "paragraph unchanged, shifted by one inserted paragraph"}
+{"id": "0c77ac90", "survives": true, "paragraph": 20, "note": "words intact, paragraph shifted by one; link text changed"}

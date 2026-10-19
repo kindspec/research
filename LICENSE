@@ -5,9 +5,11 @@ kindspec.
   experiments/                          MIT, except:
     output that quotes SpreadsheetBench   CC-BY-SA-4.0
     output that quotes TmplEnron          CC-BY-4.0
+    anchor-replay output that quotes      its corpora's terms
+      its arms (D8-anchor-replay)
     third-party sample files              their own licences
 
-NOTICE lists every file in the three exceptions, with its source and
+NOTICE lists every file in the four exceptions, with its source and
 attribution. Full texts are in LICENSES/.
 
 WHY THE SPLIT

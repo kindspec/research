@@ -1,0 +1,88 @@
+# score.py: gap 5, blockspec ae1d2740a90f, 743 packets
+  the two labellers agree on 738 of 743; they disagree on 5, of which 5 are adjudicated
+
+  stratum                          comments  sampled  labelled surviving  oracle wrong
+  github-docs/placed/loud                55       55         55              0
+  github-docs/placed/resolves          1605      100        100              0
+  github-docs/gone/loud                  99       25          0              0
+  github-docs/gone/resolves               0        0          0              -
+  github-docs/unplaced/loud               5        5          2              -
+  github-docs/unplaced/resolves           4        4          4              -
+  vscode-docs/placed/loud               113       60         58              2
+  vscode-docs/placed/resolves          4126      100        100              0
+  vscode-docs/gone/loud                 424       25          0              0
+  vscode-docs/gone/resolves               0        0          0              -
+  vscode-docs/unplaced/loud              41       41         27              -
+  vscode-docs/unplaced/resolves          18       18         18              -
+  docker-docs/placed/loud                23       23         23              1
+  docker-docs/placed/resolves          1522      100        100              0
+  docker-docs/gone/loud                  62       25          0              0
+  docker-docs/gone/resolves               0        0          0              -
+  docker-docs/unplaced/loud               8        8          5              -
+  docker-docs/unplaced/resolves           4        4          4              -
+  mdn-en/placed/loud                     22       22         22              1
+  mdn-en/placed/resolves                811      100        100              0
+  mdn-en/gone/loud                       86       25          0              0
+  mdn-en/gone/resolves                    0        0          0              -
+  mdn-en/unplaced/loud                    2        2          2              -
+  mdn-en/unplaced/resolves                1        1          1              -
+
+  share of each stratum, 95% interval (exact where every comment was labelled)
+    mdn-en/placed/loud               survives    22 of  22: 100.0% to 100.0%
+    mdn-en/placed/loud               oracle_err   1 of  22:   4.5% to   4.5%
+    docker-docs/placed/resolves      survives   100 of 100:  96.4% to 100.0%
+    docker-docs/placed/resolves      oracle_err   0 of 100:   0.0% to   3.6%
+    github-docs/placed/loud          survives    55 of  55: 100.0% to 100.0%
+    github-docs/placed/loud          oracle_err   0 of  55:   0.0% to   0.0%
+    vscode-docs/placed/resolves      survives   100 of 100:  96.4% to 100.0%
+    vscode-docs/placed/resolves      oracle_err   0 of 100:   0.0% to   3.6%
+    vscode-docs/placed/loud          survives    58 of  60:  88.5% to  99.6%
+    vscode-docs/placed/loud          oracle_err   2 of  60:   0.4% to  11.5%
+    github-docs/gone/loud            survives     0 of  25:   0.0% to  13.7%
+    github-docs/gone/loud            oracle_err   0 of  25:   0.0% to  13.7%
+    mdn-en/gone/loud                 survives     0 of  25:   0.0% to  13.7%
+    mdn-en/gone/loud                 oracle_err   0 of  25:   0.0% to  13.7%
+    github-docs/placed/resolves      survives   100 of 100:  96.4% to 100.0%
+    github-docs/placed/resolves      oracle_err   0 of 100:   0.0% to   3.6%
+    docker-docs/unplaced/resolves    survives     4 of   4: 100.0% to 100.0%
+    vscode-docs/unplaced/resolves    survives    18 of  18: 100.0% to 100.0%
+    docker-docs/gone/loud            survives     0 of  25:   0.0% to  13.7%
+    docker-docs/gone/loud            oracle_err   0 of  25:   0.0% to  13.7%
+    mdn-en/placed/resolves           survives   100 of 100:  96.4% to 100.0%
+    mdn-en/placed/resolves           oracle_err   0 of 100:   0.0% to   3.6%
+    vscode-docs/unplaced/loud        survives    27 of  41:  65.9% to  65.9%
+    docker-docs/placed/loud          survives    23 of  23: 100.0% to 100.0%
+    docker-docs/placed/loud          oracle_err   1 of  23:   4.3% to   4.3%
+    docker-docs/unplaced/loud        survives     5 of   8:  62.5% to  62.5%
+    github-docs/unplaced/resolves    survives     4 of   4: 100.0% to 100.0%
+    mdn-en/unplaced/resolves         survives     1 of   1: 100.0% to 100.0%
+    vscode-docs/gone/loud            survives     0 of  25:   0.0% to  13.7%
+    vscode-docs/gone/loud            oracle_err   0 of  25:   0.0% to  13.7%
+    mdn-en/unplaced/loud             survives     2 of   2: 100.0% to 100.0%
+    github-docs/unplaced/loud        survives     2 of   5:  40.0% to  40.0%
+
+  oracle wrong, where it places a comment: 0.1% (each stratum at its interval's lower and upper end: 0.0% to 4.5%)
+
+  refusal rate, labels for truth, pooled over github-docs, vscode-docs, docker-docs, mdn-en: 2.9% (each stratum at the end of its interval that lowers, then raises it: 2.8% to 4.2%), among comments on versions the profile accepts
+  outside it: 33 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 3.3% (3.2% to 4.6%)
+
+  refusal rate, labels for truth, github-docs: 3.4% (each stratum at the end of its interval that lowers, then raises it: 3.4% to 4.4%), among comments on versions the profile accepts
+  outside it: 3 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 3.6% (3.6% to 4.5%)
+
+  refusal rate, labels for truth, vscode-docs: 3.2% (each stratum at the end of its interval that lowers, then raises it: 3.0% to 4.7%), among comments on versions the profile accepts
+  outside it: 30 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 3.9% (3.6% to 5.4%)
+
+  refusal rate, labels for truth, docker-docs: 1.8% (each stratum at the end of its interval that lowers, then raises it: 1.8% to 2.4%), among comments on versions the profile accepts
+  outside it: 0 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 1.8% (1.8% to 2.4%)
+
+  refusal rate, labels for truth, mdn-en: 2.9% (each stratum at the end of its interval that lowers, then raises it: 2.9% to 4.4%), among comments on versions the profile accepts
+  outside it: 0 comments on versions the profile refuses, each REFUSED(not-in-profile); as if each were a refusal of surviving text: 2.9% (2.9% to 4.4%)
+
+## resolving comments the labels put elsewhere
+
+## the two labellers disagree
+  be9e5a85 [vscode-docs/unplaced/loud] A False PNone; B True P34; final False PNone
+  daf8f37f [vscode-docs/unplaced/loud] A False PNone; B True P34; final False PNone
+  e70c4e05 [vscode-docs/placed/loud] A False PNone; B True P42; final True P42
+  ef8142c5 [vscode-docs/unplaced/loud] A False PNone; B True P44; final False PNone
+  f86e4057 [vscode-docs/placed/loud] A True P29; B False PNone; final True P29

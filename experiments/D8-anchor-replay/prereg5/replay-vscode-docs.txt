@@ -1,0 +1,78 @@
+# replay.py: blockspec reference at ae1d2740a90f; MINLEN=20, SPAN=3, files=60, pairs/file=3, seed=7
+
+## vscode-docs gap=1
+  pairs: 174
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 65
+  pairs whose later version the profile refuses: 2
+  comments on them: 50
+  comments: 5122
+  no comment made: 269
+  not counted: 33
+  counted: correct 5046, loud 43, WRONG 0; span survives 4883, loud among them 0.9%
+    loud DETACHED: 6
+    loud ORPHANED: 8
+    loud REFUSED(crowded-gap): 21
+    loud REFUSED(near-copy): 7
+    loud REFUSED(unaccounted-copy): 1
+  as if every loud comment not counted had surviving text: 1.4% (25 more)
+  and every comment on a pair whose later version the profile refuses: 2.4% (50 more)
+    not counted MOVED: 8
+    not counted ORPHANED: 15
+    not counted REFUSED(crowded-gap): 1
+    not counted REFUSED(near-copy): 7
+    not counted REFUSED(repeat): 1
+    not counted REFUSED(unaccounted-copy): 1
+
+## vscode-docs gap=5
+  pairs: 160
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 64
+  pairs whose later version the profile refuses: 2
+  comments on them: 30
+  comments: 4722
+  no comment made: 252
+  not counted: 59
+  counted: correct 4550, loud 113, WRONG 0; span survives 4239, loud among them 2.7%
+    loud DETACHED: 9
+    loud ORPHANED: 23
+    loud REFUSED(crowded-gap): 59
+    loud REFUSED(near-copy): 21
+    loud REFUSED(unaccounted-copy): 1
+  as if every loud comment not counted had surviving text: 3.6% (41 more)
+  and every comment on a pair whose later version the profile refuses: 4.3% (30 more)
+    not counted DETACHED: 3
+    not counted MOVED: 13
+    not counted ORPHANED: 16
+    not counted REFUSED(crowded-gap): 6
+    not counted REFUSED(near-copy): 13
+    not counted REFUSED(refilled-gap): 2
+    not counted REFUSED(repeat): 1
+    not counted RESOLVED: 5
+
+## vscode-docs gap=25
+  pairs: 99
+  pairs not UTF-8: 0
+  pairs whose earlier version the profile refuses: 42
+  pairs whose later version the profile refuses: 3
+  comments on them: 291
+  comments: 2597
+  no comment made: 142
+  not counted: 69
+  counted: correct 2352, loud 176, WRONG 0; span survives 2046, loud among them 8.6%
+    loud DETACHED: 11
+    loud ORPHANED: 27
+    loud REFUSED(crowded-gap): 116
+    loud REFUSED(near-copy): 19
+    loud REFUSED(unaccounted-copy): 3
+  as if every loud comment not counted had surviving text: 11.0% (55 more)
+  and every comment on a pair whose later version the profile refuses: 21.8% (291 more)
+    not counted DETACHED: 3
+    not counted MOVED: 12
+    not counted ORPHANED: 36
+    not counted REFUSED(crowded-gap): 2
+    not counted REFUSED(near-copy): 11
+    not counted REFUSED(repeat): 3
+    not counted RESOLVED: 2
+
+## WRONG, first 20

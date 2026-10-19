@@ -23,11 +23,15 @@ and checks the oracle against a labelled sample.
     rehearsal-site-policy.txt  replay.py's stdout on the rehearsal arm
     kinds-site-policy-gap5.txt kinds.py's stdout on it, at gap 5
     prereg4/                   pre-registration 4's run on the verdict arms, and its verdict
+    prereg5/                   pre-registration 5's run, at adjudication 0004's resolver, and its verdict
     labels/site-policy-gap5/   the rehearsal arm's labelled sample: sample.py's key and stdout, both
                                passes of labels, and score.py's stdout
 
-**The verdict is in `prereg4/`.** blockspec's pre-registration 4 fixed the
-run before it ran; `prereg4/README.md` gives its outputs and its verdict.
+**The verdicts are in `prereg4/` and `prereg5/`.** blockspec's
+pre-registrations 4 and 5 fixed each run before it ran; each directory's
+`README.md` gives its outputs and its verdict. Pre-registration 4 found
+0003's resolver refusing too much; pre-registration 5 tests 0004's on
+held-out repositories, and passes.
 Everything else here is the harness and its rehearsal arm, `site-policy`,
 labelled at gap 5.
 

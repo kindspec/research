@@ -1,0 +1,3 @@
+# every row of dump.jsonl.gz whose verdict is WRONG, at every gap
+# python3 -c "import gzip,json; [print(l,end='') for l in gzip.open('dump.jsonl.gz','rt') if json.loads(l)['verdict']=='WRONG']"
+# none

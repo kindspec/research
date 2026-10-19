@@ -1,7 +1,8 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # Corpora — what was measured, and where it came from
 
-The experiments in this repository read 1.9 GB of third-party corpora and
+The experiments in this repository read about 2.9 GB of third-party corpora (1.9 GB before pre-registration 5's
+four held-out clones) and
 generated git histories. None of it is committed here. This file names each
 one so a result can be **reproduced rather than trusted**, which is the same
 standard the specs themselves are held to.
@@ -25,9 +26,18 @@ Sizes are the on-disk size of the working copy at the time of the run.
 | `kubernetes-website` | `github.com/kubernetes/website` | 535 MB | `D8-block-definitions` — arms `k8s-en`, `k8s-l10n` |
 | `cncf-toc` | `github.com/cncf/toc` | 31 MB | `D8-block-definitions` |
 | `site-policy` | `github.com/github/site-policy` | 820 KB | `D8-block-definitions` |
+| `github-docs` | `github.com/github/docs` | 673 MB | `D8-anchor-replay` — pre-registration 5 |
+| `vscode-docs` | `github.com/microsoft/vscode-docs` | 80 MB | `D8-anchor-replay` — pre-registration 5 |
+| `docker-docs` | `github.com/docker/docs` | 57 MB | `D8-anchor-replay` — pre-registration 5 |
+| `mdn-content` | `github.com/mdn/content` | 198 MB | `D8-anchor-replay` — pre-registration 5, arm `mdn-en` |
 
 Cloned with `--filter=blob:none`. The 40-character uniqueness measurement in
 blockspec's design brief comes from the first two.
+
+The last four are blockspec `spike/PRE-REGISTRATION-5.md`'s held-out arms, at
+the pins in `experiments/D8-anchor-replay/heldout-arms.json`, cloned in full
+(no partial-clone filter) and checked out with Git LFS files left as
+pointers; their sizes are of the working tree alone.
 
 `D8-block-definitions` reads all six, at the pins in its `arms.json`: D8 §3's
 for the first three, and blockspec `spike/PRE-REGISTRATION-2.md` §6.2's for the
