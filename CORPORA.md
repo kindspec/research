@@ -1,7 +1,8 @@
 <!-- SPDX-License-Identifier: CC-BY-4.0 -->
 # Corpora — what was measured, and where it came from
 
-The experiments in this repository read 1.9 GB of third-party corpora and
+The experiments in this repository read about 2.9 GB of third-party corpora (1.9 GB before pre-registration 5's
+four held-out clones) and
 generated git histories. None of it is committed here. This file names each
 one so a result can be **reproduced rather than trusted**, which is the same
 standard the specs themselves are held to.

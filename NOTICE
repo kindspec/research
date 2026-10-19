@@ -165,36 +165,63 @@ obsidian-help
   Elsewhere:  design-findings/D8-identity.md section 3.2 quotes the first of
               those two pairs a third time, and names two of the corpus's
               block ids, ^obsidian-sync-status and
-              ^blockquote-system-limitation. No other
-              text from obsidian-help is committed: no line of 20 or more
-              characters from en/*.md at the pin, or from any version of the
-              14 files the harnesses sample, appears in any other tracked file.
+              ^blockquote-system-limitation. The anchor-replay output
+              listed below also quotes obsidian-help: three-word spans,
+              some of them whole lines, and file paths.
 
 Pre-registration 5's held-out arms
   Files:      in experiments/D8-anchor-replay/prereg5/: dump.jsonl.gz and
               key.jsonl, which quote, for each comment, the three
-              whitespace-separated words it was placed on (a word may be a
-              link or a template tag, up to 380 characters) and the path of
-              the file; pass-a.jsonl, pass-b.jsonl and adjudicated.jsonl,
-              whose labellers' notes quote short phrases (at most 223
-              characters a note); and kinds-gap5.txt, which names example
-              file paths. No paragraph or file is committed whole.
+              whitespace-separated words it was placed on (up to 380
+              characters in all; a word may be a link or a template tag) and
+              the path of the file, some spans being a whole short paragraph
+              such as a heading or a macro; pass-a.jsonl, pass-b.jsonl and
+              adjudicated.jsonl, whose labellers' notes quote short phrases
+              (at most 223 characters a note); and kinds-gap5.txt, which names
+              example file paths.
   Quoted from, each at the pin in experiments/D8-anchor-replay/
   heldout-arms.json:
     github/docs (https://github.com/github/docs), content/*.md
       Licence:    CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
-      Attribution: GitHub, Inc. and the github/docs contributors
+      Attribution: github/docs (the licence file names no attribution;
+                  this is the repository's name)
     microsoft/vscode-docs (https://github.com/microsoft/vscode-docs),
     docs/*.md
       Licence:    CC-BY-3.0 US,
                   https://creativecommons.org/licenses/by/3.0/us/legalcode
-      Attribution: Copyright (c) Microsoft Corporation
+      Copyright:  Copyright (c) Microsoft Corporation. All rights reserved.
+                  (LICENSE.md, which licenses the documentation CC-BY-3.0 US
+                  and code MIT; what is quoted is documentation)
     docker/docs (https://github.com/docker/docs), content/*.md
       Licence:    Apache-2.0 (LICENSES/Apache-2.0.txt)
-      Attribution: Docker, Inc. and the docker/docs contributors
+      Copyright:  Copyright 2013-2026 Docker, Inc. (README.md; the
+                  repository has no NOTICE file)
     mdn/content (https://github.com/mdn/content), files/en-us/*.md
       Licence:    CC-BY-SA-2.5 for prose,
                   https://creativecommons.org/licenses/by-sa/2.5/
-      Attribution: MDN contributors (https://developer.mozilla.org)
+      Attribution: MDN contributors, https://developer.mozilla.org (the
+                  licence file names no attribution; this is MDN's own
+                  credit line)
   Changes:    none to the quoted words; they are listed as data, not
               adapted.
+
+Anchor-replay output on D8's arms
+  Files:      in experiments/D8-anchor-replay/: prereg4/dump.jsonl.gz,
+              prereg4/key.jsonl, prereg4/pass-a.jsonl, prereg4/pass-b.jsonl,
+              prereg4/kinds-gap5.txt, labels/site-policy-gap5/key.jsonl,
+              labels/site-policy-gap5/pass-a.jsonl,
+              labels/site-policy-gap5/pass-b.jsonl,
+              kinds-site-policy-gap5.txt, prereg5/regression/dump.jsonl.gz
+              and prereg5/regression/kinds-gap5.txt. They quote three-word
+              spans and file paths, and the labellers' notes short phrases,
+              as the held-out entry above describes.
+  Quoted from, each at the pin in experiments/D8-block-definitions/
+  arms.json:
+    rust-lang/book: MIT OR Apache-2.0 (its COPYRIGHT file; LICENSES/MIT.txt,
+                  LICENSES/Apache-2.0.txt)
+    obsidianmd/obsidian-help: none; no licence file at the pin
+    kubernetes/website: CC-BY-4.0 (LICENSES/CC-BY-4.0.txt)
+    cncf/toc: none; no licence file at the pin
+    github/site-policy: CC0-1.0 (LICENSES/CC0-1.0.txt)
+  The two with no licence are quoted as the other three are, in three-word
+  spans as research data.

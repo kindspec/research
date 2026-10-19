@@ -52,15 +52,18 @@ text, the pooled rate is 3.3% (3.2% to 4.6%). The oracle's error where it
 places a comment is 0.1%, and 4.5% with every stratum at the upper end of
 its interval.
 
-The refusals by cause, pooled over the four arms (`kinds-gap5.txt`, 213
-loud comments at gap 5): 96 `REFUSED(crowded-gap)`, 52
+The refusals the oracle places, by cause, pooled over the four arms
+(`kinds-gap5.txt`, 213 loud comments at gap 5; the rate also counts
+refused comments the oracle does not place and the labels find
+surviving): 96 `REFUSED(crowded-gap)`, 52
 `REFUSED(near-copy)` (22 on paragraphs whose text is unchanged), 40
 `ORPHANED`, 23 `DETACHED`, 1 `REFUSED(repeat)` and 1
 `REFUSED(unaccounted-copy)`.
 
 **What it cannot see** (pre-registration 5 §4). The word oracle grades a
 comment that lands on its span's surviving words as correct, so an edit
-beside a span (`SPEC.md` §11.12) is counted correct. At gaps 1 and 25,
+beside a span (`SPEC.md` §11.12) and R3 within one leaf are counted
+correct. At gaps 1 and 25,
 resolving comments the oracle does not count are checked by neither the
 oracle nor the labels: 19 at gap 1 (github-docs 2, vscode-docs 8,
 docker-docs 6, mdn-en 3) and 14 at gap 25 (all vscode-docs), counted from
@@ -107,10 +110,13 @@ What the labellers could have seen beyond their packets:
   this sample's packet ids are also ids there (`sample.py` draws ids from
   its generator seeded 11, as it did then), for different comments on
   different arms. A labeller that read one would have taken another
-  comment's answer. None did, by this check: of the 215, no label here
-  matches pre-registration 4's in both `survives` and its later paragraph
-  where it survives, in either pass; five notes are the same, each
-  "paragraph unchanged" or "sentence unchanged".
+  comment's answer. By this check none did: of the 215, comparing either
+  pass here with either pass there, no label that says the words survive
+  gives the same later paragraph, and three labels match, all three saying
+  they do not survive (403b322a, 7bc63c97 and c9657c6e), where chance gives
+  about four and a half (16.6% of labels here say not surviving, 12.7%
+  there). Between two and three notes are the same, depending on the
+  passes compared, each "paragraph unchanged" or "sentence unchanged".
 
 ## Running it
 
@@ -131,4 +137,6 @@ same `replay.py` and `kinds.py` with `arms.json`'s clone keys, concatenated
 in its order.
 
 The quoted words and labellers' notes remain under their repositories'
-licences; `../../../NOTICE` lists them.
+terms; `../../../NOTICE` lists them, for these arms and for the regression
+arms, two of which have no licence. The blockspec verdict record beside
+0004 follows this pull request.
