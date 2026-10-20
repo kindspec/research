@@ -179,8 +179,10 @@ Pre-registration 5's held-out arms
               adjudicated.jsonl, whose labellers' notes quote short phrases
               (at most 223 characters a note); and kinds-gap5.txt, which names
               example file paths. Also, in
-              experiments/D8-anchor-replay/tables/scan/, github-docs.txt and
-              vscode-docs.txt, which name file paths and quote, for each
+              experiments/D8-anchor-replay/tables/: README.md, which names
+              one github/docs file path and commit range; and, in scan/,
+              github-docs.txt and vscode-docs.txt, which name file paths
+              and quote, for each
               table a refusal is shown for, up to 240 characters of that
               table and of the table that triggered it.
   Quoted from, each at the pin in experiments/D8-anchor-replay/

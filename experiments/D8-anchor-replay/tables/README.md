@@ -25,17 +25,17 @@ its pin, gap 5. 0004 is blockspec ae1d274; 0003 is blockspec 31e41d3.
 `replay.py` here is `../replay.py` at research 95bfc44 with the changes its
 header lists. The one that matters: the original keeps a leaf only if its
 node has `lines`, and a table leaf has none, so the original places no table
-comment at all. With `REPLAY_TYPES=p` this copy reproduces
-`../prereg5/regression/replay-site-policy.txt` byte for byte.
+comment at all. With `REPLAY_TYPES=p`, this copy's site-policy output at gap 5
+is byte-identical to that section of
+`../prereg5/regression/replay-site-policy.txt` (its first line also names
+the types).
 
     run.sh r0004 <blockspec ae1d274> ARM CLONEKEY CLONEPATH OUTDIR
     run.sh r0003 <blockspec 31e41d3> ARM CLONEKEY CLONEPATH OUTDIR
     python3 -I analyze.py <blockspec ae1d274> OUTDIR ARM=CLONEPATH ...
 
-`analyze.txt` is that output, produced before the scripts moved here (the
-copy then also printed a paragraph-comment count, 0 for both, which this
-`analyze.py` no longer prints). The dumps themselves quote corpus text and
-are not committed.
+`analyze.txt` is that output, from the scripts as committed here. The dumps
+themselves quote corpus text and are not committed.
 
 261 table comments; 0004 and 0003 give every one the same status:
 
@@ -67,7 +67,7 @@ One output per arm in `scan/`. Totals over the nine:
 | | count |
 | --- | --: |
 | pairs with a table | 1,564 |
-| pairs the profile refuses, earlier version holding a `|` | 1,694 |
+| pairs with a version the profile refuses, earlier version holding a `|` character | 1,694 |
 | base table leaves | 3,946 |
 | unchanged (EXACT) table leaves | 2,814 |
 | ... with an unmatched current leaf | 1,680 |
@@ -84,15 +84,25 @@ code points 0.492) and 98 (0.597, 0.509, 0.444), both against current leaf
 86. Both stay at or above 0.5 without `|`: they are the word rule itself, not
 the separators.
 
+`scan.py` tests the near-copy condition itself, not the resolver's whole
+verdict (`check_pair` can refuse earlier for another reason). Calling
+`check_pair` for both resolvers instead gives the same near-copy refusals on
+vscode-docs, site-policy, k8s-en and the events-that-trigger-workflows pair.
+
 **Positive control.** `control.sh` rebuilds the conformance case as a git
-history with fixed dates (HEAD 3d3c9bd0); `scan/control.txt` reports 0004
+history with fixed dates (HEAD 3d3c9bd0). Its pair is the case's base
+against a current version with four short lines appended to the last
+paragraph, so the gap-5 sampling reaches it; it checks `scan.py`'s near-copy
+test, not the resolver. `scan/control.txt` reports 0004
 refuses, 0003 does not, every trigger `|`-only (words 0.516, without `|`
 0.000, code points 0.486).
 
 ## Limits
 
-- 1,694 pairs whose earlier version holds a `|` are outside the blockspec
-  profile, so neither resolver reaches them.
+- 1,694 pairs whose earlier version holds a `|` character have a version
+  outside the blockspec profile and are not scanned; where only the later
+  version is refused, the replay's comments there are
+  REFUSED(not-in-profile).
 - The scan counts leaves, not comments; an EXACT leaf is unchanged by
   definition, so each refusal there refuses text that survived.
 - Nine arms, the same corpora as pre-registration 5; no other population.

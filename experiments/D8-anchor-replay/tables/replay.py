@@ -9,9 +9,10 @@
 #     filter, `lf.node.lines`, drops every table);
 #   - each dumped comment carries its leaf `type`;
 #   - HERE is the parent directory, so arms.json and heldout-arms.json are
-#     read from where ../replay.py reads them.
-# With REPLAY_TYPES=p it reproduces ../prereg5/regression/replay-site-policy.txt
-# at gap 5 byte for byte.
+#     read from where ../replay.py reads them;
+#   - the first output line also names the types and the commented types.
+# With REPLAY_TYPES=p, its gap=5 section for site-policy is byte-identical to
+# that section of ../prereg5/regression/replay-site-policy.txt.
 """How often does blockspec's anchor resolver refuse, or resolve wrongly, on real
 document history? (blockspec adjudication 0003, section 12 item 1)
 

@@ -1,7 +1,5 @@
 # analyze.py: 0004 reference at ae1d2740a90f; table-leaf comments, gap 5
 
-paragraph comments (sanity, whole dump): r0004 0, r0003 0
-
 ## table comments, status, r0004: total 261
     188  RESOLVED   (held-out 117, tuned 71)
      28  EDITED   (held-out 16, tuned 12)
