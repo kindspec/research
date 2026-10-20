@@ -1,0 +1,7 @@
+# scan.py cncf-toc gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 598
+       2  EXACT table leaves
+       2  EXACT table leaves with an unmatched current leaf
+       8  base table leaves
+      22  pairs the profile refuses
+       6  pairs with a table
+  every 0004 refusal, first trigger's similarities:

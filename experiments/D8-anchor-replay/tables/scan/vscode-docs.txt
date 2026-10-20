@@ -1,0 +1,16 @@
+# scan.py vscode-docs gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 364
+      11  0003 refuses near-copy
+       1  0004 refuses near-copy
+       1  0004 refuses, 0003 refuses=True, |-only=True
+       1  0004 refuses, every trigger |-only
+     493  EXACT table leaves
+     206  EXACT table leaves with an unmatched current leaf
+     655  base table leaves
+     141  pairs the profile refuses
+     167  pairs with a table
+       1  trigger type table
+  every 0004 refusal, first trigger's similarities:
+    docs/agent-customization/agent-plugins.md f9fa4d31d6cbec0559bacbe03f221970fccebd8b..8889b0542cb2144fb53f5f53bd19c1395e2d9fa1 leaf 28 (trigger leaf 98 of 1): 0003 refuses=True, |-only=True; words 0.600, without | 0.483, code points 0.703
+  e.g. docs/agent-customization/agent-plugins.md f9fa4d31d6..8889b0542c leaf 28: words 0.600, without | 0.483, code points 0.703
+    table: 'Plugin format | Plugin root\nAgent Plugins 1.0 | `${PLUGIN_ROOT}`\nClaude | `${CLAUDE_PLUGIN_ROOT}`\nCopilot | `${PLUGIN_ROOT}` or `${CLAUDE_PLUGIN_ROOT}`\nLegacy OpenPlugin | `${PLUGIN_ROOT}`'
+    trigger (table): 'Plugin format | Token | Environment variable\nClaude | `${CLAUDE_PLUGIN_ROOT}` | `CLAUDE_PLUGIN_ROOT`\nLegacy OpenPlugin | `${PLUGIN_ROOT}` | `PLUGIN_ROOT`'

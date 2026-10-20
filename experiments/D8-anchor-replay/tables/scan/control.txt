@@ -1,0 +1,14 @@
+# scan.py control gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 1
+       1  0004 refuses near-copy
+       1  0004 refuses, 0003 refuses=False, |-only=True
+       1  0004 refuses, every trigger |-only
+       1  EXACT table leaves
+       1  EXACT table leaves with an unmatched current leaf
+       1  base table leaves
+       1  pairs with a table
+       1  trigger type table
+  every 0004 refusal, first trigger's similarities:
+    policy.md 8d431d1504b0aed070b4c8fe5805370e951e73a1..3d3c9bd0645956789c8a983afa9c4539ef64aacb leaf 1 (trigger leaf 3 of 1): 0003 refuses=False, |-only=True; words 0.516, without | 0.000, code points 0.486
+  e.g. policy.md 8d431d1504..3d3c9bd064 leaf 1: words 0.516, without | 0.000, code points 0.486
+    table: 'Limit | Value | Unit\nscram | 4.2 | sigma\nwindow | 30 | seconds\nvote | 2 | channels'
+    trigger (table): 'Inspector | Checked | Remarks\n |  | \n |  | \n |  | '

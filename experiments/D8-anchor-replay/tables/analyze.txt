@@ -1,0 +1,52 @@
+# analyze.py: 0004 reference at ae1d2740a90f; table-leaf comments, gap 5
+
+## table comments, status, r0004: total 261
+    188  RESOLVED   (held-out 117, tuned 71)
+     28  EDITED   (held-out 16, tuned 12)
+     19  DETACHED   (held-out 14, tuned 5)
+     14  ORPHANED   (held-out 13, tuned 1)
+      9  REFUSED(crowded-gap)   (held-out 6, tuned 3)
+      2  REFUSED(not-in-profile)   (held-out 1, tuned 1)
+      1  REFUSED(near-copy)   (held-out 1, tuned 0)
+  by status and verdict:
+      188  RESOLVED / correct
+       28  EDITED / correct
+       11  DETACHED / loud
+        8  DETACHED / correct
+        7  ORPHANED / correct
+        6  ORPHANED / None
+        4  REFUSED(crowded-gap) / loud
+        3  REFUSED(crowded-gap) / None
+        2  REFUSED(crowded-gap) / correct
+        2  REFUSED(not-in-profile) / profile
+        1  ORPHANED / loud
+        1  REFUSED(near-copy) / correct
+
+## table comments, status, r0003: total 261
+    188  RESOLVED   (held-out 117, tuned 71)
+     28  EDITED   (held-out 16, tuned 12)
+     19  DETACHED   (held-out 14, tuned 5)
+     14  ORPHANED   (held-out 13, tuned 1)
+      9  REFUSED(crowded-gap)   (held-out 6, tuned 3)
+      2  REFUSED(not-in-profile)   (held-out 1, tuned 1)
+      1  REFUSED(near-copy)   (held-out 1, tuned 0)
+  by status and verdict:
+      188  RESOLVED / correct
+       28  EDITED / correct
+       11  DETACHED / loud
+        8  DETACHED / correct
+        7  ORPHANED / correct
+        6  ORPHANED / None
+        4  REFUSED(crowded-gap) / loud
+        3  REFUSED(crowded-gap) / None
+        2  REFUSED(crowded-gap) / correct
+        2  REFUSED(not-in-profile) / profile
+        1  ORPHANED / loud
+        1  REFUSED(near-copy) / correct
+
+## table comments, 0003 status -> 0004 status (changed only)
+
+## 0004 REFUSED(near-copy) on table comments
+      1  EDITED
+
+## examples (EXACT near-copy)
