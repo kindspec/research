@@ -1,0 +1,6 @@
+# scan.py site-policy gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 61
+       3  EXACT table leaves
+       6  base table leaves
+       4  pairs the profile refuses
+       5  pairs with a table
+  every 0004 refusal, first trigger's similarities:

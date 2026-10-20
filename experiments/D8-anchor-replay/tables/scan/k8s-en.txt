@@ -1,0 +1,7 @@
+# scan.py k8s-en gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 2513
+      44  EXACT table leaves
+      36  EXACT table leaves with an unmatched current leaf
+      63  base table leaves
+     692  pairs the profile refuses
+      39  pairs with a table
+  every 0004 refusal, first trigger's similarities:

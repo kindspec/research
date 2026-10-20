@@ -1,0 +1,8 @@
+# scan.py mdn-en gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 14703
+       3  0003 refuses near-copy
+     512  EXACT table leaves
+     234  EXACT table leaves with an unmatched current leaf
+     745  base table leaves
+     431  pairs the profile refuses
+     558  pairs with a table
+  every 0004 refusal, first trigger's similarities:

@@ -1,0 +1,8 @@
+# scan.py obsidian-help gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 176
+       1  0003 refuses near-copy
+      88  EXACT table leaves
+      69  EXACT table leaves with an unmatched current leaf
+     120  base table leaves
+      12  pairs the profile refuses
+      47  pairs with a table
+  every 0004 refusal, first trigger's similarities:

@@ -1,0 +1,7 @@
+# scan.py docker-docs gap=5: 0004 at ae1d2740a90f, 0003 at 31e41d34f23c; files 1095
+     199  EXACT table leaves
+     177  EXACT table leaves with an unmatched current leaf
+     303  base table leaves
+      79  pairs the profile refuses
+     151  pairs with a table
+  every 0004 refusal, first trigger's similarities:
