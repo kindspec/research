@@ -1,0 +1,9 @@
+iptv-channels: commits=7008 excluded_unreadable=6 reordered_any_parent=413 reordered_all_parents=342 over_half_moved=0 tip_in_key_order=False
+  largest: [('e8c15c36', 558, 28947), ('93610d29', 382, 40709), ('126c0df4', 134, 28878), ('0fb6984a', 93, 28903), ('cb43f5b5', 63, 29671), ('9f5cfd0b', 58, 37549)]   median_moved: 4
+iptv-blocklist: commits=339 excluded_unreadable=0 reordered_any_parent=15 reordered_all_parents=9 over_half_moved=0 tip_in_key_order=False
+  largest: [('e9594ad5', 11, 1434), ('fc905a3e', 8, 997), ('9d64c05f', 8, 812), ('1282002a', 2, 1730), ('0b242649', 1, 800), ('4e56d818', 1, 796)]   median_moved: 1
+country-codes: commits=74 excluded_unreadable=1 reordered_any_parent=24 reordered_all_parents=13 over_half_moved=0 tip_in_key_order=False
+  largest: [('6c2f8116', 34, 249), ('6dd06119', 26, 250), ('21d58d0f', 26, 250), ('a0b3c0b2', 26, 250), ('d4e48954', 23, 249), ('410d0178', 17, 249)]   median_moved: 2
+iso-3166: commits=25 excluded_unreadable=0 reordered_any_parent=5 reordered_all_parents=3 over_half_moved=0 tip_in_key_order=False
+  largest: [('aeb0320a', 1, 249), ('fc02d73c', 1, 249), ('b6e238f1', 1, 249), ('f2a5c929', 1, 249), ('f3d55922', 1, 249)]   median_moved: 1
+POOLED commits=7446 any_parent=457 (6.14%) all_parents=367 (4.93%)
